@@ -1,0 +1,88 @@
+{
+    "1": {
+        "Coccygidium": {
+            "Characteristics": {
+                "Character5": "1"
+            }
+        },
+        "Biroia": {
+            "Characteristics": {
+                "Character5": "2",
+                "Character6": "1"
+            }
+        },
+        "Cremnoptoides": {
+            "Characteristics": {
+                "Character5": "2",
+                "Character6": "1 and 2",
+                "Character13": "1"
+            }
+        },
+        "Disophrys": {
+            "Characteristics": {
+                "Character5": "2",
+                "Character6": "1 and 2",
+                "Character13": "2"
+            }
+        }
+    },
+    "2": {
+        "Troticus": {
+            "Characteristics": {
+                "Character1": "2",
+                "Character9": "2"
+            }
+        },
+        "Hypsostypos": {
+            "Characteristics": {
+                "Character1": "2",
+                "Character9": "1"
+            }
+        },
+        "Cremnops": {
+            "Characteristics": {
+                "Character1": "1 and 2"
+            }
+        }
+    },
+    "4": {
+        "Earinus": {
+            "Characteristics": {
+                "Character2": "1",
+                "Character8": "1"
+            }
+        },
+        "Therophilus": {
+            "Characteristics": {
+                "Character2": "2",
+                "Character4": "2",
+                "Character3": "2"
+            }
+        },
+        "Bassus": {
+            "Characteristics": {
+                "Character2": "2",
+                "Character4": "2",
+                "Character3": "3"
+            }
+        },
+        "Lytopylus": {
+            "Characteristics": {
+                "Character2": "2",
+                "Character4": "1"
+            }
+        },
+        "Camptothlipsis": {
+            "Characteristics": {
+                "Character2": "3",
+                "Character8": "3"
+            }
+        },
+        "Aneurobracon": {
+            "Characteristics": {
+                "Character2": "3",
+                "Character8": "3"
+            }
+        }
+    }
+}
