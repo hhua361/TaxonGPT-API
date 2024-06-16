@@ -237,7 +237,7 @@ print(json.dumps(relationships, indent=4))
 
 
 
-### record character state differences in each subnodes ###
+### 记录每个子节点的字符状态差异  ###
 def build_knowledge_graph(relationships, char_matrix):
     knowledge_graph = []
     visited = set()  # 创建一个集合用来记录访问过的节点
