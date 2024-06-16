@@ -1,0 +1,78 @@
+{
+    "1": {
+        "Huperzia selago": {
+            "Characteristics": {
+                "Character2": "1"
+            }
+        },
+        "Lycopodium clavatum": {
+            "Characteristics": {
+                "Character2": "2",
+                "Character12": "1"
+            }
+        },
+        "Diphasiastrum alpinum": {
+            "Characteristics": {
+                "Character2": "2",
+                "Character12": "2",
+                "Character9": "1",
+                "Character5": "2"
+            }
+        },
+        "Diphasiastrum complanatum": {
+            "Characteristics": {
+                "Character2": "2",
+                "Character12": "2",
+                "Character9": "1",
+                "Character5": "3"
+            }
+        },
+        "Lycopodiella inundata": {
+            "Characteristics": {
+                "Character2": "2",
+                "Character12": "2",
+                "Character9": "2",
+                "Character20": "1"
+            }
+        },
+        "Lycopodium annotinum": {
+            "Characteristics": {
+                "Character2": "2",
+                "Character12": "2",
+                "Character9": "2",
+                "Character20": "2 and 3"
+            }
+        },
+        "Selaginella kraussiana": {
+            "Characteristics": {
+                "Character2": "3",
+                "Character8": "1",
+                "Character4": "1"
+            }
+        },
+        "Selaginella selaginoides": {
+            "Characteristics": {
+                "Character2": "3",
+                "Character8": "1",
+                "Character4": "2"
+            }
+        }
+    },
+    "2": {
+        "Isoetes histrix": {
+            "Characteristics": {
+                "Character20": "1"
+            }
+        },
+        "Isoetes lacustris": {
+            "Characteristics": {
+                "Character20": "2 and 3"
+            }
+        },
+        "Isoetes echinospora": {
+            "Characteristics": {
+                "Character20": "1 and 2 and 3"
+            }
+        }
+    }
+}
