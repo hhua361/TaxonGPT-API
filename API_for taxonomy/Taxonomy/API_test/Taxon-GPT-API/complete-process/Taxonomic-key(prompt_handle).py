@@ -221,7 +221,7 @@ def load_prompt_messages(file_path):
 nexus_file_path = "D:/桌面/taxonomy_primary_result/The_GPT-4_result/Dataset_3 (The Lycopodiales (Diphasiastrum, Huperzia, Isoetes, Lycopodium, Selaginella)) 4/Information gain methods/nexdata"
 csv_output_path = "D:/桌面/process_data_2.csv"
 json_output_path = "D:/桌面/knowledge_graph.json"
-prompt_file_path = "D:/桌面/prompt_messages.json"
+prompt_file_path = "D:/桌面/taxonomy_primary_result/Taxonomic dataset materials/prompt_messages.json"
 
 # Step 1: Convert NEXUS to CSV and build knowledge graph
 knowledge_graph = nexus_to_knowledge_graph(nexus_file_path, csv_output_path, json_output_path)
@@ -393,7 +393,8 @@ def classify_group(group_species):
     return json_result
 
 
-# part 4
+# part 5
+
 # Function to clean and extract JSON string
 def extract_json_string(json_string):
     # Find the positions of the start and end of the JSON object
@@ -409,7 +410,6 @@ def extract_json_string(json_string):
     return ""
 
 
-# part 5
 def recursive_classification(groups, final_classification, classification_results, depth=0, max_depth=10):
     """
     Recursive classification function to process groups and store results.
