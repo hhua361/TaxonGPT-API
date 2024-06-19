@@ -804,24 +804,21 @@ print(json.dumps(updated_classification_key, indent=4, ensure_ascii=False))
 
 
 
+
+# Initialize step counter
 step_counter = 1
 steps = []
 outer_steps = []
 
-# 初始化步骤计数
-step_counter = 1
-steps = []
-outer_steps = []
-
-# 递归函数生成分类检索表
+# Recursive function to generate classification key
 def generate_classification_key(data, current_step, outer_step=False):
     global step_counter
     for character, states in data.items():
         step_description = f"{current_step}. {character}"
         if outer_step:
-            outer_steps.append(step_description)  # 记录最外层的步骤
+            outer_steps.append(step_description)  # Record outermost steps
         else:
-            steps.append(step_description)  # 记录当前步骤和对应的性状
+            steps.append(step_description)  # Record current step and corresponding character
         state_steps = []
         step_map = {}
         for state, next_level in states.items():
@@ -834,90 +831,25 @@ def generate_classification_key(data, current_step, outer_step=False):
         steps.extend(state_steps)
         for step, next_level in step_map.items():
             generate_classification_key(next_level, step)
-        current_step += 1  # 确保最外层的序号是按顺序的
+        current_step += 1  # Ensure the outermost steps are in order
 
-# 生成分类检索表
+# Generate classification key
 generate_classification_key(updated_classification_key, 1, outer_step=True)
 
-# 排序最外层的步骤
+# Sort the outermost steps
 sorted_outer_steps = sorted(outer_steps, key=lambda x: int(x.split('.')[0]))
 
-# 合并排序后的最外层步骤和其他步骤
+# Combine sorted outermost steps with other steps
 sorted_steps = sorted_outer_steps + [step for step in steps if not any(step.startswith(f"{i}.") for i in range(1, len(outer_steps) + 1))]
 
-# 格式化输出
+# Format output
 classification_key = "\n".join(sorted_steps)
 print(classification_key)
 
-# 将结果写入文件
+# Write results to file
 with open("classification_key.txt", "w") as f:
     f.write(classification_key)
 
 
-# Part 13
 
-# Example initial result
-initial_result = parsed_initial_classification
-
-# Parse the API response JSON strings into dictionaries
-parsed_classification_results = {key: json.loads(value) for key, value in classification_results.items()}
-
-# Function to combine the initial and secondary classification results
-def combine_results(initial, secondary, state_key):
-    if not secondary:
-        return
-
-    initial_states = initial["States"].get(state_key)
-    if initial_states is None:
-        initial["States"][state_key] = secondary
-        return
-
-    if isinstance(initial_states, list):
-        if isinstance(secondary, list):
-            initial["States"][state_key] = list(set(initial_states + secondary))  # Merge two lists and remove duplicates
-        else:
-            initial["States"][state_key] = secondary
-    elif isinstance(initial_states, dict):
-        if isinstance(secondary, dict):
-            for key, value in secondary["States"].items():
-                if key not in initial_states:
-                    initial_states[key] = value
-                else:
-                    combine_results(initial_states, value, key)
-        else:
-            raise ValueError(f"Conflicting types for key {state_key}: {type(initial_states)} vs {type(secondary)}")
-    else:
-        raise ValueError(f"Unexpected type for initial states: {type(initial_states)}")
-
-
-# Dynamically combine all secondary classification results into the initial result
-for state_key, secondary in parsed_classification_results.items():
-    combine_results(initial_result, secondary, state_key)
-
-
-# Function to display the final classification result in a readable format
-def display_classification(result, indent=0):
-    indent_space = " " * indent
-    character = result.get("Character")
-    states = result.get("States")
-
-    classification = {}
-    if character and states:
-        classification["Character"] = character
-        classification["States"] = {}
-        print(f"{indent_space}1. **{character}:**")
-        for state, species in states.items():
-            if isinstance(species, list):
-                print(f"{indent_space}   - State \"{state}\": {', '.join(species)}")
-                classification["States"][state] = species
-            elif isinstance(species, dict):
-                print(f"{indent_space}   - State \"{state}\":")
-                classification["States"][state] = display_classification(species, indent + 4)
-    return classification
-
-# Display the final classification result
-final_result = display_classification(initial_result)
-# Uncomment the lines below to print the final result as JSON
-# print("\nFinal Result JSON:")
-# print(json.dumps(final_result, indent=2))
 
