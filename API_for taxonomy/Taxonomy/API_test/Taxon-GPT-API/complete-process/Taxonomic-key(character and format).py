@@ -218,17 +218,21 @@ def load_prompt_messages(file_path):
     with open(file_path, "r", encoding="utf-8") as file:
         return json.load(file)
 
+def load_character_messages(file_path):
+    with open(file_path, "r", encoding="utf-8") as file:
+        return json.load(file)
+
 # Example Usage
 nexus_file_path = "D:/桌面/taxonomy_primary_result/The_GPT-4_result/Dataset_3 (The Lycopodiales (Diphasiastrum, Huperzia, Isoetes, Lycopodium, Selaginella)) 4/Information gain methods/nexdata"
 csv_output_path = "D:/桌面/process_data_2.csv"
 json_output_path = "D:/桌面/knowledge_graph.json"
 prompt_file_path = "D:/桌面/taxonomy_primary_result/Taxonomic dataset materials/prompt_messages.json"
-
+character_file_path = "D:/桌面/taxonomy_primary_result/The_GPT-4_result/Dataset_3 (The Lycopodiales (Diphasiastrum, Huperzia, Isoetes, Lycopodium, Selaginella)) 4/Information gain methods/character_info_update.json"
 # Step 1: Convert NEXUS to CSV and build knowledge graph
 knowledge_graph = nexus_to_knowledge_graph(nexus_file_path, csv_output_path, json_output_path)
 
 # Step 2: Parse Nexus file to get character info
-character_info = parse_nexus_file(nexus_file_path)
+character_info = load_character_messages(character_file_path)
 
 # Step 3: upload the prompt information
 prompt_messages = load_prompt_messages(prompt_file_path)
@@ -793,10 +797,61 @@ def replace_indices_with_descriptions_in_key(key, character_info, parent_char_in
 
 # Replace feature and state descriptions
 updated_classification_key = replace_indices_with_descriptions_in_key(converted_initial_classification, character_info)
-
+print(type(updated_classification_key))
 # Print the updated classification key
 print("Updated Classification Key:")
 print(json.dumps(updated_classification_key, indent=4, ensure_ascii=False))
+
+
+
+step_counter = 1
+steps = []
+outer_steps = []
+
+# 初始化步骤计数
+step_counter = 1
+steps = []
+outer_steps = []
+
+# 递归函数生成分类检索表
+def generate_classification_key(data, current_step, outer_step=False):
+    global step_counter
+    for character, states in data.items():
+        step_description = f"{current_step}. {character}"
+        if outer_step:
+            outer_steps.append(step_description)  # 记录最外层的步骤
+        else:
+            steps.append(step_description)  # 记录当前步骤和对应的性状
+        state_steps = []
+        step_map = {}
+        for state, next_level in states.items():
+            if isinstance(next_level, dict):
+                step_counter += 1
+                state_steps.append(f"    - {state} >>> step {step_counter}")
+                step_map[step_counter] = next_level
+            else:
+                state_steps.append(f"    - {state}\n        - Species: {next_level}")
+        steps.extend(state_steps)
+        for step, next_level in step_map.items():
+            generate_classification_key(next_level, step)
+        current_step += 1  # 确保最外层的序号是按顺序的
+
+# 生成分类检索表
+generate_classification_key(updated_classification_key, 1, outer_step=True)
+
+# 排序最外层的步骤
+sorted_outer_steps = sorted(outer_steps, key=lambda x: int(x.split('.')[0]))
+
+# 合并排序后的最外层步骤和其他步骤
+sorted_steps = sorted_outer_steps + [step for step in steps if not any(step.startswith(f"{i}.") for i in range(1, len(outer_steps) + 1))]
+
+# 格式化输出
+classification_key = "\n".join(sorted_steps)
+print(classification_key)
+
+# 将结果写入文件
+with open("classification_key.txt", "w") as f:
+    f.write(classification_key)
 
 
 # Part 13
