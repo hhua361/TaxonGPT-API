@@ -804,16 +804,24 @@ print(json.dumps(updated_classification_key, indent=4, ensure_ascii=False))
 
 
 
+# Initialize step counter
 step_counter = 1
 steps = []
 outer_steps = []
 
+
 # Recursive function to generate classification key
-def generate_classification_key(data, current_step, outer_step=False):
+def generate_classification_key(data, current_step, parent_step=None, outer_step=False):
     global step_counter
     if isinstance(data, dict):
         for character, states in data.items():
-            step_description = f"{current_step}. {character.split(': ')[1]}"  # Only use description
+            # Ensure step_prefix is correct
+            if parent_step is None:
+                step_prefix = str(current_step)
+            else:
+                step_prefix = f"{current_step}({parent_step})"
+
+            step_description = f"{step_prefix}. {character.split(': ')[1]}"  # Only use description
             if outer_step:
                 outer_steps.append(step_description)  # Record outermost steps
             else:
@@ -823,17 +831,19 @@ def generate_classification_key(data, current_step, outer_step=False):
             for state, next_level in states.items():
                 if isinstance(next_level, dict):
                     step_counter += 1
-                    state_steps.append(f"    - {state.split(': ')[1]} >>> step {step_counter}")  # Only use description
-                    step_map[step_counter] = next_level
+                    next_step_prefix = str(step_counter) if parent_step is None else f"{step_counter}"
+                    state_steps.append(f"    - {state.split(': ')[1]} ........ {next_step_prefix}")  # Only use description
+                    step_map[step_counter] = (next_level, current_step)
                 else:
-                    state_steps.append(f"    - {state.split(': ')[1]}\n        - Species: {next_level}")  # Only use description
+                    state_steps.append(f"    - {state.split(': ')[1]} ........ {next_level}")  # Only use description
             steps.extend(state_steps)
-            for step, next_level in step_map.items():
-                generate_classification_key(next_level, step)
+            for step, (next_level, current_step) in step_map.items():
+                generate_classification_key(next_level, step, current_step)
             current_step += 1  # Ensure the outermost steps are in order
     else:
         # If data is not a dictionary, do not recurse
         return
+
 
 # Generate classification key
 generate_classification_key(updated_classification_key, 1, outer_step=True)
