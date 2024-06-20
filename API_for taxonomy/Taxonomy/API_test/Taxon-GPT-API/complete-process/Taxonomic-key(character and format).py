@@ -816,7 +816,7 @@ def generate_classification_key(data, current_step, parent_step=None):
         step_map = {}
         for character, states in data.items():
             for state, next_level in states.items():
-                full_state_description = f"{character.split(': ')[1]}：{state.split(': ')[1]}"  # Combine character and state descriptions
+                full_state_description = f"{character.split(':')[1]}: {state.split(': ')[1]}"  # Combine character and state descriptions
                 if isinstance(next_level, dict):
                     step_counter += 1
                     next_step_prefix = str(step_counter)
