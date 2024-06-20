@@ -223,11 +223,11 @@ def load_character_messages(file_path):
         return json.load(file)
 
 # Example Usage
-nexus_file_path = "D:/桌面/taxonomy_primary_result/The_GPT-4_result/Dataset_3 (The Lycopodiales (Diphasiastrum, Huperzia, Isoetes, Lycopodium, Selaginella)) 4/Information gain methods/nexdata"
+nexus_file_path = "D:/桌面/taxonomy_primary_result/The_GPT-4_result/Dataset_2 (The Equisetum species (horsetails)) 3/Information gain methods/nexdata"
 csv_output_path = "D:/桌面/process_data_2.csv"
 json_output_path = "D:/桌面/knowledge_graph.json"
 prompt_file_path = "D:/桌面/taxonomy_primary_result/Taxonomic dataset materials/prompt_messages.json"
-character_file_path = "D:/桌面/taxonomy_primary_result/The_GPT-4_result/Dataset_3 (The Lycopodiales (Diphasiastrum, Huperzia, Isoetes, Lycopodium, Selaginella)) 4/Information gain methods/character_info_update.json"
+character_file_path = "D:/桌面/TEST-KG/nexus fix/updated_character_info.json"
 # Step 1: Convert NEXUS to CSV and build knowledge graph
 knowledge_graph = nexus_to_knowledge_graph(nexus_file_path, csv_output_path, json_output_path)
 
@@ -785,7 +785,7 @@ def replace_indices_with_descriptions_in_key(key, character_info, parent_char_in
                 individual_states = state.split("and")
                 descriptions = [character_info[parent_char_index]["states"].get(s.strip(), "") for s in individual_states]
                 state_descriptions.append(" and ".join(filter(None, descriptions)))
-            state_key = f"State {' '.join(states)}: {' / '.join(state_descriptions)}"
+            state_key = f"State {' '.join(states)}: {';'.join(state_descriptions)}"
             if isinstance(subtree, dict):
                 updated_key[state_key] = replace_indices_with_descriptions_in_key(subtree, character_info, parent_char_index)
             else:
@@ -807,60 +807,45 @@ print(json.dumps(updated_classification_key, indent=4, ensure_ascii=False))
 # Initialize step counter
 step_counter = 1
 steps = []
-outer_steps = []
-
 
 # Recursive function to generate classification key
-def generate_classification_key(data, current_step, parent_step=None, outer_step=False):
+def generate_classification_key(data, current_step, parent_step=None):
     global step_counter
     if isinstance(data, dict):
+        state_steps = []
+        step_map = {}
         for character, states in data.items():
-            # Ensure step_prefix is correct
-            if parent_step is None:
-                step_prefix = str(current_step)
-            else:
-                step_prefix = f"{current_step}({parent_step})"
-
-            step_description = f"{step_prefix}. {character.split(': ')[1]}"  # Only use description
-            if outer_step:
-                outer_steps.append(step_description)  # Record outermost steps
-            else:
-                steps.append(step_description)  # Record current step
-            state_steps = []
-            step_map = {}
             for state, next_level in states.items():
+                full_state_description = f"{character.split(': ')[1]}：{state.split(': ')[1]}"  # Combine character and state descriptions
                 if isinstance(next_level, dict):
                     step_counter += 1
-                    next_step_prefix = str(step_counter) if parent_step is None else f"{step_counter}"
-                    state_steps.append(f"    - {state.split(': ')[1]} ........ {next_step_prefix}")  # Only use description
+                    next_step_prefix = str(step_counter)
+                    state_steps.append(f"    - {full_state_description} ........ {next_step_prefix}")  # Use combined description
                     step_map[step_counter] = (next_level, current_step)
                 else:
-                    state_steps.append(f"    - {state.split(': ')[1]} ........ {next_level}")  # Only use description
-            steps.extend(state_steps)
-            for step, (next_level, current_step) in step_map.items():
-                generate_classification_key(next_level, step, current_step)
-            current_step += 1  # Ensure the outermost steps are in order
+                    state_steps.append(f"    - {full_state_description} ........ {next_level}")  # Use combined description
+        if parent_step:
+            steps.append(f"{current_step}({parent_step}).")
+        else:
+            steps.append(f"{current_step}.")
+        steps.extend(state_steps)
+        for step, (next_level, parent_step) in step_map.items():
+            generate_classification_key(next_level, step, parent_step)
     else:
         # If data is not a dictionary, do not recurse
         return
 
-
 # Generate classification key
-generate_classification_key(updated_classification_key, 1, outer_step=True)
-
-# Sort the outermost steps
-sorted_outer_steps = sorted(outer_steps, key=lambda x: int(x.split('.')[0]))
-
-# Combine sorted outermost steps with other steps
-sorted_steps = sorted_outer_steps + [step for step in steps if not any(step.startswith(f"{i}.") for i in range(1, len(outer_steps) + 1))]
+generate_classification_key(updated_classification_key, 1)
 
 # Format output
-classification_key = "\n".join(sorted_steps)
+classification_key = "\n".join(steps)
 print(classification_key)
 
 # Write results to file
 with open("classification_key.txt", "w") as f:
     f.write(classification_key)
+
 
 
 
