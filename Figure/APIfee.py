@@ -5,6 +5,9 @@ import pandas as pd
 import statsmodels.api as sm
 import numpy as np
 
+# 设置字体为 Times New Roman
+plt.rcParams['font.family'] = 'Times New Roman'
+
 # 读取用户上传的文件
 file_path = "E:/Evaluate_results_for_all_datasets/Evaluate_table/API_fee/API fee.csv"
 data_fee = pd.read_csv(file_path)
@@ -13,7 +16,7 @@ data_fee = pd.read_csv(file_path)
 data_fee['5 times money'] = data_fee['5 times money'].str.replace('$', '').astype(float)
 
 # 创建一个三维图
-fig = plt.figure(figsize=(14, 10))
+fig = plt.figure(figsize=(13, 10))
 ax = fig.add_subplot(111, projection='3d')
 
 # 绘制三维散点图
@@ -22,7 +25,7 @@ scatter = ax.scatter(data_fee['species number'], data_fee['character number'], d
 # 添加坐标轴标签
 ax.set_xlabel('Species Number', fontsize=18)
 ax.set_ylabel('Character Number', fontsize=18)
-ax.set_zlabel('API Fee (5 times)', fontsize=18)
+ax.set_zlabel('API Fee (5 times) ($)', fontsize=18)
 
 # 添加标题
 ax.set_title('Effect of Species and Character Numbers on API Fee', fontsize=20)
