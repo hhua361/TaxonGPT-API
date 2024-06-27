@@ -68,6 +68,8 @@ plt.ylabel('Runtime (seconds)', fontsize=20, family='Times New Roman', labelpad=
 plt.xticks(fontsize=18, family='Times New Roman')
 plt.yticks(fontsize=18, family='Times New Roman')
 
+ax.grid(False)
+
 # 显示图像
 plt.tight_layout()
 plt.show()
