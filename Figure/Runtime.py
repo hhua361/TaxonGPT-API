@@ -7,13 +7,17 @@ import statsmodels.api as sm
 file_path = 'E:/Evaluate_results_for_all_datasets/Evaluate_table/Running_Time/Running time.csv'
 data = pd.read_csv(file_path)
 
+# 计算API和WEB运行时间的平均值
+data['API Runtime'] = data[['API time1', 'API time2', 'API time3', 'API time4', 'API time5']].mean(axis=1)
+data['WEB Runtime'] = data[['WEB time1', 'WEB time2', 'WEB time3', 'WEB time4', 'WEB time5']].mean(axis=1)
+
 # 提取API和WEB运行时间
-data_api = data[['dataset/time', 'API time', 'species number', 'character numbers']]
-data_api = data_api.rename(columns={'API time': 'Runtime'})
+data_api = data[['dataset/time', 'API Runtime', 'species number', 'character numbers']]
+data_api = data_api.rename(columns={'API Runtime': 'Runtime'})
 data_api['Program'] = 'API'
 
-data_web = data[['dataset/time', 'WEB time', 'species number', 'character numbers']]
-data_web = data_web.rename(columns={'WEB time': 'Runtime'})
+data_web = data[['dataset/time', 'WEB Runtime', 'species number', 'character numbers']]
+data_web = data_web.rename(columns={'WEB Runtime': 'Runtime'})
 data_web['Program'] = 'WEB'
 
 # 合并数据
@@ -32,8 +36,8 @@ sns.regplot(data=data_combined[data_combined['Program'] == 'WEB'], x='species nu
 api_model = sm.OLS(data_combined[data_combined['Program'] == 'API']['Runtime'], sm.add_constant(data_combined[data_combined['Program'] == 'API']['species number'])).fit()
 web_model = sm.OLS(data_combined[data_combined['Program'] == 'WEB']['Runtime'], sm.add_constant(data_combined[data_combined['Program'] == 'WEB']['species number'])).fit()
 
-api_eq = f'API: y = {api_model.params[1]:.2f}x + {api_model.params[0]:.2f}'
-web_eq = f'WEB: y = {web_model.params[1]:.2f}x + {web_model.params[0]:.2f}'
+api_eq = f'API: y = {api_model.params.iloc[1]:.2f}x + {api_model.params.iloc[0]:.2f}'
+web_eq = f'WEB: y = {web_model.params.iloc[1]:.2f}x + {web_model.params.iloc[0]:.2f}'
 
 plt.text(0.05, 0.95, api_eq, transform=plt.gca().transAxes, fontsize=14, verticalalignment='top', color='black')
 plt.text(0.05, 0.90, web_eq, transform=plt.gca().transAxes, fontsize=14, verticalalignment='top', color='black')
@@ -57,8 +61,8 @@ sns.regplot(data=data_combined[data_combined['Program'] == 'WEB'], x='character 
 api_model_char = sm.OLS(data_combined[data_combined['Program'] == 'API']['Runtime'], sm.add_constant(data_combined[data_combined['Program'] == 'API']['character numbers'])).fit()
 web_model_char = sm.OLS(data_combined[data_combined['Program'] == 'WEB']['Runtime'], sm.add_constant(data_combined[data_combined['Program'] == 'WEB']['character numbers'])).fit()
 
-api_eq_char = f'API: y = {api_model_char.params[1]:.2f}x + {api_model_char.params[0]:.2f}'
-web_eq_char = f'Web: y = {web_model_char.params[1]:.2f}x + {web_model_char.params[0]:.2f}'
+api_eq_char = f'API: y = {api_model_char.params.iloc[1]:.2f}x + {api_model_char.params.iloc[0]:.2f}'
+web_eq_char = f'Web: y = {web_model_char.params.iloc[1]:.2f}x + {web_model_char.params.iloc[0]:.2f}'
 
 plt.text(0.05, 0.95, api_eq_char, transform=plt.gca().transAxes, fontsize=14, verticalalignment='top', color='black')
 plt.text(0.05, 0.90, web_eq_char, transform=plt.gca().transAxes, fontsize=14, verticalalignment='top', color='black')
