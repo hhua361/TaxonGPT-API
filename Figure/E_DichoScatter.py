@@ -52,8 +52,7 @@ palette = {
 
 scatter_palette = [
     '#FF9999', '#FFB3B3', '#FFCCCC', '#FFD9D9', '#FFE5E5',  # 浅红色系
-    '#9DC3E7', '#AED8F0', '#BFECF9', '#D0F0FF', '#E0F7FF',  # 浅蓝色系
-    '#ADD8E6'  # 补充浅蓝色系
+    '#9DC3E7', '#AED8F0', '#ADD8E6','#BFECF9', '#D0F0FF', '#E0F7FF',  # 浅蓝色系
 ]
 
 # 绘制小提琴图和散点图
@@ -70,7 +69,7 @@ for collection in ax.collections:
 
 # 绘制散点图
 sns.stripplot(data=combined_data, x='Method', y='Runtime', hue='Dataset',
-              dodge=True, jitter=0.2, marker='o', alpha=1, linewidth=0.5, palette=scatter_palette, s=15)
+              dodge=True, jitter=0.2, marker='o', alpha=1, linewidth=1, palette=scatter_palette, s=15)
 
 # 调整图例
 legend = plt.legend(title='Dataset', bbox_to_anchor=(1.05, 1), loc='upper left', fontsize=14, title_fontsize=16)

@@ -32,8 +32,7 @@ api_color = '#EF7A6D'  # 浅红色
 web_color = '#9DC3E7'  # 浅蓝色
 palette = [
     '#FF9999', '#FFB3B3', '#FFCCCC', '#FFD9D9', '#FFE5E5',  # 浅红色系
-    '#9DC3E7', '#AED8F0', '#BFECF9', '#D0F0FF', '#E0F7FF',  # 浅蓝色系
-    '#ADD8E6'  # 补充浅蓝色系
+    '#9DC3E7', '#AED8F0', '#ADD8E6','#BFECF9', '#D0F0FF', '#E0F7FF',  # 浅蓝色系
 ]
 
 # 绘制箱型图和散点图
@@ -46,7 +45,7 @@ ax = sns.boxplot(data=combined_data[combined_data['Method'] == 'API'], x='Method
 sns.boxplot(data=combined_data[combined_data['Method'] == 'Web'], x='Method', y='Runtime', showfliers=False, width=0.6, linewidth=1.7, boxprops=dict(facecolor='none', edgecolor='black'), medianprops=dict(color='black'))
 
 # 绘制散点图，保留不同数据集的颜色，统一色调
-sns.stripplot(data=combined_data, x='Method', y='Runtime', hue='Dataset', dodge=True, jitter=0.2, marker='o', palette=palette, alpha=1, linewidth=0.5, edgecolor='auto', s=15)
+sns.stripplot(data=combined_data, x='Method', y='Runtime', hue='Dataset', dodge=True, jitter=0.2, marker='o', palette=palette, alpha=1, linewidth=1, edgecolor='auto', s=15)
 
 # 标注中位数
 medians = combined_data.groupby(['Method'])['Runtime'].median().values

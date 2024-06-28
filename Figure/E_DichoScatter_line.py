@@ -57,7 +57,6 @@ palette = {
 scatter_palette = [
     '#FF9999', '#FFB3B3', '#FFCCCC', '#FFD9D9', '#FFE5E5',  # 浅红色系
     '#9DC3E7', '#AED8F0', '#ADD8E6','#BFECF9', '#D0F0FF', '#E0F7FF',  # 浅蓝色系
-      # 补充浅蓝色系
 ]
 
 # 绘制小提琴图
