@@ -52,8 +52,8 @@ palette = {
 
 scatter_palette = [
     '#FF9999', '#FFB3B3', '#FFCCCC', '#FFD9D9', '#FFE5E5',  # 浅红色系
-    '#ADD8E6', '#B0E0E6', '#B3E5FC', '#B5E3EB', '#B2D8EB',  # 浅蓝色系
-    '#CCE5FF'  # 补充浅蓝色系
+    '#9DC3E7', '#AED8F0', '#BFECF9', '#D0F0FF', '#E0F7FF',  # 浅蓝色系
+    '#ADD8E6'  # 补充浅蓝色系
 ]
 
 # 绘制小提琴图和散点图
@@ -79,9 +79,9 @@ for text in legend.get_texts():
     text.set_family('Times New Roman')  # 设置图例标签字体
 
 # 设置图像标题和标签
-plt.title('Comparison of Runtime between API, Web, and DELTA Methods', fontsize=22, family='Times New Roman', pad=20)
+plt.title('Comparison of E_Dicho between API, Web, and DELTA Methods', fontsize=22, family='Times New Roman', pad=20)
 plt.xlabel('Methods', fontsize=20, family='Times New Roman')
-plt.ylabel('Runtime (seconds)', fontsize=20, family='Times New Roman', labelpad=20)  # 调整labelpad增加距离
+plt.ylabel('E_Dicho Score', fontsize=20, family='Times New Roman', labelpad=20)  # 调整labelpad增加距离
 
 # 设置坐标轴刻度
 plt.xticks(fontsize=18, family='Times New Roman')

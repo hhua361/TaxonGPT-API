@@ -1,77 +1,81 @@
 {
     "1": {
-        "Huperzia selago": {
+        "Equisetum litorale": {
             "Characteristics": {
-                "Character2": "1"
-            }
-        },
-        "Lycopodium clavatum": {
-            "Characteristics": {
-                "Character2": "2",
-                "Character12": "1"
-            }
-        },
-        "Diphasiastrum alpinum": {
-            "Characteristics": {
-                "Character2": "2",
-                "Character12": "2",
-                "Character9": "1",
-                "Character5": "2"
-            }
-        },
-        "Diphasiastrum complanatum": {
-            "Characteristics": {
-                "Character2": "2",
-                "Character12": "2",
-                "Character9": "1",
-                "Character5": "3"
-            }
-        },
-        "Lycopodiella inundata": {
-            "Characteristics": {
-                "Character2": "2",
-                "Character12": "2",
-                "Character9": "2",
-                "Character20": "1"
-            }
-        },
-        "Lycopodium annotinum": {
-            "Characteristics": {
-                "Character2": "2",
-                "Character12": "2",
-                "Character9": "2",
-                "Character20": "2 and 3"
-            }
-        },
-        "Selaginella kraussiana": {
-            "Characteristics": {
-                "Character2": "3",
-                "Character8": "1",
+                "Character10": "1",
+                "Character13": "1",
                 "Character4": "1"
             }
         },
-        "Selaginella selaginoides": {
+        "Equisetum palustre": {
             "Characteristics": {
-                "Character2": "3",
-                "Character8": "1",
-                "Character4": "2"
+                "Character10": "2"
+            }
+        }
+    },
+    "1 and 2": {
+        "Equisetum telmateia": {
+            "Characteristics": {
+                "Character2": "1",
+                "Character3": "1"
+            }
+        },
+        "Equisetum arvense": {
+            "Characteristics": {
+                "Character2": "1",
+                "Character3": "2"
+            }
+        },
+        "Equisetum sylvaticum": {
+            "Characteristics": {
+                "Character2": "2"
+            }
+        },
+        "Equisetum fluviatile": {
+            "Characteristics": {
+                "Character2": "3"
             }
         }
     },
     "2": {
-        "Isoetes histrix": {
+        "Equisetum ramosissimum": {
             "Characteristics": {
-                "Character20": "1"
+                "Character8": "1",
+                "Character7": "1"
             }
         },
-        "Isoetes lacustris": {
+        "Equisetum trachyodon": {
             "Characteristics": {
-                "Character20": "2 and 3"
+                "Character8": "1",
+                "Character7": "2 and 3",
+                "Character12": "1",
+                "Character6": "1"
             }
         },
-        "Isoetes echinospora": {
+        "Equisetum variegatum": {
             "Characteristics": {
-                "Character20": "1 and 2 and 3"
+                "Character8": "1",
+                "Character7": "2 and 3",
+                "Character12": "1",
+                "Character6": "2"
+            }
+        },
+        "Equisetum hyemale": {
+            "Characteristics": {
+                "Character8": "1",
+                "Character7": "3"
+            }
+        },
+        "Equisetum pratense": {
+            "Characteristics": {
+                "Character8": "2",
+                "Character2": "2"
+            }
+        },
+        "Equisetum moorei": {
+            "Characteristics": {
+                "Character8": "2",
+                "Character2": "3"
             }
         }
     }

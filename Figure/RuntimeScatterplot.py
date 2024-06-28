@@ -32,8 +32,8 @@ api_color = '#EF7A6D'  # 浅红色
 web_color = '#9DC3E7'  # 浅蓝色
 palette = [
     '#FF9999', '#FFB3B3', '#FFCCCC', '#FFD9D9', '#FFE5E5',  # 浅红色系
-    '#ADD8E6', '#B0E0E6', '#B3E5FC', '#B5E3EB', '#B2D8EB',  # 浅蓝色系
-    '#CCE5FF'  # 补充浅蓝色系
+    '#9DC3E7', '#AED8F0', '#BFECF9', '#D0F0FF', '#E0F7FF',  # 浅蓝色系
+    '#ADD8E6'  # 补充浅蓝色系
 ]
 
 # 绘制箱型图和散点图
