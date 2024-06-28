@@ -59,7 +59,7 @@ for text in legend.get_texts():
     text.set_family('Times New Roman')  # 设置图例标签字体
 
 # 设置图像标题和标签
-plt.title('Comparison of Runtime between API and Web Methods', fontsize=22, family='Times New Roman',pad=20)
+plt.title('Comparison of Runtime between API and Web Methods', fontsize=22, family='Times New Roman', pad=20)
 plt.xlabel('Methods', fontsize=20, family='Times New Roman')
 plt.ylabel('Runtime (seconds)', fontsize=20, family='Times New Roman', labelpad=20)  # 调整labelpad增加距离
 
@@ -67,9 +67,25 @@ plt.ylabel('Runtime (seconds)', fontsize=20, family='Times New Roman', labelpad=
 plt.xticks(fontsize=18, family='Times New Roman')
 plt.yticks(fontsize=18, family='Times New Roman')
 
+# 设置坐标轴颜色为黑色，并去除右边和上边的边框
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['left'].set_color('black')
+ax.spines['bottom'].set_color('black')
+ax.xaxis.label.set_color('black')
+ax.yaxis.label.set_color('black')
+ax.tick_params(axis='x', colors='black', labelsize=18)  # 调整X轴刻度字体大小
+ax.tick_params(axis='y', colors='black', labelsize=18)  # 调整Y轴刻度字体大小
+
+# 添加刻度线
+ax.xaxis.set_ticks_position('bottom')
+ax.yaxis.set_ticks_position('left')
+ax.tick_params(axis='x', direction='out', length=5, width=2, colors='black')
+ax.tick_params(axis='y', direction='out', length=5, width=2, colors='black')
+
+# 移除背景网格线，但保留坐标轴
 ax.grid(False)
 
 # 显示图像
 plt.tight_layout()
 plt.show()
-

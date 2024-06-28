@@ -66,7 +66,6 @@ ax = sns.violinplot(data=combined_data, x='Method', y='Runtime', hue='Method',
 for collection in ax.collections:
     collection.set_facecolor('none')
 
-
 # 绘制散点图
 sns.stripplot(data=combined_data, x='Method', y='Runtime', hue='Dataset',
               dodge=True, jitter=0.2, marker='o', alpha=1, linewidth=1, palette=scatter_palette, s=15)
@@ -89,12 +88,18 @@ plt.yticks(fontsize=18, family='Times New Roman')
 # 设置坐标轴颜色为黑色
 ax.spines['bottom'].set_color('black')
 ax.spines['left'].set_color('black')
-ax.spines['top'].set_color('black')
-ax.spines['right'].set_color('black')
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
 ax.xaxis.label.set_color('black')
 ax.yaxis.label.set_color('black')
 ax.tick_params(axis='x', colors='black')
 ax.tick_params(axis='y', colors='black')
+
+# 添加刻度线
+ax.xaxis.set_ticks_position('bottom')
+ax.yaxis.set_ticks_position('left')
+ax.tick_params(axis='x', direction='out', length=5, width=2, colors='black')
+ax.tick_params(axis='y', direction='out', length=5, width=2, colors='black')
 
 # 移除背景网格线，但保留坐标轴
 ax.grid(False)
@@ -102,4 +107,3 @@ ax.grid(False)
 # 显示图像
 plt.tight_layout()
 plt.show()
-

@@ -28,7 +28,7 @@ plt.rcParams['font.family'] = 'Times New Roman'
 
 # 绘制API和WEB程序的运行时间与物种数量的关系
 plt.figure(figsize=(12, 6))
-sns.scatterplot(data=data_combined, x='species number', y='Runtime', hue='Program', style='Program', markers=["o", "X"], s=100, palette={'API': '#D76364', 'WEB': '#5F97D2'})
+ax = sns.scatterplot(data=data_combined, x='species number', y='Runtime', hue='Program', style='Program', markers=["o", "X"], s=100, palette={'API': '#D76364', 'WEB': '#5F97D2'})
 sns.regplot(data=data_combined[data_combined['Program'] == 'API'], x='species number', y='Runtime', scatter=False, color='#EF7A6D', line_kws={'linewidth': 3}, label='API fit')
 sns.regplot(data=data_combined[data_combined['Program'] == 'WEB'], x='species number', y='Runtime', scatter=False, color='#9DC3E7', line_kws={'linewidth': 3}, label='WEB fit')
 
@@ -49,12 +49,30 @@ handles, labels = plt.gca().get_legend_handles_labels()
 new_labels = ['API', 'Web', 'API fit', 'Web fit']
 plt.legend(handles=handles[0:], labels=new_labels, title='Type', loc='upper right')
 plt.ylim(0, None)
+
+# 设置坐标轴颜色为黑色并去除上边和右边的边框
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['left'].set_color('black')
+ax.spines['bottom'].set_color('black')
+ax.xaxis.label.set_color('black')
+ax.yaxis.label.set_color('black')
+ax.tick_params(axis='x', colors='black',labelsize = 14)
+ax.tick_params(axis='y', colors='black',labelsize = 14)
+
+# 添加刻度线
+ax.xaxis.set_ticks_position('bottom')
+ax.yaxis.set_ticks_position('left')
+ax.tick_params(axis='x', direction='out', length=5, width=2, colors='black')
+ax.tick_params(axis='y', direction='out', length=5, width=2, colors='black')
+
 plt.grid(False)
+plt.tight_layout()
 plt.show()
 
 # 绘制API和WEB程序的运行时间与形态特征数量的关系
 plt.figure(figsize=(12, 6))
-sns.scatterplot(data=data_combined, x='character numbers', y='Runtime', hue='Program', style='Program', markers=["o", "X"], s=100, palette={'API': '#D76364', 'WEB': '#5F97D2'})
+ax = sns.scatterplot(data=data_combined, x='character numbers', y='Runtime', hue='Program', style='Program', markers=["o", "X"], s=100, palette={'API': '#D76364', 'WEB': '#5F97D2'})
 sns.regplot(data=data_combined[data_combined['Program'] == 'API'], x='character numbers', y='Runtime', scatter=False, color='#EF7A6D', line_kws={'linewidth': 3}, label='API fit')
 sns.regplot(data=data_combined[data_combined['Program'] == 'WEB'], x='character numbers', y='Runtime', scatter=False, color='#9DC3E7', line_kws={'linewidth': 3}, label='WEB fit')
 
@@ -75,5 +93,23 @@ handles, labels = plt.gca().get_legend_handles_labels()
 new_labels = ['API', 'Web', 'API fit', 'Web fit']
 plt.legend(handles=handles[0:], labels=new_labels, title='Type', loc='upper right')
 plt.ylim(0, None)
+
+# 设置坐标轴颜色为黑色并去除上边和右边的边框
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['left'].set_color('black')
+ax.spines['bottom'].set_color('black')
+ax.xaxis.label.set_color('black')
+ax.yaxis.label.set_color('black')
+ax.tick_params(axis='x', colors='black',labelsize = 14)
+ax.tick_params(axis='y', colors='black',labelsize = 14)
+
+# 添加刻度线
+ax.xaxis.set_ticks_position('bottom')
+ax.yaxis.set_ticks_position('left')
+ax.tick_params(axis='x', direction='out', length=5, width=2, colors='black')
+ax.tick_params(axis='y', direction='out', length=5, width=2, colors='black')
+
 plt.grid(False)
+plt.tight_layout()
 plt.show()
