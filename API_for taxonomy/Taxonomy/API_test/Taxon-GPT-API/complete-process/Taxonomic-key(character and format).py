@@ -223,11 +223,11 @@ def load_character_messages(file_path):
         return json.load(file)
 
 # Example Usage
-nexus_file_path = "D:/桌面/taxonomy_primary_result/The_GPT-4_result/Dataset_2 (The Equisetum species (horsetails)) 3/Information gain methods/nexdata"
+nexus_file_path = "D:/桌面/taxonomy_primary_result/The_GPT-4_result/Dataset_11 (grass genera) 19/Information gain methods/grass.nex"
 csv_output_path = "D:/桌面/process_data_2.csv"
 json_output_path = "D:/桌面/knowledge_graph.json"
 prompt_file_path = "D:/桌面/taxonomy_primary_result/Taxonomic dataset materials/prompt_messages.json"
-character_file_path = "D:/桌面/TEST-KG/nexus fix/updated_character_info.json"
+character_file_path = "D:/桌面/taxonomy_primary_result/The_GPT-4_result/Dataset_11 (grass genera) 19/Information gain methods/character_info_update.json"
 # Step 1: Convert NEXUS to CSV and build knowledge graph
 knowledge_graph = nexus_to_knowledge_graph(nexus_file_path, csv_output_path, json_output_path)
 
@@ -357,7 +357,7 @@ def classify_group(group_species):
         prompt_messages["secondary_character_messages"][0],
         prompt_messages["secondary_character_messages"][1],
         prompt_messages["secondary_character_messages"][2],
-        {"role": "user", "content": content_with_data}
+        {"role": "user", "content": content_with_data},
     ]
 
     # Make the API call to classify the group

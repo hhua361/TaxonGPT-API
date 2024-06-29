@@ -25,7 +25,7 @@ data_melted = pd.melt(data, id_vars=['dataset/time'], value_vars=['API', 'Web'],
 
 # 绘制小提琴图，不显示图例
 sns.violinplot(x='Reproducibility Score', y='Method', data=data_melted, hue='Method',
-               palette=['#F0AFA8', '#C0DAF2'], alpha=0.5, inner=None, linewidth=0.5, ax=ax, legend=False)
+               palette=['#F0AFA8', '#C0DAF2'], alpha=0.5, inner=None, linewidth=0.5, ax=ax, edgecolor='black',legend=False)
 
 # 添加随机抖动到y轴位置
 api_y_positions = np.random.uniform(-0.1, 0.1, len(data))
