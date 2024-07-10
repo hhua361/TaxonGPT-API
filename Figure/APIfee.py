@@ -5,11 +5,11 @@ import pandas as pd
 import statsmodels.api as sm
 import numpy as np
 
-# 设置字体为 Times New Roman
-plt.rcParams['font.family'] = 'Times New Roman'
+# 设置字体为 Arial
+plt.rcParams['font.family'] = 'Arial'
 
 # 读取用户上传的文件
-file_path = "E:/Evaluate_results_for_all_datasets/Evaluate_table/API_fee/API fee.csv"
+file_path = "E:/Evaluate_results_for_all_datasets/Evaluate_table/Description/API fee/API fee.csv"
 data_fee = pd.read_csv(file_path)
 
 # 清理数据，将价格列转换为浮点数
@@ -28,7 +28,7 @@ ax.set_ylabel('Character Number', fontsize=18)
 ax.set_zlabel('API Fee (5 times) ($)', fontsize=18)
 
 # 添加标题
-ax.set_title('Effect of Species and Character Numbers on API Fee', fontsize=20)
+ax.set_title('Effect of Species and Character Numbers on API Fee about Taxonomic Description', fontsize=20)
 
 # 计算线性回归平面
 X = data_fee[['species number', 'character number']]
@@ -53,5 +53,8 @@ scatter_proxy = plt.Line2D([0], [0], linestyle="none", c='#EF7A6D', marker='o')
 surface_proxy = plt.Line2D([0], [0], linestyle="none", c='#9DC3E7', marker='s', markersize=10)
 ax.legend([scatter_proxy, surface_proxy], ['Data Points', 'Regression Plane'], numpoints=1, loc='upper right', fontsize=12, frameon=True, fancybox=True, framealpha=0.7)
 
-plt.show()
+# 保存为SVG格式
+output_path = 'E:/Evaluate_results_for_all_datasets/Evaluate_table/Description/API fee/API_fee_taxonomic_description.svg'
+plt.savefig(output_path, format='svg')
 
+plt.show()

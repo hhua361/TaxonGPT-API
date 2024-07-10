@@ -41,7 +41,7 @@ method_order = {'API': 0, 'Web': 1, 'DELTA': 2}
 combined_data['MethodOrder'] = combined_data['Method'].map(method_order)
 
 # 设置字体
-plt.rcParams["font.family"] = "Times New Roman"
+plt.rcParams["font.family"] = "Arial"
 
 # 设置样式
 sns.set(style="whitegrid")
@@ -55,8 +55,9 @@ palette = {
 
 # 定义散点和连接线颜色
 scatter_palette = [
-    '#FF9999', '#FFB3B3', '#FFCCCC', '#FFD9D9', '#FFE5E5',  # 浅红色系
-    '#9DC3E7', '#AED8F0', '#ADD8E6','#BFECF9', '#D0F0FF', '#E0F7FF',  # 浅蓝色系
+    '#FF9999', '#FFB3B3', '#FFD9D9', '#FFE5E5',  # 修改后的浅红色系，删除较浅的红色 '#FFCCCC'
+    '#2E75B6',  # 添加较深的蓝色
+    '#9DC3E7', '#AED8F0', '#ADD8E6', '#BFECF9', '#D0F0FF', '#E0F7FF',  # 浅蓝色系
 ]
 
 # 绘制小提琴图
@@ -78,18 +79,18 @@ for i, dataset in enumerate(combined_data['Dataset'].unique()):
 # 创建自定义图例
 custom_lines = [Line2D([0], [0], color=scatter_palette[i], lw=4) for i in range(len(combined_data['Dataset'].unique()))]
 legend = plt.legend(custom_lines, combined_data['Dataset'].unique(), title='Dataset', bbox_to_anchor=(1.05, 1), loc='upper left', fontsize=14, title_fontsize=16)
-plt.setp(legend.get_title(), family='Times New Roman')
+plt.setp(legend.get_title(), family='Arial')
 for text in legend.get_texts():
-    text.set_family('Times New Roman')
+    text.set_family('Arial')
 
 # 设置图像标题和标签
-plt.title('Comparison of E_Dicho between API, Web, and DELTA Methods', fontsize=22, family='Times New Roman', pad=20)
-plt.xlabel('Methods', fontsize=20, family='Times New Roman')
-plt.ylabel('E_Dicho Score', fontsize=20, family='Times New Roman', labelpad=20)
+plt.title('Comparison of E_Dicho between API, Web, and DELTA Methods', fontsize=22, family='Arial', pad=20)
+plt.xlabel('Methods', fontsize=20, family='Arial')
+plt.ylabel('E_Dicho Score', fontsize=20, family='Arial', labelpad=20)
 
 # 设置坐标轴刻度
-plt.xticks(ticks=[0, 1, 2], labels=['API', 'Web', 'DELTA'], fontsize=18, family='Times New Roman')
-plt.yticks(fontsize=18, family='Times New Roman')
+plt.xticks(ticks=[0, 1, 2], labels=['API', 'Web', 'DELTA'], fontsize=18, family='Arial')
+plt.yticks(fontsize=18, family='Arial')
 
 # 设置坐标轴颜色为黑色
 ax.spines['bottom'].set_color('black')
@@ -109,6 +110,10 @@ ax.tick_params(axis='y', direction='out', length=5, width=2, colors='black')
 
 # 移除背景网格线，但保留坐标轴
 ax.grid(False)
+
+# 保存为SVG格式
+output_path = 'E:/Evaluate_results_for_all_datasets/Evaluate_table/E_Dicho/Comparison_violin_E_Dicho.svg'
+plt.savefig(output_path, format='svg')
 
 # 显示图像
 plt.tight_layout()

@@ -23,21 +23,21 @@ df_cleaned = df_cleaned.round(3)
 # 使用 sns.light_palette 创建一个浅色透明的颜色渐变，颜色越深代表分数越高
 cmap = sns.light_palette("#F5A79E", as_cmap=True)
 
-# 重新绘制热力图，并设置字体为Times New Roman
+# 重新绘制热力图，并设置字体为Arial
 plt.figure(figsize=(14, 6))
-sns.set(font='Times New Roman')
+sns.set(font='Arial')
 
 # 创建热力图
-ax = sns.heatmap(df_cleaned, annot=True, fmt=".3f", cmap=cmap, cbar_kws={'orientation': 'vertical', 'shrink': 0.8}, annot_kws={"fontsize":18, "color": "black", "fontname": "Times New Roman"})
+ax = sns.heatmap(df_cleaned, annot=True, fmt=".3f", cmap=cmap, cbar_kws={'orientation': 'vertical', 'shrink': 0.8}, annot_kws={"fontsize":18, "color": "black", "fontname": "Arial"})
 
 # 添加标题和标签，并设置字体
-plt.title('Comparison of Ways on Different Datasets', fontsize=20, fontname='Times New Roman', pad=20)
-plt.xlabel('Methods', fontsize=18, fontname='Times New Roman')
-plt.ylabel('Datasets', fontsize=18, fontname='Times New Roman')
+plt.title('Comparison of Ways on Different Datasets', fontsize=22, fontname='Arial', pad=20)
+plt.xlabel('Methods', fontsize=20, fontname='Arial')
+plt.ylabel('Datasets', fontsize=20, fontname='Arial')
 
 # 设置刻度字体
-ax.set_xticklabels(ax.get_xticklabels(), fontsize=18, fontname='Times New Roman', rotation=0)
-ax.set_yticklabels(ax.get_yticklabels(), fontsize=16, fontname='Times New Roman')
+ax.set_xticklabels(ax.get_xticklabels(), fontsize=18, fontname='Arial', rotation=0)
+ax.set_yticklabels(ax.get_yticklabels(), fontsize=16, fontname='Arial')
 
 ax.tick_params(left=True, bottom=True, length=10, width=2, colors='black', grid_color='black', grid_alpha=0.5, pad=10)
 
@@ -53,12 +53,15 @@ for spine_location, spine in ax.spines.items():
 # 调整色条位置和刻度标签
 cbar = ax.collections[0].colorbar
 cbar.ax.tick_params(labelsize=16, labelcolor='black')
-cbar.ax.set_yticklabels(cbar.ax.get_yticklabels(), fontsize=16, fontname='Times New Roman')
+cbar.ax.set_yticklabels(cbar.ax.get_yticklabels(), fontsize=16, fontname='Arial')
 
 # 添加色条标签到上方
-cbar.ax.set_title('E_Dicho', fontsize=18, fontname='Times New Roman', pad=10)
+cbar.ax.set_title('E_Dicho', fontsize=18, fontname='Arial', pad=10)
+
+# 保存为SVG格式
+output_path = 'E:/Evaluate_results_for_all_datasets/Evaluate_table/E_Dicho/Comparison_heatmap.svg'
+plt.savefig(output_path, format='svg')
 
 # 显示图像
 plt.tight_layout()
 plt.show()
-

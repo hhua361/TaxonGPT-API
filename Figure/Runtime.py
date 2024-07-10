@@ -1,10 +1,11 @@
+import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-import pandas as pd
 import statsmodels.api as sm
 
 # 读取CSV文件
-file_path = 'E:/Evaluate_results_for_all_datasets/Evaluate_table/Running_Time/Running time.csv'
+file_path = "E:/Evaluate_results_for_all_datasets/Evaluate_table/Running_Time/Running time average.csv"
 data = pd.read_csv(file_path)
 
 # 计算API和WEB运行时间的平均值
@@ -24,7 +25,7 @@ data_web['Program'] = 'WEB'
 data_combined = pd.concat([data_api, data_web])
 
 # 设置字体
-plt.rcParams['font.family'] = 'Times New Roman'
+plt.rcParams['font.family'] = 'Arial'
 
 # 绘制API和WEB程序的运行时间与物种数量的关系
 plt.figure(figsize=(12, 6))
@@ -42,9 +43,9 @@ web_eq = f'WEB: y = {web_model.params.iloc[1]:.2f}x + {web_model.params.iloc[0]:
 plt.text(0.05, 0.95, api_eq, transform=plt.gca().transAxes, fontsize=14, verticalalignment='top', color='black')
 plt.text(0.05, 0.90, web_eq, transform=plt.gca().transAxes, fontsize=14, verticalalignment='top', color='black')
 
-plt.xlabel('Species Number', fontsize=18, fontname='Times New Roman')
-plt.ylabel('Runtime (seconds)', fontsize=18, fontname='Times New Roman')
-plt.title('Taxonomic Key runtime with different Species Number', fontsize=20, fontname='Times New Roman')
+plt.xlabel('Species Number', fontsize=18, fontname='Arial')
+plt.ylabel('Runtime (seconds)', fontsize=18, fontname='Arial')
+plt.title('Taxonomic Key runtime with different Species Number', fontsize=20, fontname='Arial')
 handles, labels = plt.gca().get_legend_handles_labels()
 new_labels = ['API', 'Web', 'API fit', 'Web fit']
 plt.legend(handles=handles[0:], labels=new_labels, title='Type', loc='upper right')
@@ -57,8 +58,8 @@ ax.spines['left'].set_color('black')
 ax.spines['bottom'].set_color('black')
 ax.xaxis.label.set_color('black')
 ax.yaxis.label.set_color('black')
-ax.tick_params(axis='x', colors='black',labelsize = 14)
-ax.tick_params(axis='y', colors='black',labelsize = 14)
+ax.tick_params(axis='x', colors='black', labelsize=14)
+ax.tick_params(axis='y', colors='black', labelsize=14)
 
 # 添加刻度线
 ax.xaxis.set_ticks_position('bottom')
@@ -68,6 +69,11 @@ ax.tick_params(axis='y', direction='out', length=5, width=2, colors='black')
 
 plt.grid(False)
 plt.tight_layout()
+
+# 保存为SVG格式
+output_path_species = 'E:/Evaluate_results_for_all_datasets/Evaluate_table/Running_Time/Running_time_species.svg'
+plt.savefig(output_path_species, format='svg')
+
 plt.show()
 
 # 绘制API和WEB程序的运行时间与形态特征数量的关系
@@ -86,9 +92,9 @@ web_eq_char = f'WEB: y = {web_model_char.params.iloc[1]:.2f}x + {web_model_char.
 plt.text(0.05, 0.95, api_eq_char, transform=plt.gca().transAxes, fontsize=14, verticalalignment='top', color='black')
 plt.text(0.05, 0.90, web_eq_char, transform=plt.gca().transAxes, fontsize=14, verticalalignment='top', color='black')
 
-plt.xlabel('Character Numbers', fontsize=18, fontname='Times New Roman')
-plt.ylabel('Runtime (seconds)', fontsize=18, fontname='Times New Roman')
-plt.title('Taxonomic Key runtime with different Character Numbers', fontsize=20, fontname='Times New Roman')
+plt.xlabel('Character Numbers', fontsize=18, fontname='Arial')
+plt.ylabel('Runtime (seconds)', fontsize=18, fontname='Arial')
+plt.title('Taxonomic Key runtime with different Character Numbers', fontsize=20, fontname='Arial')
 handles, labels = plt.gca().get_legend_handles_labels()
 new_labels = ['API', 'Web', 'API fit', 'Web fit']
 plt.legend(handles=handles[0:], labels=new_labels, title='Type', loc='upper right')
@@ -101,8 +107,8 @@ ax.spines['left'].set_color('black')
 ax.spines['bottom'].set_color('black')
 ax.xaxis.label.set_color('black')
 ax.yaxis.label.set_color('black')
-ax.tick_params(axis='x', colors='black',labelsize = 14)
-ax.tick_params(axis='y', colors='black',labelsize = 14)
+ax.tick_params(axis='x', colors='black', labelsize=14)
+ax.tick_params(axis='y', colors='black', labelsize=14)
 
 # 添加刻度线
 ax.xaxis.set_ticks_position('bottom')
@@ -112,4 +118,9 @@ ax.tick_params(axis='y', direction='out', length=5, width=2, colors='black')
 
 plt.grid(False)
 plt.tight_layout()
+
+# 保存为SVG格式
+output_path_characters = 'E:/Evaluate_results_for_all_datasets/Evaluate_table/Running_Time/Running_time_characters.svg'
+plt.savefig(output_path_characters, format='svg')
+
 plt.show()

@@ -6,9 +6,9 @@ import os  # For interacting with the operating system, such as file paths
 import re  # For regular expressions, useful for pattern matching in strings
 import pandas as pd  # For data manipulation and analysis
 
-
+def TaxonGPT(nexus_file_path,prompt_life):
+# 需要通过使用if 条件语句，来调整prompt，设置prompt识别，默认使用我的json的prompt文件，如果存在额外的prompt文件，则使用额外的prompt
 # Part 1
-
 # Function to convert a letter to a number based on its position in the alphabet
 def letter_to_number(letter):
     return str(ord(letter) - ord('A') + 10)
@@ -1022,3 +1022,7 @@ final_result = display_classification(initial_result)
 # print("\nFinal Result JSON:")
 # print(json.dumps(final_result, indent=2))
 
+
+
+if __name__ == '__main__':
+    key = TaxonGPT.key()

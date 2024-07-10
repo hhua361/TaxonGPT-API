@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 
 # Load the updated CSV file
-file_path = "E:/Evaluate_results_for_all_datasets/Evaluate_table/Accuarcy/accuracy.csv"  # 你需要将文件路径更新为你的文件路径
+file_path = "E:/Evaluate_results_for_all_datasets/Evaluate_table/Description/accuracy/accuracy.csv"  # 你需要将文件路径更新为你的文件路径
 updated_accuracy_data = pd.read_csv(file_path)
 
 # Data preprocessing to convert percentage strings to numeric values
@@ -47,14 +47,14 @@ ax = sns.heatmap(average_accuracy_data, annot=False, cmap=custom_cmap, cbar_kws=
 cbar = ax.collections[0].colorbar
 
 # Adjust colorbar tick labels
-cbar.ax.tick_params(labelsize=16, labelcolor='black')
-cbar.ax.set_yticklabels(cbar.ax.get_yticklabels(), fontsize=16, fontname='Times New Roman')
+cbar.set_ticks(cbar.get_ticks())  # 设置固定的刻度
+cbar.ax.set_yticklabels([f"{int(tick)}%" for tick in cbar.get_ticks()], fontsize=16, fontname='Arial')
 
 # Add colorbar label using annotate to precisely control the position
-ax.annotate('Accuracy (%)', xy=(1.02, 0.95), xycoords='axes fraction', fontsize=18, fontname='Times New Roman', annotation_clip=False)
+ax.annotate('Accuracy (%)', xy=(1.02, 0.95), xycoords='axes fraction', fontsize=18, fontname='Arial', annotation_clip=False)
 
 # Custom annotation function to add '%' symbol to the heatmap annotations and remove decimal places for 100%
-def annotate_heatmap(data, annot_data, fmt=".2f", textsize=14, textfont='Times New Roman'):
+def annotate_heatmap(data, annot_data, fmt=".2f", textsize=14, textfont='Arial'):
     for i in range(data.shape[0]):
         for j in range(data.shape[1]):
             value = annot_data[i, j]
@@ -64,15 +64,15 @@ def annotate_heatmap(data, annot_data, fmt=".2f", textsize=14, textfont='Times N
                 plt.text(j + 0.5, i + 0.5, f"{value:{fmt}}%", ha='center', va='center', color='black', fontsize=textsize, fontname=textfont)
 
 # Add annotations after the heatmap is created
-annotate_heatmap(average_accuracy_data.values, average_accuracy_data.values, textsize=18, textfont='Times New Roman')
+annotate_heatmap(average_accuracy_data.values, average_accuracy_data.values, textsize=18, textfont='Arial')
 
 # Adjust title position
-plt.title('Average Classification Accuracy Comparison between API and Web Methods across Datasets', fontsize=22, fontname='Times New Roman', pad=20)
-plt.xlabel('Methods', fontsize=18, fontname='Times New Roman')
-plt.ylabel('Datasets', fontsize=18, fontname='Times New Roman')
+plt.title('Average Taxonomic Description Accuracy Comparison between API and Web Methods across Datasets', fontsize=22, fontname='Arial', pad=20)
+plt.xlabel('Methods', fontsize=18, fontname='Arial')
+plt.ylabel('Datasets', fontsize=18, fontname='Arial')
 
-plt.xticks(fontsize=16, fontname='Times New Roman')
-plt.yticks(fontsize=16, fontname='Times New Roman')
+plt.xticks(fontsize=16, fontname='Arial')
+plt.yticks(fontsize=16, fontname='Arial')
 
 # Add bottom and left spines and adjust their thickness
 ax.spines['bottom'].set_visible(True)
@@ -87,4 +87,12 @@ ax.tick_params(axis='x', which='both', bottom=True, top=False, labelbottom=True,
 ax.tick_params(axis='y', which='both', left=True, right=False, labelleft=True, direction='out', length=6, width=2)
 
 plt.tight_layout()  # 调整布局以确保内容显示完整
+
+# 设置SVG保存路径
+svg_output_path = 'E:/Evaluate_results_for_all_datasets/Evaluate_table/Description/accuracy/average_accuracy_heatmap_taxonomic description.svg'
+
+# 保存为SVG格式（矢量图）
+plt.savefig(svg_output_path, format='svg')
+
+# 显示图像
 plt.show()
