@@ -1,5 +1,4 @@
 # part 0
-
 # Import necessary packages
 import json  # For handling JSON data
 from openai import OpenAI  # For interacting with OpenAI API
@@ -9,7 +8,6 @@ import pandas as pd  # For data manipulation and analysis
 
 
 # Part 1
-
 # Function to convert a letter to a number based on its position in the alphabet
 def letter_to_number(letter):
     return str(ord(letter) - ord('A') + 10)
@@ -287,7 +285,6 @@ print(initial_response)
 
 
 # Part 3
-
 # Function to parse the classification result text into a dictionary format
 def parse_classification_result(result_text):
     classification = {"Character": None, "States": {}}
