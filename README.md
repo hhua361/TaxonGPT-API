@@ -15,7 +15,7 @@ python path/to/TaxonGPT.py
 ```
 
 ## Overview
-![Taxon-GPT-flowchart](https://github.com/user-attachments/assets/75c3a8c1-7caf-497c-90b5-a65ed17af1c8)
+![README](https://github.com/user-attachments/assets/4b1afa2e-4398-4a0f-9654-7fb72f73bebf)
 
 > ### Input file
 TaxonGPT is dedicated to converting information from Nexus matrices into biologically meaningful taxonomic information and accurate natural language descriptions of species. To achieve comprehensive taxonomic data, the input files for TaxonGPT include:
