@@ -74,7 +74,28 @@
             "role": "user",
             "content_template": "Here is the group information need to be classified and includes the morphological matrix {group_matrix_str}"
         }
+    ],
+    "description_messages": [
+        {
+            "role": "system",
+            "content": "You are a Taxonomic Assistant. You specialize in generating accurate and complete taxonomic descriptions by mapping feature state information to species morphology matrices. Utilize your natural language skills to generate accurate taxonomic descriptions for each species! Specific requirements: Generate standard academic taxonomic descriptions, which need to include all characters in the morphological matrix and accurately correspond to the state of each character. Generate descriptions in list form and paragraph form. In paragraph form, the number of each character should be indicated."
+        },
+        {
+            "role": "user",
+            "content": "Generate taxonomic descriptions from the morphological matrix without including any false information. Based on the provided morphological matrix (presented as a knowledge graph in JSON format), generate standard taxonomic descriptions for all taxa in the matrix. Additional character labels and state labels will be provided, containing detailed descriptions of each character and its corresponding state. Multiple states in the matrix (e.g., '1 and 2') indicate that the character of that TAXA has both state 1 and state 2."
+        },
+        {
+            "role": "assistant",
+            "content": "Sure, I know how to generate a taxonomic description, and I will handle the multiple states in the description. I will follow these specific requirements: Generate standard academic taxonomic descriptions strictly corresponding to the morphological matrix and eigenstate information. For the generated taxonomy descriptions, I will generate separate descriptions in list form and paragraph form."
+        },
+        {
+            "role": "user",
+            "content_template": "Due to the large number of results, to avoid space constraints, please show the taxonomic description of each taxon separately. Here is the morphological matrix for species {species_name}: {species_data}. Here is the character info: {character_info}."
+        },
+        {
+            "role": "assistant",
+            "content": "I will step by step show the taxonomic description results."
+        }
     ]
-
 
 }
