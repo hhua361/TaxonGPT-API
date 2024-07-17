@@ -1,0 +1,10 @@
+{
+    "api_key": "your_openai_api_key",
+    "paths": {
+        "nexus_file_path": "path/to/nexus_file.nex",
+        "prompt_file_path": "path/to/prompt_messages.json",
+        "character_file_path": "path/to/character_info.json",
+        "output_file_path": "path/to/taxonomic_descriptions.json"
+    }
+}
+
