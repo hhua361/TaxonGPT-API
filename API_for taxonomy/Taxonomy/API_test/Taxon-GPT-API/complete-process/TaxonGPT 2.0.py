@@ -1,865 +1,953 @@
 import json
+from openai import OpenAI
 import os
 import re
 import pandas as pd
-import logging
-from openai import OpenAI
-
 
 class TaxonGPT:
+    """
+    A class to process taxonomic datasets and generate knowledge graphs using OpenAI's API.
+
+    Attributes:
+        config (dict): Configuration settings loaded from a JSON file.
+        client (OpenAI): OpenAI client initialized with API key from the config.
+        paths (dict): Paths for input and output files.
+        knowledge_graph (dict): Knowledge graph generated from the dataset.
+        character_info (dict): Information about character states.
+        prompt_messages (dict): Prompt messages for OpenAI API calls.
+        step_counter (int): Counter to keep track of steps in the process.
+    """
+
     def __init__(self, config_file):
         """
-        Initialize the TaxonGPT class.
+        Initializes the TaxonGPT with configuration settings.
 
-        Parameters:
-        config_file (str): Path to the configuration file.
+        Args:
+            config_file (str): Path to the configuration file.
         """
-        with open(config_file, 'r', encoding='utf-8') as file:
-            config = json.load(file)
+        self.config = self.load_config(config_file)  # Load configuration from file
+        self.client = OpenAI(api_key=self.config["api_key"])  # Initialize OpenAI client
+        self.paths = self.config  # Set paths for input and output files
+        self.knowledge_graph = None  # Initialize knowledge graph as None
+        self.character_info = None  # Initialize character info as None
+        self.prompt_messages = None  # Initialize prompt messages as None
+        self.step_counter = 1  # Initialize step counter
 
-        self.api_key = config["api_key"]
-        self.client = OpenAI(api_key=self.api_key)
-        self.paths = config["paths"]
-        logging.basicConfig(filename='taxon_gpt.log', level=logging.DEBUG,
-                            format='%(asctime)s %(levelname)s:%(message)s')
-
-    def load_prompt_messages(self, file_path):
+    def load_config(self, config_path):
         """
-        Load prompt messages.
+        Loads the configuration settings from a JSON file.
 
-        Parameters:
-        file_path (str): Path to the prompt messages file.
+        Args:
+            config_path (str): Path to the configuration file.
 
         Returns:
-        dict: Content of the prompt messages.
-
-        Exceptions:
-        FileNotFoundError: If the file is not found.
-        JSONDecodeError: If there is an error decoding the JSON file.
+            dict: Configuration settings.
         """
-        try:
-            with open(file_path, "r", encoding="utf-8") as file:
-                return json.load(file)
-        except FileNotFoundError:
-            logging.error(f"File not found: {file_path}")
-            raise
-        except json.JSONDecodeError:
-            logging.error(f"Error decoding JSON from file: {file_path}")
-            raise
-
-    def load_character_messages(self, file_path):
-        """
-        Load character messages.
-
-        Parameters:
-        file_path (str): Path to the character messages file.
-
-        Returns:
-        dict: Content of the character messages.
-
-        Exceptions:
-        FileNotFoundError: If the file is not found.
-        JSONDecodeError: If there is an error decoding the JSON file.
-        """
-        try:
-            with open(file_path, "r", encoding="utf-8") as file:
-                return json.load(file)
-        except FileNotFoundError:
-            logging.error(f"File not found: {file_path}")
-            raise
-        except json.JSONDecodeError:
-            logging.error(f"Error decoding JSON from file: {file_path}")
-            raise
+        with open(config_path, 'r', encoding='utf-8') as config_file:
+            config = json.load(config_file)  # Load JSON configuration
+        return config
 
     def letter_to_number(self, letter):
         """
-        Convert a letter to a number.
+        Converts a letter to a number based on its position in the alphabet.
 
-        Parameters:
-        letter (str): The letter to be converted.
+        Args:
+            letter (str): The letter to convert.
 
         Returns:
-        str: The corresponding number.
+            str: The corresponding number as a string.
         """
-        return str(ord(letter) - ord('A') + 10)
+        return str(ord(letter) - ord('A') + 10)  # Convert letter to number
 
     def parse_matrix(self, matrix_content):
         """
-        Parse matrix content.
+        Parses the matrix content and converts it into a pandas DataFrame.
 
-        Parameters:
-        matrix_content (str): Content of the matrix file.
+        Args:
+            matrix_content (str): The content of the matrix to parse.
 
         Returns:
-        pd.DataFrame: Parsed data as a DataFrame.
-
-        Exceptions:
-        Exception: Any error that occurs during parsing.
+            pd.DataFrame: DataFrame containing the parsed matrix.
         """
         data = []
         headers = []
         lines = matrix_content.strip().split('\n')
-        try:
-            for i in range(0, len(lines), 2):
-                taxa = lines[i].strip().strip("'")
-                traits = lines[i + 1].strip()
-                species_traits = []
-                j = 0
-                while j < len(traits):
-                    if traits[j] == '(':
-                        j += 1
-                        states = ''
-                        while traits[j] != ')':
-                            if traits[j].isalpha():
-                                states += self.letter_to_number(traits[j])
-                            else:
-                                states += traits[j]
-                            j += 1
-                        species_traits.append(','.join(states))
-                    elif traits[j] == '?':
-                        species_traits.append('Missing')
-                    elif traits[j] == '-':
-                        species_traits.append('Not Applicable')
-                    elif traits[j].isalpha():
-                        species_traits.append(self.letter_to_number(traits[j]))
-                    else:
-                        species_traits.append(traits[j])
+
+        for i in range(0, len(lines), 2):
+            taxa = lines[i].strip().strip("'")  # Get taxa name
+            traits = lines[i + 1].strip()  # Get traits
+            species_traits = []
+            j = 0
+
+            while j < len(traits):
+                if traits[j] == '(':
                     j += 1
-                data.append([taxa] + species_traits)
-            max_traits = max(len(row) - 1 for row in data)
-            headers = ['taxa'] + [f'Character{i + 1}' for i in range(max_traits)]
-            df = pd.DataFrame(data, columns=headers)
+                    states = ''
+                    while traits[j] != ')':
+                        if traits[j].isalpha():
+                            states += self.letter_to_number(traits[j])  # Convert letter to number
+                        else:
+                            states += traits[j]
+                        j += 1
+                    species_traits.append(','.join(states))
+                elif traits[j] == '?':
+                    species_traits.append('Missing')
+                elif traits[j] == '-':
+                    species_traits.append('Not Applicable')
+                elif traits[j].isalpha():
+                    species_traits.append(self.letter_to_number(traits[j]))  # Convert letter to number
+                else:
+                    species_traits.append(traits[j])
+                j += 1
+
+            data.append([taxa] + species_traits)  # Append parsed data
+
+        max_traits = max(len(row) - 1 for row in data)
+        headers = ['taxa'] + [f'Character{i + 1}' for i in range(max_traits)]
+
+        try:
+            df = pd.DataFrame(data, columns=headers)  # Create DataFrame
+            return df
         except Exception as e:
-            logging.error(f"Error parsing matrix: {e}")
-            raise
-        return df
+            print(f"Error creating DataFrame: {e}")
+            return None
 
-    def convert_nexus_to_csv(self, nexus_file_path):
+    def convert_nexus_to_csv(self, file_path, output_path):
         """
-        Convert Nexus file to CSV.
+        Converts a NEXUS file to a CSV file.
 
-        Parameters:
-        nexus_file_path (str): Path to the Nexus file.
+        Args:
+            file_path (str): Path to the NEXUS file.
+            output_path (str): Path to save the CSV file.
 
         Returns:
-        pd.DataFrame: Parsed data as a DataFrame.
-
-        Exceptions:
-        FileNotFoundError: If the file is not found.
-        UnicodeDecodeError: If there is an error decoding the file.
-        ValueError: If the file cannot be read with any encoding.
+            pd.DataFrame: DataFrame containing the converted data.
         """
         try:
             encodings = ['utf-8', 'gbk', 'latin1']
+
             for encoding in encodings:
                 try:
-                    with open(nexus_file_path, 'r', encoding=encoding) as file:
-                        content = file.read()
-                    logging.info(f"Successfully read file with encoding: {encoding}")
+                    with open(file_path, 'r', encoding=encoding) as file:
+                        content = file.read()  # Read file content
+                    print(f"Successfully read file with encoding: {encoding}")
                     break
                 except UnicodeDecodeError:
-                    logging.warning(f"Failed to read file with encoding: {encoding}")
+                    print(f"Failed to read file with encoding: {encoding}")
                     continue
             else:
                 raise ValueError("Failed to read file with all attempted encodings.")
+
             matrix_content = re.search(r'MATRIX\s*(.*?)\s*;', content, re.DOTALL).group(1).strip()
-            df = self.parse_matrix(matrix_content)
-            df.to_csv("output.csv", index=False)
+            df = self.parse_matrix(matrix_content)  # Parse matrix content
+            df.to_csv(output_path, index=False)  # Save DataFrame to CSV
             return df
         except FileNotFoundError:
-            logging.error(f"File {nexus_file_path} not found.")
-            raise
+            print(f"File {file_path} not found.")
         except Exception as e:
-            logging.error(f"Error converting Nexus to CSV: {e}")
-            raise
+            print(f"Error: {e}")
 
     def build_knowledge_graph(self, matrix):
         """
-        Build knowledge graph from matrix.
+        Builds a knowledge graph from the given matrix.
 
-        Parameters:
-        matrix (pd.DataFrame): DataFrame containing matrix data.
-
-        Returns:
-        None
-
-        Exceptions:
-        Exception: Any error that occurs during the building of the knowledge graph.
-        """
-        try:
-            knowledge_graph = {}
-            for _, row in matrix.iterrows():
-                taxa = row.iloc[0]
-                characteristics = {}
-                for col in matrix.columns[1:]:
-                    state = row[col]
-                    if isinstance(state, str) and ',' in state:
-                        state = state.replace(',', ' and ')
-                    characteristics[col] = str(state)
-                knowledge_graph[taxa] = {'Characteristics': characteristics}
-            self.knowledge_graph = knowledge_graph
-        except Exception as e:
-            logging.error(f"Error building knowledge graph: {e}")
-            raise
-
-    def save_knowledge_graph_as_json(self):
-        """
-        Save knowledge graph as JSON file.
+        Args:
+            matrix (pd.DataFrame): DataFrame containing the matrix data.
 
         Returns:
-        None
-
-        Exceptions:
-        Exception: Any error that occurs during saving the knowledge graph as JSON.
+            dict: Knowledge graph.
         """
-        try:
-            with open("knowledge_graph.json", 'w', encoding='utf-8') as f:
-                json.dump(self.knowledge_graph, f, indent=4)
-        except Exception as e:
-            logging.error(f"Error saving knowledge graph as JSON: {e}")
-            raise
+        knowledge_graph = {}
 
-    def initial_classification(self, prompt_messages):
+        for _, row in matrix.iterrows():
+            taxa = row.iloc[0]  # Get taxa name
+            characteristics = {}
+
+            for col in matrix.columns[1:]:
+                state = row[col]
+
+                if isinstance(state, str) and ',' in state:
+                    state = state.replace(',', ' and ')
+
+                characteristics[col] = str(state)  # Assign state to characteristic
+
+            knowledge_graph[taxa] = {'Characteristics': characteristics}  # Append to knowledge graph
+
+        return knowledge_graph
+
+    def save_knowledge_graph_as_json(self, knowledge_graph, file_path):
         """
-        Perform initial classification.
+        Saves the knowledge graph as a JSON file.
 
-        Parameters:
-        prompt_messages (dict): Dictionary containing prompt messages.
+        Args:
+            knowledge_graph (dict): The knowledge graph to save.
+            file_path (str): Path to save the JSON file.
+        """
+        with open(file_path, 'w') as f:
+            json.dump(knowledge_graph, f, indent=4)  # Save knowledge graph to JSON
+
+    def nexus_to_knowledge_graph(self):
+        """
+        Converts a NEXUS file to a knowledge graph and saves it as a JSON file.
 
         Returns:
-        None
-
-        Exceptions:
-        Exception: Any error that occurs during the initial classification.
+            dict: The generated knowledge graph.
         """
-        try:
-            content_with_data = prompt_messages["initial_character_messages"][3]["content_template"].format(
-                knowledge_graph=json.dumps(self.knowledge_graph)
-            )
-            messages_initial = [
-                prompt_messages["initial_character_messages"][0],
-                prompt_messages["initial_character_messages"][1],
-                prompt_messages["initial_character_messages"][2],
-                {"role": "user", "content": content_with_data},
-            ]
-            initial_character_info = self.client.chat.completions.create(
-                model="gpt-4o",
-                messages=messages_initial,
-                stop=None,
-                max_tokens=1000,
-                temperature=0,
-                n=1
-            )
-            self.initial_response = initial_character_info.choices[0].message.content
-            logging.info(f"Initial classification response: {self.initial_response}")
-        except Exception as e:
-            logging.error(f"Error during initial classification: {e}")
-            raise
+        nexus_file_path = self.paths["nexus_file_path"]
+        csv_output_path = self.paths["csv_output_path"]
+        json_output_path = self.paths["json_output_path"]
+
+        df = self.convert_nexus_to_csv(nexus_file_path, csv_output_path)  # Convert NEXUS to CSV
+
+        if df is not None:
+            self.knowledge_graph = self.build_knowledge_graph(df)  # Build knowledge graph
+            self.save_knowledge_graph_as_json(self.knowledge_graph, json_output_path)  # Save knowledge graph to JSON
+            return self.knowledge_graph
+        else:
+            print("Failed to create the DataFrame from NEXUS file.")
+            return None
+
+    def load_prompt_messages(self):
+        """
+        Loads prompt messages from a file.
+
+        Returns:
+            dict: Loaded prompt messages.
+        """
+        prompt_file_path = self.paths["prompt_file_path"]
+
+        with open(prompt_file_path, "r", encoding="utf-8") as file:
+            self.prompt_messages = json.load(file)  # Load prompt messages from JSON
+
+        return self.prompt_messages
+
+    def load_character_messages(self):
+        """
+        Loads character messages from a file.
+
+        Returns:
+            dict: Loaded character messages.
+        """
+        character_file_path = self.paths["character_file_path"]
+
+        with open(character_file_path, "r", encoding="utf-8") as file:
+            self.character_info = json.load(file)  # Load character messages from JSON
+
+        return self.character_info
+
+    def initial_api_call(self):
+        """
+        Makes an initial API call to OpenAI with the loaded prompt messages.
+
+        Returns:
+            str: Initial response from the API.
+        """
+        content_with_data = self.prompt_messages["initial_character_messages"][3]["content_template"].format(
+            knowledge_graph=json.dumps(self.knowledge_graph)  # Insert knowledge graph into template
+        )
+
+        messages_initial = [
+            self.prompt_messages["initial_character_messages"][0],
+            self.prompt_messages["initial_character_messages"][1],
+            self.prompt_messages["initial_character_messages"][2],
+            {"role": "user", "content": content_with_data},
+        ]
+
+        initial_character_info = self.client.chat.completions.create(
+            model="gpt-4o",
+            messages=messages_initial,
+            stop=None,
+            max_tokens=1000,
+            temperature=0,
+            n=1
+        )
+
+        initial_response = initial_character_info.choices[0].message.content
+        return initial_response
 
     def parse_classification_result(self, result_text):
         """
-        Parse classification result.
+        Parses the classification result from the API.
 
-        Parameters:
-        result_text (str): Classification result text.
+        Args:
+            result_text (str): Result text from the API.
 
         Returns:
-        dict: Dictionary representation of the classification result.
-
-        Exceptions:
-        ValueError: If there is an error parsing the classification result.
+            dict: Parsed classification result.
         """
         classification = {"Character": None, "States": {}}
+
         try:
             character_match = re.search(r'"Character": "([^"]+)"', result_text)
+
             if character_match:
                 classification["Character"] = character_match.group(1)
             else:
                 raise ValueError("Character not found in the result text.")
+
             state_sections = re.findall(r'"(\d+|[^"]+)":\s*\[(.*?)\]', result_text)
+
             if not state_sections:
                 raise ValueError("No states found in the result text.")
+
             for state, species_block in state_sections:
                 species_list = re.findall(r'"([^"]+)"', species_block)
+
                 if not species_list:
                     raise ValueError(f"No species found for state {state}.")
+
                 classification["States"][state] = species_list
+
         except Exception as e:
-            logging.error(f"Error parsing classification result: {e}")
+            print(f"Error parsing classification result: {e}")
             raise e
+
         return classification
+
+    def compare_and_correct_species(self, api_output):
+        """
+        Compares and corrects species classification based on the knowledge graph.
+
+        Args:
+            api_output (dict): API output classification result.
+
+        Returns:
+            dict: Corrected classification result.
+        """
+        input_species = list(self.knowledge_graph.keys())
+        api_species = []
+
+        for state, species_list in api_output["States"].items():
+            api_species.extend(species_list)
+
+        missing_species = [species for species in input_species if species not in api_species]
+        print("Missing species: ", missing_species)
+        character = api_output["Character"]
+
+        for species in missing_species:
+            state = self.knowledge_graph[species]["Characteristics"].get(character, None)
+
+            if state:
+                if state in api_output["States"]:
+                    api_output["States"][state].append(species)
+                else:
+                    api_output["States"][state] = [species]
+
+        return api_output
 
     def generate_groups_from_classification(self, classification_result):
         """
-        Generate groups from classification result.
+        Generates groups from the classification result.
 
-        Parameters:
-        classification_result (dict): Dictionary representation of the classification result.
-
-        Returns:
-        list: List of groups, each group is a tuple (state, species_list).
-
-        Exceptions:
-        Exception: If there is an error generating groups from classification.
-        """
-        try:
-            groups = []
-            for state, species_list in classification_result["States"].items():
-                groups.append((state, species_list))
-            return groups
-        except Exception as e:
-            logging.error(f"Error generating groups from classification: {e}")
-            raise
-
-    def extract_json_string(self, json_string):
-        """
-        Extract JSON string.
-
-        Parameters:
-        json_string (str): String containing JSON data.
+        Args:
+            classification_result (dict): Classification result.
 
         Returns:
-        str: Extracted clean JSON string.
-
-        Exceptions:
-        Exception: If there is an error during extraction.
+            list: Groups generated from the classification.
         """
-        try:
-            start = json_string.find('{')
-            end = json_string.rfind('}') + 1
-            if start != -1 and end != -1:
-                cleaned_string = json_string[start:end]
-                return cleaned_string.strip()
-            return ""
-        except Exception as e:
-            logging.error(f"Error extracting JSON string: {e}")
-            raise
+        groups = []
 
-    def recursive_classification(self, groups, depth=0, max_depth=10):
-        """
-        Recursive classification.
+        for state, species_list in classification_result["States"].items():
+            groups.append((state, species_list))
 
-        Parameters:
-        groups (list): Groups to be classified.
-        depth (int): Current recursion depth.
-        max_depth (int): Maximum recursion depth.
-
-        Returns:
-        None
-
-        Exceptions:
-        Exception: Any error that occurs during recursive classification.
-        """
-        state, current_group = None, []
-        while groups:
-            try:
-                state, current_group = groups.pop(0)
-                logging.debug(f"Processing group with state: {state}, species: {current_group}, at depth: {depth}")
-                if len(current_group) == 1:
-                    self.final_classification[current_group[0]] = current_group
-                elif depth >= max_depth:
-                    logging.debug(f"Reached max depth {max_depth}. Stopping further classification for group: {current_group}")
-                    self.final_classification[state] = current_group
-                else:
-                    classification_result = self.classify_group(current_group)
-                    cleaned_classification_result = self.extract_json_string(classification_result)
-                    self.classification_results[state] = cleaned_classification_result
-                    parsed_result = self.parse_classification_result(classification_result)
-                    new_groups = self.generate_groups_from_classification(parsed_result)
-                    self.recursive_classification(new_groups, depth + 1, max_depth)
-            except Exception as e:
-                logging.error(f"Error processing group with state: {state}, species: {current_group}, at depth: {depth}")
-                raise e
-        return self.final_classification
+        return groups
 
     def classify_group(self, group_species):
         """
-        Classify a group of species.
+        Classifies a group of species using the API.
 
-        Parameters:
-        group_species (list): List of species in the group.
+        Args:
+            group_species (list): List of species to classify.
 
         Returns:
-        str: Classification result in JSON format.
-
-        Exceptions:
-        Exception: Any error that occurs during classification.
+            str: JSON formatted classification result from the API.
         """
-        try:
-            group_matrix = {species: self.knowledge_graph[species] for species in group_species}
+        group_matrix = {species: self.knowledge_graph[species] for species in group_species}
+        group_matrix_str = json.dumps(group_matrix, ensure_ascii=False)
+
+        content_with_data = self.prompt_messages["secondary_character_messages"][3]["content_template"].format(
+            group_matrix_str=group_matrix_str
+        )
+
+        messages_secondary = [
+            self.prompt_messages["secondary_character_messages"][0],
+            self.prompt_messages["secondary_character_messages"][1],
+            self.prompt_messages["secondary_character_messages"][2],
+            {"role": "user", "content": content_with_data},
+        ]
+
+        response = self.client.chat.completions.create(
+            model="gpt-4o",
+            messages=messages_secondary,
+            stop=None,
+            temperature=0,
+            max_tokens=1000,
+            n=1
+        )
+
+        result_secondary = response.choices[0].message.content
+
+        content_with_data = self.prompt_messages["JSON_format_messages"][3]["content_template"].format(
+            result_secondary=result_secondary
+        )
+
+        messages_JSON1 = [
+            self.prompt_messages["JSON_format_messages"][0],
+            self.prompt_messages["JSON_format_messages"][1],
+            self.prompt_messages["JSON_format_messages"][2],
+            {"role": "user", "content": content_with_data}
+        ]
+
+        response = self.client.chat.completions.create(
+            model="gpt-4o",
+            messages=messages_JSON1,
+            stop=None,
+            temperature=0,
+            max_tokens=1500,
+            n=1
+        )
+
+        json_result = response.choices[0].message.content
+        print(json_result)
+        return json_result
+
+    def extract_json_string(self, json_string):
+        """
+        Extracts a JSON string from the given string.
+
+        Args:
+            json_string (str): String containing JSON data.
+
+        Returns:
+            str: Extracted JSON string.
+        """
+        start = json_string.find('{')
+        end = json_string.rfind('}') + 1
+
+        if start != -1 and end != -1:
+            cleaned_string = json_string[start:end]
+            return cleaned_string.strip()
+
+        return ""
+
+    def recursive_classification(self, groups, final_classification, classification_results, depth=0, max_depth=10):
+        """
+        Recursively classifies species groups.
+
+        Args:
+            groups (list): List of species groups to classify.
+            final_classification (dict): Final classification result.
+            classification_results (dict): Classification results at each step.
+            depth (int): Current depth of recursion.
+            max_depth (int): Maximum depth for recursion.
+
+        Returns:
+            dict: Final classification result.
+        """
+        state, current_group = None, []
+
+        while groups:
+            try:
+                state, current_group = groups.pop(0)
+                print(f"Processing group with state: {state}, species: {current_group}, at depth: {depth}")
+
+                if len(current_group) == 1:
+                    final_classification[current_group[0]] = current_group
+                elif depth >= max_depth:
+                    print(f"Reached max depth {max_depth}. Stopping further classification for group: {current_group}")
+                    final_classification[state] = current_group
+                else:
+                    classification_result = self.classify_group(current_group)
+                    cleaned_classification_result = self.extract_json_string(classification_result)
+                    classification_results[state] = cleaned_classification_result
+                    parsed_result = self.parse_classification_result(classification_result)
+                    new_groups = self.generate_groups_from_classification(parsed_result)
+                    self.recursive_classification(new_groups, final_classification, classification_results, depth + 1, max_depth)
+            except Exception as e:
+                print(f"Error processing group with state: {state}, species: {current_group}, at depth: {depth}")
+                print(f"Exception: {e}")
+                raise e
+
+        return final_classification
+
+    def extract_paths(self, node, path=None):
+        """
+        Extracts paths from the classification node.
+
+        Args:
+            node (dict): Classification node.
+            path (dict): Current path.
+
+        Yields:
+            tuple: Species and their corresponding paths.
+        """
+        if path is None:
+            path = {}
+
+        if 'Character' in node and 'States' in node:
+            current_character = node['Character'].replace(" ", "").strip()
+
+            for state, value in node['States'].items():
+                new_path = path.copy()
+                new_path[current_character] = state
+
+                if isinstance(value, dict):
+                    yield from self.extract_paths(value, new_path)
+                else:
+                    for species in value:
+                        yield species, new_path
+
+    def check_state_match(self, state, correct_state):
+        """
+        Checks if the state matches the correct state.
+
+        Args:
+            state (str): The state to check.
+            correct_state (str): The correct state to compare against.
+
+        Returns:
+            bool: True if the states match, False otherwise.
+        """
+        if correct_state is None:
+            return False
+
+        if " and " in correct_state:
+            correct_states = correct_state.split(" and ")
+            return all(sub_state in correct_states for sub_state in state.split(" and "))
+
+        return state == correct_state
+
+    def validate_results(self, final_results, groups):
+        """
+        Validates the final classification results.
+
+        Args:
+            final_results (dict): Final classification results.
+            groups (list): List of species groups.
+
+        Returns:
+            list: List of errors found in the results.
+        """
+        errors = []
+        all_species = set(self.knowledge_graph.keys())
+        classified_species = set()
+
+        for key, results in final_results.items():
+            for species, data in results.items():
+                classified_species.add(species)
+
+                if species in self.knowledge_graph:
+                    mismatch = False
+                    incorrect_character_states = {}
+
+                    for character, state in data["Characteristics"].items():
+                        character = character.replace(" ", "").strip()
+                        correct_state = self.knowledge_graph[species]["Characteristics"].get(character)
+
+                        if correct_state is None or not self.check_state_match(state, correct_state):
+                            mismatch = True
+                            incorrect_character_states[character] = {"error_state": state, "correct_state": correct_state}
+
+                    if mismatch:
+                        errors.append({
+                            "species": species,
+                            "key": key,
+                            "error": "Mismatch",
+                            "error_result": incorrect_character_states,
+                            "correct_result": {character: self.knowledge_graph[species]["Characteristics"].get(character) for character in incorrect_character_states}
+                        })
+                else:
+                    errors.append({
+                        "species": species,
+                        "key": key,
+                        "error": "Species not found in knowledge graph",
+                        "error_result": data["Characteristics"]
+                    })
+
+        missing_species = all_species - classified_species
+
+        for species in missing_species:
+            group_found = False
+
+            for group_key, species_list in groups:
+                if species in species_list:
+                    errors.append({
+                        "species": species,
+                        "error": "Missing species",
+                        "key": group_key,
+                        "correct_result": self.knowledge_graph[species]["Characteristics"]
+                    })
+                    group_found = True
+                    break
+
+            if not group_found:
+                errors.append({
+                    "species": species,
+                    "error": "Missing species",
+                    "key": None,
+                    "correct_result": self.knowledge_graph[species]["Characteristics"]
+                })
+
+        return errors
+
+    def get_species_list_for_state(self, groups, key):
+        """
+        Gets the list of species for a given state.
+
+        Args:
+            groups (list): List of species groups.
+            key (str): State key.
+
+        Returns:
+            list: List of species for the state.
+        """
+        species_list = []
+
+        for state, species in groups:
+            if state == key:
+                species_list = species
+                break
+
+        if not species_list:
+            print(f"Key {key} not found in groups")
+        else:
+            print(f"Processing species list for state '{key}': {species_list}")
+
+        return species_list
+
+    def correct_classification(self, errors, classification_results, groups):
+        """
+        Corrects the classification based on errors.
+
+        Args:
+            errors (list): List of errors to correct.
+            classification_results (dict): Current classification results.
+            groups (list): List of species groups.
+
+        Returns:
+            dict: Updated classification results.
+        """
+        for error in errors:
+            key = error['key']
+
+            if key is None:
+                continue
+
+            species_list = self.get_species_list_for_state(groups, key)
+
+            if not species_list:
+                continue
+
+            group_matrix = {s: self.knowledge_graph[s] for s in species_list}
             group_matrix_str = json.dumps(group_matrix, ensure_ascii=False)
-            content_with_data = self.prompt_messages["secondary_character_messages"][3]["content_template"].format(
-                group_matrix_str=group_matrix_str
-            )
-            messages_secondary = [
-                self.prompt_messages["secondary_character_messages"][0],
-                self.prompt_messages["secondary_character_messages"][1],
-                self.prompt_messages["secondary_character_messages"][2],
-                {"role": "user", "content": content_with_data},
+            content_error = self.prompt_messages["correct_messages"][2]["content_template"].format(error=error)
+            content_group_matrix = self.prompt_messages["correct_messages"][4]["content_template"].format(group_matrix_str=group_matrix_str)
+
+            messages_correct = [
+                self.prompt_messages["correct_messages"][0],
+                self.prompt_messages["correct_messages"][1],
+                {"role": "user", "content": content_error},
+                self.prompt_messages["correct_messages"][3],
+                {"role": "user", "content": content_group_matrix}
             ]
+
             response = self.client.chat.completions.create(
                 model="gpt-4o",
-                messages=messages_secondary,
+                messages=messages_correct,
                 stop=None,
                 temperature=0,
                 max_tokens=1000,
                 n=1
             )
-            result_secondary = response.choices[0].message.content
+
+            corrected_result = response.choices[0].message.content
+
             content_with_data = self.prompt_messages["JSON_format_messages"][3]["content_template"].format(
-                result_secondary=result_secondary
+                result_secondary=corrected_result
             )
-            messages_JSON1 = [
+
+            messages_JSON2 = [
                 self.prompt_messages["JSON_format_messages"][0],
                 self.prompt_messages["JSON_format_messages"][1],
                 self.prompt_messages["JSON_format_messages"][2],
                 {"role": "user", "content": content_with_data}
             ]
+
             response = self.client.chat.completions.create(
                 model="gpt-4o",
-                messages=messages_JSON1,
+                messages=messages_JSON2,
                 stop=None,
                 temperature=0,
                 max_tokens=1500,
                 n=1
             )
+
             json_result = response.choices[0].message.content
-            logging.info(f"Classification result: {json_result}")
-            return json_result
-        except Exception as e:
-            logging.error(f"Error classifying group: {e}")
-            raise
-
-    def validate_results(self):
-        """
-        Validate classification results.
-
-        Returns:
-        list: List of errors found during validation.
-
-        Exceptions:
-        Exception: Any error that occurs during validation.
-        """
-        errors = []
-        try:
-            for key, results in self.final_classification.items():
-                for species, data in results.items():
-                    if species in self.knowledge_graph:
-                        mismatch = False
-                        incorrect_character_states = {}
-                        for character, state in data["Characteristics"].items():
-                            character = character.replace(" ", "").strip()
-                            correct_state = self.knowledge_graph[species]["Characteristics"].get(character)
-                            if correct_state is None or not self.check_state_match(state, correct_state):
-                                mismatch = True
-                                incorrect_character_states[character] = {"error_state": state, "correct_state": correct_state}
-                        if mismatch:
-                            errors.append({
-                                "species": species,
-                                "key": key,
-                                "error": "Mismatch",
-                                "error_result": incorrect_character_states,
-                                "correct_result": {character: self.knowledge_graph[species]["Characteristics"].get(character) for character in incorrect_character_states}
-                            })
-                    else:
-                        errors.append({
-                            "species": species,
-                            "key": key,
-                            "error": "Species not found in knowledge graph",
-                            "error_result": data["Characteristics"]
-                        })
-            return errors
-        except Exception as e:
-            logging.error(f"Error validating results: {e}")
-            raise
-
-    def check_state_match(self, state, correct_state):
-        """
-        Check if the state matches the correct state.
-
-        Parameters:
-        state (str): The state to be checked.
-        correct_state (str): The correct state to match against.
-
-        Returns:
-        bool: True if the state matches the correct state, False otherwise.
-
-        Exceptions:
-        Exception: Any error that occurs during state matching.
-        """
-        try:
-            if correct_state is None:
-                return False
-            if " and " in correct_state:
-                correct_states = correct_state.split(" and ")
-                return all(sub_state in correct_states for sub_state in state.split(" and "))
-            return state == correct_state
-        except Exception as e:
-            logging.error(f"Error checking state match: {e}")
-            raise
-
-    def correct_classification(self, errors):
-        """
-        Correct classification based on errors.
-
-        Parameters:
-        errors (list): List of errors found during validation.
-
-        Returns:
-        None
-
-        Exceptions:
-        Exception: Any error that occurs during correction.
-        """
-        try:
-            for error in errors:
-                key = error['key']
-                species_list = self.get_species_list_for_state(key)
-                if not species_list:
-                    continue
-                group_matrix = {s: self.knowledge_graph[s] for s in species_list}
-                group_matrix_str = json.dumps(group_matrix, ensure_ascii=False)
-                content_error = self.prompt_messages["correct_messages"][2]["content_template"].format(error=error)
-                content_group_matrix = self.prompt_messages["correct_messages"][4]["content_template"].format(group_matrix_str=group_matrix_str)
-                messages_correct = [
-                    self.prompt_messages["correct_messages"][0],
-                    self.prompt_messages["correct_messages"][1],
-                    {"role": "user", "content": content_error},
-                    self.prompt_messages["correct_messages"][3],
-                    {"role": "user", "content": content_group_matrix}
-                ]
-                response = self.client.chat.completions.create(
-                    model="gpt-4o",
-                    messages=messages_correct,
-                    stop=None,
-                    temperature=0,
-                    max_tokens=1000,
-                    n=1
-                )
-                corrected_result = response.choices[0].message.content
-                content_with_data = self.prompt_messages["JSON_format_messages"][3]["content_template"].format(
-                    result_secondary=corrected_result
-                )
-                messages_JSON2 = [
-                    self.prompt_messages["JSON_format_messages"][0],
-                    self.prompt_messages["JSON_format_messages"][1],
-                    self.prompt_messages["JSON_format_messages"][2],
-                    {"role": "user", "content": content_with_data}
-                ]
-                response = self.client.chat.completions.create(
-                    model="gpt-4o",
-                    messages=messages_JSON2,
-                    stop=None,
-                    temperature=0,
-                    max_tokens=1500,
-                    n=1
-                )
-                json_result = response.choices[0].message.content
-                json_cleaned_result = self.extract_json_string(json_result)
-                logging.info(f"Corrected classification result: {json_cleaned_result}")
-                self.classification_results[key] = json_cleaned_result
-        except Exception as e:
-            logging.error(f"Error correcting classification: {e}")
-            raise
-
-    def get_species_list_for_state(self, key):
-        """
-        Get species list for a given state key.
-
-        Parameters:
-        key (str): The state key.
-
-        Returns:
-        list: List of species for the given state key.
-
-        Exceptions:
-        Exception: Any error that occurs during retrieval.
-        """
-        try:
-            species_list = []
-            for state, species in self.groups:
-                if state == key:
-                    species_list = species
-                    break
-            if not species_list:
-                logging.warning(f"Key {key} not found in groups")
-            else:
-                logging.info(f"Processing species list for state '{key}': {species_list}")
-            return species_list
-        except Exception as e:
-            logging.error(f"Error getting species list for state {key}: {e}")
-            raise
-
-    def extract_paths(self, node, path=None):
-        """
-        Extract paths from a classification node.
-
-        Parameters:
-        node (dict): The classification node.
-        path (dict): The current path (used for recursion).
-
-        Yields:
-        tuple: Species and path.
-
-        Exceptions:
-        Exception: Any error that occurs during extraction.
-        """
-        try:
-            if path is None:
-                path = {}
-            if 'Character' in node and 'States' in node:
-                current_character = node['Character'].replace(" ", "").strip()
-                for state, value in node['States'].items():
-                    new_path = path.copy()
-                    new_path[current_character] = state
-                    if isinstance(value, dict):
-                        yield from self.extract_paths(value, new_path)
-                    else:
-                        for species in value:
-                            yield species, new_path
-        except Exception as e:
-            logging.error(f"Error extracting paths from node: {e}")
-            raise
-
-    def process_final_classification(self):
-        """
-        Process final classification.
-
-        Returns:
-        None
-
-        Exceptions:
-        Exception: Any error that occurs during processing.
-        """
-        try:
-            self.final_results = {}
-            for key, json_str in self.classification_results.items():
-                classification_data = json.loads(json_str)
-                species_paths = list(self.extract_paths(classification_data))
-                formatted_results = {}
-                for species, path in species_paths:
-                    formatted_results[species] = {"Characteristics": path}
-                self.final_results[key] = formatted_results
-        except Exception as e:
-            logging.error(f"Error processing final classification: {e}")
-            raise
-
-    def replace_indices_with_descriptions_in_key(self, key, character_info, parent_char_index=None):
-        """
-        Replace indices with descriptions in classification key.
-
-        Parameters:
-        key (dict): The classification key.
-        character_info (dict): Dictionary containing character information.
-        parent_char_index (str): The parent character index (used for recursion).
-
-        Returns:
-        dict: Updated classification key with descriptions.
-
-        Exceptions:
-        Exception: Any error that occurs during replacement.
-        """
-        try:
-            updated_key = {}
-            for char_state, subtree in key.items():
-                if char_state.startswith("Character"):
-                    parts = char_state.split()
-                    if len(parts) > 1:
-                        char_index = parts[1]
-                        if char_index in character_info:
-                            char_description = f"Character {char_index}: {character_info[char_index]['description']}"
-                            if isinstance(subtree, dict):
-                                updated_subtree = self.replace_indices_with_descriptions_in_key(subtree, character_info, char_index)
-                                updated_key[char_description] = updated_subtree
-                            else:
-                                updated_key[char_description] = subtree
-                        else:
-                            updated_key[char_state] = subtree
-                    else:
-                        updated_key[char_state] = subtree
-                elif char_state.startswith("State") and parent_char_index:
-                    states = char_state.split()[1:]
-                    state_descriptions = []
-                    for state in states:
-                        individual_states = state.split("and")
-                        descriptions = [character_info[parent_char_index]["states"].get(s.strip(), "") for s in individual_states]
-                        state_descriptions.append(" and ".join(filter(None, descriptions)))
-                    state_key = f"State {' '.join(states)}: {';'.join(state_descriptions)}"
-                    if isinstance(subtree, dict):
-                        updated_key[state_key] = self.replace_indices_with_descriptions_in_key(subtree, character_info, parent_char_index)
-                    else:
-                        updated_key[state_key] = subtree
-                else:
-                    updated_key[char_state] = subtree
-            return updated_key
-        except Exception as e:
-            logging.error(f"Error replacing indices with descriptions: {e}")
-            raise
+            json_cleaned_result = self.extract_json_string(json_result)
+            classification_results[key] = json_cleaned_result
+            return classification_results
 
     def convert_structure(self, node):
         """
-        Convert classification structure.
+        Converts the structure of the classification node.
 
-        Parameters:
-        node (dict): The classification node.
+        Args:
+            node (dict): Classification node.
 
         Returns:
-        dict: Converted classification structure.
-
-        Exceptions:
-        Exception: Any error that occurs during conversion.
+            dict: Converted structure.
         """
-        try:
-            if "Character" in node and "States" in node:
-                character = node["Character"]
-                states = node["States"]
-                converted = {f"Character {character.replace('Character', '')}": {}}
-                for state, sub_node in states.items():
-                    state_key = f"State {state}"
-                    if isinstance(sub_node, list):
-                        converted[f"Character {character.replace('Character', '')}"][state_key] = sub_node[0] if len(sub_node) == 1 else sub_node
-                    elif isinstance(sub_node, dict):
-                        converted[f"Character {character.replace('Character', '')}"][state_key] = self.convert_structure(sub_node)
-                return converted
-            return node
-        except Exception as e:
-            logging.error(f"Error converting structure: {e}")
-            raise
+        if "Character" in node and "States" in node:
+            character = node["Character"]
+            states = node["States"]
+            converted = {f"Character {character.replace('Character', '')}": {}}
+
+            for state, sub_node in states.items():
+                state_key = f"State {state}"
+
+                if isinstance(sub_node, list):
+                    converted[f"Character {character.replace('Character', '')}"][state_key] = sub_node[0] if len(sub_node) == 1 else sub_node
+                elif isinstance(sub_node, dict):
+                    converted[f"Character {character.replace('Character', '')}"][state_key] = self.convert_structure(sub_node)
+
+            return converted
+
+        return node
 
     def combine_results(self, initial, secondary, state_key):
         """
-        Combine initial and secondary classification results.
+        Combines initial and secondary results.
 
-        Parameters:
-        initial (dict): Initial classification result.
-        secondary (dict): Secondary classification result.
-        state_key (str): The state key.
+        Args:
+            initial (dict): Initial classification result.
+            secondary (dict): Secondary classification result.
+            state_key (str): State key to combine results for.
+        """
+        if not secondary:
+            return
+
+        initial_states = initial["States"].get(state_key)
+
+        if initial_states is None:
+            initial["States"][state_key] = secondary
+            return
+
+        if isinstance(initial_states, list):
+            if isinstance(secondary, list):
+                initial["States"][state_key] = list(set(initial_states + secondary))
+            else:
+                initial["States"][state_key] = secondary
+        elif isinstance(initial_states, dict):
+            if isinstance(secondary, dict):
+                for key, value in secondary["States"].items():
+                    if key not in initial_states:
+                        initial_states[key] = value
+                    else:
+                        self.combine_results(initial_states, value, key)
+            else:
+                raise ValueError(f"Conflicting types for key {state_key}: {type(initial_states)} vs {type(secondary)}")
+        else:
+            raise ValueError(f"Unexpected type for initial states: {type(initial_states)}")
+
+    def replace_indices_with_descriptions_in_key(self, key, parent_char_index=None):
+        """
+        Replaces indices with descriptions in the classification key.
+
+        Args:
+            key (dict): Classification key.
+            parent_char_index (str): Parent character index.
 
         Returns:
-        None
-
-        Exceptions:
-        ValueError: If there are conflicting types for the state key.
-        Exception: Any other error that occurs during combination.
+            dict: Updated classification key with descriptions.
         """
-        try:
-            if not secondary:
-                return
-            initial_states = initial["States"].get(state_key)
-            if initial_states is None:
-                initial["States"][state_key] = secondary
-                return
-            if isinstance(initial_states, list):
-                if isinstance(secondary, list):
-                    initial["States"][state_key] = list(set(initial_states + secondary))
-                else:
-                    initial["States"][state_key] = secondary
-            elif isinstance(initial_states, dict):
-                if isinstance(secondary, dict):
-                    for key, value in secondary["States"].items():
-                        if key not in initial_states:
-                            initial_states[key] = value
+        updated_key = {}
+
+        for char_state, subtree in key.items():
+            if char_state.startswith("Character"):
+                parts = char_state.split()
+
+                if len(parts) > 1:
+                    char_index = parts[1]
+
+                    if char_index in self.character_info:
+                        char_description = f"Character {char_index}: {self.character_info[char_index]['description']}"
+
+                        if isinstance(subtree, dict):
+                            updated_subtree = self.replace_indices_with_descriptions_in_key(subtree, char_index)
+                            updated_key[char_description] = updated_subtree
                         else:
-                            self.combine_results(initial_states, value, key)
+                            updated_key[char_description] = subtree
+                    else:
+                        updated_key[char_state] = subtree
                 else:
-                    raise ValueError(f"Conflicting types for key {state_key}: {type(initial_states)} vs {type(secondary)}")
+                    updated_key[char_state] = subtree
+            elif char_state.startswith("State") and parent_char_index:
+                states = char_state.split()[1:]
+                state_descriptions = []
+
+                for state in states:
+                    individual_states = state.split("and")
+                    descriptions = [self.character_info[parent_char_index]["states"].get(s.strip(), "") for s in individual_states]
+                    state_descriptions.append(" and ".join(filter(None, descriptions)))
+
+                state_key = f"State {' '.join(states)}: {';'.join(state_descriptions)}"
+
+                if isinstance(subtree, dict):
+                    updated_key[state_key] = self.replace_indices_with_descriptions_in_key(subtree, parent_char_index)
+                else:
+                    updated_key[state_key] = subtree
             else:
-                raise ValueError(f"Unexpected type for initial states: {type(initial_states)}")
-        except Exception as e:
-            logging.error(f"Error combining results: {e}")
-            raise
+                updated_key[char_state] = subtree
+
+        return updated_key
 
     def generate_classification_key(self, data, current_step, parent_step=None):
         """
-        Generate classification key.
+        Generates a classification key from the data.
 
-        Parameters:
-        data (dict): Classification data.
-        current_step (int): The current step number.
-        parent_step (int): The parent step number (used for recursion).
-
-        Returns:
-        None
-
-        Exceptions:
-        Exception: Any error that occurs during generation.
+        Args:
+            data (dict): Classification data.
+            current_step (int): Current step in the classification process.
+            parent_step (int): Parent step in the classification process.
         """
         global step_counter
-        try:
-            if isinstance(data, dict):
-                state_steps = []
-                step_map = {}
-                for character, states in data.items():
-                    for state, next_level in states.items():
-                        full_state_description = f"{character.split(':')[1]}: {state.split(': ')[1]}"
-                        if isinstance(next_level, dict):
-                            step_counter += 1
-                            next_step_prefix = str(step_counter)
-                            state_steps.append(f"    - {full_state_description} ........ {next_step_prefix}")
-                            step_map[step_counter] = (next_level, current_step)
-                        else:
-                            state_steps.append(f"    - {full_state_description} ........ {next_level}")
-                if parent_step:
-                    self.steps.append(f"{current_step}({parent_step}).")
-                else:
-                    self.steps.append(f"{current_step}.")
-                self.steps.extend(state_steps)
-                for step, (next_level, parent_step) in step_map.items():
-                    self.generate_classification_key(next_level, step, parent_step)
+
+        if isinstance(data, dict):
+            state_steps = []
+            step_map = {}
+
+            for character, states in data.items():
+                for state, next_level in states.items():
+                    full_state_description = f"{character.split(':')[1]}: {state.split(': ')[1]}"
+
+                    if isinstance(next_level, dict):
+                        self.step_counter += 1
+                        next_step_prefix = str(self.step_counter)
+                        state_steps.append(f"    - {full_state_description} ........ {next_step_prefix}")
+                        step_map[self.step_counter] = (next_level, current_step)
+                    else:
+                        state_steps.append(f"    - {full_state_description} ........ {next_level}")
+
+            if parent_step:
+                self.steps.append(f"{current_step}({parent_step}).")
             else:
-                return
-        except Exception as e:
-            logging.error(f"Error generating classification key: {e}")
-            raise
+                self.steps.append(f"{current_step}.")
 
-    def process_key(self, nexus_file_path, prompt_file_path, character_file_path):
+            self.steps.extend(state_steps)
+
+            for step, (next_level, parent_step) in step_map.items():
+                self.generate_classification_key(next_level, step, parent_step)
+        else:
+            return
+
+    def process_key(self):
         """
-        Process the taxonomic key.
-
-        Parameters:
-        nexus_file_path (str): Path to the Nexus file.
-        prompt_file_path (str): Path to the prompt messages file.
-        character_file_path (str): Path to the character information file.
-
-        Returns:
-        None
-
-        Exceptions:
-        FileNotFoundError: If the file is not found.
-        JSONDecodeError: If there is an error decoding the JSON file.
-        Exception: Any other error that occurs during processing.
+        Processes the key by converting NEXUS to knowledge graph, loading messages,
+        making initial API calls, and recursively classifying groups.
         """
-        try:
-            self.prompt_messages = self.load_prompt_messages(prompt_file_path)
-            self.character_info = self.load_character_messages(character_file_path)
+        # Part 1: Convert NEXUS to knowledge graph and load messages
+        self.nexus_to_knowledge_graph()
+        self.load_character_messages()
+        self.load_prompt_messages()
+        initial_response_result = self.initial_api_call()
 
-            df = self.convert_nexus_to_csv(nexus_file_path)
-            self.build_knowledge_graph(df)
-            self.save_knowledge_graph_as_json()
-            self.initial_classification(self.prompt_messages)
-            parsed_initial_classification = self.parse_classification_result(self.initial_response)
-            self.groups = self.generate_groups_from_classification(parsed_initial_classification)
-            self.final_classification = self.recursive_classification(self.groups)
-            errors = self.validate_results()
-            while errors:
-                self.correct_classification(errors)
-                self.final_classification = {}
-                self.process_final_classification()
-                errors = self.validate_results()
-            self.save_final_classification()
+        # Part 2: Parse API output, correct species, and generate groups
+        parsed_api_output = self.parse_classification_result(initial_response_result)
+        corrected_api_output = self.compare_and_correct_species(parsed_api_output)
+        groups = self.generate_groups_from_classification(corrected_api_output)
+        print(groups)
 
-            self.steps = []
-            step_counter = 1
-            self.generate_classification_key(self.updated_classification_key, 1)
-            classification_key = "\n".join(self.steps)
-            logging.info(classification_key)
-            with open("classification_key.txt", "w", encoding='utf-8') as f:
-                f.write(classification_key)
-        except Exception as e:
-            logging.error(f"Error processing taxonomic key: {e}")
-            raise
+        # Part 3: Recursively classify groups
+        max_depth = 5
+        final_classification = {}
+        classification_results = {}
+        final_classification = self.recursive_classification(groups, final_classification, classification_results, depth=0, max_depth=max_depth)
+        groups = self.generate_groups_from_classification(corrected_api_output)
 
-    def generate_taxonomic_description(self, species_name, species_data, character_info, prompt_messages):
+        # Part 4: Extract paths and format results
+        final_results = {}
+        for key, json_str in classification_results.items():
+            classification_data = json.loads(json_str)
+            species_paths = list(self.extract_paths(classification_data))
+
+            formatted_results = {}
+            for species, path in species_paths:
+                formatted_results[species] = {"Characteristics": path}
+
+            final_results[key] = formatted_results
+
+        # Part 5: Validate results and correct errors
+        errors = self.validate_results(final_results, groups)
+        print(errors)
+        correction_attempts = 0
+        max_correction_attempts = 10
+
+        while errors and correction_attempts < max_correction_attempts:
+            correction_attempts += 1
+            classification_results = self.correct_classification(errors, classification_results, groups)
+            final_results = {}
+
+            for key, json_str in classification_results.items():
+                try:
+                    classification_data = json.loads(json_str)
+                except json.JSONDecodeError as e:
+                    print(f"Error decoding JSON for key {key}: {e}")
+                    print(f"Invalid JSON string: {json_str}")
+                    raise
+
+                species_paths = list(self.extract_paths(classification_data))
+                formatted_results = {}
+
+                for species, path in species_paths:
+                    formatted_results[species] = {"Characteristics": path}
+
+                final_results[key] = formatted_results
+
+            errors = self.validate_results(final_results, groups)
+
+        if correction_attempts == 0:
+            print("No errors found. The initial classification results are correct.")
+        else:
+            print(f"Errors were corrected {correction_attempts} times before finalizing the results.")
+
+        if correction_attempts >= max_correction_attempts:
+            print("Due to the API repeatedly correcting errors during execution, it persistently repeats the same mistakes, resulting in an infinite loop. Therefore, it is recommended to restart the code execution process to avoid endlessly correcting the same issue.")
+
+        with open('final_classification.json', 'w') as f:
+            json.dump(final_results, f, indent=4)
+
+        print("Final classification results have been saved to 'final_classification.json'.")
+        print(json.dumps(final_results, indent=4))
+
+        classification_result = {key: json.loads(value) for key, value in classification_results.items()}
+
+        # Part 6: Convert structure, combine results, and generate classification key
+        converted_result = {}
+
+        for key, value in classification_result.items():
+            converted_result[f"Character {key}"] = self.convert_structure(value)
+
+        for state_key, secondary in classification_result.items():
+            self.combine_results(corrected_api_output, secondary, state_key)
+
+        converted_initial_classification = self.convert_structure(corrected_api_output)
+        updated_classification_key = self.replace_indices_with_descriptions_in_key(converted_initial_classification, self.character_info)
+
+        print(type(updated_classification_key))
+        print("Updated Classification Key:")
+        print(json.dumps(updated_classification_key, indent=4, ensure_ascii=False))
+
+        self.step_counter = 1
+        self.steps = []
+        self.generate_classification_key(updated_classification_key, 1)
+
+        classification_key = "\n".join(self.steps)
+        print(classification_key)
+
+        with open("classification_key.txt", "w") as f:
+            f.write(classification_key)
+
+    def generate_taxonomic_description(self, species_name, species_data):
         """
         Generate taxonomic description.
 
@@ -876,32 +964,37 @@ class TaxonGPT:
         Exception: Any error that occurs during description generation.
         """
         try:
-            content_with_data = prompt_messages["description_messages"][3]["content_template"].format(
+            content_with_data = self.prompt_messages["description_messages"][3]["content_template"].format(
                 species_name=species_name,
                 species_data=json.dumps(species_data),
-                character_info=json.dumps(character_info)
+                character_info=json.dumps(self.character_info)
             )
+
             messages = [
-                prompt_messages["description_messages"][0],
-                prompt_messages["description_messages"][1],
-                prompt_messages["description_messages"][2],
+                self.prompt_messages["description_messages"][0],
+                self.prompt_messages["description_messages"][1],
+                self.prompt_messages["description_messages"][2],
                 {"role": "user", "content": content_with_data},
-                prompt_messages["description_messages"][4]
+                self.prompt_messages["description_messages"][4]
             ]
+
             response = self.client.chat.completions.create(
-                model="gpt-4o",
+                model="gpt-4o-mini",
                 messages=messages,
                 stop=None,
                 temperature=0,
                 n=1
             )
+
             result = response.choices[0].message.content
+            print(result)
             return result
+
         except Exception as e:
-            logging.error(f"Error generating taxonomic description: {e}")
+            print(f"Error generating taxonomic description: {e}")
             raise
 
-    def process_description(self, character_info_file_path, output_file_path, prompt_file_path):
+    def process_description(self):
         """
         Process taxonomic descriptions.
 
@@ -919,36 +1012,46 @@ class TaxonGPT:
         JSONDecodeError: If there is an error decoding the JSON file.
         Exception: Any other error that occurs during processing.
         """
-        try:
-            with open(character_info_file_path, "r", encoding="utf-8") as file:
-                character_info = json.load(file)
+        self.nexus_to_knowledge_graph()
+        self.load_character_messages()
+        self.load_prompt_messages()
 
-            prompt_messages = self.load_prompt_messages(prompt_file_path)
+        taxonomic_descriptions = {}
 
-            taxonomic_descriptions = {}
-            for species_name, species_data in self.knowledge_graph.items():
-                description = self.generate_taxonomic_description(species_name, species_data, character_info, prompt_messages)
+        for species_name, species_data in self.knowledge_graph.items():
+            try:
+                description = self.generate_taxonomic_description(species_name, species_data)
                 taxonomic_descriptions[species_name] = description
+            except Exception as e:
+                print(f"Error generating description for species {species_name}: {e}")
+                continue
 
-            with open(output_file_path, 'w', encoding='utf-8') as f:
-                json.dump(taxonomic_descriptions, f, ensure_ascii=False, indent=4)
-
-            logging.info(f"Taxonomic descriptions have been generated and saved to '{output_file_path}'.")
-        except FileNotFoundError as e:
-            logging.error(f"File not found: {e.filename}")
-            raise
-        except json.JSONDecodeError as e:
-            logging.error(f"Error decoding JSON from file: {e}")
-            raise
+        try:
+            # Save the taxonomic descriptions to a JSON file
+            with open('taxonomic_descriptions.json', 'w') as f:
+                json.dump(taxonomic_descriptions, f, indent=4)
+            print("Taxonomic descriptions have been saved to 'taxonomic_descriptions.json'.")
         except Exception as e:
-            logging.error(f"Error processing descriptions: {e}")
-            raise
+            print(f"Error saving taxonomic descriptions to file: {e}")
 
+        print("Taxonomic descriptions have been saved to 'taxonomic_descriptions.json'.")
+
+
+# The config.json file template
+"""
+{
+    "api_key": "YOUR API KEY HERE",
+    "nexus_file_path": "<Full path to the input Nexus file>",
+    "csv_output_path": "<Full path to the output CSV output file>",
+    "json_output_path": "<Full path to the JSON output file>",
+    "prompt_file_path": "<Full path to the input Prompt file>",
+    "character_file_path": "<Full path to the input character info>"
+}
+"""
 
 # Example usage
 config_file_path = "path/to/config.json"
-taxon_gpt = TaxonGPT(config_file_path)
 
-# Use paths from the configuration
-taxon_gpt.process_key(taxon_gpt.paths["nexus_file_path"], taxon_gpt.paths["prompt_file_path"], taxon_gpt.paths["character_file_path"])
-taxon_gpt.process_description(taxon_gpt.paths["matrix_file_path"], taxon_gpt.paths["character_file_path"], taxon_gpt.paths["output_file_path"], taxon_gpt.paths["prompt_file_path"])
+taxon_gpt = TaxonGPT(config_file_path)
+taxon_gpt.process_key()
+taxon_gpt.process_description()

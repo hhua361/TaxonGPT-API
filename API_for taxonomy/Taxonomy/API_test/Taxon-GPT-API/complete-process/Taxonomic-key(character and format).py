@@ -221,11 +221,11 @@ def load_character_messages(file_path):
         return json.load(file)
 
 # Example Usage
-nexus_file_path = "D:/桌面/taxonomy_primary_result/The_GPT-4_result/Dataset_11 (grass genera) 19/Information gain methods/grass.nex"
+nexus_file_path = "D:/桌面/Taxonomy_primary_result/The_GPT-4_result/Dataset_6 (The families of gymnosperms) 10/Information gain methods/nexdata"
 csv_output_path = "D:/桌面/process_data_2.csv"
 json_output_path = "D:/桌面/knowledge_graph.json"
 prompt_file_path = "D:/桌面/taxonomy_primary_result/Taxonomic dataset materials/prompt_messages.json"
-character_file_path = "D:/桌面/taxonomy_primary_result/The_GPT-4_result/Dataset_11 (grass genera) 19/Information gain methods/character_info_update.json"
+character_file_path = "D:/桌面/Taxonomy_primary_result/The_GPT-4_result/Dataset_6 (The families of gymnosperms) 10/Information gain methods/character_info_update.json"
 # Step 1: Convert NEXUS to CSV and build knowledge graph
 knowledge_graph = nexus_to_knowledge_graph(nexus_file_path, csv_output_path, json_output_path)
 
@@ -267,7 +267,7 @@ messages_initial = [
 # Set various parameters to control the API response.
 # Setting the temperature to 0 and limiting max_tokens to save costs and avoid long, redundant outputs.
 initial_character_info = client.chat.completions.create(
-    model="gpt-4o",
+    model="gpt-4o-mini",
     messages=messages_initial,
     stop=None,
     max_tokens=1000,
@@ -283,10 +283,15 @@ initial_response = initial_character_info.choices[0].message.content
 # However, for debugging, you can use this print statement to check the response.
 print(initial_response)
 
-
 # Part 3
 # Function to parse the classification result text into a dictionary format
 def parse_classification_result(result_text):
+    """
+    Parse the classification result text into a dictionary format.
+
+    :param result_text: String containing the classification result in JSON format
+    :return: Dictionary containing the parsed classification result
+    """
     classification = {"Character": None, "States": {}}
     try:
         # Attempt to match the Character from the result text
@@ -309,16 +314,46 @@ def parse_classification_result(result_text):
 
     except Exception as e:
         print(f"Error parsing classification result: {e}")
-        # Decide whether to return an empty classification or raise an exception when an error occurs
         raise e  # Or return classification
 
     return classification
 
-# Parse the initial classification response from the API
-parsed_initial_classification = parse_classification_result(initial_response)
-print(parsed_initial_classification)
+def compare_and_correct_species(api_output, knowledge_graph):
+    """
+    Compare species in the API output with the knowledge graph and correct any missing species.
 
-# Function to generate groups from the classification result
+    :param api_output: Dictionary containing the API classification result
+    :param knowledge_graph: Dictionary containing the knowledge graph with species information
+    :return: Updated API output dictionary with missing species corrected
+    """
+    # Extract species information from the knowledge graph
+    input_species = list(knowledge_graph.keys())
+
+    # Extract all species information from the API output
+    api_species = []
+    for state, species_list in api_output["States"].items():
+        api_species.extend(species_list)
+
+    # Compare the two species lists and find the missing species in the API output
+    missing_species = [species for species in input_species if species not in api_species]
+
+    # Output the missing species
+    print("Missing species: ", missing_species)
+
+    # Supplement the missing species into the corresponding state
+    character = api_output["Character"]
+    for species in missing_species:
+        # Get the character state of the missing species from the knowledge graph
+        state = knowledge_graph[species]["Characteristics"].get(character, None)
+        if state:
+            # Add the species to the corresponding state
+            if state in api_output["States"]:
+                api_output["States"][state].append(species)
+            else:
+                api_output["States"][state] = [species]
+
+    return api_output
+
 def generate_groups_from_classification(classification_result):
     """
     Generate groups from classification result.
@@ -331,14 +366,23 @@ def generate_groups_from_classification(classification_result):
         groups.append((state, species_list))
     return groups
 
-# Generate groups from the parsed initial classification
-groups = generate_groups_from_classification(parsed_initial_classification)
+# Parse the initial classification response from the API
+parsed_api_output = parse_classification_result(initial_response)
+print("Parsed Initial Classification:")
+print(json.dumps(parsed_api_output, indent=2, ensure_ascii=False))
+
+# Compare and correct species in the API output
+corrected_api_output = compare_and_correct_species(parsed_api_output, knowledge_graph)
+print("Updated API result:")
+print(json.dumps(corrected_api_output, indent=2, ensure_ascii=False))
+
+# Generate groups from the updated API result
+groups = generate_groups_from_classification(corrected_api_output)
+print("Generated Groups:")
 print(groups)
 
 
 # Part 4
-
-# API call function for continued grouping for each subgroup
 def classify_group(group_species):
     # Create a sub-matrix for the group of species
     group_matrix = {species: knowledge_graph[species] for species in group_species}
@@ -359,7 +403,7 @@ def classify_group(group_species):
 
     # Make the API call to classify the group
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=messages_secondary,
         stop=None,
         temperature=0,
@@ -383,7 +427,7 @@ def classify_group(group_species):
 
     # Make the API call to format the response as JSON
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=messages_JSON1,
         stop=None,
         temperature=0,
@@ -493,12 +537,10 @@ print(classification_results)
 # Part 7
 
 # Reload the groups information to help with further processing
-groups = generate_groups_from_classification(parsed_initial_classification)
+groups = generate_groups_from_classification(corrected_api_output)
 print(classification_results)
 print(type(classification_results))
 
-
-# Function to extract paths from the classification tree
 def extract_paths(node, path=None):
     if path is None:
         path = {}
@@ -514,9 +556,7 @@ def extract_paths(node, path=None):
                 for species in value:
                     yield species, new_path
 
-# Process each classification result and extract paths
 final_results = {}
-
 for key, json_str in classification_results.items():
     classification_data = json.loads(json_str)
     species_paths = list(extract_paths(classification_data))
@@ -527,10 +567,6 @@ for key, json_str in classification_results.items():
 
     final_results[key] = formatted_results
 
-
-# Part 8
-
-# Function to check if the state matches the correct state
 def check_state_match(state, correct_state):
     if correct_state is None:
         return False
@@ -539,11 +575,16 @@ def check_state_match(state, correct_state):
         return all(sub_state in correct_states for sub_state in state.split(" and "))
     return state == correct_state
 
-# Validate classification results and log errors
-def validate_results(final_results, knowledge_graph):
+
+# Verification results
+def validate_results(final_results, knowledge_graph, groups):
     errors = []
+    all_species = set(knowledge_graph.keys())
+    classified_species = set()
+
     for key, results in final_results.items():
         for species, data in results.items():
+            classified_species.add(species)
             if species in knowledge_graph:
                 mismatch = False
                 incorrect_character_states = {}
@@ -568,12 +609,33 @@ def validate_results(final_results, knowledge_graph):
                     "error": "Species not found in knowledge graph",
                     "error_result": data["Characteristics"]
                 })
+
+    # Checking for missing species and identifying the group in which they are found
+    missing_species = all_species - classified_species
+    for species in missing_species:
+        group_found = False
+        for group_key, species_list in groups:
+            if species in species_list:
+                errors.append({
+                    "species": species,
+                    "error": "Missing species",
+                    "key": group_key,
+                    "correct_result": knowledge_graph[species]["Characteristics"]
+                })
+                group_found = True
+                break
+        if not group_found:
+            errors.append({
+                "species": species,
+                "error": "Missing species",
+                "key": None,
+                "correct_result": knowledge_graph[species]["Characteristics"]
+            })
+
     return errors
 
 
-# Part 9
-
-# Function to get the species list for a specific state from the groups
+# Get a list of species in a given state
 def get_species_list_for_state(groups, key):
     species_list = []
     for state, species in groups:
@@ -587,27 +649,26 @@ def get_species_list_for_state(groups, key):
     return species_list
 
 
-# Part 10
-
-# Function to correct classification errors using the API
-def correct_classification(errors, classification_results, knowledge_graph):
+# Correcting categorisation errors using the API
+def correct_classification(errors, classification_results, knowledge_graph, groups):
     for error in errors:
         key = error['key']
+        if key is None:
+            continue
 
-        # Get the species list for the erroneous state
+        # Get a list of species with error status
         species_list = get_species_list_for_state(groups, key)
         if not species_list:
             continue
 
-        # Create a sub-matrix for the group of species
         group_matrix = {s: knowledge_graph[s] for s in species_list}
         group_matrix_str = json.dumps(group_matrix, ensure_ascii=False)
 
-        # Replace the placeholders in the content templates with actual data
+        # Replacing placeholders in templates
         content_error = prompt_messages["correct_messages"][2]["content_template"].format(error=error)
         content_group_matrix = prompt_messages["correct_messages"][4]["content_template"].format(group_matrix_str=group_matrix_str)
 
-        # Create messages list
+        # Creating a list of messages
         messages_correct = [
             prompt_messages["correct_messages"][0],
             prompt_messages["correct_messages"][1],
@@ -616,9 +677,9 @@ def correct_classification(errors, classification_results, knowledge_graph):
             {"role": "user", "content": content_group_matrix}
         ]
 
-        # Make the API call to correct the classification
+        # Call API Correction Classification
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4o-mini",
             messages=messages_correct,
             stop=None,
             temperature=0,
@@ -627,12 +688,12 @@ def correct_classification(errors, classification_results, knowledge_graph):
         )
         corrected_result = response.choices[0].message.content
 
-        # Replace the placeholder in the content template with actual data
+        # Replacing placeholders in templates
         content_with_data = prompt_messages["JSON_format_messages"][3]["content_template"].format(
             result_secondary=corrected_result
         )
 
-        # Create messages_JSON list
+        # Creating a messages_JSON list
         messages_JSON2 = [
             prompt_messages["JSON_format_messages"][0],
             prompt_messages["JSON_format_messages"][1],
@@ -640,9 +701,9 @@ def correct_classification(errors, classification_results, knowledge_graph):
             {"role": "user", "content": content_with_data}
         ]
 
-        # Make the API call to format the response as JSON
+        # Calling the API to format the response as JSON
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4o-mini",
             messages=messages_JSON2,
             stop=None,
             temperature=0,
@@ -651,31 +712,41 @@ def correct_classification(errors, classification_results, knowledge_graph):
         )
         json_result = response.choices[0].message.content
         json_cleaned_result = extract_json_string(json_result)
-        print(json_cleaned_result)
         classification_results[key] = json_cleaned_result
         return classification_results
 
 
-# Part 11
+# Validate the initial classification results and record any errors
+errors = validate_results(final_results, knowledge_graph, groups)
+print(errors)
 
-# Validate the initial classification results and log any errors
-errors = validate_results(final_results, knowledge_graph)
+# Initial correction attempt count
+correction_attempts = 0
 
-# Purpose: Enter a loop until all errors have been fixed.
-# Function: Executes the code inside the loop when the errors list is not empty.
-while errors:
-    # Fix current categorization errors using the API
-    classification_results = correct_classification(errors, classification_results, knowledge_graph)
+# Maximum correction attempts
+max_correction_attempts = 10
 
-    # Reset the final_results dictionary to store the corrected categorization results
+while errors and correction_attempts < max_correction_attempts:
+    # Record the number of correction attempts
+    correction_attempts += 1
+
+    # Use the API to correct current classification errors
+    classification_results = correct_classification(errors, classification_results, knowledge_graph, groups)
+
+    # Reset the final_results dictionary to store corrected classification results
     final_results = {}
 
     # Iterate over the corrected classification results and extract species classification paths
     for key, json_str in classification_results.items():
-        classification_data = json.loads(json_str)
+        try:
+            classification_data = json.loads(json_str)
+        except json.JSONDecodeError as e:
+            print(f"Error decoding JSON for key {key}: {e}")
+            print(f"Invalid JSON string: {json_str}")
+            raise  # Re-raise the exception after logging
         species_paths = list(extract_paths(classification_data))
 
-        # Format the extracted classification paths and store them in the formatted_results dictionary
+        # Format the extracted classification paths and store in the formatted_results dictionary
         formatted_results = {}
         for species, path in species_paths:
             formatted_results[species] = {"Characteristics": path}
@@ -683,8 +754,18 @@ while errors:
         # Add the formatted classification results to final_results
         final_results[key] = formatted_results
 
-    # Re-validate the corrected classification results and log any remaining errors
-    errors = validate_results(final_results, knowledge_graph)
+    # Re-validate the corrected classification results and record any remaining errors
+    errors = validate_results(final_results, knowledge_graph, groups)
+
+# Check if there were any errors and output information
+if correction_attempts == 0:
+    print("No errors found. The initial classification results are correct.")
+else:
+    print(f"Errors were corrected {correction_attempts} times before finalizing the results.")
+
+# Check if the correction attempt limit was reached
+if correction_attempts >= max_correction_attempts:
+    print("Due to the API repeatedly correcting errors during execution, it persistently repeats the same mistakes, resulting in an infinite loop. Therefore, it is recommended to restart the code execution process to avoid endlessly correcting the same issue.")
 
 # Save the final classification results to a JSON file
 with open('final_classification.json', 'w') as f:
@@ -751,10 +832,10 @@ def combine_results(initial, secondary, state_key):
 
 # Dynamically combine all secondary classification results
 for state_key, secondary in classification_result.items():
-    combine_results(parsed_initial_classification, secondary, state_key)
+    combine_results(corrected_api_output, secondary, state_key)
 
 # Convert the merged results to the desired format
-converted_initial_classification = convert_structure(parsed_initial_classification)
+converted_initial_classification = convert_structure(corrected_api_output)
 
 # Recursive function to replace indices with descriptions in the classification key
 def replace_indices_with_descriptions_in_key(key, character_info, parent_char_index=None):
