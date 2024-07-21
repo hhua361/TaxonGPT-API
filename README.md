@@ -29,13 +29,12 @@ To utilize the TaxonGPT.py file effectively, a configuration file is required. T
 * **Paths**: A dictionary containing the paths to the input and output files.
 ```python
 {
-    "api_key": "your_openai_api_key",
-    "paths": {
-        "nexus_file_path": "path/to/nexus_file.nex",
-        "prompt_file_path": "path/to/prompt_messages.json",
-        "character_file_path": "path/to/character_info.json",
-        "output_file_path": "path/to/taxonomic_descriptions.json"
-    }
+    "api_key": "YOUR API KEY HERE",
+    "nexus_file_path": "<Full path to the input Nexus file>",
+    "csv_output_path": "<Full path to the output CSV output file>",
+    "json_output_path": "<Full path to the JSON output file>",
+    "prompt_file_path": "<Full path to the input Prompt file>",
+    "character_file_path": "<Full path to the input character info>"
 }
 ```
 To generate taxonomic results efficiently, ensure the configuration file contains the correct file paths. Based on the specific requirements for generating classification results, different branch functions can be used.
