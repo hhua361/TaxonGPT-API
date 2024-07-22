@@ -118,7 +118,8 @@ TaxonGPT.process_description()
 ```
 
 ## Example
-> The taxonomic key results generated using the TaxonGPT.Key function are derived from the Equisetum dataset extracted from the DELTA database. This dataset includes 12 species characterized by 29 morphological traits, stored in the form of a Nexus matrix.
+> ### Taxonomic Key
+> The taxonomic key results generated using the TaxonGPT.Key function are derived from the *Equisetum* dataset extracted from the DELTA database. This dataset includes 12 species characterized by 29 morphological traits, stored in the form of a Nexus matrix.
 
 ```markdown
 1.
@@ -155,7 +156,7 @@ TaxonGPT.process_description()
     -  The main stems <of the assimilating shoots, rough or smooth>: Very rough ........ Equisetum trachyodon
     -  The main stems <of the assimilating shoots, rough or smooth>: Slightly rough ........ Equisetum variegatum
 ```
-
+> ### Taxonomic Description
 > The dataset results generated using the TaxonGPT. Description function include detailed information for one of the species, *Equisetum arvense*. This data is derived from the *Equisetum* dataset extracted from the DELTA database, which comprises 12 species characterized by 29 morphological characters, stored in the form of a Nexus matrix.
 
 ```
