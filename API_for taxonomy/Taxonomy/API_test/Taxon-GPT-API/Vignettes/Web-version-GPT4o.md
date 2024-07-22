@@ -7,8 +7,41 @@ Taxonomy, as a branch of systematics, has a crucial place in all biological disc
 ## Prompt
 Prompt design is critical in the use of the web version of GPT-4o. For different categorization tasks, content-specific Prompts are required, while flexible Prompts can be used to give accurate instructions by adjusting them to the right specifications.
 >### Taxonomic Key
+```
+Using the prompt for Web version of GPT-4o to generate Taxonomic Key.
+
+Prompt: Generation of Taxonomic key from Morphological Matrix
+    I need to generate a taxonomic key using a morphological matrix provided in a CSV file. This matrix contains character states for various taxa. The goal is to determine the characters that best separate the taxa based on their states and progressively categorize them to construct the taxonomic key. The analysis should use information gain to evaluate each character's ability to classify the taxa evenly.
+Please follow these requirements during the analysis:
+    1. Initial Character Selection: Ensure all taxa have a defined state ('Missing' or 'Not applicable' is an invalid status) for the first character. Ignore characters with more than two states type and use information gain to select the most suitable character for initial classification.
+    2. Dynamic Character Selection: For each new character selection, reload the original matrix. Re-evaluate the presence of invalid states in character, Ignore characters with missing or not applicable states for the current subset of taxa. Include characters with actual states for the taxa being considered, even if they have missing or not applicable states for other taxa.
+    3. Character Selection Preference: Prefer characters with fewer state types when multiple characters have the same information gain. Ignore characters with more than three state types regardless of their information gain.
+    4. Step-by-Step Classification: Classify taxa step-by-step according to the above rules until all taxa are individually classified. Display the results in a nested structure without showing the code implementation.
+
+Refinement Prompts:
+After generating the taxonomic key, need to add the corresponding CHARACTER and STATE information, perform character mapping, based on the corresponding CHARACTER's STATE that is provided to you, where "," is used to indicate that more than one state exists at the same time for the same CHARACTER(such as the character1 1,2 means both this taxa for the character 1 both have state 1 and state 2), and finally keep the numerical labeling
+```
 >### Taxonomic Description
+```
+Using the prompt for Web version of GPT-4o to generate Taxonomic Description.
+
+Prompt: Generation of Taxonomic Descriptions from Morphological Matrix
+Based on the provided morphological matrix (presented as a knowledge graph in JSON format), standard taxonomic descriptions are generated for all taxa in the matrix. Additional character labels and state labels will be provided, these labels contain a detailed description of each character and its corresponding state. Multiple states in the matrix (e.g., "1 and 2") indicate that the character of that species has both state 1 and state 2.
+Specific requirements:
+    1. Generate standard academic taxonomic descriptions, which need to include all characters in the morphological matrix and accurately correspond to the state of each character.
+    2. Generate descriptions in list form and paragraph form. In paragraph form, the number of each character should be indicated.
+Due to the large number of results, to avoid space constraints, please show the taxonomic description of each taxa separately.
+```
 >### Flexible adjust prompt
+```
+Flexible adjust prompt to generate the expect Taxonomic results.
+Selects the specified character or species:
+
+When inputting a prompt to generate Taxonomic keys or Taxonomic descriptions, if you need to adjust the expected results flexibly, you can append the following prompts:
+Prompts:
+    In the generated taxonomic results, I only want to select the following species (e.g., species1, species2, etc.) to generate taxonomic keys or taxonomic descriptions. Please strictly follow the above requirements and accurately select the corresponding species.
+    In the generated taxonomic results, I only want to select the following characters (e.g., character1, character2, etc.) to generate taxonomic keys or taxonomic descriptions. Please strictly follow the above requirements and accurately select the corresponding characters.
+```
 ## Overview
 In the web version of GPT-4o, it is not possible to read Nexus files directly and the recognition of this file type is poor. Therefore, when passing morphological matrix information to the web version of GPT-4o, the Nexus file needs to be converted to Knowledge Graph or CSV format for input.
 >### Input file
