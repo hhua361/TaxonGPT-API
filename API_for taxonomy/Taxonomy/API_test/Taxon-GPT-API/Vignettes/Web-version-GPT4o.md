@@ -3,6 +3,7 @@ Web version GPT-4o: Investgateing the GPT model application with Taxonomy
 ## Introduction
 Taxonomy, as a branch of systematics, has a crucial place in all biological disciplines. Accurate taxonomic information is essential for taxonomists to analyse evolutionary relationships between species, assess morphological features and name new species. However, this process relies heavily on natural language and requires extensive manual processing of taxonomic data, consuming significant time and human resources. Large-scale language models (LLMs) excel in natural language processing (NLP). In this manuscript, we demonstrate that the GPT-4o model is an efficient LLM that can efficiently process natural language in taxonomic studies and generate taxonomically meaningful results using relevant data. We tested the use of the **Web-based version of the GPT-4o** model in the field of taxonomy for generating taxonomic results and transforming taxonomic data.
 ## User interface
+![web-markdown](https://github.com/user-attachments/assets/b3aa77b3-2770-4ab8-b954-208a1452964d)
 
 ## Prompt
 Prompt design is critical in the use of the web version of GPT-4o. For different categorization tasks, content-specific Prompts are required, while flexible Prompts can be used to give accurate instructions by adjusting them to the right specifications.
