@@ -35,7 +35,7 @@ If the API key is correctly set, the TaxonGPT function will proceed with the sub
 #### ⚠️Caution: Refrain from disclosing your API key to unauthorized individuals or posting it in publicly accessible locations.
 ## Overview
 > ### Input file
-TaxonGPT is dedicated to converting information from Nexus matrices into biologically meaningful taxonomic information and accurate natural language descriptions of species. To achieve comprehensive taxonomic data, the input files for TaxonGPT include:
+> TaxonGPT is dedicated to converting information from Nexus matrices into biologically meaningful taxonomic information and accurate natural language descriptions of species. To achieve comprehensive taxonomic data, the input files for TaxonGPT include:
 * **Nexus Matrix** (nexus_file_path): Contains species and their corresponding character states.
 ```
 This is just an example of the Nexus file format that will be shown.
@@ -89,9 +89,9 @@ This is just an example of the character information format that will be shown.
 ```
 - **Prompt Message** (prompt_file_path): Instructions for the API model. This file can be adjusted based on specific requirements.
 > ### Usage
-To utilize the TaxonGPT.py file effectively, a configuration file is required. This configuration file should include the necessary input file paths and the output file path. The essential information within the config file includes:
-* **API Key**: Your OpenAI API key.
-* **Paths**: A dictionary containing the paths to the input and output files.
+>To utilize the TaxonGPT.py file effectively, a configuration file is required. This configuration file should include the necessary input file paths and the output file path. The essential information within the config file includes:
+>* **API Key**: Your OpenAI API key.
+>* **Paths**: A dictionary containing the paths to the input and output files.
 ```
 This is just an example of the config file format that will be shown.
 {
