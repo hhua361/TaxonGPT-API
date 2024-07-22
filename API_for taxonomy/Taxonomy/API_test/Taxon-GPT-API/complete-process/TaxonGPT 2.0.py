@@ -1051,11 +1051,10 @@ class TaxonGPT:
 
 # Example usage
 config_file_path = "path/to/config.json"
-
 # Through TaxonGPT() to generate the related result
-taxon_gpt = TaxonGPT(config_file_path)
+TaxonGPT = TaxonGPT(config_file_path)
 
 # Generate the Taxonomic Key
-taxon_gpt.process_key()
+TaxonGPT.process_key()
 # Generate the Taxonomic Description
-taxon_gpt.process_description()
+TaxonGPT.process_description()
