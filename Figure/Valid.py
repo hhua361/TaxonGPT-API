@@ -67,7 +67,7 @@ ax1.set_ylim(0.95, 1.1)  # 调整y轴范围以提高可见性
 ax2 = ax1.twinx()
 ax2.plot(x, api_means_list, marker='o', color='#EF7A6D', label='API Mean', linewidth=4)
 ax2.plot(x, web_means_list, marker='o', color='#9DC3E7', label='Web Mean', linewidth=4)
-ax2.set_ylim(0, 1.1)  # 确保折线图的y轴范围与条形图的y轴范围一致
+ax2.set_ylim(0.8, 1.1)  # 确保折线图的y轴范围与条形图的y轴范围一致
 
 # 为两个图添加图例
 handles1, labels1 = ax1.get_legend_handles_labels()

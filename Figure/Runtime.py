@@ -1,126 +1,54 @@
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
-import statsmodels.api as sm
+import numpy as np
 
-# 读取CSV文件
-file_path = "E:/Evaluate_results_for_all_datasets/Evaluate_table/Running_Time/Running time average.csv"
-data = pd.read_csv(file_path)
+# Load the data
+data_file_path = "D:/桌面/Processed_Test_Extract_Matrix.xlsx"
+data = pd.read_excel(data_file_path)
 
-# 计算API和WEB运行时间的平均值
-data['API Runtime'] = data[['API time1', 'API time2', 'API time3', 'API time4', 'API time5']].mean(axis=1)
-data['WEB Runtime'] = data[['WEB time1', 'WEB time2', 'WEB time3', 'WEB time4', 'WEB time5']].mean(axis=1)
+# Extract character numbers and accuracy values for each trial
+character_numbers = data.iloc[:, 0]  # X-axis: Character numbers
+accuracy_values = data.iloc[:, 1:21]  # Y-axis: Accuracy values for 20 trials
 
-# 提取API和WEB运行时间
-data_api = data[['dataset/time', 'API Runtime', 'species number', 'character numbers']]
-data_api = data_api.rename(columns={'API Runtime': 'Runtime'})
-data_api['Program'] = 'API'
+# Calculate the mean and standard deviation for each character number
+means = accuracy_values.mean(axis=1)
+std_devs = accuracy_values.std(axis=1)
 
-data_web = data[['dataset/time', 'WEB Runtime', 'species number', 'character numbers']]
-data_web = data_web.rename(columns={'WEB Runtime': 'Runtime'})
-data_web['Program'] = 'WEB'
+# Create the scatter plot
+plt.figure(figsize=(12, 8))
 
-# 合并数据
-data_combined = pd.concat([data_api, data_web])
+# Plot error bars showing the standard deviation for each character number
+plt.errorbar(character_numbers, means, yerr=std_devs, fmt='o', capsize=5,
+             label='Average value ± Standard Deviation', color='#5F97D2', ecolor='#5F97D2', elinewidth=2, capthick=2)
 
-# 设置字体
-plt.rcParams['font.family'] = 'Arial'
+# Plot the average values as scatter points
+plt.scatter(character_numbers, means, color='#D76364', label='Average value', s=100, zorder=5)
 
-# 绘制API和WEB程序的运行时间与物种数量的关系
-plt.figure(figsize=(12, 6))
-ax = sns.scatterplot(data=data_combined, x='species number', y='Runtime', hue='Program', style='Program', markers=["o", "X"], s=100, palette={'API': '#D76364', 'WEB': '#5F97D2'})
-sns.regplot(data=data_combined[data_combined['Program'] == 'API'], x='species number', y='Runtime', scatter=False, color='#EF7A6D', line_kws={'linewidth': 3}, label='API fit')
-sns.regplot(data=data_combined[data_combined['Program'] == 'WEB'], x='species number', y='Runtime', scatter=False, color='#9DC3E7', line_kws={'linewidth': 3}, label='WEB fit')
+# Plot the trend line connecting the average values
+plt.plot(character_numbers, means, color='#EF7A6D', label='Trend Line', linewidth=2)
 
-# 计算并添加线性回归方程
-api_model = sm.OLS(data_combined[data_combined['Program'] == 'API']['Runtime'], sm.add_constant(data_combined[data_combined['Program'] == 'API']['species number'])).fit()
-web_model = sm.OLS(data_combined[data_combined['Program'] == 'WEB']['Runtime'], sm.add_constant(data_combined[data_combined['Program'] == 'WEB']['species number'])).fit()
+# Scatter the individual trial points with a small random offset
+offset = np.random.uniform(-0.8, 0.8, size=accuracy_values.shape)  # Larger range of offset
+for i in range(accuracy_values.shape[1]):
+    plt.scatter(character_numbers + offset[:, i], accuracy_values.iloc[:, i], alpha=0.5, color='gray')
 
-api_eq = f'API: y = {api_model.params.iloc[1]:.2f}x + {api_model.params.iloc[0]:.2f}'
-web_eq = f'WEB: y = {web_model.params.iloc[1]:.2f}x + {web_model.params.iloc[0]:.2f}'
-
-plt.text(0.05, 0.95, api_eq, transform=plt.gca().transAxes, fontsize=14, verticalalignment='top', color='black')
-plt.text(0.05, 0.90, web_eq, transform=plt.gca().transAxes, fontsize=14, verticalalignment='top', color='black')
-
-plt.xlabel('Species Number', fontsize=18, fontname='Arial')
-plt.ylabel('Runtime (seconds)', fontsize=18, fontname='Arial')
-plt.title('Taxonomic Key runtime with different Species Number', fontsize=20, fontname='Arial')
-handles, labels = plt.gca().get_legend_handles_labels()
-new_labels = ['API', 'Web', 'API fit', 'Web fit']
-plt.legend(handles=handles[0:], labels=new_labels, title='Type', loc='upper right')
-plt.ylim(0, None)
-
-# 设置坐标轴颜色为黑色并去除上边和右边的边框
-ax.spines['top'].set_visible(False)
+# Remove the right and top spines (axes lines)
+ax = plt.gca()
 ax.spines['right'].set_visible(False)
-ax.spines['left'].set_color('black')
-ax.spines['bottom'].set_color('black')
-ax.xaxis.label.set_color('black')
-ax.yaxis.label.set_color('black')
-ax.tick_params(axis='x', colors='black', labelsize=14)
-ax.tick_params(axis='y', colors='black', labelsize=14)
+ax.spines['top'].set_visible(False)
 
-# 添加刻度线
-ax.xaxis.set_ticks_position('bottom')
-ax.yaxis.set_ticks_position('left')
-ax.tick_params(axis='x', direction='out', length=5, width=2, colors='black')
-ax.tick_params(axis='y', direction='out', length=5, width=2, colors='black')
+# Adjust the font size of the axis ticks
+plt.xticks(fontsize=16)
+plt.yticks(fontsize=16)
 
-plt.grid(False)
-plt.tight_layout()
+# Set the title and labels
+plt.title('The effect of extract accuracy with Character Number', fontsize=20)
+plt.xlabel('Character Number', fontsize=18)
+plt.ylabel('Accuracy (%)', fontsize=18)
 
-# 保存为SVG格式
-output_path_species = 'E:/Evaluate_results_for_all_datasets/Evaluate_table/Running_Time/Running_time_species.svg'
-plt.savefig(output_path_species, format='svg')
+# Add legend with adjusted position
+plt.legend(fontsize=14, loc='upper left', bbox_to_anchor=(1.05, 1))  # 将图注右移
 
+# Show the plot
 plt.show()
 
-# 绘制API和WEB程序的运行时间与形态特征数量的关系
-plt.figure(figsize=(12, 6))
-ax = sns.scatterplot(data=data_combined, x='character numbers', y='Runtime', hue='Program', style='Program', markers=["o", "X"], s=100, palette={'API': '#D76364', 'WEB': '#5F97D2'})
-sns.regplot(data=data_combined[data_combined['Program'] == 'API'], x='character numbers', y='Runtime', scatter=False, color='#EF7A6D', line_kws={'linewidth': 3}, label='API fit')
-sns.regplot(data=data_combined[data_combined['Program'] == 'WEB'], x='character numbers', y='Runtime', scatter=False, color='#9DC3E7', line_kws={'linewidth': 3}, label='WEB fit')
-
-# 计算并添加线性回归方程
-api_model_char = sm.OLS(data_combined[data_combined['Program'] == 'API']['Runtime'], sm.add_constant(data_combined[data_combined['Program'] == 'API']['character numbers'])).fit()
-web_model_char = sm.OLS(data_combined[data_combined['Program'] == 'WEB']['Runtime'], sm.add_constant(data_combined[data_combined['Program'] == 'WEB']['character numbers'])).fit()
-
-api_eq_char = f'API: y = {api_model_char.params.iloc[1]:.2f}x + {api_model_char.params.iloc[0]:.2f}'
-web_eq_char = f'WEB: y = {web_model_char.params.iloc[1]:.2f}x + {web_model_char.params.iloc[0]:.2f}'
-
-plt.text(0.05, 0.95, api_eq_char, transform=plt.gca().transAxes, fontsize=14, verticalalignment='top', color='black')
-plt.text(0.05, 0.90, web_eq_char, transform=plt.gca().transAxes, fontsize=14, verticalalignment='top', color='black')
-
-plt.xlabel('Character Numbers', fontsize=18, fontname='Arial')
-plt.ylabel('Runtime (seconds)', fontsize=18, fontname='Arial')
-plt.title('Taxonomic Key runtime with different Character Numbers', fontsize=20, fontname='Arial')
-handles, labels = plt.gca().get_legend_handles_labels()
-new_labels = ['API', 'Web', 'API fit', 'Web fit']
-plt.legend(handles=handles[0:], labels=new_labels, title='Type', loc='upper right')
-plt.ylim(0, None)
-
-# 设置坐标轴颜色为黑色并去除上边和右边的边框
-ax.spines['top'].set_visible(False)
-ax.spines['right'].set_visible(False)
-ax.spines['left'].set_color('black')
-ax.spines['bottom'].set_color('black')
-ax.xaxis.label.set_color('black')
-ax.yaxis.label.set_color('black')
-ax.tick_params(axis='x', colors='black', labelsize=14)
-ax.tick_params(axis='y', colors='black', labelsize=14)
-
-# 添加刻度线
-ax.xaxis.set_ticks_position('bottom')
-ax.yaxis.set_ticks_position('left')
-ax.tick_params(axis='x', direction='out', length=5, width=2, colors='black')
-ax.tick_params(axis='y', direction='out', length=5, width=2, colors='black')
-
-plt.grid(False)
-plt.tight_layout()
-
-# 保存为SVG格式
-output_path_characters = 'E:/Evaluate_results_for_all_datasets/Evaluate_table/Running_Time/Running_time_characters.svg'
-plt.savefig(output_path_characters, format='svg')
-
-plt.show()
