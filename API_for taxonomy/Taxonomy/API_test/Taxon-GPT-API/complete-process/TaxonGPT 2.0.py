@@ -1049,11 +1049,26 @@ class TaxonGPT:
 }
 """
 
-# Example usage
-config_file_path = "path/to/config.json"
+# Get the path to the directory where the current script is located
+script_directory = os.getcwd()
+
+# Path to build configuration file (current directory)
+config_file_path = os.path.join(script_directory, 'config.json')
+
+# Check if the configuration file exists
+if not os.path.exists(config_file_path):
+    raise FileNotFoundError(f"Configuration file not found: {config_file_path}")
+
+# Open and read the contents of the configuration file
+with open(config_file_path, 'r') as config_file:
+    config_data = json.load(config_file)
+
+# Print the read configuration data
+print(f"Read the profile data: {config_data}")
+
+
 # Through TaxonGPT() to generate the related result
 TaxonGPT = TaxonGPT(config_file_path)
-
 # Generate the Taxonomic Key
 TaxonGPT.process_key()
 # Generate the Taxonomic Description
