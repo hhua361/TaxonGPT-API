@@ -5,6 +5,10 @@ import os  # For interacting with the operating system, such as file paths
 # Set the OpenAI API key
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+# Define file paths
+matrix_file_path = "D:/桌面/TEST-KG/nexus fix/matrix_knowledge_graph_22.json"
+character_info_file_path = "D:/桌面/TEST-KG/nexus fix/updated_character_info.json"
+output_file_path = "D:/桌面/taxonomic_descriptions.json"
 
 def generate_taxonomic_description(species_name, species_data, character_info):
     messages_desctiption = [
@@ -17,6 +21,10 @@ def generate_taxonomic_description(species_name, species_data, character_info):
             **Generate standard academic taxonomic descriptions, which need to include all characters in the morphological matrix and accurately correspond to the state of each character. 
             **Generate descriptions in list form and paragraph form. In paragraph form, the number of each character should be indicated.
          """},
+        {
+            "role": "system",
+            "content": "The taxonomic description List format: \n1. Character description (character label): State description (State label). \nThe taxonomic description paragraph format: \n Species about the character 1 description is State description (State label).\n** When there is a special state of Not Applicable, (Not Applicable) needs to be recorded as a label **",
+        },
         {"role": "user", "content": """
             1. Generate taxonomic descriptions from the morphological matrix without including any false information.
             2. Based on the provided morphological matrix (presented as a knowledge graph in JSON format), generate standard taxonomic descriptions for all taxa in the matrix.
@@ -50,39 +58,29 @@ def generate_taxonomic_description(species_name, species_data, character_info):
     result = response.choices[0].message.content
     return result
 
-
-def main(matrix_file_path, character_info_file_path, output_file_path):
     # Read morphological matrix data from a JSON file
-    with open(matrix_file_path, "r", encoding="utf-8") as file:
-        matrix_data = json.load(file)
+ with open(matrix_file_path, "r", encoding="utf-8") as file:
+    matrix_data = json.load(file)
 
     # Read character information data from a JSON file
-    with open(character_info_file_path, "r", encoding="utf-8") as file:
-        character_info = json.load(file)
+with open(character_info_file_path, "r", encoding="utf-8") as file:
+    character_info = json.load(file)
 
     # Output the read data to confirm
-    print(matrix_data)
-    print(character_info)
+print(matrix_data)
+print(character_info)
 
     # Create an empty dictionary to store the taxonomic descriptions
-    taxonomic_descriptions = {}
+taxonomic_descriptions = {}
 
     # Iterate over each species and generate taxonomic descriptions
-    for species_name, species_data in matrix_data.items():
-        description = generate_taxonomic_description(species_name, species_data, character_info)
-        taxonomic_descriptions[species_name] = description
+for species_name, species_data in matrix_data.items():
+    description = generate_taxonomic_description(species_name, species_data, character_info)
+    taxonomic_descriptions[species_name] = description
 
     # Write the results to a file
-    with open(output_file_path, 'w', encoding='utf-8') as f:
-        json.dump(taxonomic_descriptions, f, ensure_ascii=False, indent=4)
+with open(output_file_path, 'w', encoding='utf-8') as f:
+     json.dump(taxonomic_descriptions, f, ensure_ascii=False, indent=4)
 
-    print(f"Taxonomic descriptions have been generated and saved to '{output_file_path}'.")
+print(f"Taxonomic descriptions have been generated and saved to '{output_file_path}'.")
 
-if __name__ == "__main__":
-    # Define file paths
-    matrix_file_path = "D:/桌面/TEST-KG/nexus fix/matrix_knowledge_graph_22.json"
-    character_info_file_path = "D:/桌面/TEST-KG/nexus fix/updated_character_info.json"
-    output_file_path = "D:/桌面/taxonomic_descriptions.json"
-
-    # Call the main function with the file paths
-    main(matrix_file_path, character_info_file_path, output_file_path)

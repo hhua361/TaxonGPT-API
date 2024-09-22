@@ -27,7 +27,7 @@ class TaxonGPT:
         """
         self.config = self.load_config(config_file)  # Load configuration from file
         self.client = OpenAI(api_key=self.config["api_key"])  # Initialize OpenAI client
-        self.paths = self.config  # Set paths for input and output files
+        self.paths = self.config["paths"]  # Set paths for input and output files
         self.knowledge_graph = None  # Initialize knowledge graph as None
         self.character_info = None  # Initialize character info as None
         self.prompt_messages = None  # Initialize prompt messages as None
@@ -377,7 +377,7 @@ class TaxonGPT:
         ]
 
         response = self.client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4o-2024-08-06",
             messages=messages_secondary,
             stop=None,
             temperature=0,
@@ -399,7 +399,7 @@ class TaxonGPT:
         ]
 
         response = self.client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4o-2024-08-06",
             messages=messages_JSON1,
             stop=None,
             temperature=0,
@@ -652,7 +652,7 @@ class TaxonGPT:
             ]
 
             response = self.client.chat.completions.create(
-                model="gpt-4o",
+                model="gpt-4o-2024-08-06",
                 messages=messages_correct,
                 stop=None,
                 temperature=0,
@@ -674,7 +674,7 @@ class TaxonGPT:
             ]
 
             response = self.client.chat.completions.create(
-                model="gpt-4o",
+                model="gpt-4o-2024-08-06",
                 messages=messages_JSON2,
                 stop=None,
                 temperature=0,
@@ -818,8 +818,18 @@ class TaxonGPT:
 
             for character, states in data.items():
                 for state, next_level in states.items():
-                    full_state_description = f"{character.split(':')[1]}: {state.split(': ')[1]}"
+                    # Split character and state and check if split result has enough parts
+                    character_parts = character.split(':')
+                    state_parts = state.split(': ')
 
+                    if len(character_parts) > 1 and len(state_parts) > 1:
+                        full_state_description = f"{character_parts[1]}: {state_parts[1]}"
+                    else:
+                        # Provide a default or handle cases where the expected split is not present
+                        full_state_description = f"{character}: {state}"
+                        print(f"Warning: character or state not in expected format. Character: {character}, State: {state}")
+
+                    # Check if next_level is a dictionary and handle accordingly
                     if isinstance(next_level, dict):
                         self.step_counter += 1
                         next_step_prefix = str(self.step_counter)
@@ -911,7 +921,8 @@ class TaxonGPT:
             print(f"Errors were corrected {correction_attempts} times before finalizing the results.")
 
         if correction_attempts >= max_correction_attempts:
-            print("Due to the API repeatedly correcting errors during execution, it persistently repeats the same mistakes, resulting in an infinite loop. Therefore, it is recommended to restart the code execution process to avoid endlessly correcting the same issue.")
+            print(
+                "Due to the API repeatedly correcting errors during execution, it persistently repeats the same mistakes, resulting in an infinite loop. Therefore, it is recommended to restart the code execution process to avoid endlessly correcting the same issue.")
 
         with open('final_classification.json', 'w') as f:
             json.dump(final_results, f, indent=4)
@@ -944,8 +955,12 @@ class TaxonGPT:
         classification_key = "\n".join(self.steps)
         print(classification_key)
 
-        with open("classification_key.txt", "w") as f:
+        # Get the output file path from the configuration for the classification key
+        taxonomic_key_path = self.config["paths"]["taxonomic_key_path"]
+
+        with open(taxonomic_key_path, "w") as f:
             f.write(classification_key)
+        print(f"Taxonomic key has been saved to '{taxonomic_key_path}'.")
 
     def generate_taxonomic_description(self, species_name, species_data):
         """
@@ -964,7 +979,7 @@ class TaxonGPT:
         Exception: Any error that occurs during description generation.
         """
         try:
-            content_with_data = self.prompt_messages["description_messages"][3]["content_template"].format(
+            content_with_data = self.prompt_messages["description_messages"][4]["content_template"].format(
                 species_name=species_name,
                 species_data=json.dumps(species_data),
                 character_info=json.dumps(self.character_info)
@@ -974,12 +989,13 @@ class TaxonGPT:
                 self.prompt_messages["description_messages"][0],
                 self.prompt_messages["description_messages"][1],
                 self.prompt_messages["description_messages"][2],
+                self.prompt_messages["description_messages"][3],
                 {"role": "user", "content": content_with_data},
-                self.prompt_messages["description_messages"][4]
+                self.prompt_messages["description_messages"][5]
             ]
 
             response = self.client.chat.completions.create(
-                model="gpt-4o-mini",
+                model="gpt-4o-2024-08-06",
                 messages=messages,
                 stop=None,
                 temperature=0,
@@ -994,15 +1010,195 @@ class TaxonGPT:
             print(f"Error generating taxonomic description: {e}")
             raise
 
+    def load_json_file(self, file_path):
+        """
+        Loads a JSON file from the specified file path.
+
+        Args:
+            file_path (str): The path to the JSON file to be loaded.
+
+        Returns:
+            dict: The parsed JSON data as a Python dictionary.
+        """
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return json.load(file)
+
+    def parse_list_form(self, description_text):
+        """
+        Parse the List Format or List Form description and return a dictionary mapping character numbers to state numbers.
+
+        Args:
+            description_text (str): The text containing the taxonomic description.
+
+        Returns:
+            dict: A dictionary mapping character numbers to state numbers.
+        """
+        # Ensure description_text is a string
+        if not isinstance(description_text, str):
+            print("Error: description_text is not a string.")
+            return {}
+
+        character_states = {}
+
+        # Extract the "List Form" or "List Format" section
+        list_form_match = re.search(r'#### List (Form|Format):\n(.*?)(\n####|\Z)', description_text, re.DOTALL)
+
+        if not list_form_match:
+            print("Unable to find the 'List Form' or 'List Format' section.")
+            return character_states
+
+        list_form_text = list_form_match.group(2).strip()
+        # Split the content by lines
+        lines = list_form_text.split('\n')
+        idx = 0
+        while idx < len(lines):
+            line = lines[idx].strip()
+            # Check if the line starts with a number and period, e.g., "1."
+            match = re.match(r'^(\d+)\.\s*(.*)', line)
+            if match:
+                char_num = match.group(1)
+                rest_of_line = match.group(2)
+                idx += 1
+                # Merge multi-line descriptions
+                while idx < len(lines) and not re.match(r'^\d+\.\s', lines[idx].strip()):
+                    rest_of_line += ' ' + lines[idx].strip()
+                    idx += 1
+                # Find all numbers in parentheses
+                state_numbers = re.findall(r'\((\d+)\)', rest_of_line)
+                if not state_numbers:
+                    # Check for "Missing" or "Not Applicable" status.
+                    if 'Missing' in rest_of_line:
+                        state_numbers = ['Missing']
+                    elif 'Not Applicable' in rest_of_line:
+                        state_numbers = ['Not Applicable']
+                character_states['Character' + char_num] = state_numbers
+            else:
+                idx += 1
+        return character_states
+
+    def parse_original_data(self, species_name):
+        """
+        Parses the original data from the knowledge graph and returns a dictionary mapping character numbers to state numbers.
+
+        Args:
+            species_name (str): The name of the species whose data needs to be parsed.
+
+        Returns:
+            dict: A dictionary mapping character numbers to lists of state numbers.
+        """
+        # Using data from knowledge_graph
+        if species_name not in self.knowledge_graph:
+            print(f"Error: {species_name} not found in the knowledge graph.")
+            return {}
+
+        characteristics = self.knowledge_graph[species_name]["Characteristics"]
+        character_states = {}
+
+        for char, states_str in characteristics.items():
+            if states_str == "Missing":
+                states_list = ['Missing']
+            else:
+                # Split the state string into a list, supporting "and" and comma separation.
+                states_list = [s.strip() for s in re.split(r'and|,', states_str)]
+            character_states[char] = states_list
+
+        return character_states
+
+    def compare_character_states(self, extracted_states, original_states):
+        """
+        Compares the extracted states with the original states and returns a list of mismatches.
+
+        Args:
+            extracted_states (dict): The character states extracted from the description.
+            original_states (dict): The original character states from the knowledge graph.
+
+        Returns:
+            list: A list of mismatches, each represented as a dictionary.
+        """
+        mismatches = []
+        for char in original_states:
+            orig_states = original_states[char]
+            extracted_states_char = extracted_states.get(char, [])
+            if set(orig_states) != set(extracted_states_char):
+                mismatches.append({
+                    'Character': char,
+                    'OriginalStates': orig_states,
+                    'ExtractedStates': extracted_states_char
+                })
+        return mismatches
+
+    def check_description(self, description_text, original_data, species_name):
+        """
+        Compares the character states in the provided description text with the original data for a given species.
+
+        Args:
+            description_text (str): The taxonomic description of the species in text format.
+            original_data (dict): The original data containing species and their characteristics.
+            species_name (str): The name of the species whose data needs to be compared.
+
+        Returns:
+            None: Prints the mismatches found, if any, or confirms that all character states match.
+        """
+        extracted_states = self.parse_list_form(description_text)
+        original_states = self.parse_original_data(species_name)
+        mismatches = self.compare_character_states(extracted_states, original_states)
+        if mismatches:
+            print(f"Mismatches found for {species_name}:")
+            for m in mismatches:
+                print(f"{m['Character']}: Original states {m['OriginalStates']}, Extracted states {m['ExtractedStates']}")
+        else:
+            print(f"All character states match for {species_name}.")
+
+    def compare_files(self, description_file_path, knowledge_graph_file_path):
+        """
+        Loads and compares the description and original data from files, performing a check for each species.
+
+        Args:
+            description_file_path (str): The file path to the JSON file containing the taxonomic descriptions.
+            knowledge_graph_file_path (str): The file path to the JSON file containing the original knowledge graph data.
+
+        Returns:
+            None: Iterates over each species in the description file and runs the check for mismatches.
+        """
+        # Load file data
+        description_data = self.load_json_file(description_file_path)
+        print(description_data)
+        knowledge_graph_data = self.load_json_file(knowledge_graph_file_path)
+
+        # Initialize a variable to store the comparison results
+        comparison_results = []
+
+        # Iterate over each species in the description file
+        for species_name in description_data:
+            print(f"\nChecking data for {species_name}...")
+            description_text = description_data[species_name]
+            original_data = knowledge_graph_data
+
+            # Run the description check function
+            mismatches = self.check_description(description_text, original_data, species_name)
+
+            if mismatches:
+                comparison_results.append({
+                    "species": species_name,
+                    "mismatches": mismatches
+                })
+
+            # Save comparison results to a file
+        comparison_output_path = self.config["paths"].get("comparison_output_path", "comparison_results.json")
+
+        try:
+            with open(comparison_output_path, 'w') as f:
+                json.dump(comparison_results, f, indent=4)
+            print(f"Comparison results have been saved to '{comparison_output_path}'.")
+        except Exception as e:
+            print(f"Error saving comparison results: {e}")
+
     def process_description(self):
         """
         Process taxonomic descriptions.
 
         Parameters:
-        matrix_file_path (str): Path to the matrix file.
-        character_info_file_path (str): Path to the character information file.
-        output_file_path (str): Path to the output file.
-        prompt_file_path (str): Path to the prompt messages file.
+        None
 
         Returns:
         None
@@ -1018,6 +1214,7 @@ class TaxonGPT:
 
         taxonomic_descriptions = {}
 
+        # Loop through species and generate descriptions
         for species_name, species_data in self.knowledge_graph.items():
             try:
                 description = self.generate_taxonomic_description(species_name, species_data)
@@ -1027,25 +1224,42 @@ class TaxonGPT:
                 continue
 
         try:
-            # Save the taxonomic descriptions to a JSON file
-            with open('taxonomic_descriptions.json', 'w') as f:
+            # Get the output file path from the configuration
+            output_file_path = self.config["paths"]["taxonomic_description_path"]
+
+            # Save the taxonomic descriptions to the specified file
+            with open(output_file_path, 'w') as f:
                 json.dump(taxonomic_descriptions, f, indent=4)
-            print("Taxonomic descriptions have been saved to 'taxonomic_descriptions.json'.")
+            print(f"Taxonomic descriptions have been saved to '{taxonomic_description_path}'.")
         except Exception as e:
             print(f"Error saving taxonomic descriptions to file: {e}")
 
-        print("Taxonomic descriptions have been saved to 'taxonomic_descriptions.json'.")
-
+        # Optional: Check function control, not implemented by default
+        if self.config.get("enable_description_check", True):
+            description_file_path = self.config["paths"]["taxonomic_description_path"]
+            knowledge_graph_file_path = self.config["paths"]["json_output_path"]
+            self.compare_files(description_file_path, knowledge_graph_file_path)  # Call the check function
+        else:
+            print("Description check is disabled by configuration.")
 
 # The config.json file template
 """
 {
     "api_key": "YOUR API KEY HERE",
     "nexus_file_path": "<Full path to the input Nexus file>",
-    "csv_output_path": "<Full path to the output CSV output file>",
-    "json_output_path": "<Full path to the JSON output file>",
     "prompt_file_path": "<Full path to the input Prompt file>",
-    "character_file_path": "<Full path to the input character info>"
+    "character_file_path": "<Full path to the input character info file>",
+    
+    "csv_output_path": "<Full path to  output CSV format matrix file>",
+    "json_output_path": "<Full path to output JSON format matrix file>",
+    "taxonomic_description_path": "<Full path to output taxonomic description file>"
+    "taxonomic_key_path": "<Full path to output taxonomic key file>"
+
+    
+    "comparison_output_path": "<Full path to output taxonomic key file>",
+    # By default, the description check feature is disabled to prevent generating excessive redundant results. If you need to check the execution steps, please set "enable_description_check": false to true in the configuration file.
+    "enable_description_check": false
+
 }
 """
 
