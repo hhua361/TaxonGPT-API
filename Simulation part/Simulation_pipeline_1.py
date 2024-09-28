@@ -9,7 +9,7 @@ import re
 import pandas as pd
 
 # Part 1: Randomly generate the character list information and store the result in a variable
-
+number_about_the_character = 15
 # Initialize the OpenAI client with the API key
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
@@ -49,13 +49,14 @@ messages_character_list = [
             }
      """},
     {"role": "user",
-     "content": """Please randomly generate a character list and indicate the relevant species name, and strictly follow the above requirements.
-                Generate as many characters as you can."""}
+     "content": f"""Please randomly generate a character list and indicate the relevant species name, and strictly follow the above requirements.
+     When generating the character list, please ensure that the list contains exactly {number_about_the_character} characters 
+    """}
 ]
 
 # Generate the initial character list using OpenAI API
 response = client.chat.completions.create(
-    model="gpt-4o",
+    model="gpt-4o-2024-08-06",
     messages=messages_character_list,
     stop=None,
     max_tokens=1000,
@@ -78,25 +79,25 @@ def parse_character_list(character_list_str):
     Returns:
         list: A list of state ranges for each character.
     """
-    json_start_index = character_list_str.find("Character list format:")
-    if json_start_index == -1:
-        raise ValueError("Could not find 'Character list format:' in the character list string.")
+    # 找到 JSON 部分的起始位置
+    json_start_index = character_list_str.find("```json")
+    json_end_index = character_list_str.rfind("```")
 
-    json_str = character_list_str[json_start_index + len("Character list format:"):].strip()
+    if json_start_index == -1 or json_end_index == -1:
+        raise ValueError("Could not find JSON format in the character list string.")
 
-    json_start_index = json_str.find("{")
-
-    if json_start_index == -1:
-        raise ValueError("Could not find JSON start '{' after 'Character list format:'.")
-
-    json_str = json_str[json_start_index:]
+    # 提取 JSON 字符串部分并移除包围的反引号
+    json_str = character_list_str[json_start_index + len("```json"):json_end_index].strip()
 
     try:
+        # 解析 JSON 字符串
         character_dict = json.loads(json_str)
     except json.JSONDecodeError as e:
         raise ValueError(f"JSON Decode Error: {e}")
 
     state_ranges = []
+
+    # 遍历每个字符并提取其状态
     for character in character_dict.values():
         states = list(character['states'].keys())
         state_ranges.append([int(state) for state in states])
@@ -198,36 +199,94 @@ def call_api_for_description(knowledge_graph, character_list):
     """
     messages = [
         {"role": "system", "content": """
-            1. You are a Taxonomic Assistant.
-            2. You specialize in generating accurate and complete taxonomic descriptions by mapping feature state information to species morphology matrices.
-            3. Utilize your natural language skills to generate accurate taxonomic descriptions for each species!
-            Specific requirements:
-            **Generate standard academic taxonomic descriptions, which need to include all characters in the morphological matrix and accurately correspond to the state of each character. 
-            **Generate descriptions in list form and paragraph form. In paragraph form, the number of each character should be indicated.
-            """},
-        {"role": "user", "content": """
-            1. Generate taxonomic descriptions from the morphological matrix without including any false information.
-            2. Based on the provided morphological matrix (presented as a knowledge graph in JSON format), generate standard taxonomic descriptions for all taxa in the matrix.
-            3. Additional character labels and state labels will be provided, containing detailed descriptions of each character and its corresponding state.
-            4. Multiple states in the matrix (e.g., '1 and 2') indicate that the character of that TAXA has both state 1 and state 2.
-            """},
+            You are a taxonomic assistant.
+
+            **Task:**
+            - Generate accurate and complete taxonomic descriptions for each species by mapping character state information to species morphological matrices.
+
+            **Specific Requirements:**
+
+            1. **Description Language:** Write standard academic taxonomic descriptions in English.
+
+            2. **Content Inclusion:** The descriptions need to include all characters from the morphological matrix and accurately correspond to each character's state.
+
+            3. **Description Format:**
+                - **List Form:** List each character's state description according to its number.
+                - **Paragraph Form:** Describe all character states in a paragraph, indicating the character numbers at appropriate places.
+
+            4. **Handling Multiple States:** For characters with multiple states (e.g., "1 and 2"), accurately reflect that the taxon possesses all these states. For example: "Character 5: possesses both wings and antennae."
+
+            5. **Avoid Subjective Information:** Strictly generate descriptions based on the provided data without including any errors or assumed information. Avoid subjective judgments.
+
+            6. **Terminology Consistency:** Use consistent professional terminology to ensure the descriptions are professional and consistent.
+
+            7. **Separate Presentation:** The taxonomic descriptions for each taxon should be presented separately to avoid any loss of information or confusion due to space constraints.
+
+            8. **Data Format:**
+                - **Morphological Matrix (knowledge_graph):** Provided in JSON format, structured as follows:
+                ```json
+                {
+                    "taxon1": {
+                        "character1": "state1",
+                        "character2": ["state1", "state2"],  // Multiple states
+                        ...
+                    },
+                    ...
+                }
+                ```
+                - **Character Information (character_list):** Provided in JSON format, structured as follows:
+                ```json
+                {
+                    "character1": {
+                        "description": "Description of character 1",
+                        "states": {
+                            "state1": "Description of state 1",
+                            "state2": "Description of state 2",
+                            ...
+                        }
+                    },
+                    ...
+                }
+                ```
+
+            9. **Example:**
+
+            **List Form:**
+            - **Character 1:** State description.
+            - **Character 2:** State description.
+            - ...
+
+            **Paragraph Form:**
+            "1. State description. 2. State description. ..."
+
+            **Note:** Include character numbers in the paragraph form.
+        """},
+        {"role": "user", "content": f"""
+            Please generate standard taxonomic descriptions for all taxa based on the provided morphological matrix and character information.
+
+            **Morphological Matrix (knowledge_graph):**
+
+            {knowledge_graph}
+
+            **Character Information (character_list):**
+
+            {character_list}
+
+            **Note:**
+            - For characters with multiple states, please accurately reflect that the taxon possesses all these states.
+            - Please strictly generate descriptions based on the provided data, avoiding any additional details or explanations that are not provided.
+            - Each taxon's description should be presented separately.
+
+        """},
         {"role": "assistant", "content": """
-            Sure, I know how to generate a taxonomic description, and I will handle the multiple states in the description.
-            I will follow these specific requirements:
-            1. Generate standard academic taxonomic descriptions strictly corresponding to the morphological matrix and eigenstate information.
-            2. For the generated taxonomy descriptions, I will generate separate descriptions in list form and paragraph form.
-            """},
-            {"role": "user", "content":f"""
-            Due to the large number of results, to avoid space constraints, please show the taxonomic description of each taxon separately.
-            Here is the morphological matrix for species{knowledge_graph}.
-                f"Here is the character info: {character_list}.
-             """},
-            {"role": "assistant", "content":
-                "I will step by step show the results."
-             }
-        ]
+            Understood. I will strictly generate standard academic taxonomic descriptions for each taxon according to the provided morphological matrix and character state information.
+
+            I will provide each taxon's description in both list form and paragraph form, indicating character numbers in the paragraph form, and accurately reflecting multiple states.
+        """}
+    ]
+
     response = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4o-2024-08-06",
             messages=messages,
             stop=None,
             temperature=0,
@@ -320,7 +379,7 @@ def extract_matrix_from_description(species_name, description, character_list):
 
     ]
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4o-2024-08-06",
         messages=messages_extract_information,
         stop=None,
         max_tokens=1000,
