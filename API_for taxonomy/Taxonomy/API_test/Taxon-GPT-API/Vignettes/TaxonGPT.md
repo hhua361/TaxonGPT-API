@@ -97,10 +97,19 @@ This is just an example of the config file format that will be shown.
 {
     "api_key": "YOUR API KEY HERE",
     "nexus_file_path": "<Full path to the input Nexus file>",
-    "csv_output_path": "<Full path to the output CSV output file>",
-    "json_output_path": "<Full path to the JSON output file>",
     "prompt_file_path": "<Full path to the input Prompt file>",
-    "character_file_path": "<Full path to the input character info>"
+    "character_file_path": "<Full path to the input character info file>",
+    
+    "csv_output_path": "<Full path to  output CSV format matrix file>",
+    "json_output_path": "<Full path to output JSON format matrix file>",
+    "taxonomic_description_path": "<Full path to output taxonomic description file>"
+    "taxonomic_key_path": "<Full path to output taxonomic key file>"
+
+    
+    "comparison_output_path": "<Full path to output taxonomic key file>",
+    # By default, the description check feature is disabled to prevent generating excessive redundant results. If you need to check the execution steps, please set "enable_description_check": false to true in the configuration file.
+    "enable_description_check": false
+
 }
 ```
 
