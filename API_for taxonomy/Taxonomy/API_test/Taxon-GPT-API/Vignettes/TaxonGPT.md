@@ -92,6 +92,7 @@ This is just an example of the character information format that will be shown.
 >To utilize the TaxonGPT.py file effectively, a configuration file is required. This configuration file should include the necessary input file paths and the output file path. The essential information within the config file includes:
 >* **API Key**: Your OpenAI API key.
 >* **Paths**: A dictionary containing the paths to the input and output files.
+>* *You need to put the config file and TaxonGPT.py in the same directory, TaxonGPT.py will automatically recognize the config file
 ```
 This is just an example of the config file format that will be shown.
 """
@@ -117,13 +118,12 @@ This is just an example of the config file format that will be shown.
 
 To generate taxonomic results efficiently, ensure the configuration file contains the correct file paths. Based on the specific requirements for generating classification results, different branch functions can be used.
 ```
-# Example usage
-config_file_path = "path/to/config.json"
 # Through TaxonGPT() to generate the related result
 TaxonGPT = TaxonGPT(config_file_path)
 
 # Generate the Taxonomic Key
 TaxonGPT.process_key()
+
 # Generate the Taxonomic Description
 TaxonGPT.process_description()
 ```
