@@ -1,4 +1,4 @@
-TaxonGPT: Efficient Taxonomic Data Conversion and Key Generation with ChatGPT-4o model
+TaxonGPT: A program for taxonomic classification using generative AI natural language capabilities
 ====
 
 ## Introduction
