@@ -28,23 +28,31 @@ To utilize the TaxonGPT.py file effectively, a configuration file is required. T
 {
     "api_key": "YOUR API KEY HERE",
     "nexus_file_path": "<Full path to the input Nexus file>",
-    "csv_output_path": "<Full path to the output CSV output file>",
-    "json_output_path": "<Full path to the JSON output file>",
     "prompt_file_path": "<Full path to the input Prompt file>",
-    "character_file_path": "<Full path to the input character info>"
+    "character_file_path": "<Full path to the input character info file>",
+    
+    "csv_output_path": "<Full path to  output CSV format matrix file>",
+    "json_output_path": "<Full path to output JSON format matrix file>",
+    "taxonomic_description_path": "<Full path to output taxonomic description file>"
+    "taxonomic_key_path": "<Full path to output taxonomic key file>"
+
+    
+    "comparison_output_path": "<Full path to output taxonomic key file>",
+    # By default, the description check feature is disabled to prevent generating excessive redundant results. If you need to check the execution steps, please set "enable_description_check": false to true in the configuration file.
+    "enable_description_check": false
+
 }
 ```
 To generate taxonomic results efficiently, ensure the configuration file contains the correct file paths. Based on the specific requirements for generating classification results, different branch functions can be used.
 ```python
-# Example usage
-config_file_path = "path/to/config.json"
-taxon_gpt = TaxonGPT(config_file_path)
+# Through TaxonGPT() to generate the related result
+TaxonGPT = TaxonGPT(config_file_path)
 
-# Use paths from the configuration
-# Generate the Taxonomic Key results
-taxon_gpt.process_key(taxon_gpt.paths["nexus_file_path"], taxon_gpt.paths["prompt_file_path"], taxon_gpt.paths["character_file_path"])
-# Generate the Taxonomic Description results
-taxon_gpt.process_description(taxon_gpt.paths["matrix_file_path"], taxon_gpt.paths["character_file_path"], taxon_gpt.paths["output_file_path"], taxon_gpt.paths["prompt_file_path"])
+# Generate the Taxonomic Key
+TaxonGPT.process_key()
+
+# Generate the Taxonomic Description
+TaxonGPT.process_description()
 ```
 #### ⚠️Caution: Refrain from disclosing your API key to unauthorized individuals or posting it in publicly accessible locations.
 
