@@ -33,7 +33,7 @@ If the API key is correctly set, the TaxonGPT function will proceed with the sub
 
 ![step1-4](https://github.com/user-attachments/assets/b17b1c8e-d233-40e4-a0dd-c8a8683bdde1)
 
-#### Once you have obtained the API code from OpenAI, the first step is to configure the API within the environment variables. This can be done by executing the appropriate configuration commands in PowerShell. After successfully configuring the API in the environment, it is essential to restart the terminal window to ensure that the changes take effect, and then use the relevant commands to verify the environment variables.
+*** Once you have obtained the API code from OpenAI, the first step is to configure the API within the environment variables. This can be done by executing the appropriate configuration commands in PowerShell. After successfully configuring the API in the environment, it is essential to restart the terminal window to ensure that the changes take effect, and then use the relevant commands to verify the environment variables.
 ```
 # For configuring environment variables (API) in PowerShell.
 setx OPENAI_API_KEY “YOUR_API_KEY”
