@@ -1,8 +1,8 @@
-TaxonGPT: Efficient Taxonomic Data Conversion and Key Generation with GPT-4o model
+TaxonGPT: Efficient Taxonomic Data Conversion and Key Generation with ChatGPT-4o model
 ====
 
 ## Introduction
-Taxonomy, as a branch of systematics, holds critical importance across various biological disciplines. Accurate taxonomic information is essential for taxonomists to analyze evolutionary relationships between species, assess morphological characteristics, and name new species. However, this process heavily relies on natural language and involves extensive manual work to handle taxonomic data, consuming significant time and human resources. Large Language Models (LLMs) have demonstrated excellent performance in Natural Language Processing (NLP). In this manuscript, we demonstrated the GPT-4o model, a efficient LLM, can effectively handling natural language in taxonomic research, using relevant data to generate taxonomically meaningful results. We developed the <strong>TaxonGPT (API)</strong> function, which utilizes the GPT-4o model to process Nexus matrix data, converting it into taxonomic keys and taxonomic descriptions, providing an innovative automated approach to taxonomic data processing.
+Taxonomy, as a branch of systematics, holds critical importance across various biological disciplines. Accurate taxonomic information is essential for taxonomists to analyze evolutionary relationships between species, assess morphological characteristics, and name new species. However, this process heavily relies on natural language and involves extensive manual work to handle taxonomic data, consuming significant time and human resources. Large Language Models (LLMs) have demonstrated excellent performance in Natural Language Processing (NLP). In this manuscript, we demonstrated the ChatGPT-4o model, a efficient LLM, can effectively handling natural language in taxonomic research, using relevant data to generate taxonomically meaningful results. We developed the <strong>TaxonGPT (API)</strong> function, which utilizes the ChatGPT-4o model to process Nexus matrix data, converting it into taxonomic keys and taxonomic descriptions, providing an innovative automated approach to taxonomic data processing.
 
 ## Installation
 To use the TaxonGPT function, you can download the TaxonGPT.py file located in the main directory. Then, run it in your local Python environment.
@@ -35,11 +35,15 @@ If the API key is correctly set, the TaxonGPT function will proceed with the sub
 
 *** Once you have obtained the API code from OpenAI, the first step is to configure the API within the environment variables. This can be done by executing the appropriate configuration commands in PowerShell. After successfully configuring the API in the environment, it is essential to restart the terminal window to ensure that the changes take effect, and then use the relevant commands to verify the environment variables.
 ```
-# For configuring environment variables (API) in PowerShell.
+# For configuring environment variables (API) in PowerShell. (For Windows)
 setx OPENAI_API_KEY “YOUR_API_KEY”
-
 # Verifying whether the environment variables (API) were successfully imported in the new PowerShell session. (For Windows)
 $env:OPENAI_API_KEY
+
+# For configuring environment variables (API) in PowerShell. (For Linux/macOS)
+export OPENAI_API_KEY="sk-your-api-key"
+# Verifying whether the environment variables (API) were successfully imported in the new PowerShell session. (For Linux/macOS)
+echo $OPENAI_API_KEY
 ```
 #### ⚠️Caution: Refrain from disclosing your API key to unauthorized individuals or posting it in publicly accessible locations.
 ## Overview
