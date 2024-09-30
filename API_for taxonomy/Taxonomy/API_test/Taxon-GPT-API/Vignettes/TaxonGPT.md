@@ -31,7 +31,9 @@ If the API key is correctly set, the TaxonGPT function will proceed with the sub
 4. Access the "API keys" interface to manage your API keys.
 5. Create the API key and ensure to save and record this key properly for future use.
 
-** Once you have obtained the API code from OpenAI, the first step is to configure the API within the environment variables. This can be done by executing the appropriate configuration commands in PowerShell. After successfully configuring the API in the environment, it is essential to restart the terminal window to ensure that the changes take effect, and then use the relevant commands to verify the environment variables.
+![step1-4](https://github.com/user-attachments/assets/b17b1c8e-d233-40e4-a0dd-c8a8683bdde1)
+
+#### Once you have obtained the API code from OpenAI, the first step is to configure the API within the environment variables. This can be done by executing the appropriate configuration commands in PowerShell. After successfully configuring the API in the environment, it is essential to restart the terminal window to ensure that the changes take effect, and then use the relevant commands to verify the environment variables.
 ```
 # For configuring environment variables (API) in PowerShell.
 setx OPENAI_API_KEY “YOUR_API_KEY”
@@ -39,7 +41,6 @@ setx OPENAI_API_KEY “YOUR_API_KEY”
 # Verifying whether the environment variables (API) were successfully imported in the new PowerShell session. (For Windows)
 $env:OPENAI_API_KEY
 ```
-![step1-4](https://github.com/user-attachments/assets/b17b1c8e-d233-40e4-a0dd-c8a8683bdde1)
 #### ⚠️Caution: Refrain from disclosing your API key to unauthorized individuals or posting it in publicly accessible locations.
 ## Overview
 > ### Input file
@@ -100,7 +101,7 @@ This is just an example of the character information format that will be shown.
 >To utilize the TaxonGPT.py file effectively, a configuration file is required. This configuration file should include the necessary input file paths and the output file path. The essential information within the config file includes:
 >* **API Key**: Your OpenAI API key.
 >* **Paths**: A dictionary containing the paths to the input and output files.
->* *You need to put the config file and TaxonGPT.py in the same directory, TaxonGPT.py will automatically recognize the config file
+#### You need to put the config file and TaxonGPT.py in the same directory, TaxonGPT.py will automatically recognize the config file
 ```
 This is just an example of the config file format that will be shown.
 """
