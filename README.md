@@ -1,4 +1,4 @@
-TaxonGPT: Efficient Taxonomic Data Conversion and Key Generation with GPT-4o model
+TaxonGPT: Efficient Taxonomic Data Conversion and Key Generation with ChatGPT-4o model
 ====
 
 ## Installation
