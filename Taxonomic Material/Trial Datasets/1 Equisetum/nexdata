@@ -1,0 +1,110 @@
+#NEXUS
+
+BEGIN DATA;
+DIMENSIONS NTAX=13 NCHAR=29;
+
+[! ]
+FORMAT MISSING=? GAP=- SYMBOLS="123456";
+
+CHARLABELS
+[1(4)] 'the rhizomes <whether tuberous'
+[2(5)] 'the shoots <dimorphism>'
+[3(8)] 'the brown, non-assimilating fe'
+[4(12)] 'the main stems <of the assimil'
+[5(13)] 'the main stems <of the assimil'
+[6(14)] 'the main stems <of the assimil'
+[7(15)] 'the main stems <of the assimil'
+[8(16)] 'the main stems <of the assimil'
+[9(17)] 'the main stem internodes <of t'
+[10(19)] 'the <longitudinal internodal>'
+[11(20)] 'the main stem internodes <of t'
+[12(21)] 'central hollow <of the main st'
+[13(22)] 'endodermis <in main stem inter'
+[14(24)] 'the main stem sheaths <of assi'
+[15(25)] 'the main stem sheaths <of assi'
+[16(27)] 'the teeth <of the main stem sh'
+[17(29)] 'the teeth <of the main stem sh'
+[18(30)] 'the primary branching <regular'
+[19(31)] 'the primary branches <when pre'
+[20(32)] 'the primary branches <carriage'
+[21(33)] 'the primary branches <of assim'
+[22(37)] 'the first <primary> branch int'
+[23(38)] 'the primary branch internodes'
+[24(39)] 'stomata <of assimilating shoot'
+[25(41)] 'the cones <blunt or apiculate>'
+[26(42)] 'spores <whether fertile>'
+[27(43)] 'spores released <months releas'
+[28(46)] 'Subgenus'
+[29(47)] 'Section <of subgenus Equisetum'
+;
+
+STATELABELS
+1 'bearing tubers' 'not tuberous',
+2 'conspicuously dimorphic: the c' 'distinguishable as fertile and'
+     'all green and alike vegetative',
+3 'with numerous sheaths and rela' 'with only 4 to 6 relatively di',
+4 'erect' 'decumbent',
+5 'bright green' 'dull green',
+6 'very rough' 'slightly rough' 'smooth',
+7 'bearing whorls of slender bran' 'sparingly branched, the branch' 'simple',
+8 'persisting through the winter' 'dying down in autumn',
+9 'somewhat swollen' 'not swollen',
+10 'fine, the ribs between them no' 'deep, with prominent ridges be',
+11 'solid' 'with a central hollow',
+12 'much less than half the diamet' 'about half the diameter of the'
+     'more than half the diameter of',
+13 'surrounding the individual vas' 'comprising a single layer outs'
+     'comprising two layers, one out',
+14 'about as broad as long' 'longer than broad',
+15 'loose' 'appressed',
+16 'ribbed' 'not ribbed',
+17 'persistent' 'caducous',
+18 'symmetrical' 'asymmetrical',
+19 'few' 'numerous',
+20 'ascending' 'spreading' 'drooping',
+21 'simple' 'secondarily branched',
+22 'much shorter than the subtendi' 'at least as long as the subten',
+23 'solid' 'hollow',
+24 'sunken' 'not sunken',
+25 'blunt' 'apiculate',
+26 'fertile' 'abortive',
+27 'April' 'May' 'June' 'July' 'August' 'September',
+28 'Equisetum' 'Hippochaete',
+29 'Aestivalia' 'Subvernalia' 'Vernalia',
+;
+
+MATRIX 
+'Equisetum arvense'                                                             
+(12)12(12)1212?22(12)21?1?12(23)121211113                                       
+'Equisetum fluviatile'                                                          
+(12)3-1?3(13)2?1231?(12)2?2211?2211(34)11                                       
+'Equisetum hyemale'                                                             
+23-121311?2(23)312?2------121(45)2-                                             
+'Equisetum litorale'                                                          
+13-1?212?12(12)1?12?(12)211(12)2212-11                                          
+'Equisetum moorei'                                                            
+23-121322?2(23)?21?1------122-2-                                                
+'Equisetum palustre'                                                            
+13-(12)?2(123)222212?111(12)(12)(12)112211(234)11                               
+'Equisetum pratense'                                                            
+22?1?1(13)2??2(23)2???112(23)121211112                                          
+'Equisetum ramosissimum'                                                        
+23-??(12)112?2(23)3???1?2??12121(2345)2-                                        
+'Equisetum sylvaticum'                                                          
+(12)2?11(23)(13)22?2(23)2??11123221211(12)12                                    
+'Equisetum telmateia'                                                           
+(12)111??12212(23)2?111122111211112                                             
+'Equisetum trachyodon'                                                        
+23-(12)?1(23)12?213?211???1??122-2-                                             
+'Equisetum variegatum'                                                          
+23-(12)?2(23)12?213?111???1??121(45)2-                                                                                       
+;
+
+END;
+BEGIN ASSUMPTIONS;
+OPTIONS DEFTYPE=unord PolyTCount=MINSTEPS;
+TYPESET * untitled = unord: 1-11 13-19 21-26 28-29, ord: 12 20 27;
+
+WTSET * untitled = 1: 1-29;
+
+END;

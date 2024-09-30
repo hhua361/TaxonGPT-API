@@ -1,0 +1,104 @@
+#NEXUS
+
+BEGIN DATA;
+DIMENSIONS NTAX=19 NCHAR=18;
+
+[! ]
+FORMAT MISSING=? GAP=- SYMBOLS="1234";
+
+CHARLABELS
+[1(1)] 'body size'
+[2(3)] 'telson with'
+[3(4)] 'telson with'
+[4(5)] 'telson spines <lenght>'
+[5(6)] 'epimeral plate III'
+[6(7)] 'urosoma segment I'
+[7(8)] 'inner lobe of maxilla I'
+[8(9)] 'outer lobe of maxilla I'
+[9(10)] 'propodus and carpus of gnathop'
+[10(11)] 'propodus of gnathopod II <size'
+[11(12)] 'gnathopod dactylus with'
+[12(13)] 'dactylus of pereopod III-VII'
+[13(14)] 'coxal plate IV'
+[14(15)] 'dactyli III-IV'
+[15(16)] 'uropod I <distal setae>'
+[16(17)] 'uropod I <ratio of uropod rami'
+[17(18)] 'uropod I <sexual dimorphism>'
+[18(19)] 'uropod III'
+;
+
+STATELABELS
+1 'up to 10 mm' 'more than 10 mm',
+2 'apical, lateral and dorsal spi' 'apical and lateral spines'
+     'apical spines alone' 'apical and dorsal spines',
+3 '3, rarely 4 apical spines per' '5 or more apical spines per lo',
+4 'long, longer than 1/2 of the t' 'short-to mid sized, at most 0.',
+5 'subrounded, posterior and vent' 'angular, ventral margin slight',
+6 'single seta or spine dorso-pos' 'two or more setae and/or spine',
+7 'one to two setae' 'three or more setae',
+8 'with 7 spines, typically inner' 'with 7 spines, inner four with'
+     'with 7 spines, all with severa' 'more than 7 spines, all fine p',
+9 'carpus longer than propodus, p' 'carpus as long as propodus or'
+     'carpus as long as propodus or',
+10 'much larger than propodus of g' 'slightly larger than propodus',
+11 'single seta at outer margin' 'more than one seta on outer ma',
+12 'at most one spine at the base' 'at least one additional spine',
+13 'much deeper than broad, proxim' 'more broad than deep, or as br',
+14 'long and slender, longer than' 'slender or stout, at most 1/2',
+15 'distal setae on rami not remak' 'long setae distally on rami (b',
+16 'inner ramus slightly to remark' 'inner ramus shorter than outer',
+17 'sexually dimorphic: inner ramu' 'sexually non-dimorphic: the ra'
+     'sexual dimorphism not know',
+18 'sexually dimorphic: distal art' 'sexually non-dimorphic: distal'
+     'sexual dimorphism not known',
+;
+
+MATRIX 
+'aquilex'                                                                       
+121(12)11112211221221                                                           
+'auerbachi'                                                                     
+121122212221221133                                                              
+'brixianus'                                                                     
+2(12)222(12)213121221121                                                        
+'caspary'                                                                       
+121221141221121122                                                              
+'forelii'                                                                       
+121121112221211221                                                              
+'inopinatus'                                                                    
+121221132211221122                                                              
+'luchoffmani'                                                                   
+111121(12)23221211221                                                           
+'muotae'                                                                        
+111(12)2(12)(12)12221221133                                                     
+'murimali'                                                                      
+2(34)2222141221121123                                                           
+'puteanus'                                                                      
+211(12)22212222221111                                                           
+'rhenorhodanesis species complex'                                               
+21122(12)112221221111                                                           
+'setiferus'                                                                     
+111111112221222121                                                              
+'styx'                                                                          
+21122(12)213121221121                                                           
+'thienemanni'                                                                   
+121121112221221121                                                              
+'thuringius'                                                                    
+211211212221221111                                                              
+'tonywhitteni'                                                                  
+121(12)22113121221121                                                           
+'virei'                                                                         
+2(14)(12)222213121121111                                                        
+'B-(cf.thienemanni)'                                                          
+121221??2221221131                                                              
+'A-(cf.stygius)'                                                              
+2(12)1211213121221121                                                           
+;
+
+END;
+BEGIN ASSUMPTIONS;
+OPTIONS DEFTYPE=unord PolyTCount=MINSTEPS;
+TYPESET * untitled = unord: 1-18;
+
+WTSET * untitled = 1: 1-18;
+
+END;

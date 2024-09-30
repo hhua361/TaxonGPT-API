@@ -1,0 +1,135 @@
+#NEXUS
+
+BEGIN DATA;
+DIMENSIONS NTAX=13 NCHAR=29;
+
+[! ]
+FORMAT MISSING=? GAP=- SYMBOLS="123456789ABCDE";
+
+CHARLABELS
+[1(2)] '<color general>'
+[2(3)] 'forewing <color key>'
+[3(4)] 'head <color for key>'
+[4(5)] 'mesosoma <color key>'
+[5(8)] 'scape <shape>'
+[6(9)] 'antennal scrobe <depth>'
+[7(10)] 'antennal scrobe <sculpture>'
+[8(11)] 'clypeus <sculpture>'
+[9(12)] 'clypeus <with tooth>'
+[10(13)] 'gena <sculpture>'
+[11(14)] 'face <sculpture>'
+[12(15)] 'area between antennal scrobe a'
+[13(16)] 'vertex <sculpture>'
+[14(17)] 'posterior orbit of eye <sculpt'
+[15(18)] 'middle lobe of scutum <sculptu'
+[16(19)] 'notauli <sculpture>'
+[17(20)] 'mesopleuron <sculpture>'
+[18(21)] 'sternaulus <completeness>'
+[19(22)] 'discrimin (median longitudinal'
+[20(23)] 'metapleuron <rugosity>'
+[21(24)] 'propodeum <sculpture>'
+[22(25)] 'median tergite 1 <shape>'
+[23(26)] 'median tergite 1 <sculpture>'
+[24(27)] 'hypopygium <length>'
+[25(28)] 'hypopygium <extending past api'
+[26(29)] 'ovipositor <length>'
+[27(30)] 'length of setae of ovipositor'
+[28(31)] '<diagnosis>'
+[29(32)] '<material examined>'
+;
+
+STATELABELS
+1 'variable, from mostly black to' 'mottled black and brown except'
+     'mottled dark brown and yellowi' 'mostly black with reddish brow'
+     'all black except: mandible and' 'mottled black and brown except'
+     'mottled black and brown except' 'mottled black and brown except'
+     'mottled dark brown and yellowi' 'mostly black with laterotergit'
+     'mottled black and brown except',
+2 'mostly weakly infuscate but le' 'clear basally, infuscate in ap'
+     'entirely infuscate (Fig. XXX)',
+3 'entirely black (Fig. XXX)' 'partly or entirely brown (Fig.',
+4 'entirely black except tegula v' 'partly or entirely brown',
+5 'flared apicoanteriorly with ex' 'not flared apicoanteriorly and',
+6 'deep (Fig. XXX)' 'shallow (Fig. XXX)' 'flat (Fig. XXX)',
+7 'entirely smooth with weak punc' 'smooth with weak punctures med'
+     'mostly smooth lacking puncture' 'smooth medially, transversely'
+     'variable, from mostly transver' 'entirely transversely rugosost'
+     'rugose medially, smooth latera' 'entirely transversely rugosost',
+8 'entirely rugose (Fig. XXX)' 'mostly smooth with weak punctu',
+9 'with median tooth' 'without median tooth',
+10 'with weak rugose microsculptur' 'mostly smooth with weak punctu'
+     'with wide irregular punctures,' 'transversely rugosostriate ant'
+     'entirely longitudinally rugoso' 'transversely rugosostriate ant',
+11 'mostly punctate with some weak' 'weakly punctate throughout (Fi'
+     'entirely rugose (Fig. XXX)',
+12 'with protuberance (Fig. XXX)' 'without protuberance (Fig. XXX',
+13 '' '',
+14 'with distinct crenulate margin' 'lacking distinct crenulate mar',
+15 'entirely smooth with punctures' 'entirely rugosopunctate'
+     'smooth with punctures anterome',
+16 'entirely crenulate' 'crenulations weak and partly e',
+17 'entirely rugosopunctate or rug' 'at least partly smooth with pu',
+18 'long occupying most of length' 'only present at midlength (Fig'
+     'absent or difficult to discern',
+19 'smooth or with a few barely pe' 'crenulate',
+20 'mostly rugose, lacking a large' 'partly rugose but with a large',
+21 'mostly rugose with smooth area' 'entirely rugose without smooth',
+22 'distinctly narrowed posteriorl' 'not distinctly narrowed poster',
+23 'completely rugose' 'partly smooth with punctures e',
+24 'subequal to half length of met' 'less than 1/3 length of metaso',
+25 'extending past apical tergum (' 'not extending past apical terg',
+26 'more than half as long as meta' 'barely exerted, much shorter t',
+27 'none longer than 2x width of o' 'as much as 3 or 4x as long as',
+28 'notauli crenulations weak and' 'mesopleuron entirely rugosopun'
+     'mesopleuron at least partly sm' 'body of mesosoma entirely blac'
+     'tergite 1 partly smooth with p' 'middle lobe of scutum entirely'
+     'middle lobe of scutum smooth w' 'discrimen smooth or with a few'
+     'discrimen smooth or with a few' 'scape not flared apicoanterior'
+     'scape flared apicoanteriorly w' 'scape flared apicoanteriorly w'
+     'mesosoma entirely black except' 'mesosoma entirely black except',
+29 'Holotype female: South Africa:' 'Holotype Female: South Africa,'
+     'Holotype female: South Africa,' 'Holotype female: South Africa,'
+     'Holotype male: South Africa: J' 'Holotype male: South Africa, G'
+     'Holotype female: South Africa,' 'Holotype female: South Africa,'
+     'Holotype female: South Africa,' 'Holotype male: South Africa: J'
+     'Holotype male: South Africa: J' 'Holotype female: South Africa,'
+     'Holotype female: South Africa,',
+;
+
+MATRIX 
+'Khoikhoia anthelion Sharkey 2009'                                              
+A1221271133(12)21111(13)21221212227                                             
+'Khoikhoia lission Mason 1984'                                                  
+9322116116311111232122(12)????3D                                                
+'Khoikhoia oligospilos Sharkey 2009'                                            
+B122118113311112232(12)222????18                                                
+'Khoikhoia semiadusta Mason 1983'                                               
+5(12)211161153121112(23)21221????4A                                             
+'Khoikhoia solata Mason 1983'                                                   
+83221161153111112321222????5B                                                   
+'Khoikhoia townesi Mason 1983'                                                  
+6(12)22116114312121132122122216C                                                
+'Khoikhoia turneri Mason 1984'                                                  
+73221161153121311321221222179                                                   
+'Sania browni Sharkey 2009'                                                     
+33(12)22312221212112(23)1221(12)222182                                          
+'Sania capensis Mason 1983'                                                     
+1(12)222322222212112211212????95                                                
+'Sania henryi Mason 1983'                                                       
+4322223221121(12)11212(12)211????A6                                             
+'Sania marjoriae Mason 1983'                                                    
+(14)(12)221(23)3221121(12)112121111111?B1                                       
+'Sania masneri Sharkey 2009'                                                    
+42221242221(12)1(12)112(123)212121112C4                                         
+'Sania masoni Sharkey 2009'                                                     
+2(12)112352221(12)12112(123)212222221E3                                         
+;
+
+END;
+BEGIN ASSUMPTIONS;
+OPTIONS DEFTYPE=unord PolyTCount=MINSTEPS;
+TYPESET * untitled = unord: 1-29;
+
+WTSET * untitled = 1: 1-29;
+
+END;

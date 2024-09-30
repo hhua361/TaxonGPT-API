@@ -1,0 +1,126 @@
+#NEXUS
+
+BEGIN DATA;
+DIMENSIONS NTAX=24 NCHAR=24;
+
+[! ]
+FORMAT MISSING=? GAP=- SYMBOLS="123456";
+
+CHARLABELS
+[1(2)] 'region'
+[2(4)] 'body size'
+[3(5)] 'body shape'
+[4(6)] 'mandibular palp proximal artic'
+[5(7)] 'maxilla I outer lobe with'
+[6(9)] 'maxilla I inner lobe with'
+[7(10)] 'gnathopod II ischium with'
+[8(11)] 'propodus of gnathopod II <size'
+[9(12)] 'gnathopod II propodus <shape>'
+[10(13)] 'gnathopod II propodus with'
+[11(14)] 'gnathopod I-II dactylus with'
+[12(15)] 'dactylus of pereopods III-IV w'
+[13(16)] 'dactylus of pereopods VI-VII'
+[14(17)] 'urosomite I with'
+[15(18)] 'urosomite I dorsolaterally wit'
+[16(19)] 'urosomite III dorsolaterally'
+[17(20)] 'epimeral plate III'
+[18(21)] 'telson cleft'
+[19(22)] 'telson'
+[20(23)] 'pleopods I-III with'
+[21(24)] 'peduncles of pleopods I-III wi'
+[22(25)] 'uropod I in males with'
+[23(26)] 'uropod I'
+[24(27)] 'uropod III'
+;
+
+STATELABELS
+1 'Iran' 'Turkey' 'Iraq' 'Syria' 'Lebanon' 'Israel',
+2 'adult larger than 15 mm' 'at most 14 mm',
+3 'stout (coxal plates more deep' 'slender (coxal plates as deep',
+4 'without setae' 'with setae',
+5 'seven spines, inner often mult' 'seven spines, all multidenticu'
+     'more than seven spines, inner',
+6 'single seta' 'at least two setae',
+7 'postero-distal group of setae' 'postero-facial and postero-dis',
+8 'large' 'mid-size to small',
+9 'quadrate to subquadrate' 'strongly trapezoid - hoof shap',
+10 'single supporting spine' 'two or more supporting spines',
+11 'at least two setae on outer ma' 'single seta on outer margin',
+12 'single robust seta at the base' 'at least two robust setae in p',
+13 'single robust seta at the base' 'at least two robust setae in p',
+14 'single robust seta at the base' 'at least two robust setae at t'
+     'at least two robust setae at t',
+15 'single seta, thin or robust, b' 'single, strong, curved robust'
+     'more than one seta, robust or',
+16 'without setae' 'with robust setae',
+17 'angular, but not produced' 'distinctly subrounded, disto-p'
+     'distinclty pointed and produce',
+18 'deeper than 0.5 telson cleft' 'shallow, less than 0.5 of tels',
+19 'with no dorsal spines' 'with at least one dorsal spine',
+20 'two hooks in retincles' 'more than two hooks in retinac',
+21 'retinacles alone' 'retinacles and several setae a',
+22 'simple, no finger-like extensi' 'finger-like extension on ventr',
+23 'sexually non-dimorphic, inner' 'sexually dimorphic, inner ramu',
+24 'sexually dimorphic, both artic' 'sexually non-dimorphic, distal'
+     'sexually nondimorphic, but elo',
+;
+
+MATRIX 
+'Niphargus_alisadri_Esmaeili_Rineh_Sari_2013'                                 
+1?2112112111113111111111                                                        
+'Niphargus_altagahizi_Alouf_1973'                                               
+52111211211121111111?112                                                        
+'Niphargus_anatolicus_Karaman_1950'                                             
+2?2112?2111111112111?121                                                        
+'Niphargus_bisitunicus_sp.n.'                                                   
+1?1112121211111131111112                                                        
+'Niphargus_borisi_sp.n.'                                                        
+1?1111121211123211111112                                                        
+'Niphargus_daniali_Esmaeili_Rineh_Sari_2013'                                  
+1?121212111111111121211(12)                                                     
+'Niphargus_darvishi_sp.n.'                                                      
+1?1122112112213131111112                                                        
+'Niphargus_imitator_Karaman_2012'                                               
+2?2111121121111112(12)22111                                                     
+'Niphargus_incus_Karaman_2012'                                                  
+2?2112121112111111(12)12111                                                     
+'Niphargus_itus_Karaman_1986'                                                   
+621122112111213111112112                                                        
+'Niphargus_khayyami_Hekmatara_Zakek_Heidari_Baladehi_Fier_2013'           
+12112222112(12)(12)1(13)111211???                                               
+'Niphargus_khwarizmi_Hekmatara_ Zakek_Heidari_Baladehi_Fier_2013'          
+1221121211111111(12)1111111                                                     
+'Niphargus_krigizi Fier_Camur_Elipek_Oezbek_2009'                           
+22211112111113(13)111122111                                                     
+'Niphargus_nadarini_nadarini_Alouf_1972'                                        
+(56)2111211211121311111?112                                                     
+'Niphargus_nadarini_favitor_Karaman_2012'                                       
+42111211211(12)211111112111                                                     
+'Niphargus_nadarini_iraquensis_Karaman_2012'                                    
+3111(13)211211(12)21(13)111112113                                               
+'Niphargus_orientalis_Karaman_1950'                                             
+222112?211122?31(12)121????                                                     
+'Niphargus_religiosus_Karaman_2012'                                             
+221212121111?13111212???                                                        
+'Niphargus_sertaci Fier_ Camur_Elipek_Oezbek_2009'                           
+22111(12)11211(12)(12)21111211111                                               
+'Niphargus_sharifi_sp.n.'                                                      
+121122121211111111111112                                                        
+'Niphargus_tauri_tauri_Schellenberg_1933'                                       
+222111121121111121121111                                                        
+'Niphargus_tauri_afioni_Karaman_2012'                                           
+222112121121111121122??3                                                        
+'Niphargus_turcicus_Andreev_Kenderov_2012'                                    
+2122121211111?112111?121                                                        
+'Niphargus_valachicus_Dobreanu_Manolache_1933'                                
+(12)2111(12)112112212131211212                                                  
+;
+
+END;
+BEGIN ASSUMPTIONS;
+OPTIONS DEFTYPE=unord PolyTCount=MINSTEPS;
+TYPESET * untitled = unord: 1 3-11 13-15 17-24, ord: 2 12 16;
+
+WTSET * untitled = 1: 1-24;
+
+END;

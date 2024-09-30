@@ -1,0 +1,97 @@
+#NEXUS
+
+BEGIN DATA;
+DIMENSIONS NTAX=18 NCHAR=17;
+
+[! ]
+FORMAT MISSING=? GAP=- SYMBOLS="1234";
+
+CHARLABELS
+[1(1)] 'Position of lateral carina of'
+[2(2)] 'Presence and shape of 2nd subm'
+[3(3)] 'Shape of tarsal claws'
+[4(4)] 'Sculpture of median tergite 3'
+[5(5)] 'Length of foretibial spurs'
+[6(6)] 'Length of mouthparts'
+[7(7)] 'Frons, with or without lateral'
+[8(8)] 'Sculpture of first median terg'
+[9(9)] 'Presence of adventitious vein'
+[10(10)] 'Length of ovipositor'
+[11(11)] 'Presence of notauli'
+[12(12)] 'Presence of RS+M vein of forew'
+[13(13)] 'Presence of ventral longitudin'
+[14(14)] 'Position of metasomal cavity ('
+[15(15)] 'Shape of lateral carina of fro'
+[16(16)] 'Presence of RS vein of forewin'
+[17(17)] 'Tubular carinae surrounding an'
+;
+
+STATELABELS
+1 'with posterior ends directed t' 'with posterior ends directed t'
+     'with posterior ends meeting an' 'absent',
+2 'quadrate, or slightly narrowin' 'triangular' 'absent',
+3 'fore and mid claws cleft' 'fore and mid claws with a basa'
+     'Fore and mid claws simple',
+4 'extensively striate in anterio' 'not extensively striate, usual',
+5 'about as long as basitarsus, a' 'less that 3/4 length of fore b',
+6 'Mouthparts long, galea signifi' 'Mouthparts short (normal), gal',
+7 'bordered with carinae' 'not bordered with carinae',
+8 'mostly striate' 'entirely smooth' 'mostly granulate or coriarious',
+9 'absent or indicated only by sl' 'present and distinct',
+10 'short, barely exerted or less' 'longer than half length of met',
+11 'present but not necessarily co' 'absent',
+12 'mostly or entirely absent' 'present and complete',
+13 'Hind trochantellus with one or' 'Hind trochantellus lacking car',
+14 'situated entirely dorsal to co' 'situated partly between coxal',
+15 'lamellate (high and thin)' 'in the form of a blunt ridge,' 'absent',
+16 'completely absent' 'present, though sometimes inte',
+17 'present and high, resulting in' 'absent or low, groove between',
+;
+
+MATRIX 
+'Agathis'                                                                       
+4(12)222121121122322                                                            
+'Lytopylus'                                                                     
+422(12)2221121121322                                                            
+'Braunsia'                                                                      
+4(12)212221221121322                                                            
+'Camptothlipsis'                                                                
+43222223121122322                                                               
+'Therophilus'                                                                   
+42222221(12)211(12)2322                                                         
+'Bassus'                                                                        
+42322221121122322                                                               
+'Earinus'                                                                       
+4122222(12)122222322                                                            
+'Biroia'                                                                        
+11122112122122122                                                               
+'Gyrochus'                                                                      
+31122212212122122                                                               
+'Troticus'                                                                      
+21122212211122122                                                               
+'Coccygidium'                                                                   
+1(12)121212111112222                                                            
+'Hypsostypos'                                                                   
+2(12)122212111112221                                                            
+'Amputostypos'                                                                  
+4(12)122222111112322                                                            
+'Euagathis'                                                                     
+4(12)122(12)22(12)11122322                                                      
+'Disophrys'                                                                     
+11122(12)12(12)11122122                                                         
+'Cremnops'                                                                      
+(12)1122112121122222                                                            
+'Cremnoptoides'                                                                 
+11122(12)12(12)21112122                                                         
+'Aneurobracon'                                                                  
+43(23)22223121122312                                                            
+;
+
+END;
+BEGIN ASSUMPTIONS;
+OPTIONS DEFTYPE=unord PolyTCount=MINSTEPS;
+TYPESET * untitled = unord: 1-17;
+
+WTSET * untitled = 1: 1-17;
+
+END;

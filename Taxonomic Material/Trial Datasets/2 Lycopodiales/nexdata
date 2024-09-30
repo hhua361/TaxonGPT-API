@@ -1,0 +1,94 @@
+#NEXUS
+
+BEGIN DATA;
+DIMENSIONS NTAX=11 NCHAR=22;
+
+[! ]
+FORMAT MISSING=? GAP=- SYMBOLS="1234";
+
+CHARLABELS
+[1(3)] 'stems <elongation>'
+[2(4)] 'stems <carriage>'
+[3(6)] 'stems <manner of branching>'
+[4(7)] 'stems <whether dorsiventral>'
+[5(8)] 'stems <whether with flattened'
+[6(9)] 'stems <presence of secondary t'
+[7(10)] 'the old leaf bases <in Isoetes'
+[8(11)] 'leaves <whether ligulate>'
+[9(12)] 'leaves <arrangement>'
+[10(13)] '<foliage> leaves <heterophylly'
+[11(15)] '<foliage> leaves <appressed or'
+[12(16)] 'leaves <whether hair-pointed>'
+[13(17)] '<heterosporous or homosporous>'
+[14(18)] 'sporophylls <modified or leafl'
+[15(19)] 'sporophylls <arrangement>'
+[16(20)] 'cones <carriage>'
+[17(21)] 'the sporangia'
+[18(22)] 'the megaspores <of Isoetes, su'
+[19(23)] '<terrestrial or aquatic:>'
+[20(24)] '<habitat elevation:>'
+[21(25)] '<habitat when terrestrial:>'
+[22(28)] 'family'
+;
+
+STATELABELS
+1 'elongated, with numerous small' 'short and tuberous, with sheat',
+2 'suberect, and rooting at the b' 'creeping, and rooting directly'
+     'creeping, and rooting from cha',
+3 'overtly dichotomising vegetati' 'ostensibly monopodial vegetati',
+4 'dorsiventrally organized, with' 'not dorsiventrally organized',
+5 'with non-flattened branches' 'with only slightly flattened b'
+     'with strongly flattened branch',
+6 'with anomalous secondary thick' 'without secondary thickening',
+7 'persistent on the stem, short' 'not persistent',
+8 'ligulate' 'eligulate',
+9 '4-ranked on the branches' 'not 4-ranked',
+10 'of two kinds: those of the two' 'all alike and spirally arrange',
+11 'appressed' 'spreading',
+12 'with long, filiform hair-like' 'not hair-pointed',
+13 'homosporous' 'heterosporous',
+14 'resembling the foliage leaves' 'differing markedly from the fo',
+15 'aggregated into well defined t' 'in fertile zones tending to al',
+16 'sessile at the tips of the nor' 'on long, erect peduncles which',
+17 'basal and subsessile on the ad' 'very large, transversely and l',
+18 'covered with short, blunt tube' 'covered with long, fragile spi'
+     'with a reticulate ornamentatio',
+19 'terrestrial' 'aquatic',
+20 'lowland' 'upland' 'montane',
+21 'bogs' 'heaths' 'sandy places' 'rock ledges',
+22 'Lycopodiaceae' 'Selaginellacae' 'Isoetaceae',
+;
+
+MATRIX 
+'Diphasiastrum alpinum'                                                         
+122222?2121212111?1(123)?1                                                      
+'Diphasiastrum complanatum'                                                     
+122232?212?212111?1(123)?1                                                      
+'Huperzia selago'                                                               
+111212?222?2112-1?1(123)?1                                                      
+'Isoetes echinospora'                                                           
+2??211212222212-222(123)?3                                                      
+'Isoetes histrix'                                                               
+2??211112222212-23(12)1(23)3                                                    
+'Isoetes lacustris'                                                             
+2??211212222212-212(23)?3                                                       
+'Lycopodiella inundata'                                                         
+122212?2222212111?11?1                                                          
+'Lycopodium annotinum'                                                          
+122212?2222212111?1(23)?1                                                       
+'Lycopodium clavatum'                                                           
+122212?222?11?121?1(123)?1                                                      
+'Selaginella kraussiana'                                                        
+131132?111(12)22?111?1??2                                                       
+'Selaginella selaginoides'                                                      
+131212?122(12)221111?13?2                                                                                                           
+;
+
+END;
+BEGIN ASSUMPTIONS;
+OPTIONS DEFTYPE=unord PolyTCount=MINSTEPS;
+TYPESET * untitled = unord: 1-4 6-19 21-22, ord: 5 20;
+
+WTSET * untitled = 1: 1-22;
+
+END;
