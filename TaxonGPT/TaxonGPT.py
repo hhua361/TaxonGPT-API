@@ -924,7 +924,7 @@ class TaxonGPT:
             print(
                 "Due to the API repeatedly correcting errors during execution, it persistently repeats the same mistakes, resulting in an infinite loop. Therefore, it is recommended to restart the code execution process to avoid endlessly correcting the same issue.")
 
-        with open('../../../Taxon-GPT-API/complete-process/final_classification.json', 'w') as f:
+        with open('../../Taxon-GPT-API/complete-process/final_classification.json', 'w') as f:
             json.dump(final_results, f, indent=4)
 
         print("Final classification results have been saved to 'final_classification.json'.")
