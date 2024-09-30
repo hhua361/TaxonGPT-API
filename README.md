@@ -1,4 +1,4 @@
-TaxonGPT: Efficient Taxonomic Data Conversion and Key Generation with ChatGPT-4o model
+TaxonGPT: A program for taxonomic classification using generative AI natural language capabilities
 ====
 
 ## Installation
@@ -57,4 +57,4 @@ TaxonGPT.process_description()
 #### ⚠️Caution: Refrain from disclosing your API key to unauthorized individuals or posting it in publicly accessible locations.
 
 ## Acknowledgements
-Sincerely thank OpenAI for their development of the ChatGPT and ChatGPT-4o models, which provided valuable assistance during this research and the preparation of the manuscript. Special appreciation is extended to Andrea Grecu, June Ko, and Miao Wang for their support and insightful discussions. The ChatGPT-4o model's API was particularly instrumental in conducting the experiments. Additionally, the ChatGPT-4o model assisted in the editing of this paper, including grammar and syntax corrections.
+Sincerely thank OpenAI for their development of the ChatGPT and ChatGPT-4o models, which provided valuable assistance during this research and the preparation of the manuscript. Special appreciation is extended to Andrea Grecu, June Ko, Yuan Xu, and Miao Wang for their support and insightful discussions. The ChatGPT-4o model's API was particularly instrumental in conducting the experiments. Additionally, the ChatGPT-4o model assisted in the editing of this paper, including grammar and syntax corrections.
