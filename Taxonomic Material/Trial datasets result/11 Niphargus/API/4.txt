@@ -1,0 +1,149 @@
+Updated Classification Key:
+{
+    "Character 1: region": {
+        "State 1: Iran": {
+            "Character 2: body size": {
+                "State 2: at most 14 mm": {
+                    "Character 5: maxilla I outer lobe with": {
+                        "State 1: seven spines, inner often multidenticulated, other with 1-2 denticles": "Niphargus khwarizmi Hekmatara, Zakek, Heidari Baladehi & Fier 2013",
+                        "State 2: seven spines, all multidenticulated": {
+                            "Character 10: gnathopod II propodus with": {
+                                "State 1: single supporting spine": "Niphargus khayyami Hekmatara, Zakek, Heidari Baladehi & Fier 2013",
+                                "State 2: two or more supporting spines": "Niphargus sharifi sp. n."
+                            }
+                        }
+                    }
+                },
+                "State Not applicable: ": {
+                    "Character 8: propodus of gnathopod II <size>": {
+                        "State 1: large": {
+                            "Character 12: dactylus of pereopods III-IV with": {
+                                "State 1: single robust seta at the base of nail": "Niphargus alisadri Esmaeili-Rineh & Sari 2013",
+                                "State 2: at least two robust setae in proximal part of dactylus": "Niphargus darvishi sp.n."
+                            }
+                        },
+                        "State 2: mid-size to small": {
+                            "Character 14: urosomite I with": {
+                                "State 1: single robust seta at the base of uropod I": {
+                                    "Character 19: telson": {
+                                        "State 1: with no dorsal spines": "Niphargus bisitunicus sp.n.",
+                                        "State 2: with at least one dorsal spine": "Niphargus daniali Esmaeili-Rineh & Sari 2013"
+                                    }
+                                },
+                                "State 2: at least two robust setae at the base of uropod I (in a row)": "Niphargus borisi sp.n."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "State 2: Turkey": {
+            "Character 2: body size": {
+                "State 1: adult larger than 15 mm": "Niphargus turcicus Andreev & Kenderov 2012",
+                "State 2: at most 14 mm": {
+                    "Character 3: body shape": {
+                        "State 1: stout (coxal plates more deep than wide)": {
+                            "Character 9: gnathopod II propodus <shape>": {
+                                "State 2: strongly trapezoid - hoof shaped": {
+                                    "Character 15: urosomite I dorsolaterally with": {
+                                        "State 1: single seta, thin or robust, but neither curved nor placed on socket": "Niphargus sertaci Fi er, Camur-Elipek & Oezbek 2009",
+                                        "State 2: single, strong, curved robust seta on a socket": "Niphargus valachicus Dobreanu & Manolache 1933"
+                                    }
+                                }
+                            }
+                        },
+                        "State 2: slender (coxal plates as deep as wide or wider than deeper)": {
+                            "Character 11: gnathopod I-II dactylus with": {
+                                "State 1: at least two setae on outer margin": {
+                                    "Character 13: dactylus of pereopods VI-VII": {
+                                        "State 1: single robust seta at the base of nail": "Niphargus krigizi Fi er, Camur-Elipek & Oezbek 2009",
+                                        "State 2: at least two robust setae in proximal part of dactylus": "Niphargus orientalis Karaman 1950"
+                                    }
+                                },
+                                "State 2: single seta on outer margin": {
+                                    "Character 24: uropod III": {
+                                        "State 1: sexually dimorphic, both articles of outer ramus distinctly elongated in males": "Niphargus tauri tauri Schellenberg 1933",
+                                        "State 3: sexually nondimorphic, but elongated": "Niphargus tauri afioni Karaman 2012"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "State Not applicable: ": {
+                    "Character 6: maxilla I inner lobe with": {
+                        "State 1: single seta": "Niphargus imitator Karaman 2012",
+                        "State 2: at least two setae": {
+                            "Character 12: dactylus of pereopods III-IV with": {
+                                "State 1: single robust seta at the base of nail": "Niphargus anatolicus Karaman 1950",
+                                "State 2: at least two robust setae in proximal part of dactylus": "Niphargus incus Karaman 2012"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "State 3: Iraq": "Niphargus nadarini iraquensis Karaman 2012",
+        "State 4: Syria": "Niphargus nadarini favitor Karaman 2012",
+        "State 5: Lebanon": "Niphargus altagahizi Alouf 1973",
+        "State 5 and 6: Lebanon;;Israel": "Niphargus nadarini nadarini Alouf 1972",
+        "State 6: Israel": "Niphargus itus Karaman 1986"
+    }
+}
+
+1.
+    -  region: Iran ........ 2
+    -  region: Turkey ........ 3
+    -  region: Iraq ........ Niphargus nadarini iraquensis Karaman 2012
+    -  region: Syria ........ Niphargus nadarini favitor Karaman 2012
+    -  region: Lebanon ........ Niphargus altagahizi Alouf 1973
+    -  region: Lebanon;;Israel ........ Niphargus nadarini nadarini Alouf 1972
+    -  region: Israel ........ Niphargus itus Karaman 1986
+2(1).
+    -  body size: at most 14 mm ........ 4
+    -  body size: Not applicable ........ 5
+4(2).
+    -  maxilla I outer lobe with: seven spines, inner often multidenticulated, other with 1-2 denticles ........ Niphargus khwarizmi Hekmatara, Zakek, Heidari Baladehi & Fier 2013
+    -  maxilla I outer lobe with: seven spines, all multidenticulated ........ 6
+6(4).
+    -  gnathopod II propodus with: single supporting spine ........ Niphargus khayyami Hekmatara, Zakek, Heidari Baladehi & Fier 2013
+    -  gnathopod II propodus with: two or more supporting spines ........ Niphargus sharifi sp. n.
+5(2).
+    -  propodus of gnathopod II <size>: large ........ 7
+    -  propodus of gnathopod II <size>: mid-size to small ........ 8
+7(5).
+    -  dactylus of pereopods III-IV with: single robust seta at the base of nail ........ Niphargus alisadri Esmaeili-Rineh & Sari 2013
+    -  dactylus of pereopods III-IV with: at least two robust setae in proximal part of dactylus ........ Niphargus darvishi sp.n.
+8(5).
+    -  urosomite I with: single robust seta at the base of uropod I ........ 9
+    -  urosomite I with: at least two robust setae at the base of uropod I (in a row) ........ Niphargus borisi sp.n.
+9(8).
+    -  telson: with no dorsal spines ........ Niphargus bisitunicus sp.n.
+    -  telson: with at least one dorsal spine ........ Niphargus daniali Esmaeili-Rineh & Sari 2013
+3(1).
+    -  body size: adult larger than 15 mm ........ Niphargus turcicus Andreev & Kenderov 2012
+    -  body size: at most 14 mm ........ 10
+    -  body size: Not applicable ........ 11
+10(3).
+    -  body shape: stout (coxal plates more deep than wide) ........ 12
+    -  body shape: slender (coxal plates as deep as wide or wider than deeper) ........ 13
+12(10).
+    -  gnathopod II propodus <shape>: strongly trapezoid - hoof shaped ........ 14
+14(12).
+    -  urosomite I dorsolaterally with: single seta, thin or robust, but neither curved nor placed on socket ........ Niphargus sertaci Fi er, Camur-Elipek & Oezbek 2009
+    -  urosomite I dorsolaterally with: single, strong, curved robust seta on a socket ........ Niphargus valachicus Dobreanu & Manolache 1933
+13(10).
+    -  gnathopod I-II dactylus with: at least two setae on outer margin ........ 15
+    -  gnathopod I-II dactylus with: single seta on outer margin ........ 16
+15(13).
+    -  dactylus of pereopods VI-VII: single robust seta at the base of nail ........ Niphargus krigizi Fi er, Camur-Elipek & Oezbek 2009
+    -  dactylus of pereopods VI-VII: at least two robust setae in proximal part of dactylus ........ Niphargus orientalis Karaman 1950
+16(13).
+    -  uropod III: sexually dimorphic, both articles of outer ramus distinctly elongated in males ........ Niphargus tauri tauri Schellenberg 1933
+    -  uropod III: sexually nondimorphic, but elongated ........ Niphargus tauri afioni Karaman 2012
+11(3).
+    -  maxilla I inner lobe with: single seta ........ Niphargus imitator Karaman 2012
+    -  maxilla I inner lobe with: at least two setae ........ 17
+17(11).
+    -  dactylus of pereopods III-IV with: single robust seta at the base of nail ........ Niphargus anatolicus Karaman 1950
+    -  dactylus of pereopods III-IV with: at least two robust setae in proximal part of dactylus ........ Niphargus incus Karaman 2012

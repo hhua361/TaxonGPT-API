@@ -1,0 +1,179 @@
+{
+    "1": {
+        "description": "region",
+        "states": {
+            "1": "Iran",
+            "2": "Turkey",
+            "3": "Iraq",
+            "4": "Syria",
+            "5": "Lebanon",
+            "6": "Israel"
+        }
+    },
+    "2": {
+        "description": "body size",
+        "states": {
+            "1": "adult larger than 15 mm",
+            "2": "at most 14 mm"
+        }
+    },
+    "3": {
+        "description": "body shape",
+        "states": {
+            "1": "stout (coxal plates more deep than wide)",
+            "2": "slender (coxal plates as deep as wide or wider than deeper)"
+        }
+    },
+    "4": {
+        "description": "mandibular palp proximal article",
+        "states": {
+            "1": "without setae",
+            "2": "with setae"
+        }
+    },
+    "5": {
+        "description": "maxilla I outer lobe with",
+        "states": {
+            "1": "seven spines, inner often multidenticulated, other with 1-2 denticles",
+            "2": "seven spines, all multidenticulated",
+            "3": "more than seven spines, inner often multidenticulated, other with 1-2 denticles"
+        }
+    },
+    "6": {
+        "description": "maxilla I inner lobe with",
+        "states": {
+            "1": "single seta",
+            "2": "at least two setae"
+        }
+    },
+    "7": {
+        "description": "gnathopod II ischium with",
+        "states": {
+            "1": "postero-distal group of setae",
+            "2": "postero-facial and postero-distal group of setae"
+        }
+    },
+    "8": {
+        "description": "propodus of gnathopod II <size>",
+        "states": {
+            "1": "large",
+            "2": "mid-size to small"
+        }
+    },
+    "9": {
+        "description": "gnathopod II propodus <shape>",
+        "states": {
+            "1": "quadrate to subquadrate",
+            "2": "strongly trapezoid - hoof shaped"
+        }
+    },
+    "10": {
+        "description": "gnathopod II propodus with",
+        "states": {
+            "1": "single supporting spine",
+            "2": "two or more supporting spines"
+        }
+    },
+    "11": {
+        "description": "gnathopod I-II dactylus with",
+        "states": {
+            "1": "at least two setae on outer margin",
+            "2": "single seta on outer margin"
+        }
+    },
+    "12": {
+        "description": "dactylus of pereopods III-IV with",
+        "states": {
+            "1": "single robust seta at the base of nail",
+            "2": "at least two robust setae in proximal part of dactylus"
+        }
+    },
+    "13": {
+        "description": "dactylus of pereopods VI-VII",
+        "states": {
+            "1": "single robust seta at the base of nail",
+            "2": "at least two robust setae in proximal part of dactylus"
+        }
+    },
+    "14": {
+        "description": "urosomite I with",
+        "states": {
+            "1": "single robust seta at the base of uropod I",
+            "2": "at least two robust setae at the base of uropod I (in a row)",
+            "3": "at least two robust setae at the base of uropod I (inserted at the same site)"
+        }
+    },
+    "15": {
+        "description": "urosomite I dorsolaterally with",
+        "states": {
+            "1": "single seta, thin or robust, but neither curved nor placed on socket",
+            "2": "single, strong, curved robust seta on a socket",
+            "3": "more than one seta, robust or thin"
+        }
+    },
+    "16": {
+        "description": "urosomite III dorsolaterally",
+        "states": {
+            "1": "without setae",
+            "2": "with robust setae"
+        }
+    },
+    "17": {
+        "description": "epimeral plate III",
+        "states": {
+            "1": "angular, but not produced",
+            "2": "distinctly subrounded, disto-posterior corner indicated with seta",
+            "3": "distinctly pointed and produced posteriorly"
+        }
+    },
+    "18": {
+        "description": "telson cleft",
+        "states": {
+            "1": "deeper than 0.5 telson cleft",
+            "2": "shallow, less than 0.5 of telson length"
+        }
+    },
+    "19": {
+        "description": "telson",
+        "states": {
+            "1": "with no dorsal spines",
+            "2": "with at least one dorsal spine"
+        }
+    },
+    "20": {
+        "description": "pleopods I-III with",
+        "states": {
+            "1": "two hooks in retincles",
+            "2": "more than two hooks in retinacles at least in one pleopod pair"
+        }
+    },
+    "21": {
+        "description": "peduncles of pleopods I-III with",
+        "states": {
+            "1": "retinacles alone",
+            "2": "retinacles and several setae along peduncle"
+        }
+    },
+    "22": {
+        "description": "uropod I in males with",
+        "states": {
+            "1": "simple, no finger-like extension distally",
+            "2": "finger-like extension on ventro-distal part of peduncle"
+        }
+    },
+    "23": {
+        "description": "uropod I",
+        "states": {
+            "1": "sexually non-dimorphic, inner ramus at most 1.2 as long as outer ramus",
+            "2": "sexually dimorphic, inner ramus remarkably elongated than outer ramus (proportion 1: 1.3)"
+        }
+    },
+    "24": {
+        "description": "uropod III",
+        "states": {
+            "1": "sexually dimorphic, both articles of outer ramus distinctly elongated in males",
+            "2": "sexually non-dimorphic, distal article of outer ramus shorter than 0.1 of proximal article",
+            "3": "sexually nondimorphic, but elongated"
+        }
+    }
+}

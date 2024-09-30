@@ -1,0 +1,83 @@
+Updated Classification Key:
+{
+    "Character 1: Stems elongation": {
+        "State 1: elongated, with numerous small leaves": {
+            "Character 2: Stems carriage": {
+                "State 1: suberect, and rooting directly at the base only": "Huperzia selago",
+                "State 2: creeping, and rooting directly at intervals along their length": {
+                    "Character 12: Leaves whether hair-pointed": {
+                        "State 1: with long, filiform hair-like tips": "Lycopodium clavatum",
+                        "State 2: not hair-pointed": {
+                            "Character 9: Leaves arrangement": {
+                                "State 1: 4-ranked on the branches": {
+                                    "Character 5: Stems whether with flattened branches": {
+                                        "State 2: with only slightly flattened branches": "Diphasiastrum alpinum",
+                                        "State 3: with strongly flattened branches": "Diphasiastrum complanatum"
+                                    }
+                                },
+                                "State 2: not 4-ranked": {
+                                    "Character 20: Habitat elevation": {
+                                        "State 1: lowland": "Lycopodiella inundata",
+                                        "State 2 and 3: upland;;montane": "Lycopodium annotinum"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "State 3: creeping, and rooting from characteristic, leafless, root-bearing branches (rhizophores)": {
+                    "Character 8: Leaves whether ligulate": {
+                        "State 1: ligulate": {
+                            "Character 4: Stems whether dorsiventral": {
+                                "State 1: dorsiventrally organized, with four ranks of leaves": "Selaginella kraussiana",
+                                "State 2: not dorsiventrally organized": "Selaginella selaginoides"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "State 2: short and tuberous, with sheathing leaves crowded in dense rosettes": {
+            "Character 7: The old leaf bases in Isoetes, persistence": {
+                "State 1: persistent on the stem, short and blackish, each with two long points": "Isoetes histrix",
+                "State 2: not persistent": {
+                    "Character 18: The megaspores of Isoetes, surface ornamentation": {
+                        "State 1: covered with short, blunt tubercles": "Isoetes lacustris",
+                        "State 2: covered with long, fragile spines": "Isoetes echinospora"
+                    }
+                }
+            }
+        }
+    }
+}
+
+1.
+    -  Stems elongation: elongated, with numerous small leaves ........ 2
+    -  Stems elongation: short and tuberous, with sheathing leaves crowded in dense rosettes ........ 3
+2(1).
+    -  Stems carriage: suberect, and rooting directly at the base only ........ Huperzia selago
+    -  Stems carriage: creeping, and rooting directly at intervals along their length ........ 4
+    -  Stems carriage: creeping, and rooting from characteristic, leafless, root-bearing branches (rhizophores) ........ 5
+4(2).
+    -  Leaves whether hair-pointed: with long, filiform hair-like tips ........ Lycopodium clavatum
+    -  Leaves whether hair-pointed: not hair-pointed ........ 6
+6(4).
+    -  Leaves arrangement: 4-ranked on the branches ........ 7
+    -  Leaves arrangement: not 4-ranked ........ 8
+7(6).
+    -  Stems whether with flattened branches: with only slightly flattened branches ........ Diphasiastrum alpinum
+    -  Stems whether with flattened branches: with strongly flattened branches ........ Diphasiastrum complanatum
+8(6).
+    -  Habitat elevation: lowland ........ Lycopodiella inundata
+    -  Habitat elevation: upland;;montane ........ Lycopodium annotinum
+5(2).
+    -  Leaves whether ligulate: ligulate ........ 9
+9(5).
+    -  Stems whether dorsiventral: dorsiventrally organized, with four ranks of leaves ........ Selaginella kraussiana
+    -  Stems whether dorsiventral: not dorsiventrally organized ........ Selaginella selaginoides
+3(1).
+    -  The old leaf bases in Isoetes, persistence: persistent on the stem, short and blackish, each with two long points ........ Isoetes histrix
+    -  The old leaf bases in Isoetes, persistence: not persistent ........ 10
+10(3).
+    -  The megaspores of Isoetes, surface ornamentation: covered with short, blunt tubercles ........ Isoetes lacustris
+    -  The megaspores of Isoetes, surface ornamentation: covered with long, fragile spines ........ Isoetes echinospora

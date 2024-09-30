@@ -1,0 +1,74 @@
+Updated Classification Key:
+{
+    "Character 1: longevity of plants": {
+        "State 1: annual or biennial, without remains of old sheaths or culms": "Zea",
+        "State 1 and 2: annual or biennial, without remains of old sheaths or culms;;perennial with remains of old sheaths and/or culms": {
+            "Character 26: female-fertile spikelets location of disarticulation positions": {
+                "State 1: readily disarticulating above the glumes when mature": {
+                    "Character 10: adaxial ligule form; avoid seedlings": {
+                        "State 1: an unfringed membrane may be variously hairy or ciliolate": {
+                            "Character 11: plants whether monoecious, with bisexual spikelets, or dioecious": {
+                                "State 2: bisexual, with at least some bisexual spikelets": "Agrostis",
+                                "State 2 and 3: bisexual, with at least some bisexual spikelets;;dioecious with separate male and female-fertile individuals": "Poa"
+                            }
+                        },
+                        "State 2: a fringed membrane": "Eleusine",
+                        "State 2 and 3: a fringed membrane;;a fringe of hairs": "Chloris"
+                    }
+                },
+                "State 3: falling with the glumes when mature pending data changes, including forms where the spikelets are shed by inflorescence disarticulation": {
+                    "Character 25: female-fertile spikelets plane of compression": {
+                        "State 1 and 2 and 3: compressed laterally lying on the side when placed on a flat surface;;not noticeably compressed terete;;compressed dorsally, ventrally or dorsiventrally lying on front or back when placed on a flat surface": "Andropogon",
+                        "State 3: compressed dorsally, ventrally or dorsiventrally lying on front or back when placed on a flat surface": {
+                            "Character 26: female-fertile spikelets location of disarticulation positions": {
+                                "State 3 and 4: falling with the glumes when mature pending data changes, including forms where the spikelets are shed by inflorescence disarticulation;;not disarticulating common in cultivated cereals": "Panicum",
+                                "State 3: falling with the glumes when mature pending data changes, including forms where the spikelets are shed by inflorescence disarticulation": "Echinochloa"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "State 2: perennial with remains of old sheaths and/or culms": {
+            "Character 12: inflorescence chasmogamous: overall form": {
+                "State 2: of spicate spike-like main branches of spikes, narrow racemes or narrow panicles": "Cynodon",
+                "State 5: paniculate and not readily referable to any of the other states": {
+                    "Character 10: adaxial ligule form; avoid seedlings": {
+                        "State 1: an unfringed membrane may be variously hairy or ciliolate": "Festuca",
+                        "State 2: a fringed membrane": "Anisopogon",
+                        "State 3: a fringe of hairs": "Phragmites"
+                    }
+                },
+                "State Missing: ": "Bambusa"
+            }
+        }
+    }
+}
+1.
+    -  longevity of plants: annual or biennial, without remains of old sheaths or culms ........ Zea
+    -  longevity of plants: annual or biennial, without remains of old sheaths or culms;;perennial with remains of old sheaths and/or culms ........ 2
+    -  longevity of plants: perennial with remains of old sheaths and/or culms ........ 3
+2(1).
+    -  female-fertile spikelets location of disarticulation positions: readily disarticulating above the glumes when mature ........ 4
+    -  female-fertile spikelets location of disarticulation positions: falling with the glumes when mature pending data changes, including forms where the spikelets are shed by inflorescence disarticulation ........ 5
+4(2).
+    -  adaxial ligule form; avoid seedlings: an unfringed membrane may be variously hairy or ciliolate ........ 6
+    -  adaxial ligule form; avoid seedlings: a fringed membrane ........ Eleusine
+    -  adaxial ligule form; avoid seedlings: a fringed membrane;;a fringe of hairs ........ Chloris
+6(4).
+    -  plants whether monoecious, with bisexual spikelets, or dioecious: bisexual, with at least some bisexual spikelets ........ Agrostis
+    -  plants whether monoecious, with bisexual spikelets, or dioecious: bisexual, with at least some bisexual spikelets;;dioecious with separate male and female-fertile individuals ........ Poa
+5(2).
+    -  female-fertile spikelets plane of compression: compressed laterally lying on the side when placed on a flat surface;;not noticeably compressed terete;;compressed dorsally, ventrally or dorsiventrally lying on front or back when placed on a flat surface ........ Andropogon
+    -  female-fertile spikelets plane of compression: compressed dorsally, ventrally or dorsiventrally lying on front or back when placed on a flat surface ........ 7
+7(5).
+    -  female-fertile spikelets location of disarticulation positions: falling with the glumes when mature pending data changes, including forms where the spikelets are shed by inflorescence disarticulation;;not disarticulating common in cultivated cereals ........ Panicum
+    -  female-fertile spikelets location of disarticulation positions: falling with the glumes when mature pending data changes, including forms where the spikelets are shed by inflorescence disarticulation ........ Echinochloa
+3(1).
+    -  inflorescence chasmogamous: of spicate spike-like main branches of spikes, narrow racemes or narrow panicles ........ Cynodon
+    -  inflorescence chasmogamous: paniculate and not readily referable to any of the other states ........ 8
+    -  inflorescence chasmogamous: Missing ........ Bambusa
+8(3).
+    -  adaxial ligule form; avoid seedlings: an unfringed membrane may be variously hairy or ciliolate ........ Festuca
+    -  adaxial ligule form; avoid seedlings: a fringed membrane ........ Anisopogon
+    -  adaxial ligule form; avoid seedlings: a fringe of hairs ........ Phragmites

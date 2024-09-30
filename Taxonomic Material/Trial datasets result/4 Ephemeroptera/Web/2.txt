@@ -1,0 +1,23 @@
+Character23:
+  1:
+    Character35:
+      1:
+        Character15:
+          1,2: Araucariaceae
+          2: Pinaceae
+          3,4: Sciadopityaceae
+      2:
+        Character28:
+          4: Cephalotaxaceae
+          5: Ephedraceae
+          3: Stangeriaceae
+      1,2: Cupressaceae
+  2:
+    Character3:
+      1,2:
+        Character1:
+          1: Cycadaceae
+          2: Taxaceae
+      1: Ginkgoaceae
+      1,2,3: Gnetaceae
+  1,2: Podocarpaceae

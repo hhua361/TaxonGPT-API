@@ -1,0 +1,84 @@
+{
+  "Character1": {
+    "3": "Gyrochus",
+    "4": {
+      "Character8": {
+        "3": {
+          "Character16": {
+            "2": "Camptothlipsis",
+            "1": "Aneurobracon"
+          }
+        },
+        "2": {
+          "Character3": {
+            "2": "Earinus",
+            "1": {
+              "Character13": {
+                "2": "Euagathis",
+                "1": "Amputostypos"
+              }
+            }
+          }
+        },
+        "1": {
+          "Character14": {
+            "2": {
+              "Character3": {
+                "3": "Bassus",
+                "2": {
+                  "Character6": {
+                    "2": {
+                      "Character2": {
+                        "2": "Therophilus",
+                        "1": "Earinus"
+                      }
+                    },
+                    "1": "Agathis"
+                  }
+                }
+              }
+            },
+            "1": {
+              "Character9": {
+                "2": "Braunsia",
+                "1": "Lytopylus"
+              }
+            }
+          }
+        }
+      }
+    },
+    "2": {
+      "Character6": {
+        "2": {
+          "Character9": {
+            "2": "Troticus",
+            "1": "Hypsostypos"
+          }
+        },
+        "1": "Cremnops"
+      }
+    },
+    "1": {
+      "Character10": {
+        "2": {
+          "Character11": {
+            "2": "Biroia",
+            "1": {
+              "Character13": {
+                "2": "Cremnops",
+                "1": "Cremnoptoides"
+              }
+            }
+          }
+        },
+        "1": {
+          "Character5": {
+            "2": "Disophrys",
+            "1": "Coccygidium"
+          }
+        }
+      }
+    }
+  }
+}

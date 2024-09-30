@@ -1,0 +1,79 @@
+Updated Classification Key:
+{
+    "Character 1: <habit: pachycaul or leptocaul>": {
+        "State 1: pachycaul": {
+            "Character 13: the <cycad> leaflets <venation>": {
+                "State 1: with a prominent midrib and no laterals <Cycadaceae>": "Cycadaceae",
+                "State 2: with pinnate venation, having a prominent midrib and dichotomously branching laterals <Stangeriaceae>": "Stangeriaceae"
+            }
+        },
+        "State 2: leptocaul": {
+            "Character 8: main branches <insertion>": {
+                "State 1 and 2: spiral;;whorled": {
+                    "Character 14: mature <foliage> leaves <whether dimorphic>": {
+                        "State 1: dimorphic": "Ginkgoaceae",
+                        "State 2: not dimorphic": {
+                            "Character 7: <whether plants resinous>": {
+                                "State 1: resinous <with resin-containing cells, cavities or canals conspicuous somewhere in the plant>": "Pinaceae",
+                                "State 1 and 2: resinous <with resin-containing cells, cavities or canals conspicuous somewhere in the plant>;;not resinous": "Taxaceae"
+                            }
+                        }
+                    }
+                },
+                "State 2: whorled": "Araucariaceae",
+                "State 2 and 3: whorled;;opposite": {
+                    "Character 9: the leafy branchlets": {
+                        "State 1: flattened in one plane": "Cephalotaxaceae",
+                        "State 2: not flattened": "Ephedraceae"
+                    }
+                },
+                "State Not applicable: ": {
+                    "Character 9: the leafy branchlets": {
+                        "State 1 and 2: flattened in one plane;;not flattened": {
+                            "Character 11: <presence of phyllodes>": {
+                                "State 1 and 2: phyllocladineous;;with normal leaves": "Podocarpaceae",
+                                "State 2: with normal leaves": "Cupressaceae"
+                            }
+                        },
+                        "State 2: not flattened": {
+                            "Character 28: the ovules <location>": {
+                                "State 1: borne proximal-adaxially on the seed-cone scales": "Sciadopityaceae",
+                                "State 5: borne erect in the centre of the 'flowers'": "Gnetaceae"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+1.
+    -  <habit: pachycaul ........ 2
+    -  <habit: leptocaul ........ 3
+2(1).
+    -  the <cycad> leaflets <venation>: with a prominent midrib and no laterals <Cycadaceae> ........ Cycadaceae
+    -  the <cycad> leaflets <venation>: with pinnate venation, having a prominent midrib and dichotomously branching laterals <Stangeriaceae> ........ Stangeriaceae
+3(1).
+    -  main branches <insertion>: spiral;;whorled ........ 4
+    -  main branches <insertion>: whorled ........ Araucariaceae
+    -  main branches <insertion>: whorled;;opposite ........ 5
+    -  main branches <insertion>: Not applicable........ 6
+4(3).
+    -  mature <foliage> leaves <whether dimorphic>: dimorphic ........ Ginkgoaceae
+    -  mature <foliage> leaves <whether dimorphic>: not dimorphic ........ 7
+7(4).
+    -  <whether plants resinous>: resinous <with resin-containing cells, cavities or canals conspicuous somewhere in the plant> ........ Pinaceae
+    -  <whether plants resinous>: resinous <with resin-containing cells, cavities or canals conspicuous somewhere in the plant>;;not resinous ........ Taxaceae
+5(3).
+    -  the leafy branchlets: flattened in one plane ........ Cephalotaxaceae
+    -  the leafy branchlets: not flattened ........ Ephedraceae
+6(3).
+    -  the leafy branchlets: flattened in one plane;;not flattened ........ 8
+    -  the leafy branchlets: not flattened ........ 9
+8(6).
+    -  <presence of phyllodes>: phyllocladineous;;with normal leaves ........ Podocarpaceae
+    -  <presence of phyllodes>: with normal leaves ........ Cupressaceae
+9(6).
+    -  the ovules <location>: borne proximal-adaxially on the seed-cone scales ........ Sciadopityaceae
+    -  the ovules <location>: borne erect in the centre of the 'flowers' ........ Gnetaceae

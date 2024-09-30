@@ -1,0 +1,87 @@
+
+Updated Classification Key:
+{
+    "Character 1: <habit: pachycaul or leptocaul>": {
+        "State 1: pachycaul": {
+            "Character 13: the <cycad> leaflets <venation>": {
+                "State 1: with a prominent midrib and no laterals <Cycadaceae>": "Cycadaceae",
+                "State 2: with pinnate venation, having a prominent midrib and dichotomously branching laterals <Stangeriaceae>": "Stangeriaceae"
+            }
+        },
+        "State 2: leptocaul": {
+            "Character 3: <habit>": {
+                "State 1: trees": {
+                    "Character 18: mature <foliage> leaves <phyllotaxy>": {
+                        "State 1: alternate <spiral>": {
+                            "Character 14: mature <foliage> leaves <whether dimorphic>": {
+                                "State 1: dimorphic": "Ginkgoaceae",
+                                "State 2: not dimorphic": "Araucariaceae"
+                            }
+                        },
+                        "State 3: whorled": "Sciadopityaceae"
+                    }
+                },
+                "State 1 and 2: trees;;shrubs": {
+                    "Character 8: main branches <insertion>": {
+                        "State 1 and 2: spiral;;whorled": {
+                            "Character 20: longitudinal resin canals <location in transverse sections>": {
+                                "State 1: 1 per leaf, this median-abaxial": "Taxaceae",
+                                "State 2 and 3 and 4 and 5 and 6: 2 per leaf, these lateral;;in a horizontal row;;in a peripheral ring;;in an abaxial arc;;in an adaxial arc": "Pinaceae"
+                            }
+                        },
+                        "State 2 and 3: whorled;;opposite": {
+                            "Character 5: <whether exhibiting switch-plant morphology>": {
+                                "State 1: Casuarina-like switch-plants photosynthesizing mainly via their grooved and jointed stems, the leaves reduced to small scales which are soon shed": "Ephedraceae",
+                                "State 2: not Casuarina-like switch plants": "Cephalotaxaceae"
+                            }
+                        },
+                        "State Not applicable: ": {
+                            "Character 9: the leafy branchlets": {
+                                "State 1 and 2: flattened in one plane;;not flattened": {
+                                    "Character 11: <presence of phyllodes>": {
+                                        "State 1 and 2: phyllocladineous;;with normal leaves": "Podocarpaceae",
+                                        "State 2: with normal leaves": "Cupressaceae"
+                                    }
+                                },
+                                "State 2: not flattened": "Gnetaceae"
+                            }
+                        }
+                    }
+                },
+                "State 1 and 2 and 3: trees;;shrubs;;vines": "Ephedraceae"
+            }
+        }
+    }
+}
+1.
+    -  <habit: pachycaul ........ 2
+    -  <habit: leptocaul ........ 3
+2(1).
+    -  the <cycad> leaflets <venation>: with a prominent midrib and no laterals <Cycadaceae> ........ Cycadaceae
+    -  the <cycad> leaflets <venation>: with pinnate venation, having a prominent midrib and dichotomously branching laterals <Stangeriaceae> ........ Stangeriaceae
+3(1).
+    -  <habit>: trees ........ 4
+    -  <habit>: trees;;shrubs ........ 5
+    -  <habit>: trees;;shrubs;;vines ........ Ephedraceae
+4(3).
+    -  mature <foliage> leaves <phyllotaxy>: alternate <spiral> ........ 6
+    -  mature <foliage> leaves <phyllotaxy>: whorled ........ Sciadopityaceae
+6(4).
+    -  mature <foliage> leaves <whether dimorphic>: dimorphic ........ Ginkgoaceae
+    -  mature <foliage> leaves <whether dimorphic>: not dimorphic ........ Araucariaceae
+5(3).
+    -  main branches <insertion>: spiral;;whorled ........ 7
+    -  main branches <insertion>: whorled;;opposite ........ 8
+    -  main branches <insertion>: Not applicable ........ 9
+7(5).
+    -  longitudinal resin canals <location in transverse sections>: 1 per leaf, this median-abaxial ........ Taxaceae
+    -  longitudinal resin canals <location in transverse sections>: 2 per leaf, these lateral;;in a horizontal row;;in a peripheral ring;;in an abaxial arc;;in an adaxial arc ........ Pinaceae
+8(5).
+    -  <whether exhibiting switch-plant morphology>: Casuarina-like switch-plants photosynthesizing mainly via their grooved and jointed stems, the leaves reduced to small scales which are soon shed ........ Ephedraceae
+    -  <whether exhibiting switch-plant morphology>: not Casuarina-like switch plants ........ Cephalotaxaceae
+9(5).
+    -  the leafy branchlets: flattened in one plane;;not flattened ........ 10
+    -  the leafy branchlets: not flattened ........ Gnetaceae
+10(9).
+    -  <presence of phyllodes>: phyllocladineous;;with normal leaves ........ Podocarpaceae
+    -  <presence of phyllodes>: with normal leaves ........ Cupressaceae

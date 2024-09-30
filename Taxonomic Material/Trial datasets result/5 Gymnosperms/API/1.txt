@@ -1,0 +1,36 @@
+Updated Classification Key:
+{
+    "Character 1: click on all lateral habitus images that match your specimen": {
+        "State 1 and 1 and 1 and 2: L. vaughntani;;L. vaughntani;;L. vaughntani;;L. bradzlotnicki": {
+            "Character 3: sculpture of third lobe of median syntergite 2+3": {
+                "State 1: mostly or entirely longitudinally striate": "Lytopylus jessiehillae",
+                "State 2: mostly or entirely smooth": "Lytopylus mingfangi"
+            }
+        },
+        "State 1: L. vaughntani": "Lytopylus vaughntani",
+        "State 2: L. bradzlotnicki": "Lytopylus bradzlotnicki",
+        "State 3: L. rebeccashapleyae": "Lytopylus rebeccashapleyae",
+        "State 4: L. sandraberriosae": "Lytopylus sandraberriosae",
+        "State 5: L. flavicalcar": "Lytopylus flavicalcar",
+        "State 6: L. robpringlei": "Lytopylus robpringlei",
+        "State 7: L. gregburtoni": "Lytopylus gregburtoni",
+        "State 8: L. colleenhitchcockae": "Lytopylus colleenhitchcockae",
+        "State 9: L. jessicadimauroae": "Lytopylus jessicadimauroae",
+        "State 10: L. macadamiae": "Lytopylus macadamiae"
+    }
+}
+1.
+    -  click on all lateral habitus images that match your specimen: L. vaughntani;;L. vaughntani;;L. vaughntani;;L. bradzlotnicki ........ 2
+    -  click on all lateral habitus images that match your specimen: L. vaughntani ........ Lytopylus vaughntani
+    -  click on all lateral habitus images that match your specimen: L. bradzlotnicki ........ Lytopylus bradzlotnicki
+    -  click on all lateral habitus images that match your specimen: L. rebeccashapleyae ........ Lytopylus rebeccashapleyae
+    -  click on all lateral habitus images that match your specimen: L. sandraberriosae ........ Lytopylus sandraberriosae
+    -  click on all lateral habitus images that match your specimen: L. flavicalcar ........ Lytopylus flavicalcar
+    -  click on all lateral habitus images that match your specimen: L. robpringlei ........ Lytopylus robpringlei
+    -  click on all lateral habitus images that match your specimen: L. gregburtoni ........ Lytopylus gregburtoni
+    -  click on all lateral habitus images that match your specimen: L. colleenhitchcockae ........ Lytopylus colleenhitchcockae
+    -  click on all lateral habitus images that match your specimen: L. jessicadimauroae ........ Lytopylus jessicadimauroae
+    -  click on all lateral habitus images that match your specimen: L. macadamiae ........ Lytopylus macadamiae
+2(1).
+    -  sculpture of third lobe of median syntergite 2+3: mostly or entirely longitudinally striate ........ Lytopylus jessiehillae
+    -  sculpture of third lobe of median syntergite 2+3: mostly or entirely smooth ........ Lytopylus mingfangi

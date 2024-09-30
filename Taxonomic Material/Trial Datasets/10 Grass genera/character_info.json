@@ -1,0 +1,551 @@
+{
+    "1": {
+        "description": "longevity of plants",
+        "states": {
+            "1": "annual or biennial, without remains of old sheaths or culms",
+            "2": "perennial with remains of old sheaths and/or culms"
+        }
+    },
+    "2": {
+        "description": "mature culms maximum height: data unreliable for large genera",
+        "states": {
+            "1": "up to 199 cm high",
+            "2": "200 to 499 cm high",
+            "3": "500 cm high or more"
+        }
+    },
+    "3": {
+        "description": "culms whether woody or herbaceous",
+        "states": {
+            "1": "woody and persistent",
+            "2": "herbaceous not woody, not persistent"
+        }
+    },
+    "4": {
+        "description": "culms whether branched above",
+        "states": {
+            "1": "branched vegetatively above",
+            "2": "unbranched vegetatively above"
+        }
+    },
+    "5": {
+        "description": "culm nodes whether hairy or glabrous",
+        "states": {
+            "1": "hairy",
+            "2": "glabrous"
+        }
+    },
+    "6": {
+        "description": "leaf blades shape: data incomplete",
+        "states": {
+            "1": "linear to lanceolate",
+            "2": "ovate-lanceolate to elliptic",
+            "3": "obovate"
+        }
+    },
+    "7": {
+        "description": "leaf blades mid-width: data very incomplete",
+        "states": {
+            "1": "up to 4.9 mm wide",
+            "2": "5 mm wide or more"
+        }
+    },
+    "8": {
+        "description": "leaf blades whether pseudopetiolate",
+        "states": {
+            "1": "pseudopetiolate",
+            "2": "not pseudopetiolate"
+        }
+    },
+    "9": {
+        "description": "adaxial ligule presence",
+        "states": {
+            "1": "present",
+            "2": "absent"
+        }
+    },
+    "10": {
+        "description": "adaxial ligule form; avoid seedlings",
+        "states": {
+            "1": "an unfringed membrane may be variously hairy or ciliolate",
+            "2": "a fringed membrane",
+            "3": "a fringe of hairs",
+            "4": "a rim of minute papillae"
+        }
+    },
+    "11": {
+        "description": "plants whether monoecious, with bisexual spikelets, or dioecious",
+        "states": {
+            "1": "monoecious with all the fertile spikelets unisexual",
+            "2": "bisexual, with at least some bisexual spikelets",
+            "3": "dioecious with separate male and female-fertile individuals"
+        }
+    },
+    "12": {
+        "description": "inflorescence chasmogamous: overall form",
+        "states": {
+            "1": "a single spike",
+            "2": "of spicate spike-like main branches of spikes, narrow racemes or narrow panicles",
+            "3": "a false spike, with spikelets or spikelet clusters on contracted axes",
+            "4": "a single raceme at least some of the spikelets clearly pedicellate",
+            "5": "paniculate and not readily referable to any of the other states"
+        }
+    },
+    "13": {
+        "description": "inflorescence whether open or contracted: mainly applied to panicles",
+        "states": {
+            "1": "open",
+            "2": "contracted very compact, or narrow and spike-like"
+        }
+    },
+    "14": {
+        "description": "inflorescence whether comprising a complex of partial inflorescences and intervening foliar organs",
+        "states": {
+            "1": "a complex of partial inflorescences and intervening foliar organs i.e., a pseudo-inflorescence",
+            "2": "not comprising partial inflorescences and foliar organs"
+        }
+    },
+    "15": {
+        "description": "spikelet-bearing axes whether disarticulating; note that spikelet-bearing axes may be greatly reduced",
+        "states": {
+            "1": "disarticulating often manifested in clearly articulated rachides; excluding inflorescences falling whole (tumbleweeds)",
+            "2": "persistent not disarticulating"
+        }
+    },
+    "16": {
+        "description": "spikelet-bearing axes manner of disarticulation",
+        "states": {
+            "1": "falling entire",
+            "2": "disarticulating at the joints"
+        }
+    },
+    "17": {
+        "description": "spikelets grouping: recorded mainly in spikes and racemes",
+        "states": {
+            "1": "solitary",
+            "2": "paired",
+            "3": "in triplets"
+        }
+    },
+    "18": {
+        "description": "spikelets whether secund",
+        "states": {
+            "1": "secund",
+            "2": "not secund"
+        }
+    },
+    "19": {
+        "description": "spikelets whether in regular long-and-short combinations, as exemplified in typical andropogonoids",
+        "states": {
+            "1": "consistently in long-and-short combinations i.e., pedicellate/sessile or long-pedicel/short-pedicel pairs or triplets: currently includes andropogonoid forms with the pedicellate spikelets reduced to their pedicels",
+            "2": "not consistently in distinct long-and-short combinations"
+        }
+    },
+    "20": {
+        "description": "spikelets detail of long-and-short combinations (intended mainly for andropogonoids)",
+        "states": {
+            "1": "in pedicellate/sessile combinations",
+            "2": "unequally pedicellate in each combination"
+        }
+    },
+    "22": {
+        "description": "the shorter andropogonoid spikelets sessile or shorter-pedicelled, sexuality",
+        "states": {
+            "1": "hermaphrodite",
+            "2": "female-only",
+            "3": "male-only",
+            "4": "sterile"
+        }
+    },
+    "23": {
+        "description": "the longer andropogonoid spikelets pedicelled or longer-pedicelled, sexuality",
+        "states": {
+            "1": "hermaphrodite",
+            "2": "female-only",
+            "3": "male-only",
+            "4": "sterile"
+        }
+    },
+    "24": {
+        "description": "female-fertile spikelets approximate length, excluding any awns",
+        "states": {
+            "1": "up to 14.9 mm long",
+            "2": "15 mm long or more"
+        }
+    },
+    "25": {
+        "description": "female-fertile spikelets plane of compression",
+        "states": {
+            "1": "compressed laterally lying on the side when placed on a flat surface",
+            "2": "not noticeably compressed terete",
+            "3": "compressed dorsally, ventrally or dorsiventrally lying on front or back when placed on a flat surface"
+        }
+    },
+    "26": {
+        "description": "female-fertile spikelets location of disarticulation positions",
+        "states": {
+            "1": "readily disarticulating above the glumes when mature",
+            "2": "disarticulating between the glumes",
+            "3": "falling with the glumes when mature pending data changes, including forms where the spikelets are shed by inflorescence disarticulation",
+            "4": "not disarticulating common in cultivated cereals"
+        }
+    },
+    "27": {
+        "description": "female-fertile spikelets whether rachilla disarticulates between the florets of spikelets with two or more fertile florets",
+        "states": {
+            "1": "not disarticulating between the florets",
+            "2": "disarticulating between the florets"
+        }
+    },
+    "28": {
+        "description": "rachilla of female-fertile spikelets, whether terminated by a female-fertile floret, or prolonged",
+        "states": {
+            "1": "prolonged beyond the uppermost female-fertile floret i.e. not terminated by a female-fertile floret: note that racemose spikelets with three or more female-fertile florets have all been awarded this state",
+            "2": "terminated by a female-fertile floret not prolonged"
+        }
+    },
+    "29": {
+        "description": "hairy callus presence",
+        "states": {
+            "1": "present",
+            "2": "absent"
+        }
+    },
+    "30": {
+        "description": "glumes of female-fertile spikelets, present or absent",
+        "states": {
+            "1": "present",
+            "2": "absent"
+        }
+    },
+    "31": {
+        "description": "glumes of female-fertile spikelets, number: glumes are barren, with neither axillary spikelets nor florets",
+        "states": {
+            "1": "one per spikelet",
+            "2": "two",
+            "3": "several"
+        }
+    },
+    "32": {
+        "description": "glumes of female-fertile spikelets, whether markedly unequal in the intact spikelet; regardless of any differences in form",
+        "states": {
+            "1": "very unequal in length in the intact spikelet",
+            "2": "more or less equal in length in the intact spikelet: generally includes subequal"
+        }
+    },
+    "33": {
+        "description": "glumes of female-fertile spikelets, lengths relative to proximal (adjacent) lemmas; refers to the longer glume when glumes unequal",
+        "states": {
+            "1": "decidedly shorter than the adjacent lemmas in intact spikelets",
+            "2": "long relative to the adjacent lemmas more or less equalling or exceeding them"
+        }
+    },
+    "34": {
+        "description": "glumes of female-fertile spikelets, whether awned",
+        "states": {
+            "1": "awned",
+            "2": "awnless"
+        }
+    },
+    "35": {
+        "description": "glumes of female-fertile spikelets, whether carinate (i.e., one-keeled to middle or below)",
+        "states": {
+            "1": "carinate one-keeled",
+            "2": "non-carinate includes forms with more than one keel, as well as those with non-keeled glumes"
+        }
+    },
+    "36": {
+        "description": "upper glume (or the single glume) of female-fertile spikelets, mid-zone nerve number",
+        "states": {
+            "1": "up to 1 nerved",
+            "2": "2 nerved",
+            "3": "3 nerved or more"
+        }
+    },
+    "37": {
+        "description": "female-fertile spikelets whether containing sterile or male-only florets in addition to female-fertile florets",
+        "states": {
+            "1": "normally with female-fertile florets only",
+            "2": "or at least some of them, normally with incomplete sterile or male-only florets note that the situation at the apex of spikelets with more than three florets is often unknown or unclear"
+        }
+    },
+    "38": {
+        "description": "the incomplete male or sterile florets position in spikelet",
+        "states": {
+            "1": "proximal to the female-fertile florets",
+            "2": "distal to the female-fertile florets",
+            "3": "both distal and proximal to the female-fertile florets"
+        }
+    },
+    "39": {
+        "description": "the proximal incomplete florets of the female-fertile spikelets, when present, number (intended mainly for panicoids)",
+        "states": {
+            "1": "up to 1",
+            "2": "2 or more"
+        }
+    },
+    "40": {
+        "description": "the proximal incomplete florets of the female-fertile spikelets: sexuality",
+        "states": {
+            "1": "male",
+            "2": "sterile"
+        }
+    },
+    "41": {
+        "description": "the proximal imperfect lemmas of the female-fertile spikelets: whether awned",
+        "states": {
+            "1": "awned",
+            "2": "awnless"
+        }
+    },
+    "42": {
+        "description": "number of female-fertile florets per female-fertile spikelet",
+        "states": {
+            "1": "1",
+            "2": "2 or more"
+        }
+    },
+    "43": {
+        "description": "female-fertile lemmas shape of apex",
+        "states": {
+            "1": "entire",
+            "2": "incised"
+        }
+    },
+    "44": {
+        "description": "female-fertile lemmas entire, whether pointed or blunt",
+        "states": {
+            "1": "pointed",
+            "2": "blunt"
+        }
+    },
+    "45": {
+        "description": "female-fertile lemmas whether mucronate or awned",
+        "states": {
+            "1": "awnless neither mucronate nor awned",
+            "2": "mucronate with a short, hard point or vestigial or incipient awn",
+            "3": "awned"
+        }
+    },
+    "46": {
+        "description": "awns of female-fertile lemmas, if present, number",
+        "states": {
+            "1": "1",
+            "2": "2 to 5",
+            "3": "6 or more"
+        }
+    },
+    "47": {
+        "description": "awns of female-fertile lemmas, position of (main, median)",
+        "states": {
+            "1": "from a sinus",
+            "2": "dorsal",
+            "3": "apical"
+        }
+    },
+    "48": {
+        "description": "awns of female-fertile lemmas, whether straight or geniculate when dry",
+        "states": {
+            "1": "non-geniculate straight or curved",
+            "2": "geniculate usually twisted at the base"
+        }
+    },
+    "49": {
+        "description": "awns main, median of the female-fertile lemmas, relative length",
+        "states": {
+            "1": "much shorter than the body of the lemma",
+            "2": "about as long as the body of the lemma",
+            "3": "much longer than the body of the lemma"
+        }
+    },
+    "50": {
+        "description": "female-fertile lemmas whether carinate (i.e., one-keeled at least to the middle on the back)",
+        "states": {
+            "1": "carinate with a single median keel",
+            "2": "non-carinate rounded, flat, with two or more keels"
+        }
+    },
+    "51": {
+        "description": "female-fertile lemmas presence of germination flap",
+        "states": {
+            "1": "with a clear germination flap when mature",
+            "2": "without a germination flap"
+        }
+    },
+    "52": {
+        "description": "female-fertile lemmas number of nerves traversing mid-region",
+        "states": {
+            "1": "up to 1 nerved",
+            "2": "2 to 7 nerved",
+            "3": "8 nerved or more"
+        }
+    },
+    "53": {
+        "description": "palea female-fertile, presence in female-fertile florets",
+        "states": {
+            "1": "present",
+            "2": "absent"
+        }
+    },
+    "54": {
+        "description": "palea female-fertile, relative size",
+        "states": {
+            "1": "relatively long three-quarters or more of female-fertile lemma length",
+            "2": "conspicuous but relatively short less than three-quarters of female-fertile lemma length",
+            "3": "very reduced or vestigial"
+        }
+    },
+    "55": {
+        "description": "lodicules presence in female-fertile florets",
+        "states": {
+            "1": "present",
+            "2": "absent"
+        }
+    },
+    "56": {
+        "description": "lodicules of female-fertile florets, texture",
+        "states": {
+            "1": "distally fleshy cuneate panicoid type",
+            "2": "distally membranous pooid type"
+        }
+    },
+    "57": {
+        "description": "lodicules of female-fertile florets, whether hairy",
+        "states": {
+            "1": "ciliate or hairy",
+            "2": "glabrous"
+        }
+    },
+    "58": {
+        "description": "stamens number per female-fertile floret (not applicable to male spikelets or male florets)",
+        "states": {
+            "1": "up to 2",
+            "2": "3",
+            "3": "4 or more"
+        }
+    },
+    "59": {
+        "description": "ovary of female-fertile florets, whether apex glabrous or hairy",
+        "states": {
+            "1": "glabrous",
+            "2": "hairy"
+        }
+    },
+    "60": {
+        "description": "stigmas number",
+        "states": {
+            "1": "1",
+            "2": "2",
+            "3": "3 or more"
+        }
+    },
+    "61": {
+        "description": "stigmas colour, in chasmogamous spikelets",
+        "states": {
+            "1": "white",
+            "2": "red anthocyanin pigmented",
+            "3": "golden brown"
+        }
+    },
+    "62": {
+        "description": "fruit length when mature",
+        "states": {
+            "1": "small to medium sized",
+            "2": "large"
+        }
+    },
+    "63": {
+        "description": "fruit or grain surface pattern",
+        "states": {
+            "1": "sculptured",
+            "2": "smooth"
+        }
+    },
+    "64": {
+        "description": "hilum form",
+        "states": {
+            "1": "short punctiform or shortly elliptical, less than half length of fruit",
+            "2": "long-linear more than half as long as fruit"
+        }
+    },
+    "65": {
+        "description": "pericarp whether fused or loose (or free)",
+        "states": {
+            "1": "free",
+            "2": "loosely adherent fairly easily removable when soaked",
+            "3": "fused"
+        }
+    },
+    "66": {
+        "description": "maximum cells-distant count; reliably indicative of photosynthetic pathway",
+        "states": {
+            "1": "C4",
+            "2": "C3"
+        }
+    },
+    "67": {
+        "description": "C4 biochemical type as determined by enzyme assay",
+        "states": {
+            "1": "PCK",
+            "2": "NAD-ME",
+            "3": "NADP-ME"
+        }
+    },
+    "68": {
+        "description": "leaf blade XyMS: reliably indicative of C4 type",
+        "states": {
+            "1": "XyMS+ C3, or C4 aspartate formers type PCK or NAD-ME (exceptions: Eriachneae)",
+            "2": "XyMS? C4 malate formers type NADP-ME"
+        }
+    },
+    "69": {
+        "description": "leaf blade mesophyll presence of arm cells (= hatchet cells)",
+        "states": {
+            "1": "with arm cells",
+            "2": "without arm cells"
+        }
+    },
+    "70": {
+        "description": "leaf blade mesophyll presence of fusoid cells",
+        "states": {
+            "1": "with fusoids",
+            "2": "without fusoids"
+        }
+    },
+    "71": {
+        "description": "midrib of the leaf blade, prominence",
+        "states": {
+            "1": "conspicuous prominent in the outline, with distinctive sclerenchyma, etc.",
+            "2": "not readily distinguishable other than by position"
+        }
+    },
+    "72": {
+        "description": "midrib of the mid leaf blade, vascularization",
+        "states": {
+            "1": "with one bundle only",
+            "2": "having a conventional arc of bundles i.e. at least three bundles",
+            "3": "having complex vascularization i.e. with more than one bundle, not arranged in a conventional arc"
+        }
+    },
+    "73": {
+        "description": "midrib and/or middle part of leaf blade, whether extensively of colourless cells adaxially",
+        "states": {
+            "1": "with conspicuous colourless tissue adaxially",
+            "2": "without conspicuous colourless tissue adaxially"
+        }
+    },
+    "74": {
+        "description": "presence in the leaf blade of small vascular bundles unaccompanied by sclerenchyma",
+        "states": {
+            "1": "many of the smallest vascular bundles unaccompanied by sclerenchyma",
+            "2": "all or nearly all the vascular bundles accompanied by sclerenchyma"
+        }
+    },
+    "75": {
+        "description": "Zea mays",
+        "states": {
+            "1": "fruiting inflorescence a massive, spatheate cob, the fruits in many rows",
+            "2": "fruiting inflorescence not as in maize"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+Character1 is used as the initial split:
+	• State 1,2:
+		○ Further split by Character2:
+			§ State 1:
+				□ Further split by Character3:
+					® State 2: Equisetum_arvense
+					® State 1: Equisetum_telmateia
+			§ State 3: Equisetum_fluviatile
+			§ State 2: Equisetum_sylvaticum
+	• State 2:
+		○ Further split by Character6:
+			§ State 1:
+				□ Further split by Character7:
+					® State 3:
+						◊ Further split by Character8:
+							} State 1: Equisetum_hyemale
+							} State 2: Equisetum_moorei
+					® State 1,3: Equisetum_pratense
+					® State 2,3: Equisetum_trachyodon
+			§ State 1,2: Equisetum_ramosissimum
+			§ State 2: Equisetum_variegatum
+	• State 1:
+		○ Further split by Character4:
+			§ State 1: Equisetum_litorale
+			§ State 1,2: Equisetum_palustre

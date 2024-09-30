@@ -1,0 +1,55 @@
+Character12:
+  1:
+    Character15:
+      3:
+        Character8:
+          1:
+            Character1:
+              1: Niphargus_alisadri
+              6: Niphargus_itus_Karaman_1986
+              5,6: Niphargus_nadarini
+          2:
+            Character1:
+              1: Niphargus_borisi_sp.n.
+              2: Niphargus_religiosus_Karaman_2012
+      1:
+        Character1:
+          5: Niphargus_altagahizi
+          2:
+            Character6:
+              2:
+                Character4:
+                  1:
+                    Character11:
+                      1: Niphargus_anatolicus
+                      2: Niphargus_tauri_afioni_Karaman_2012
+                  2: Niphargus_turcicus_Andreev_&_Kenderov_2012
+              1:
+                Character17:
+                  1: Niphargus_imitator_Karaman_2012
+                  2: Niphargus_tauri_tauri_Schellenberg_1933
+          1:
+            Character17:
+              3: Niphargus_bisitunicus_sp.n.
+              1:
+                Character4:
+                  2: Niphargus_daniali
+                  1: Niphargus_sharifi_sp._n.
+              1,2: Niphargus_khwarizmi
+      1,3: Niphargus_krigizi
+  2:
+    Character1:
+      1: Niphargus_darvishi_sp.n.
+      2:
+        Character13:
+          1: Niphargus_incus_Karaman_2012
+          2: Niphargus_orientalis_Karaman_1950
+      1,2: Niphargus_valachicus_Dobreanu_&_Manolache_1933
+  1,2:
+    Character5:
+      2: Niphargus_khayyami
+      1:
+        Character1:
+          4: Niphargus_nadarini_favitor
+          2: Niphargus_sertaci
+      1,3: Niphargus_nadarini_iraquensis

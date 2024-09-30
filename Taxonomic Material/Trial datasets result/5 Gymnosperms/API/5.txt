@@ -1,0 +1,48 @@
+Updated Classification Key:
+{
+    "Character 2: forewing color pattern": {
+        "State 1: banded yellow and infuscate": "Lytopylus sandraberriosae",
+        "State 2: mostly or entirely infuscate": {
+            "Character 1: click on all lateral habitus images that match your specimen": {
+                "State 1: L. vaughntani": "Lytopylus vaughntani",
+                "State 1 and 1 and 1 and 2: L. vaughntani;;L. vaughntani;;L. vaughntani;;L. bradzlotnicki": {
+                    "Character 3: sculpture of third lobe of median syntergite 2+3": {
+                        "State 1: mostly or entirely longitudinally striate": "Lytopylus jessiehillae",
+                        "State 2: mostly or entirely smooth": "Lytopylus mingfangi"
+                    }
+                },
+                "State 5: L. flavicalcar": "Lytopylus flavicalcar",
+                "State 6: L. robpringlei": "Lytopylus robpringlei",
+                "State 7: L. gregburtoni": "Lytopylus gregburtoni",
+                "State 8: L. colleenhitchcockae": "Lytopylus colleenhitchcockae",
+                "State 9: L. jessicadimauroae": "Lytopylus jessicadimauroae",
+                "State 10: L. macadamiae": "Lytopylus macadamiae"
+            }
+        },
+        "State 3: mostly or entirely hyaline (clear)": {
+            "Character 1: click on all lateral habitus images that match your specimen": {
+                "State 2: L. bradzlotnicki": "Lytopylus bradzlotnicki",
+                "State 3: L. rebeccashapleyae": "Lytopylus rebeccashapleyae"
+            }
+        }
+    }
+}
+1.
+    -  forewing color pattern: banded yellow and infuscate ........ Lytopylus sandraberriosae
+    -  forewing color pattern: mostly or entirely infuscate ........ 2
+    -  forewing color pattern: mostly or entirely hyaline (clear) ........ 3
+2(1).
+    -  click on all lateral habitus images that match your specimen: L. vaughntani ........ Lytopylus vaughntani
+    -  click on all lateral habitus images that match your specimen: L. vaughntani;;L. vaughntani;;L. vaughntani;;L. bradzlotnicki ........ 4
+    -  click on all lateral habitus images that match your specimen: L. flavicalcar ........ Lytopylus flavicalcar
+    -  click on all lateral habitus images that match your specimen: L. robpringlei ........ Lytopylus robpringlei
+    -  click on all lateral habitus images that match your specimen: L. gregburtoni ........ Lytopylus gregburtoni
+    -  click on all lateral habitus images that match your specimen: L. colleenhitchcockae ........ Lytopylus colleenhitchcockae
+    -  click on all lateral habitus images that match your specimen: L. jessicadimauroae ........ Lytopylus jessicadimauroae
+    -  click on all lateral habitus images that match your specimen: L. macadamiae ........ Lytopylus macadamiae
+4(2).
+    -  sculpture of third lobe of median syntergite 2+3: mostly or entirely longitudinally striate ........ Lytopylus jessiehillae
+    -  sculpture of third lobe of median syntergite 2+3: mostly or entirely smooth ........ Lytopylus mingfangi
+3(1).
+    -  click on all lateral habitus images that match your specimen: L. bradzlotnicki ........ Lytopylus bradzlotnicki
+    -  click on all lateral habitus images that match your specimen: L. rebeccashapleyae ........ Lytopylus rebeccashapleyae

@@ -1,0 +1,70 @@
+• Character3 = 2
+	• Character20 = 1
+		○ Character1 = 1
+			§ Character8 = 1
+				□ Niphargus_alisadri
+			§ Character8 = 2
+				□ Niphargus_khwarizmi
+		○ Character1 = 2
+			§ Character12 = 1
+				□ Character4 = 1
+					® Niphargus_anatolicus
+				□ Character4 = 2
+					® Niphargus_turcicus_Andreev_&_Kenderov_2012
+			§ Character12 = 2
+				□ Character13 = 1
+					® Niphargus_incus_Karaman_2012
+				□ Character13 = 2
+					® Niphargus_orientalis_Karaman_1950
+	• Character20 = 2
+		○ Character17 = 1
+			§ Character11 = 2
+				□ Niphargus_imitator_Karaman_2012
+			§ Character11 = 1
+				□ Niphargus_krigizi
+		○ Character17 = 2
+			§ Character6 = 1
+				□ Niphargus_tauri_tauri_Schellenberg_1933
+			§ Character6 = 2
+				□ Niphargus_tauri_afioni_Karaman_2012
+• Character3 = 1
+	• Character8 = 1
+		○ Character6 = 2
+			§ Character17 = 1
+				□ Character12 = 1
+					® Character5 = 1
+						◊ Character1 = 5
+							} Niphargus_altagahizi
+						◊ Character1 = 5,6
+							} Niphargus_nadarini
+					® Character5 = 2
+						◊ Niphargus_itus_Karaman_1986
+				□ Character12 = 1,2
+					® Character1 = 4
+						◊ Niphargus_nadarini_favitor
+					® Character1 = 3
+						◊ Niphargus_nadarini_iraquensis
+			§ Character17 = 3
+				□ Niphargus_darvishi_sp.n.
+		○ Character6 = 1,2
+			§ Character1 = 2
+				□ Niphargus_sertaci
+			§ Character1 = 1,2
+				□ Niphargus_valachicus_Dobreanu_&_Manolache_1933
+	• Character8 = 2
+		○ Character10 = 2
+			§ Character5 = 1
+				□ Character6 = 2
+					® Niphargus_bisitunicus_sp.n.
+				□ Character6 = 1
+					® Niphargus_borisi_sp.n.
+			§ Character5 = 2
+				□ Niphargus_sharifi_sp._n.
+		○ Character10 = 1
+			§ Character1 = 1
+				□ Character4 = 2
+					® Niphargus_daniali
+				□ Character4 = 1
+					® Niphargus_khayyami
+			§ Character1 = 2
+				□ Niphargus_religiosus_Karaman_2012

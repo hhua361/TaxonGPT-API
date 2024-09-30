@@ -1,0 +1,43 @@
+Step-by-Step Explanation with Labels:
+	1. Character4: Initial split based on Character4.
+		○ Character4 = 1,2: Further split based on Character6.
+			1. Character6:
+				□ Character6 = 1: Identifies "aquilex".
+				□ Character6 = 1,2: Identifies "muotae".
+				□ Character6 = 2: Further split based on Character2.
+					1. Character2:
+						◊ Character2 = 1: Identifies "puteanus".
+						◊ Character2 = 2: Identifies "tonywhitteni".
+		○ Character4 = 1: Further split based on Character7.
+			1. Character7:
+				□ Character7 = 2: Identifies "auerbachi".
+				□ Character7 = 1: Further split based on Character2.
+					1. Character2:
+						◊ Character2 = 2: Further split based on Character14.
+							1. Character14:
+								– Character14 = 1: Identifies "forelii".
+								– Character14 = 2: Identifies "thienemanni".
+						◊ Character2 = 1: Identifies "setiferus".
+				□ Character7 = 1,2: Identifies "luchoffmani".
+		○ Character4 = 2: Further split based on Character9.
+			1. Character9:
+				□ Character9 = 3: Further split based on Character2.
+					1. Character2:
+						◊ Character2 = 1,2: Further split based on Character3.
+							1. Character3:
+								– Character3 = 2: Identifies "brixianus".
+								– Character3 = 1: Identifies "'A_(cf.stygius)'".
+						◊ Character2 = 1: Identifies "styx".
+						◊ Character2 = 1,4: Identifies "virei".
+				□ Character9 = 1: Further split based on Character2.
+					1. Character2:
+						◊ Character2 = 2: Identifies "caspary".
+						◊ Character2 = 3,4: Identifies "murimali".
+				□ Character9 = 2: Further split based on Character17.
+					1. Character17:
+						◊ Character17 = 2: Identifies "inopinatus".
+						◊ Character17 = 1: Further split based on Character5.
+							1. Character5:
+								– Character5 = 2: Identifies "rhenorhodanesis_species_complex".
+								– Character5 = 1: Identifies "thuringius".
+						◊ Character17 = 3: Identifies "'B_(cf.thienemanni)'".

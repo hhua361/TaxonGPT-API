@@ -1,0 +1,31 @@
+Character24: 1 (stomata <of assimilating shoot>): sunken
+  ├── Character7: 1 (the main stems <of the assimil>): bearing whorls of slender bran
+  │     └── Equisetum_ramosissimum
+  ├── Character7: 2,3 (the main stems <of the assimil>): sparingly branched, the branch, simple
+  │     ├── Character6: 1 (the main stems <of the assimil>): very rough
+  │     │     └── Equisetum_trachyodon
+  │     └── Character6: 2 (the main stems <of the assimil>): slightly rough
+  │           └── Equisetum_variegatum
+  ├── Character7: 3 (the main stems <of the assimil>): simple
+        ├── Character8: 1 (the main stems <of the assimil>): persisting through the winter
+        │     └── Equisetum_hyemale
+        └── Character8: 2 (the main stems <of the assimil>): dying down in autumn
+              └── Equisetum_moorei
+Character24: 2 (stomata <of assimilating shoot>): not sunken
+  ├── Character2: 1 (the shoots <dimorphism>): conspicuously dimorphic: the c
+  │     ├── Character3: 1 (the brown, non-assimilating fe): with numerous sheaths and rela
+  │     │     └── Equisetum_telmateia
+  │     └── Character3: 2 (the brown, non-assimilating fe): with only 4 to 6 relatively di
+  │           └── Equisetum_arvense
+  ├── Character2: 2 (the shoots <dimorphism>): distinguishable as fertile and
+  │     ├── Character1: 1,2 (the rhizomes <whether tuberous>): bearing tubers, not tuberous
+  │     │     └── Equisetum_sylvaticum
+  │     └── Character1: 2 (the rhizomes <whether tuberous>): not tuberous
+  │           └── Equisetum_pratense
+  ├── Character2: 3 (the shoots <dimorphism>): all green and alike vegetative
+        ├── Character7: 1 (the main stems <of the assimil>): bearing whorls of slender bran
+        │     └── Equisetum_litorale
+        ├── Character7: 1,2,3 (the main stems <of the assimil>): bearing whorls of slender bran, sparingly branched, the branch, simple
+        │     └── Equisetum_palustre
+        └── Character7: 1,3 (the main stems <of the assimil>): bearing whorls of slender bran, simple
+              └── Equisetum_fluviatile

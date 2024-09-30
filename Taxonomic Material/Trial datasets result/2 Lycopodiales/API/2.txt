@@ -1,0 +1,71 @@
+Updated Classification Key:
+{
+    "Character 1: Stems elongation": {
+        "State 1: elongated, with numerous small leaves": {
+            "Character 2: Stems carriage": {
+                "State 1: suberect, and rooting directly at the base only": "Huperzia selago",
+                "State 2: creeping, and rooting directly at intervals along their length": {
+                    "Character 12: Leaves whether hair-pointed": {
+                        "State 1: with long, filiform hair-like tips": "Lycopodium clavatum",
+                        "State 2: not hair-pointed": {
+                            "Character 20: Habitat elevation": {
+                                "State 1: lowland": "Lycopodiella inundata",
+                                "State 2 and 3: upland;;montane": "Lycopodium annotinum",
+                                "State 1 and 2 and 3: lowland;;upland;;montane": {
+                                    "Character 5: Stems whether with flattened branches": {
+                                        "State 2: with only slightly flattened branches": "Diphasiastrum alpinum",
+                                        "State 3: with strongly flattened branches": "Diphasiastrum complanatum"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "State 3: creeping, and rooting from characteristic, leafless, root-bearing branches (rhizophores)": {
+                    "Character 11: Foliage leaves appressed or spreading": {
+                        "State 1 and 2: appressed;;spreading": {
+                            "Character 4: Stems whether dorsiventral": {
+                                "State 1: dorsiventrally organized, with four ranks of leaves": "Selaginella kraussiana",
+                                "State 2: not dorsiventrally organized": "Selaginella selaginoides"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "State 2: short and tuberous, with sheathing leaves crowded in dense rosettes": {
+            "Character 18: The megaspores of Isoetes, surface ornamentation": {
+                "State 1: covered with short, blunt tubercles": "Isoetes lacustris",
+                "State 2: covered with long, fragile spines": "Isoetes echinospora",
+                "State 3: with a reticulate ornamentation, neither tuberculate nor spiny": "Isoetes histrix"
+            }
+        }
+    }
+}
+
+1.
+    -  Stems elongation: elongated, with numerous small leaves ........ 2
+    -  Stems elongation: short and tuberous, with sheathing leaves crowded in dense rosettes ........ 3
+2(1).
+    -  Stems carriage: suberect, and rooting directly at the base only ........ Huperzia selago
+    -  Stems carriage: creeping, and rooting directly at intervals along their length ........ 4
+    -  Stems carriage: creeping, and rooting from characteristic, leafless, root-bearing branches (rhizophores) ........ 5
+4(2).
+    -  Leaves whether hair-pointed: with long, filiform hair-like tips ........ Lycopodium clavatum
+    -  Leaves whether hair-pointed: not hair-pointed ........ 6
+6(4).
+    -  Habitat elevation: lowland ........ Lycopodiella inundata
+    -  Habitat elevation: upland;;montane ........ Lycopodium annotinum
+    -  Habitat elevation: lowland;;upland;;montane ........ 7
+7(6).
+    -  Stems whether with flattened branches: with only slightly flattened branches ........ Diphasiastrum alpinum
+    -  Stems whether with flattened branches: with strongly flattened branches ........ Diphasiastrum complanatum
+5(2).
+    -  Foliage leaves appressed or spreading: appressed;;spreading ........ 8
+8(5).
+    -  Stems whether dorsiventral: dorsiventrally organized, with four ranks of leaves ........ Selaginella kraussiana
+    -  Stems whether dorsiventral: not dorsiventrally organized ........ Selaginella selaginoides
+3(1).
+    -  The megaspores of Isoetes, surface ornamentation: covered with short, blunt tubercles ........ Isoetes lacustris
+    -  The megaspores of Isoetes, surface ornamentation: covered with long, fragile spines ........ Isoetes echinospora
+    -  The megaspores of Isoetes, surface ornamentation: with a reticulate ornamentation, neither tuberculate nor spiny ........ Isoetes histrix

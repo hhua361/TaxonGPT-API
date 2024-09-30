@@ -1,0 +1,27 @@
+Character4:
+	• State 2:
+		○ Character5:
+			§ State 2:
+				□ Character2:
+					® State 3:
+						◊ Character1:
+							} State 2: Lytopylus_bradzlotnicki
+							} State 3: Lytopylus_rebeccashapleyae
+					® State 2:
+						◊ Character1:
+							} State 9: Lytopylus_jessicadimauroae
+							} State 6: Lytopylus_robpringlei
+					® State 1: Lytopylus_sandraberriosae
+			§ State 1:
+				□ Character1:
+					® State 8: Lytopylus_colleenhitchcockae
+					® State 1: Lytopylus_vaughntani
+			§ State 1,2:
+				□ Character1:
+					® State 5: Lytopylus_flavicalcar
+					® State 11,12:
+						◊ Character3:
+							} State 1: Lytopylus_jessiehillae
+							} State 2: Lytopylus_mingfangi
+					® State 10: Lytopylus_macadamiae
+	• State 1: Lytopylus_gregburtoni

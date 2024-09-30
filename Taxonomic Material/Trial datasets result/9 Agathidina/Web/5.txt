@@ -1,0 +1,33 @@
+Character32
+	• State 2
+		○ Character10
+			§ State 1
+				□ Character2
+					® State 1: Agrostis
+					® State 1,2: Oryza
+			§ State 1,2
+				□ Character1
+					® State 1,2: Andropogon
+					® State 2: Bambusa
+			§ State 2
+				□ Character1
+					® State 2: Anisopogon
+					® State 1: Zea
+	• State 1
+		○ Character72
+			§ State 1,2
+				□ Character3
+					® State 2: Chloris
+					® State 1,2: Panicum
+			§ State 2
+				□ Character1
+					® State 1,2: Echinochloa
+					® State 2: Phragmites
+			§ State 1
+				□ Character1
+					® State 1,2: Eleusine
+					® State 2: Festuca
+	• State 1,2
+		○ Character1
+			§ State 2: Cynodon
+			§ State 1,2: Poa

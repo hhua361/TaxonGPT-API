@@ -1,0 +1,138 @@
+Updated Classification Key:
+{
+    "Character 1: Position of lateral carina of frons": {
+        "State 1: with posterior ends directed towards lateral ocelli": {
+            "Character 5: Length of foretibial spurs": {
+                "State 1: about as long as basitarsus, and ending in a long thin style": "Coccygidium",
+                "State 2: less that 3/4 length of fore basitarsus, and ending abruptly": {
+                    "Character 6: Length of mouthparts": {
+                        "State 1: Mouthparts long, galea significantly longer than wide; gena often elongate": "Biroia",
+                        "State 1 and 2: Mouthparts long, galea significantly longer than wide; gena often elongate;;Mouthparts short (normal), galea not longer than wide; gena not especially elongate": {
+                            "Character 13: Presence of ventral longitudinal carinae on hind trochantellus": {
+                                "State 1: Hind trochantellus with one or two distinct carinae": "Cremnoptoides",
+                                "State 2: Hind trochantellus lacking carinae": {
+                                    "Character 9: Presence of adventitious vein (2RS) on r-m crossvein of forewing": {
+                                        "State 1: absent or indicated only by slight swelling": "Disophrys"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "State 2: with posterior ends directed towards median ocellus": {
+            "Character 1: Position of lateral carina of frons": {
+                "State 2: with posterior ends directed towards median ocellus": {
+                    "Character 9: Presence of adventitious vein (2RS) on r-m crossvein of forewing": {
+                        "State 2: present and distinct": "Troticus",
+                        "State 1: absent or indicated only by slight swelling": "Hypsostypos"
+                    }
+                },
+                "State 1 and 2: with posterior ends directed towards lateral ocelli;;with posterior ends directed towards median ocellus": {
+                    "Character 6: Length of mouthparts": {
+                        "State 1: Mouthparts long, galea significantly longer than wide; gena often elongate": "Cremnops"
+                    }
+                }
+            }
+        },
+        "State 3: with posterior ends meeting anterior to ocelli forming a complete circle": "Gyrochus",
+        "State 4: absent": {
+            "Character 2: Presence and shape of 2nd submarginal cell of forewing": {
+                "State 1: quadrate, or slightly narrowing anteriorly": "Earinus",
+                "State 2: triangular": {
+                    "Character 3: Shape of tarsal claws": {
+                        "State 2: fore and mid claws with a basal lobe": {
+                            "Character 4: Sculpture of median tergite 3": {
+                                "State 1 and 2: extensively striate in anterior half or more;;not extensively striate, usually smooth or weakly coriarious": "Lytopylus",
+                                "State 2: not extensively striate, usually smooth or weakly coriarious": "Therophilus"
+                            }
+                        },
+                        "State 3: Fore and mid claws simple": "Bassus"
+                    }
+                },
+                "State 3: absent": {
+                    "Character 8: Sculpture of first median tergite": {
+                        "State 3: mostly granulate or coriarious": {
+                            "Character 16: Presence of RS vein of forewing": {
+                                "State 1: completely absent": "Aneurobracon",
+                                "State 2: present, though sometimes interrupted at midlength": "Camptothlipsis"
+                            }
+                        }
+                    }
+                },
+                "State 1 and 2: quadrate, or slightly narrowing anteriorly;;triangular": {
+                    "Character 3: Shape of tarsal claws": {
+                        "State 1: fore and mid claws cleft": {
+                            "Character 10: Length of ovipositor": {
+                                "State 1: short, barely exerted or less than half length of metasoma": {
+                                    "Character 13: Presence of ventral longitudinal carinae on hind trochantellus": {
+                                        "State 1: Hind trochantellus with one or two distinct carinae": "Amputostypos",
+                                        "State 2: Hind trochantellus lacking carinae": "Euagathis"
+                                    }
+                                }
+                            }
+                        },
+                        "State 2: fore and mid claws with a basal lobe": {
+                            "Character 4: Sculpture of median tergite 3": {
+                                "State 1: extensively striate in anterior half or more": "Braunsia",
+                                "State 2: not extensively striate, usually smooth or weakly coriarious": "Agathis"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+1.
+    -  Position of lateral carina of frons: with posterior ends directed towards lateral ocelli ........ 2
+    -  Position of lateral carina of frons: with posterior ends directed towards median ocellus ........ 3
+    -  Position of lateral carina of frons: with posterior ends meeting anterior to ocelli forming a complete circle ........ Gyrochus
+    -  Position of lateral carina of frons: absent ........ 4
+2(1).
+    -  Length of foretibial spurs: about as long as basitarsus, and ending in a long thin style ........ Coccygidium
+    -  Length of foretibial spurs: less that 3/4 length of fore basitarsus, and ending abruptly ........ 5
+5(2).
+    -  Length of mouthparts: Mouthparts long, galea significantly longer than wide; gena often elongate ........ Biroia
+    -  Length of mouthparts: Mouthparts long, galea significantly longer than wide; gena often elongate;;Mouthparts short (normal), galea not longer than wide; gena not especially elongate ........ 6
+6(5).
+    -  Presence of ventral longitudinal carinae on hind trochantellus: Hind trochantellus with one or two distinct carinae ........ Cremnoptoides
+    -  Presence of ventral longitudinal carinae on hind trochantellus: Hind trochantellus lacking carinae ........ 7
+7(6).
+    -  Presence of adventitious vein (2RS) on r-m crossvein of forewing: absent or indicated only by slight swelling ........ Disophrys
+3(1).
+    -  Position of lateral carina of frons: with posterior ends directed towards median ocellus ........ 8
+    -  Position of lateral carina of frons: with posterior ends directed towards lateral ocelli;;with posterior ends directed towards median ocellus ........ 9
+8(3).
+    -  Presence of adventitious vein (2RS) on r-m crossvein of forewing: present and distinct ........ Troticus
+    -  Presence of adventitious vein (2RS) on r-m crossvein of forewing: absent or indicated only by slight swelling ........ Hypsostypos
+9(3).
+    -  Length of mouthparts: Mouthparts long, galea significantly longer than wide; gena often elongate ........ Cremnops
+4(1).
+    -  Presence and shape of 2nd submarginal cell of forewing: quadrate, or slightly narrowing anteriorly ........ Earinus
+    -  Presence and shape of 2nd submarginal cell of forewing: triangular ........ 10
+    -  Presence and shape of 2nd submarginal cell of forewing: absent ........ 11
+    -  Presence and shape of 2nd submarginal cell of forewing: quadrate, or slightly narrowing anteriorly;;triangular ........ 12
+10(4).
+    -  Shape of tarsal claws: fore and mid claws with a basal lobe ........ 13
+    -  Shape of tarsal claws: Fore and mid claws simple ........ Bassus
+13(10).
+    -  Sculpture of median tergite 3: extensively striate in anterior half or more;;not extensively striate, usually smooth or weakly coriarious ........ Lytopylus
+    -  Sculpture of median tergite 3: not extensively striate, usually smooth or weakly coriarious ........ Therophilus
+11(4).
+    -  Sculpture of first median tergite: mostly granulate or coriarious ........ 14
+14(11).
+    -  Presence of RS vein of forewing: completely absent ........ Aneurobracon
+    -  Presence of RS vein of forewing: present, though sometimes interrupted at midlength ........ Camptothlipsis
+12(4).
+    -  Shape of tarsal claws: fore and mid claws cleft ........ 15
+    -  Shape of tarsal claws: fore and mid claws with a basal lobe ........ 16
+15(12).
+    -  Length of ovipositor: short, barely exerted or less than half length of metasoma ........ 17
+17(15).
+    -  Presence of ventral longitudinal carinae on hind trochantellus: Hind trochantellus with one or two distinct carinae ........ Amputostypos
+    -  Presence of ventral longitudinal carinae on hind trochantellus: Hind trochantellus lacking carinae ........ Euagathis
+16(12).
+    -  Sculpture of median tergite 3: extensively striate in anterior half or more ........ Braunsia
+    -  Sculpture of median tergite 3: not extensively striate, usually smooth or weakly coriarious ........ Agathis

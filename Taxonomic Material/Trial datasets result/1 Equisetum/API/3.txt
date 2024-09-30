@@ -1,0 +1,115 @@
+Updated Classification Key:
+{
+    "Character 1: The rhizomes <whether tuberous>": {
+        "State 1: Bearing tubers": {
+            "Character 10: The longitudinal internodal grooves <in the main stem internodes of the assimilating shoots, details>": {
+                "State 1: Fine, the ribs between them not prominent": "Equisetum litorale",
+                "State 2: Deep, with prominent ridges between": "Equisetum palustre"
+            }
+        },
+        "State 1 and 2: Bearing tubers;;Not tuberous": {
+            "Character 1: The rhizomes <whether tuberous>": {
+                "State 1 and 2: Bearing tubers;;Not tuberous": {
+                    "Character 2: The shoots <dimorphism>": {
+                        "State 1: Conspicuously dimorphic: the cone-bearing stems thick, unbranched, brown and non-assimilating, appearing in early spring and withering before the emergence of the sterile, branched, green, persistent ones": {
+                            "Character 3: The brown, non-assimilating fertile stems <number of sheaths>": {
+                                "State 1: With numerous sheaths and relatively short internodes": "Equisetum telmateia",
+                                "State 2: With only 4 to 6 relatively distant sheaths": "Equisetum arvense"
+                            }
+                        },
+                        "State 2: Distinguishable as fertile and sterile: both types produced at the same time, but those bearing cones remaining non-green and unbranched until after spore dispersal, and only later becoming green and branching so as to resemble the sterile stems vegetatively": "Equisetum sylvaticum",
+                        "State 3: All green and alike vegetatively, the sterile and cone-bearing shoots emerging at the same time": "Equisetum fluviatile"
+                    }
+                }
+            }
+        },
+        "State 2: Not tuberous": {
+            "Character 8: The main stems <of the assimilating shoots, persistence>": {
+                "State 1: Persisting through the winter": {
+                    "Character 7: The main stems <of the assimilating shoots, branching>": {
+                        "State 3: Simple": {
+                            "Character 4: The main stems <of the assimilating shoots, carriage>": {
+                                "State 1: Erect": {
+                                    "Character 13: Endodermis <in main stem internodes of assimilating shoots, location>": {
+                                        "State 3: Comprising two layers, one outside and the other inside the ring of vascular bundles": {
+                                            "Character 26: Spores <whether fertile>": {
+                                                "State 1: Fertile": "Equisetum hyemale"
+                                            }
+                                        }
+                                    }
+                                },
+                                "State 1 and 2: Erect;;Decumbent": {
+                                    "Character 6: The main stems <of the assimilating shoots, rough or smooth>": {
+                                        "State 1: Very rough": "Equisetum trachyodon",
+                                        "State 2: Slightly rough": "Equisetum variegatum"
+                                    }
+                                }
+                            }
+                        },
+                        "State 1: Bearing whorls of slender branches at the nodes": {
+                            "Character 6: The main stems <of the assimilating shoots, rough or smooth>": {
+                                "State 1 and 2: Very rough;;Slightly rough": "Equisetum ramosissimum"
+                            }
+                        }
+                    }
+                },
+                "State 2: Dying down in autumn": {
+                    "Character 2: The shoots <dimorphism>": {
+                        "State 2: Distinguishable as fertile and sterile: both types produced at the same time, but those bearing cones remaining non-green and unbranched until after spore dispersal, and only later becoming green and branching so as to resemble the sterile stems vegetatively": "Equisetum pratense",
+                        "State 3: All green and alike vegetatively, the sterile and cone-bearing shoots emerging at the same time": {
+                            "Character 9: The main stem internodes <of the assimilating shoots, whether swollen>": {
+                                "State 2: Not swollen": {
+                                    "Character 26: Spores <whether fertile>": {
+                                        "State 2: Abortive": "Equisetum moorei"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+1.
+    -  The rhizomes <whether tuberous>: Bearing tubers ........ 2
+    -  The rhizomes <whether tuberous>: Bearing tubers;;Not tuberous ........ 3
+    -  The rhizomes <whether tuberous>: Not tuberous ........ 4
+2(1).
+    -  The longitudinal internodal grooves <in the main stem internodes of the assimilating shoots, details>: Fine, the ribs between them not prominent ........ Equisetum litorale
+    -  The longitudinal internodal grooves <in the main stem internodes of the assimilating shoots, details>: Deep, with prominent ridges between ........ Equisetum palustre
+3(1).
+    -  The rhizomes <whether tuberous>: Bearing tubers;;Not tuberous ........ 5
+5(3).
+    -  The shoots <dimorphism>: Conspicuously dimorphic ........ 6
+    -  The shoots <dimorphism>: Distinguishable as fertile and sterile ........ Equisetum sylvaticum
+    -  The shoots <dimorphism>: All green and alike vegetatively, the sterile and cone-bearing shoots emerging at the same time ........ Equisetum fluviatile
+6(5).
+    -  The brown, non-assimilating fertile stems <number of sheaths>: With numerous sheaths and relatively short internodes ........ Equisetum telmateia
+    -  The brown, non-assimilating fertile stems <number of sheaths>: With only 4 to 6 relatively distant sheaths ........ Equisetum arvense
+4(1).
+    -  The main stems <of the assimilating shoots, persistence>: Persisting through the winter ........ 7
+    -  The main stems <of the assimilating shoots, persistence>: Dying down in autumn ........ 8
+7(4).
+    -  The main stems <of the assimilating shoots, branching>: Simple ........ 9
+    -  The main stems <of the assimilating shoots, branching>: Bearing whorls of slender branches at the nodes ........ 10
+9(7).
+    -  The main stems <of the assimilating shoots, carriage>: Erect ........ 11
+    -  The main stems <of the assimilating shoots, carriage>: Erect;;Decumbent ........ 12
+11(9).
+    -  Endodermis <in main stem internodes of assimilating shoots, location>: Comprising two layers, one outside and the other inside the ring of vascular bundles ........ 13
+13(11).
+    -  Spores <whether fertile>: Fertile ........ Equisetum hyemale
+12(9).
+    -  The main stems <of the assimilating shoots, rough or smooth>: Very rough ........ Equisetum trachyodon
+    -  The main stems <of the assimilating shoots, rough or smooth>: Slightly rough ........ Equisetum variegatum
+10(7).
+    -  The main stems <of the assimilating shoots, rough or smooth>: Very rough;;Slightly rough ........ Equisetum ramosissimum
+8(4).
+    -  The shoots <dimorphism>: Distinguishable as fertile and sterile ........ Equisetum pratense
+    -  The shoots <dimorphism>: All green and alike vegetatively, the sterile and cone-bearing shoots emerging at the same time ........ 14
+14(8).
+    -  The main stem internodes <of the assimilating shoots, whether swollen>: Not swollen ........ 15
+15(14).
+    -  Spores <whether fertile>: Abortive ........ Equisetum moorei

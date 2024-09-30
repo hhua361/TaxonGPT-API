@@ -1,0 +1,64 @@
+Updated Classification Key:
+{
+    "Character 2: forewing <color key>": {
+        "State 1: mostly weakly infuscate but less so anterobasally and at midlength (Fig. XXX)": {
+            "Character 1: <color general>": {
+                "State 1 and 4: variable, from mostly black to mostly yellowish brown; mesosoma always with extensive orangish brown; differing from most other species in that all specimens have extensive pale whitish yellow on all lateral terga;;mostly black with reddish brown infusions on temple, lateral frons, tegula, and parts of legs; laterotergite 1 whitish; lower gena and malar space yellowish white": "Sania marjoriae Mason 1983",
+                "State 1: variable, from mostly black to mostly yellowish brown; mesosoma always with extensive orangish brown; differing from most other species in that all specimens have extensive pale whitish yellow on all lateral terga": "Sania capensis Mason 1983"
+            }
+        },
+        "State 3: entirely infuscate (Fig. XXX)": {
+            "Character 1: <color general>": {
+                "State 3: mottled dark brown and yellowish brown except laterotergite 1 and margins of most metasomal sclerites whitish, head and mesothorax predominantly yellowish brown": "Sania browni Sharkey 2009",
+                "State 4: mostly black with reddish brown infusions on temple, lateral frons, tegula, and parts of legs; laterotergite 1 whitish; lower gena and malar space yellowish white": "Sania henryi Mason 1983",
+                "State 7: mottled black and brown except laterotergite 1 whitish, body, particularly metasoma, predominantly dark brown to black": "Khoikhoia turneri Mason 1984",
+                "State 8: mottled black and brown except laterotergite 1 whitish otherwise metasoma mostly brown": "Khoikhoia solata Mason 1983",
+                "State 9: mottled dark brown and yellowish brown except laterotergite 1 whitish, otherwise metasoma mostly pale brown, head and mesothorax predominantly yellowish brown": "Khoikhoia lission Mason 1984"
+            }
+        },
+        "State 1 and 2: mostly weakly infuscate but less so anterobasally and at midlength (Fig. XXX);;clear basally, infuscate in apical half (Fig. XXX)": {
+            "Character 1: <color general>": {
+                "State 1: variable, from mostly black to mostly yellowish brown; mesosoma always with extensive orangish brown; differing from most other species in that all specimens have extensive pale whitish yellow on all lateral terga": [
+                    "Sania marjoriae Mason 1983",
+                    "Sania capensis Mason 1983"
+                ],
+                "State 2: mottled black and brown except laterotergite 1 and margins of most metasomal sclerites whitish, otherwise metasoma mostly brown": "Sania masoni Sharkey 2009",
+                "State 4: mostly black with reddish brown infusions on temple, lateral frons, tegula, and parts of legs; laterotergite 1 whitish; lower gena and malar space yellowish white": [
+                    "Sania marjoriae Mason 1983",
+                    "Sania masneri Sharkey 2009"
+                ],
+                "State 5: all black except: mandible and parts of all segments of fore- and midlegs reddish or yellowish brown, hind tibia reddish brown basally, laterotergite and sternum of metasomal tergum 1 whitish": "Khoikhoia semiadusta Mason 1983",
+                "State 6: mottled black and brown except laterotergite 1 and margins of most metasomal scleriters whitish, left and right sides of the holotype vary considerably with the right side much lighter": "Khoikhoia townesi Mason 1983"
+            }
+        },
+        "State 4: ": {
+            "Character 1: <color general>": {
+                "State 1 and 4: variable, from mostly black to mostly yellowish brown; mesosoma always with extensive orangish brown; differing from most other species in that all specimens have extensive pale whitish yellow on all lateral terga;;mostly black with reddish brown infusions on temple, lateral frons, tegula, and parts of legs; laterotergite 1 whitish; lower gena and malar space yellowish white": "Sania marjoriae Mason 1983",
+                "State 4: mostly black with reddish brown infusions on temple, lateral frons, tegula, and parts of legs; laterotergite 1 whitish; lower gena and malar space yellowish white": "Sania masneri Sharkey 2009"
+            }
+        }
+    }
+}
+1.
+    -  forewing <color key>: mostly weakly infuscate but less so anterobasally and at midlength (Fig. XXX) ........ 2
+    -  forewing <color key>: entirely infuscate (Fig. XXX) ........ 3
+    -  forewing <color key>: mostly weakly infuscate but less so anterobasally and at midlength (Fig. XXX);;clear basally, infuscate in apical half (Fig. XXX) ........ 4
+    -  forewing <color key>:  ........ 5
+2(1).
+    -  <color general>: variable, from mostly black to mostly yellowish brown; mesosoma always with extensive orangish brown; differing from most other species in that all specimens have extensive pale whitish yellow on all lateral terga;;mostly black with reddish brown infusions on temple, lateral frons, tegula, and parts of legs; laterotergite 1 whitish; lower gena and malar space yellowish white ........ Sania marjoriae Mason 1983
+    -  <color general>: variable, from mostly black to mostly yellowish brown; mesosoma always with extensive orangish brown; differing from most other species in that all specimens have extensive pale whitish yellow on all lateral terga ........ Sania capensis Mason 1983
+3(1).
+    -  <color general>: mottled dark brown and yellowish brown except laterotergite 1 and margins of most metasomal sclerites whitish, head and mesothorax predominantly yellowish brown ........ Sania browni Sharkey 2009
+    -  <color general>: mostly black with reddish brown infusions on temple, lateral frons, tegula, and parts of legs; laterotergite 1 whitish; lower gena and malar space yellowish white ........ Sania henryi Mason 1983
+    -  <color general>: mottled black and brown except laterotergite 1 whitish, body, particularly metasoma, predominantly dark brown to black ........ Khoikhoia turneri Mason 1984
+    -  <color general>: mottled black and brown except laterotergite 1 whitish otherwise metasoma mostly brown ........ Khoikhoia solata Mason 1983
+    -  <color general>: mottled dark brown and yellowish brown except laterotergite 1 whitish, otherwise metasoma mostly pale brown, head and mesothorax predominantly yellowish brown ........ Khoikhoia lission Mason 1984
+4(1).
+    -  <color general>: variable, from mostly black to mostly yellowish brown; mesosoma always with extensive orangish brown; differing from most other species in that all specimens have extensive pale whitish yellow on all lateral terga ........ ['Sania marjoriae Mason 1983', 'Sania capensis Mason 1983']
+    -  <color general>: mottled black and brown except laterotergite 1 and margins of most metasomal sclerites whitish, otherwise metasoma mostly brown ........ Sania masoni Sharkey 2009
+    -  <color general>: mostly black with reddish brown infusions on temple, lateral frons, tegula, and parts of legs; laterotergite 1 whitish; lower gena and malar space yellowish white ........ ['Sania marjoriae Mason 1983', 'Sania masneri Sharkey 2009']
+    -  <color general>: all black except ........ Khoikhoia semiadusta Mason 1983
+    -  <color general>: mottled black and brown except laterotergite 1 and margins of most metasomal scleriters whitish, left and right sides of the holotype vary considerably with the right side much lighter ........ Khoikhoia townesi Mason 1983
+5(1).
+    -  <color general>: variable, from mostly black to mostly yellowish brown; mesosoma always with extensive orangish brown; differing from most other species in that all specimens have extensive pale whitish yellow on all lateral terga;;mostly black with reddish brown infusions on temple, lateral frons, tegula, and parts of legs; laterotergite 1 whitish; lower gena and malar space yellowish white ........ Sania marjoriae Mason 1983
+    -  <color general>: mostly black with reddish brown infusions on temple, lateral frons, tegula, and parts of legs; laterotergite 1 whitish; lower gena and malar space yellowish white ........ Sania masneri Sharkey 2009

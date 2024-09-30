@@ -1,0 +1,62 @@
+Updated Classification Key:
+{
+    "Character 2: forewing <color key>": {
+        "State 1: mostly weakly infuscate but less so anterobasally and at midlength (Fig. XXX)": {
+            "Character 6: antennal scrobe <depth>": {
+                "State 1: deep (Fig. XXX)": "Khoikhoia oligospilos Sharkey 2009",
+                "State 2: shallow (Fig. XXX)": "Khoikhoia anthelion Sharkey 2009"
+            }
+        },
+        "State 3: entirely infuscate (Fig. XXX)": {
+            "Character 10: gena <sculpture>": {
+                "State 1: with weak rugose microsculpture (Fig. XXX)": "Sania henryi Mason 1983",
+                "State 2: mostly smooth with weak punctures (Fig. XXX)": "Sania browni Sharkey 2009",
+                "State 5: entirely longitudinally rugosostriate, striae weaker posteriorly (Fig. XXX)": {
+                    "Character 28: <diagnosis>": {
+                        "State 5: tergite 1 partly smooth with punctures posteriorly; notauli entirely crenulate (Fig. XXX)": "Khoikhoia solata Mason 1983",
+                        "State 7: middle lobe of scutum smooth with punctures anteromedially, otherwise rugosopunctate (Fig. XXX); mesopleuron entirely rugosopunctate (Fig. XXX)": "Khoikhoia turneri Mason 1984"
+                    }
+                },
+                "State 6: transversely rugosostriate anteriorly, rugosopunctate at midlength, longitudinally rugosostriate posteriorly (Fig. XXX)": "Khoikhoia lission Mason 1984"
+            }
+        },
+        "State 1 and 2: mostly weakly infuscate but less so anterobasally and at midlength (Fig. XXX);;clear basally, infuscate in apical half (Fig. XXX)": {
+            "Character 1: <color general>": {
+                "State 1: variable, from mostly black to mostly yellowish brown; mesosoma always with extensive orangish brown; differing from most other species in that all specimens have extensive pale whitish yellow on all lateral terga": {
+                    "Character 6: antennal scrobe <depth>": {
+                        "State 2 and 3: shallow (Fig. XXX);;flat (Fig. XXX)": "Sania marjoriae Mason 1983",
+                        "State 3: flat (Fig. XXX)": "Sania capensis Mason 1983"
+                    }
+                },
+                "State 2: mottled black and brown except laterotergite 1 and margins of most metasomal sclerites whitish, otherwise metasoma mostly brown": "Sania masoni Sharkey 2009",
+                "State 4: mostly black with reddish brown infusions on temple, lateral frons, tegula, and parts of legs; laterotergite 1 whitish; lower gena and malar space yellowish white": "Sania masneri Sharkey 2009",
+                "State 5: all black except: mandible and parts of all segments of fore- and midlegs reddish or yellowish brown, hind tibia reddish brown basally, laterotergite and sternum of metasomal tergum 1 whitish": "Khoikhoia semiadusta Mason 1983",
+                "State 6: mottled black and brown except laterotergite 1 and margins of most metasomal scleriters whitish, left and right sides of the holotype vary considerably with the right side much lighter": "Khoikhoia townesi Mason 1983"
+            }
+        }
+    }
+}
+1.
+    -  forewing <color key>: mostly weakly infuscate but less so anterobasally and at midlength (Fig. XXX) ........ 2
+    -  forewing <color key>: entirely infuscate (Fig. XXX) ........ 3
+    -  forewing <color key>: mostly weakly infuscate but less so anterobasally and at midlength (Fig. XXX);;clear basally, infuscate in apical half (Fig. XXX) ........ 4
+2(1).
+    -  antennal scrobe <depth>: deep (Fig. XXX) ........ Khoikhoia oligospilos Sharkey 2009
+    -  antennal scrobe <depth>: shallow (Fig. XXX) ........ Khoikhoia anthelion Sharkey 2009
+3(1).
+    -  gena <sculpture>: with weak rugose microsculpture (Fig. XXX) ........ Sania henryi Mason 1983
+    -  gena <sculpture>: mostly smooth with weak punctures (Fig. XXX) ........ Sania browni Sharkey 2009
+    -  gena <sculpture>: entirely longitudinally rugosostriate, striae weaker posteriorly (Fig. XXX) ........ 5
+    -  gena <sculpture>: transversely rugosostriate anteriorly, rugosopunctate at midlength, longitudinally rugosostriate posteriorly (Fig. XXX) ........ Khoikhoia lission Mason 1984
+5(3).
+    -  <diagnosis>: tergite 1 partly smooth with punctures posteriorly; notauli entirely crenulate (Fig. XXX) ........ Khoikhoia solata Mason 1983
+    -  <diagnosis>: middle lobe of scutum smooth with punctures anteromedially, otherwise rugosopunctate (Fig. XXX); mesopleuron entirely rugosopunctate (Fig. XXX) ........ Khoikhoia turneri Mason 1984
+4(1).
+    -  <color general>: variable, from mostly black to mostly yellowish brown; mesosoma always with extensive orangish brown; differing from most other species in that all specimens have extensive pale whitish yellow on all lateral terga ........ 6
+    -  <color general>: mottled black and brown except laterotergite 1 and margins of most metasomal sclerites whitish, otherwise metasoma mostly brown ........ Sania masoni Sharkey 2009
+    -  <color general>: mostly black with reddish brown infusions on temple, lateral frons, tegula, and parts of legs; laterotergite 1 whitish; lower gena and malar space yellowish white ........ Sania masneri Sharkey 2009
+    -  <color general>: all black except ........ Khoikhoia semiadusta Mason 1983
+    -  <color general>: mottled black and brown except laterotergite 1 and margins of most metasomal scleriters whitish, left and right sides of the holotype vary considerably with the right side much lighter ........ Khoikhoia townesi Mason 1983
+6(4).
+    -  antennal scrobe <depth>: shallow (Fig. XXX);;flat (Fig. XXX) ........ Sania marjoriae Mason 1983
+    -  antennal scrobe <depth>: flat (Fig. XXX) ........ Sania capensis Mason 1983

@@ -1,0 +1,44 @@
+Character2:
+  2:
+    Character4:
+      1,2:
+        Character5:
+          1: aquilex'
+          2: tonywhitteni'
+      1:
+        Character6:
+          2: auerbachi'
+          1:
+            Character14:
+              1: forelii'
+              2: thienemanni'
+      2:
+        Character9:
+          1: caspary'
+          2:
+            Character11:
+              1: inopinatus'
+              2: B - (cf.thienemanni)'
+  1,2:
+    Character3:
+      2: brixianus'
+      1: A - (cf.stygius)'
+  1:
+    Character4:
+      1:
+        Character5:
+          2: luchoffmani'
+          1: setiferus'
+      1,2:
+        Character1:
+          1: muotae'
+          2: puteanus'
+      2:
+        Character5:
+          2:
+            Character7:
+              1: rhenorhodanesis species complex'
+              2: styx'
+          1: thuringius'
+  3,4: murimali'
+  1,4: virei'

@@ -1,0 +1,23 @@
+1. Character7=1:
+    1.1. Character2=1:
+        1.1.1. Lytopylus_sandraberriosae
+    1.2. Character2=2:
+        1.2.1. Lytopylus_vaughntani
+    1.3. Character2=3:
+        1.3.1. Character1=2: Lytopylus_bradzlotnicki
+        1.3.2. Character1=3: Lytopylus_rebeccashapleyae
+2. Character7=2:
+    2.1. Character5=1:
+        2.1.1. Character1=7: Lytopylus_gregburtoni
+        2.1.2. Character1=8: Lytopylus_colleenhitchcockae
+    2.2. Character5=1,2:
+        2.2.1. Character1=10: Lytopylus_macadamiae
+        2.2.2. Character1=11,12:
+            2.2.2.1. Character3=1: Lytopylus_jessiehillae
+            2.2.2.2. Character3=2: Lytopylus_mingfangi
+        2.2.3. Character1=5: Lytopylus_flavicalcar
+    2.3. Character5=2:
+        2.3.1. Character1=6: Lytopylus_robpringlei
+        2.3.2. Character1=9: Lytopylus_jessicadimauroae
+
+

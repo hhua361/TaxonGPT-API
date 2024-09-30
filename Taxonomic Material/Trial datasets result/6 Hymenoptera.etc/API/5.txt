@@ -1,0 +1,97 @@
+Updated Classification Key:
+{
+    "Character 9: Fore-wings of imagines and sub-imagines, whether veins R4 and R5 detached.": {
+        "State 1: with R5 detached basally from R4": {
+            "Character 7: Wings of imagines and sub-imagines, spotted or unspotted.": {
+                "State 1: more or less spotted with brown or blackish": "Ephemera",
+                "State 2: unspotted (dubiously implicit)": "Potamanthus"
+            }
+        },
+        "State 2: with R5 and R4 joined basally (implicit)": {
+            "Character 3: The compound eyes of imagines, two-lobed or not.": {
+                "State 1 and 2: distinctly two-lobed (the larger, upper lobe usually with larger facets than those of the lower, in which they are usually darker);;rounded (not lobed, though sometimes two-coloured)": {
+                    "Character 13: The hind-wing costa of imagines and sub-imagines, smoothly curved or with a projection.": {
+                        "State 1: smoothly curved": {
+                            "Character 22: The lobes of the penis, appendages/spurs.": {
+                                "State 1: each with one recurved appendage (spur)": "Leptophlebia",
+                                "State 2: each with two recurved appendages (spurs)": "Paraleptophlebia"
+                            }
+                        },
+                        "State 2: with a conspicuous projection": "Habrophlebia"
+                    }
+                },
+                "State 2: rounded (not lobed, though sometimes two-coloured)": {
+                    "Character 5: Second antennal segment of imagines and sub-imagines, relative length.": {
+                        "State 1: three times as long as the first": "Brachycercus",
+                        "State 2: no more than twice as long as the first": "Caenis",
+                        "State Missing: ": "Ephemerella"
+                    }
+                }
+            }
+        },
+        "State 3: ": {
+            "Character 1: The sex of imago.": {
+                "State 1 and 2: male;;female": {
+                    "Character 7: Wings of imagines and sub-imagines, spotted or unspotted.": {
+                        "State 1: more or less spotted with brown or blackish": "Ecdyonurus",
+                        "State 2: unspotted (dubiously implicit)": {
+                            "Character 20: Male claspers, crossed or separate.": {
+                                "State 1: crossed": "Rhithrogena",
+                                "State Missing: ": "Heptagenia",
+                                "State 2: separate": "Ameletus"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "State 6: ": {
+            "Character 13: The hind-wing costa of imagines and sub-imagines, smoothly curved or with a projection.": {
+                "State 2: with a conspicuous projection": "Habrophlebia",
+                "State 1: smoothly curved": {
+                    "Character 22: The lobes of the penis, appendages/spurs.": {
+                        "State 1: each with one recurved appendage (spur)": "Leptophlebia",
+                        "State 2: each with two recurved appendages (spurs)": "Paraleptophlebia"
+                    }
+                }
+            }
+        }
+    }
+}
+
+1.
+    -  Fore-wings of imagines and sub-imagines, whether veins R4 and R5 detached.: with R5 detached basally from R4 ........ 2
+    -  Fore-wings of imagines and sub-imagines, whether veins R4 and R5 detached.: with R5 and R4 joined basally (implicit) ........ 3
+    -  Fore-wings of imagines and sub-imagines, whether veins R4 and R5 detached.:  ........ 4
+    -  Fore-wings of imagines and sub-imagines, whether veins R4 and R5 detached.:  ........ 5
+2(1).
+    -  Wings of imagines and sub-imagines, spotted or unspotted.: more or less spotted with brown or blackish ........ Ephemera
+    -  Wings of imagines and sub-imagines, spotted or unspotted.: unspotted (dubiously implicit) ........ Potamanthus
+3(1).
+    -  The compound eyes of imagines, two-lobed or not.: distinctly two-lobed (the larger, upper lobe usually with larger facets than those of the lower, in which they are usually darker);;rounded (not lobed, though sometimes two-coloured) ........ 6
+    -  The compound eyes of imagines, two-lobed or not.: rounded (not lobed, though sometimes two-coloured) ........ 7
+6(3).
+    -  The hind-wing costa of imagines and sub-imagines, smoothly curved or with a projection.: smoothly curved ........ 8
+    -  The hind-wing costa of imagines and sub-imagines, smoothly curved or with a projection.: with a conspicuous projection ........ Habrophlebia
+8(6).
+    -  The lobes of the penis, appendages/spurs.: each with one recurved appendage (spur) ........ Leptophlebia
+    -  The lobes of the penis, appendages/spurs.: each with two recurved appendages (spurs) ........ Paraleptophlebia
+7(3).
+    -  Second antennal segment of imagines and sub-imagines, relative length.: three times as long as the first ........ Brachycercus
+    -  Second antennal segment of imagines and sub-imagines, relative length.: no more than twice as long as the first ........ Caenis
+    -  Second antennal segment of imagines and sub-imagines, relative length.:  Missing........ Ephemerella
+4(1).
+    -  The sex of imago.: male;;female ........ 9
+9(4).
+    -  Wings of imagines and sub-imagines, spotted or unspotted.: more or less spotted with brown or blackish ........ Ecdyonurus
+    -  Wings of imagines and sub-imagines, spotted or unspotted.: unspotted (dubiously implicit) ........ 10
+10(9).
+    -  Male claspers, crossed or separate.: crossed ........ Rhithrogena
+    -  Male claspers, crossed or separate.:  Missing........ Heptagenia
+    -  Male claspers, crossed or separate.: separate ........ Ameletus
+5(1).
+    -  The hind-wing costa of imagines and sub-imagines, smoothly curved or with a projection.: with a conspicuous projection ........ Habrophlebia
+    -  The hind-wing costa of imagines and sub-imagines, smoothly curved or with a projection.: smoothly curved ........ 11
+11(5).
+    -  The lobes of the penis, appendages/spurs.: each with one recurved appendage (spur) ........ Leptophlebia
+    -  The lobes of the penis, appendages/spurs.: each with two recurved appendages (spurs) ........ Paraleptophlebia

@@ -1,0 +1,207 @@
+{
+    "1": {
+        "description": "The sex of imago.",
+        "states": {
+            "1": "male",
+            "2": "female"
+        }
+    },
+    "2": {
+        "description": "The compound eyes of imagines, separation.",
+        "states": {
+            "1": "contiguous",
+            "2": "widely separated"
+        }
+    },
+    "3": {
+        "description": "The compound eyes of imagines, two-lobed or not.",
+        "states": {
+            "1": "distinctly two-lobed (the larger, upper lobe usually with larger facets than those of the lower, in which they are usually darker)",
+            "2": "rounded (not lobed, though sometimes two-coloured)"
+        }
+    },
+    "4": {
+        "description": "The upper lobe of the compound eyes of imagines, whether turbanate.",
+        "states": {
+            "1": "turbanate (turban-shaped)",
+            "2": "rounded"
+        }
+    },
+    "5": {
+        "description": "Second antennal segment of imagines and sub-imagines, relative length.",
+        "states": {
+            "1": "three times as long as the first",
+            "2": "no more than twice as long as the first"
+        }
+    },
+    "6": {
+        "description": "Wings, whether fringed.",
+        "states": {
+            "1": "fringed in the imago (Caenidae only)",
+            "2": "fringed only in sub-imagines (implicit)"
+        }
+    },
+    "7": {
+        "description": "Wings of imagines and sub-imagines, spotted or unspotted.",
+        "states": {
+            "1": "more or less spotted with brown or blackish",
+            "2": "unspotted (dubiously implicit)"
+        }
+    },
+    "8": {
+        "description": "Fore-wings of imagines and sub-imagines, whether veins M1 and Cu1 are strongly divergent.",
+        "states": {
+            "1": "with veins M1 and Cu1 strongly diverging basally",
+            "2": "with veins M1 and Cu1 sub-parallel basally (implicit)"
+        }
+    },
+    "9": {
+        "description": "Fore-wings of imagines and sub-imagines, whether veins R4 and R5 detached.",
+        "states": {
+            "1": "with R5 detached basally from R4",
+            "2": "with R5 and R4 joined basally (implicit)"
+        }
+    },
+    "10": {
+        "description": "The marginal fore-wing veinlets of imagines and sub-imagines, whether single or paired between the main longitudinal veins.",
+        "states": {
+            "1": "single",
+            "2": "paired"
+        }
+    },
+    "11": {
+        "description": "Hind-wings of imagines, present or absent.",
+        "states": {
+            "1": "present (though sometimes very reduced)",
+            "2": "absent (even as vestiges)"
+        }
+    },
+    "12": {
+        "description": "The hind-wings of the female imagines, length relative to fore-wings: data recorded only for two-tailed females!",
+        "states": {
+            "1": "no more than one fifth the length of the fore-wings",
+            "2": "more than one fifth the length of the fore-wings"
+        }
+    },
+    "13": {
+        "description": "The hind-wing costa of imagines and sub-imagines, smoothly curved or with a projection.",
+        "states": {
+            "1": "smoothly curved",
+            "2": "with a conspicuous projection"
+        }
+    },
+    "14": {
+        "description": "The fore-legs of imagines, insertion close or distant.",
+        "states": {
+            "1": "inserted relatively close together under the thorax",
+            "2": "widely separated under the thorax"
+        }
+    },
+    "15": {
+        "description": "Hind tarsi of imagines and sub-imagines, length relative to the tibia.",
+        "states": {
+            "1": "about one-and-a-half times the length of the tibia (Siphlonurus)",
+            "2": "slightly shorter than the tibia (Ameletus)"
+        }
+    },
+    "16": {
+        "description": "Hind tarsi of imagines and sub-imagines, number of moveable segments.",
+        "states": {
+            "1": "with 5 moveable segments",
+            "2": "with 4 moveable segments (the fifth, if present, fused to the tibia)",
+            "3": "with 2-3 moveable segments"
+        }
+    },
+    "17": {
+        "description": "The first segment of the hind tarsus of imagines, length relative to the second segment.",
+        "states": {
+            "1": "about twice as long as the second",
+            "2": "about three times as long as the second"
+        }
+    },
+    "18": {
+        "description": "The hind tarsal claws of imagines, whether both pointed or one blunt and one pointed.",
+        "states": {
+            "1": "both pointed",
+            "2": "unalike, being one pointed and one blunt"
+        }
+    },
+    "19": {
+        "description": "The abdomen of imagines, number of tails.",
+        "states": {
+            "1": "with two tails",
+            "2": "with three tails"
+        }
+    },
+    "20": {
+        "description": "Male claspers, crossed or separate.",
+        "states": {
+            "1": "crossed",
+            "2": "separate"
+        }
+    },
+    "21": {
+        "description": "The lobes of the penis, broad or narrow.",
+        "states": {
+            "1": "very broad-tipped, and closely approximated",
+            "2": "narrow, rod-shaped, and widely separated"
+        }
+    },
+    "22": {
+        "description": "The lobes of the penis, appendages/spurs.",
+        "states": {
+            "1": "each with one recurved appendage (spur)",
+            "2": "each with two recurved appendages (spurs)",
+            "3": "without recurved appendages"
+        }
+    },
+    "23": {
+        "description": "The outer tails of nymphs, distribution of hairs.",
+        "states": {
+            "1": "hairy (bearing long hairs) on the inner side only",
+            "2": "hairy on both sides"
+        }
+    },
+    "24": {
+        "description": "Gills of nymphs, position on abdomen.",
+        "states": {
+            "1": "mostly at the sides of the abdomen",
+            "2": "mostly lying on the upper surface of the abdomen"
+        }
+    },
+    "25": {
+        "description": "Gills of nymphs, fringing.",
+        "states": {
+            "1": "all densely fringed with filaments on both sides",
+            "2": "not fringed with filaments on both sides"
+        }
+    },
+    "26": {
+        "description": "Gills of nymphs, whether consisting of a plate with a tuft of filaments.",
+        "states": {
+            "1": "mostly consisting of a plate bearing a tuft of filaments",
+            "2": "never comprising a plate bearing a tuft of filaments"
+        }
+    },
+    "27": {
+        "description": "Superfamily.",
+        "states": {
+            "1": "Ephemeroidea",
+            "2": "Baetoidea",
+            "3": "Heptagenioidea"
+        }
+    },
+    "28": {
+        "description": "Family.",
+        "states": {
+            "1": "Baetidae",
+            "2": "Caenidae",
+            "3": "Ephemeridae",
+            "4": "Ephemerellidae",
+            "5": "Heptageniidae",
+            "6": "Leptophlebiidae",
+            "7": "Potamanthidae",
+            "8": "Siphlonuridae"
+        }
+    }
+}

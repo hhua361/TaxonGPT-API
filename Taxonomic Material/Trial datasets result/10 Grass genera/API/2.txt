@@ -1,0 +1,52 @@
+Character 1
+State 1：
+1. **Character2**
+   - **State 1**
+     1. **Character7**
+        - **State 1**: setiferus'
+        - **State 1 and 2**
+          1. **Character6**
+             - **State 1**: luchoffmani'
+             - **State 1 and 2**: muotae'
+   - **State 2**
+     1. **Character9**
+        - **State 1**: caspary'
+        - **State 2**
+          1. **Character17**
+             - **State 2**
+               1. **Character4**
+                  - **State 1**
+                    1. **Character16**
+                       - **State 1**: thienemanni'
+                       - **State 2**: forelii'
+                  - **State 1 and 2**:aquilex'
+                  - **State 2**: inopinatus'
+             - **State 3**
+               1. **Character6**
+                  - **State 1**: B - (cf.thienemanni)'
+                  - **State 2**: auerbachi'
+        - **State 3**: tonywhitteni'
+State 2：
+1. **Character3**
+   - 1:
+     1. **Character9**
+        - 1: "murimali"
+        - 2:
+          1. **Character17**
+             - 1:
+               1. **Character5**
+                  - 1: "thuringius"
+                  - 2:
+                    1. **Character7**
+                       - 1: "rhenorhodanesis species complex"
+                       - 2: "puteanus"
+        - 3:
+          1. **Character6**
+             - 1: "A - (cf.stygius)"
+             - 2: "styx"
+   - 2:
+     1. **Character2**
+        - 1 and 2: "brixianus"
+        - 3 and 4: "murimali"
+        - 1 and 4: "virei"
+

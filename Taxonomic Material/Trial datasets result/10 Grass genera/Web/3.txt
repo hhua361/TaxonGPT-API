@@ -1,0 +1,42 @@
+Character1:
+	1. State 1:
+		○ Character4:
+			§ State 1,2:
+				□ Character6:
+					® State 1: aquilex'
+					® State 1,2: muotae'
+					® State 2: tonywhitteni'
+			§ State 1:
+				□ Character7:
+					® State 2: auerbachi'
+					® State 1:
+						◊ Character2:
+							} State 2:
+								– Character14:
+									w State 1: forelii'
+									w State 2: thienemanni'
+							} State 1: setiferus'
+					® State 1,2: luchoffmani'
+			§ State 2:
+				□ Character8:
+					® State 4: caspary'
+					® State 3: inopinatus'
+					® State Missing: B - (cf.thienemanni)'
+	2. State 2:
+		○ Character6:
+			§ State 1,2:
+				□ Character2:
+					® State 1,2: brixianus'
+					® State 1:
+						◊ Character7:
+							} State 1: rhenorhodanesis species complex'
+							} State 2: styx'
+			§ State 2:
+				□ Character2:
+					® State 3,4: murimali'
+					® State 1: puteanus'
+					® State 1,4: virei'
+			§ State 1:
+				□ Character2:
+					® State 1: thuringius'
+					® State 1,2: A - (cf.stygius)'

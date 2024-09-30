@@ -1,0 +1,252 @@
+{
+    "1": {
+        "description": "<color general>",
+        "states": {
+            "1": "variable, from mostly black to mostly yellowish brown; mesosoma always with extensive orangish brown; differing from most other species in that all specimens have extensive pale whitish yellow on all lateral terga",
+            "2": "mottled black and brown except laterotergite 1 and margins of most metasomal sclerites whitish, otherwise metasoma mostly brown",
+            "3": "mottled dark brown and yellowish brown except laterotergite 1 and margins of most metasomal sclerites whitish, head and mesothorax predominantly yellowish brown",
+            "4": "mostly black with reddish brown infusions on temple, lateral frons, tegula, and parts of legs; laterotergite 1 whitish; lower gena and malar space yellowish white",
+            "5": "all black except: mandible and parts of all segments of fore- and midlegs reddish or yellowish brown, hind tibia reddish brown basally, laterotergite and sternum of metasomal tergum 1 whitish",
+            "6": "mottled black and brown except laterotergite 1 and margins of most metasomal scleriters whitish, left and right sides of the holotype vary considerably with the right side much lighter",
+            "7": "mottled black and brown except laterotergite 1 whitish, body, particularly metasoma, predominantly dark brown to black",
+            "8": "mottled black and brown except laterotergite 1 whitish otherwise metasoma mostly brown",
+            "9": "mottled dark brown and yellowish brown except laterotergite 1 whitish, otherwise metasoma mostly pale brown, head and mesothorax predominantly yellowish brown",
+            "10": "mostly black with laterotergite 1 pale and the following areas yellowish brown: gena, posterodorsal apex of pronotum, tegula, legs except coxae and some tarsomeres",
+            "11": "mottled black and brown except laterotergite 1 whitish, otherwise metasoma mostly brown"
+        }
+    },
+    "2": {
+        "description": "forewing <color key>",
+        "states": {
+            "1": "mostly weakly infuscate but less so anterobasally and at midlength (Fig. XXX)",
+            "2": "clear basally, infuscate in apical half (Fig. XXX)",
+            "3": "entirely infuscate (Fig. XXX)"
+        }
+    },
+    "3": {
+        "description": "head <color for key>",
+        "states": {
+            "1": "entirely black (Fig. XXX)",
+            "2": "partly or entirely brown (Fig. XXX)"
+        }
+    },
+    "4": {
+        "description": "mesosoma <color key>",
+        "states": {
+            "1": "entirely black except tegula variable",
+            "2": "partly or entirely brown"
+        }
+    },
+    "5": {
+        "description": "scape <shape>",
+        "states": {
+            "1": "flared apicoanteriorly with expanded apical surface",
+            "2": "not flared apicoanteriorly and lacking expanded apical surface"
+        }
+    },
+    "6": {
+        "description": "antennal scrobe <depth>",
+        "states": {
+            "1": "deep (Fig. XXX)",
+            "2": "shallow (Fig. XXX)",
+            "3": "flat (Fig. XXX)"
+        }
+    },
+    "7": {
+        "description": "antennal scrobe <sculpture>",
+        "states": {
+            "1": "entirely smooth with weak punctures (Fig. XXX)",
+            "2": "smooth with weak punctures medially, weakly and irregularly transverse-striate laterally (Fig. XXX)",
+            "3": "mostly smooth lacking punctures and microsetae, with very weak irregular sculpture laterally (Fig. XXX)",
+            "4": "smooth medially, transversely striate laterally (Fig. XXX)",
+            "5": "variable, from mostly transverse-striate, to mostly smooth with punctures (Fig. XXX)",
+            "6": "entirely transversely rugosostriate (Fig. XXX)",
+            "7": "rugose medially, smooth laterally except with few transverse striae immediately posterad antennal insertion (Fig. XXX)",
+            "8": "entirely transversely rugosostriate somewhat smoother dorsomedially (Fig. XXX)"
+        }
+    },
+    "8": {
+        "description": "clypeus <sculpture>",
+        "states": {
+            "1": "entirely rugose (Fig. XXX)",
+            "2": "mostly smooth with weak punctures (Fig. XXX)"
+        }
+    },
+    "9": {
+        "description": "clypeus <with tooth>",
+        "states": {
+            "1": "with median tooth",
+            "2": "without median tooth"
+        }
+    },
+    "10": {
+        "description": "gena <sculpture>",
+        "states": {
+            "1": "with weak rugose microsculpture (Fig. XXX)",
+            "2": "mostly smooth with weak punctures (Fig. XXX)",
+            "3": "with wide irregular punctures, lacking distinct rugose striae (Fig. XXX)",
+            "4": "transversely rugosostriate anteriorly, longitudinally rugosostriate posteriorly (Fig. XXX)",
+            "5": "entirely longitudinally rugosostriate, striae weaker posteriorly (Fig. XXX)",
+            "6": "transversely rugosostriate anteriorly, rugosopunctate at midlength, longitudinally rugosostriate posteriorly (Fig. XXX)"
+        }
+    },
+    "11": {
+        "description": "face <sculpture>",
+        "states": {
+            "1": "mostly punctate with some weak rugae especially dorsally (Fig. XXX)",
+            "2": "weakly punctate throughout (Fig. XXX)",
+            "3": "entirely rugose (Fig. XXX)"
+        }
+    },
+    "12": {
+        "description": "area between antennal scrobe and inner orbit of eye <protuberance>",
+        "states": {
+            "1": "with protuberance (Fig. XXX)",
+            "2": "without protuberance (Fig. XXX)"
+        }
+    },
+    "13": {
+        "description": "vertex <sculpture>",
+        "states": {
+            "1": "",
+            "2": ""
+        }
+    },
+    "14": {
+        "description": "posterior orbit of eye <sculpture>",
+        "states": {
+            "1": "with distinct crenulate margin (Fig. XXX)",
+            "2": "lacking distinct crenulate margin (Fig. XXX)"
+        }
+    },
+    "15": {
+        "description": "middle lobe of scutum <sculpture>",
+        "states": {
+            "1": "entirely smooth with punctures",
+            "2": "entirely rugosopunctate",
+            "3": "smooth with punctures anteromedially, otherwise rugosopunctate"
+        }
+    },
+    "16": {
+        "description": "notauli <sculpture>",
+        "states": {
+            "1": "entirely crenulate",
+            "2": "crenulations weak and partly effaced"
+        }
+    },
+    "17": {
+        "description": "mesopleuron <sculpture>",
+        "states": {
+            "1": "entirely rugosopunctate or rugose",
+            "2": "at least partly smooth with punctures"
+        }
+    },
+    "18": {
+        "description": "sternaulus <completeness>",
+        "states": {
+            "1": "long occupying most of length of mesopleuron (Fig. XXX)",
+            "2": "only present at midlength (Fig. XXX)",
+            "3": "absent or difficult to discern due to dense sculpture of mesopleuron (Fig. XXX)"
+        }
+    },
+    "19": {
+        "description": "discrimin (median longitudinal ventral sulcus between mesopleura) <sculpture>",
+        "states": {
+            "1": "smooth or with a few barely perceptible crenulae",
+            "2": "crenulate"
+        }
+    },
+    "20": {
+        "description": "metapleuron <rugosity>",
+        "states": {
+            "1": "mostly rugose, lacking a large smooth lightly punctate area",
+            "2": "partly rugose but with a large smooth lightly punctate area"
+        }
+    },
+    "21": {
+        "description": "propodeum <sculpture>",
+        "states": {
+            "1": "mostly rugose with smooth area posterolaterally (Fig. XXX)",
+            "2": "entirely rugose without smooth area posterolaterally (Fig. XXX)"
+        }
+    },
+    "22": {
+        "description": "median tergite 1 <shape>",
+        "states": {
+            "1": "distinctly narrowed posteriorly",
+            "2": "not distinctly narrowed posteriorly"
+        }
+    },
+    "23": {
+        "description": "median tergite 1 <sculpture>",
+        "states": {
+            "1": "completely rugose",
+            "2": "partly smooth with punctures especially posteriorly, with weak rugae or microsculpture anteriorly"
+        }
+    },
+    "24": {
+        "description": "hypopygium <length>",
+        "states": {
+            "1": "subequal to half length of metasoma (Fig. XXX)",
+            "2": "less than 1/3 length of metasoma (Fig. XXX)"
+        }
+    },
+    "25": {
+        "description": "hypopygium <extending past apical tergum>",
+        "states": {
+            "1": "extending past apical tergum (Fig. XXX)",
+            "2": "not extending past apical tergum (Fig. XXX)"
+        }
+    },
+    "26": {
+        "description": "ovipositor <length>",
+        "states": {
+            "1": "more than half as long as metasoma",
+            "2": "barely exerted, much shorter than metasoma"
+        }
+    },
+    "27": {
+        "description": "length of setae of ovipositor sheath",
+        "states": {
+            "1": "none longer than 2x width of ovipositor sheath (Fig. XXX)",
+            "2": "as much as 3 or 4x as long as width of sheath (Fig. XXX)"
+        }
+    },
+    "28": {
+        "description": "<diagnosis>",
+        "states": {
+            "1": "notauli crenulations weak and partly effaced (Fig. XXX)",
+            "2": "mesopleuron entirely rugosopunctate or rugose (Fig. XXX); middle lobe of scutum entirely smooth with punctures (Fig. XXX)",
+            "3": "mesopleuron at least partly smooth with punctures (Fig. XXX); notauli entirely crenulate; mesosoma partly or entirely brown; median tergite 1 completely rugose (Fig. XXX)",
+            "4": "body of mesosoma entirely black except tegula brown (Fig. XXX)",
+            "5": "tergite 1 partly smooth with punctures posteriorly; notauli entirely crenulate (Fig. XXX)",
+            "6": "middle lobe of scutum entirely rugosopunctate; mesopleuron entirely rugosopunctate (Fig. XXX)",
+            "7": "middle lobe of scutum smooth with punctures anteromedially, otherwise rugosopunctate (Fig. XXX); mesopleuron entirely rugosopunctate (Fig. XXX)",
+            "8": "discrimen smooth or with a few barely perceptible crenulae (Fig. XXX); metapleuron partly rugose but with a large smooth lightly punctate area (Fig. XXX)",
+            "9": "discrimen smooth or with a few barely perceptible crenulae; metapleuron mostly rugose, lacking a large smooth lightly punctate area (Fig. XXX)",
+            "10": "scape not flared apicoanteriorly and lacking expanded apical surface (Fig. XXX); discrimen crenulate (Fig. XXX); mesosoma partly or entirely brown (Fig. XXX)",
+            "11": "scape flared apicoanteriorly with expanded apical surface; median tergite 1 distinctly narrowed posteriorly and completely rugose",
+            "12": "scape flared apicoanteriorly with expanded apical surface (Fig. XXX); median tergite 1 distinctly narrowed posteriorly and smooth with punctures posterolaterally (Fig. XXX)",
+            "13": "mesosoma entirely black except tegula variable (Fig. XXX); median tergite 1 smooth with punctures posterolaterally (Fig. XXX)",
+            "14": "mesosoma entirely black except tegula variable (Fig. XXX)"
+        }
+    },
+    "29": {
+        "description": "<material examined>",
+        "states": {
+            "1": "Holotype female: South Africa: Jonkershoek, near Stellenbosch, 33∼57＊33.74§S, 18∼55＊10.23§E, 227m, 18.xii.1970, V. Whitehead (AEI). Other specimens: 5 females, 9 males, South Africa: Western Cape, 10 km S. Clanwilliam, Malaise on sandy hill, 32∼13＊39§S, 18∼50＊50§E , 140m, 5每25.x.2004, ME Irwin, FD Parker, M Hauser (SAMC, HIC, INHS)",
+            "2": "Holotype Female: South Africa, Western Cape, 15km N Citrusdal, Koedoeskop Farm, Malaise across hillside trail, 32∼29＊18§S, 18∼57＊30§E, 220m, 5每25.x.2004, ME Irwin, FD Parker. SA-34 (SAMC). Paratypes: South Africa, Western Cape: 2 females, 3 males, same data as holotype. 1 female, 9 males, 10 km S. Clanwilliam, Malaise on sandy hill, 32∼13＊39§S, 18∼50＊50§E , 140m, 5每25.x.2004, ME Irwin, FD Parker, M Hauser. 2 females, 1 male, 14km NW Robertson@hwy R60, Malaise in dry wash, 33∼46.65＊S 19∼45.69＊E, 270 m, 7.x.2002, ME Irwin, FD Parker, RSA-15 (SAMC, AEI, HIC, CNCI, INHS)",
+            "3": "Holotype female: South Africa, Western Cape, 10 km S. Clanwilliam, Malaise on sandy hill, 32∼13＊39§S, 18∼50＊50§E, 140m, 5每25.x.2004, ME Irwin, FD Parker, M Hauser (SAMC). Paratypes: 3 females, 18 males, South Africa, Western Cape, 15km N Citrusdal, Koedoeskop Farm, Malaise across hillside trail, 32∼29＊18§S, 18∼57＊30§E, 220m, 5每25.x.2004, ME Irwin, FD Parker, SA-34 (SAMC, AEI, HIC, CNCI, INHS)",
+            "4": "Holotype female: South Africa, Western Cape, 10 km S. Clanwilliam, Malaise on sandy hill, 32∼13＊39§S, 18∼5:0＊50§E, 140m, 5每25.x.2004, ME Irwin, FD Parker, M Hauser (SAMC). Paratypes: 2 males, same data as holotype (SAMC, HIC)",
+            "5": "Holotype male: South Africa: Jonkershoek, near Stellenbosch, 33∼57＊33.74§S, 18∼55＊10.23§E, 227m, 18.xii.1970, V. Whitehead (AEI). Paratypes: 2 males, South Africa: Jonkershoek, near Stellenbosch, 33∼57＊33.74§S, 18∼55＊10.23§E, 227m, 11.i.1971, V. Whitehead (AEI)",
+            "6": "Holotype male: South Africa, Garies, Cape, 30∼33＊35.77§S, 17∼59＊24.91§E, 223m, 23.ix.1970, H. & M. Townes (AEI)",
+            "7": "Holotype female: South Africa, Western Cape, Kogelberg Nature Reserve, MT, K098-M42, Mesic Mtn. Fynbos, last burnt c. 1988, 34∼16.481＊S, 19∼01.033＊E, 199m, 16.ix-16.x.1999, S. van Noort. SAM-HYM-P0024705 (SAMC). Paratype: male same data as holotype (HIC)",
+            "8": "Holotype female: South Africa, Western Cape, Langberg Farm, 3 km 270∼ W Langebaanweg, MT, LW02-N2-M229, Sand Plain Fynbos, 32∼58.461＊S, 18∼07.344＊E, 51m, 29.x-5.xi.2003, S. van Noort. SAM-HYM-P0024985 (SAMC)",
+            "9": "Holotype female: South Africa, Ceres, Cape Province, 33∼22＊14.08§S, 19∼18§22.10§E, 457m, i.1921, R.E.Turner (BMNH)",
+            "10": "Holotype male: South Africa: Jonkershoek, near Stellenbosch, 33∼57＊33.74§S, 18∼55＊10.23§E, 227m, 24.xii.1970 , V. Whitehead (AEI)",
+            "11": "Holotype male: South Africa: Jonkershoek, near Stellenbosch, 33∼57＊33.74§S, 18∼55＊10.23§E, 227m, 18.xii.1970, V. Whitehead (AEI)",
+            "12": "Holotype female: South Africa, Grahamstown, 33∼18＊37.50§S, 26∼31＊30.22§E, 545m, ii.1972, Fred Gess (AEI)",
+            "13": "Holotype female: South Africa, Witzenberg Vall., S.W. Cape Prov., 914m, 19.i.1921, R.E. Turner (BMNH)"
+        }
+    }
+}

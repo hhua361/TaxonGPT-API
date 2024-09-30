@@ -1,0 +1,16 @@
+• Character28 = 1
+	• Character15 = 1,2: Araucariaceae
+	• Character15 = 2,3: Cupressaceae
+	• Character15 = 2: Pinaceae
+	• Character15 = 3,4: Sciadopityaceae
+• Character28 = 4: Cephalotaxaceae
+• Character28 = 3
+	• Character13 = 1: Cycadaceae
+	• Character13 = 2: Stangeriaceae
+• Character28 = 5
+	• Character5 = 1: Ephedraceae
+	• Character5 = 2: Gnetaceae
+• Character28 = 2
+	• Character2 = 2: Ginkgoaceae
+	• Character2 = 1: Taxaceae
+• Character28 = 1,2: Podocarpaceae

@@ -1,0 +1,91 @@
+{
+    "1": {
+        "description": "click on all lateral habitus images that match your specimen",
+        "states": {
+            "1": "L. vaughntani",
+            "2": "L. bradzlotnicki",
+            "3": "L. rebeccashapleyae",
+            "4": "L. sandraberriosae",
+            "5": "L. flavicalcar",
+            "6": "L. robpringlei",
+            "7": "L. gregburtoni",
+            "8": "L. colleenhitchcockae",
+            "9": "L. jessicadimauroae",
+            "10": "L. macadamiae",
+            "11": "L. jessiehillae",
+            "12": "L. mingfangi"
+        }
+    },
+    "2": {
+        "description": "forewing color pattern",
+        "states": {
+            "1": "banded yellow and infuscate",
+            "2": "mostly or entirely infuscate",
+            "3": "mostly or entirely hyaline (clear)"
+        }
+    },
+    "3": {
+        "description": "sculpture of third lobe of median syntergite 2+3",
+        "states": {
+            "1": "mostly or entirely longitudinally striate",
+            "2": "mostly or entirely smooth"
+        }
+    },
+    "4": {
+        "description": "presence of protuberences on occiput",
+        "states": {
+            "1": "present",
+            "2": "absent"
+        }
+    },
+    "5": {
+        "description": "color pattern of femur",
+        "states": {
+            "1": "mostly or entiely melanic",
+            "2": "mostly or entirely pale"
+        }
+    },
+    "6": {
+        "description": "color of hind coxa",
+        "states": {
+            "1": "mostly or entirely melanic",
+            "2": "mostly or entirely pale"
+        }
+    },
+    "7": {
+        "description": "color of metasoma",
+        "states": {
+            "1": "mostly or entirely melanic",
+            "2": "mostly or entirely pale"
+        }
+    },
+    "8": {
+        "description": "shape of posterior margin of syntergum 2+3",
+        "states": {
+            "1": "convex, covering most of terminal terga",
+            "2": "straight"
+        }
+    },
+    "9": {
+        "description": "sculpture of propodeum",
+        "states": {
+            "1": "with carinae forming areolae, median areola rounded anteriorly",
+            "2": "mostly smooth, lacking areolae",
+            "3": "with carinae forming areolae, median areola NOT rounded anteriorly"
+        }
+    },
+    "10": {
+        "description": "sculpture of notauli",
+        "states": {
+            "1": "with crenulae extending well along its length",
+            "2": "smooth without crenulae, or with one or two crenulae restricted to extreme anterior apex along border of mesoscutum"
+        }
+    },
+    "11": {
+        "description": "shape of gena",
+        "states": {
+            "1": "acute posterolaterally",
+            "2": "rounded or with an obtuse angle posterolaterally"
+        }
+    }
+}

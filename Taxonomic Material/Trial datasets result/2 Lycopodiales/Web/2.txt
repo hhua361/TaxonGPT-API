@@ -1,0 +1,33 @@
+Character22
+	• State 1
+		○ Character5
+			§ State 2
+				□ Diphasiastrum_alpinum
+			§ State 3
+				□ Diphasiastrum_complanatum
+			§ State 1
+				□ Character20
+					® State 1,2,3
+						◊ Character2
+							} State 1
+								– Huperzia_selago
+							} State 2
+								– Lycopodium_clavatum
+					® State 1
+						◊ Lycopodiella_inundata
+					® State 2,3
+						◊ Lycopodium_annotinum
+	• State 3
+		○ Character18
+			§ State 2
+				□ Isoetes_echinospora
+			§ State 3
+				□ Isoetes_histrix
+			§ State 1
+				□ Isoetes_lacustris
+	• State 2
+		○ Character4
+			§ State 1
+				□ Selaginella_kraussiana
+			§ State 2
+				□ Selaginella_selaginoides

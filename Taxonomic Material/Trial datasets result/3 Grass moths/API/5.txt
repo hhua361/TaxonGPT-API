@@ -1,0 +1,30 @@
+Character 1：
+	State 1：
+		1. **Character 1:**
+		   - State "1 and 2": Agriphila
+		   - State "1":
+		     1. **Character 3:**
+		        - State "1": Chilo
+		        - State "2":
+		          1. **Character 24:**
+		             - State "2": Euchromius
+		             - State "1": Haimbachia
+	State 2：
+		1. Character2 = 1
+		    1. Character5 = 1
+		        1. Character10 = 1 and 2: Chrysocrambus
+		        2. Character10 = 2 and 3: Chrysoteuchia
+		        3. Character10 = 1 and 2 and 3: Crambus
+		        4. Character10 = 3: Thisanotia
+		    2. Character5 = 2
+		        1. Character4 = 2
+		            1. Character6 = 1 and 2 and 3: Catoptria
+		            2. Character6 = 3: Ancylolomia
+		        2. Character4 = 1 and 2
+		            1. Character16 = 1 and 2: Platytes
+		            2. Character16 = 2: Pediasia
+		2. Character2 = 2
+		    1. Character4 = 1
+		        1. Character8 = 1: Donacaula
+		        2. Character8 = 1 and 2: Schoenobius
+   		   2. Character4 = 1 and 2: Calamotropha
