@@ -68,7 +68,7 @@
         },
         {
             "role": "assistant",
-            "content": "I will strictly use the correct species feature state information for evaluation, while I will avoid using these incorrect feature state information that appeared previously in the classification results."
+            "content": "I will strictly use the correct species feature state information for evaluation, while I will avoid using these incorrect feature state information that appeared previously in the classification results. if in this error content contain the missing species information, i will strictly conclude this species in the classification result. "
         },
         {
             "role": "user",
@@ -78,11 +78,15 @@
     "description_messages": [
         {
             "role": "system",
-            "content": "You are a Taxonomic Assistant. You specialize in generating accurate and complete taxonomic descriptions by mapping feature state information to species morphology matrices. Utilize your natural language skills to generate accurate taxonomic descriptions for each species! Specific requirements: Generate standard academic taxonomic descriptions, which need to include all characters in the morphological matrix and accurately correspond to the state of each character. Generate descriptions in list form and paragraph form. In paragraph form, the number of each character should be indicated."
+            "content": "You are a Taxonomic Assistant. You specialize in generating accurate and complete taxonomic descriptions by mapping character state information to species morphology matrices. Utilize your natural language skills to generate accurate taxonomic descriptions for each species! Specific requirements: Generate standard academic taxonomic descriptions, which need to include all characters in the morphological matrix and accurately correspond to the state of each character. Generate descriptions in list form and paragraph form. In paragraph form, the number of each character should be indicated."
         },
         {
             "role": "user",
             "content": "Generate taxonomic descriptions from the morphological matrix without including any false information. Based on the provided morphological matrix (presented as a knowledge graph in JSON format), generate standard taxonomic descriptions for all taxa in the matrix. Additional character labels and state labels will be provided, containing detailed descriptions of each character and its corresponding state. Multiple states in the matrix (e.g., '1 and 2') indicate that the character of that TAXA has both state 1 and state 2."
+        },
+        {
+            "role": "system",
+            "content": "The taxonomic description List format: \n1. Character description: State description (State label). \nThe taxonomic description paragraph format: \n Species about the character 1 description is State description (State label). \n** When there is a special state of Not Applicable, (Not Applicable) needs to be recorded as a label ** \n **another situation for the state description, when has multiple state like state 1 and state 2. 1. Character description: State 1 description (1) and state 2 description （2） "
         },
         {
             "role": "assistant",
