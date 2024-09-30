@@ -31,6 +31,7 @@ If the API key is correctly set, the TaxonGPT function will proceed with the sub
 4. Access the "API keys" interface to manage your API keys.
 5. Create the API key and ensure to save and record this key properly for future use.
 
+
 ![step1-4](https://github.com/user-attachments/assets/b17b1c8e-d233-40e4-a0dd-c8a8683bdde1)
 #### ⚠️Caution: Refrain from disclosing your API key to unauthorized individuals or posting it in publicly accessible locations.
 ## Overview

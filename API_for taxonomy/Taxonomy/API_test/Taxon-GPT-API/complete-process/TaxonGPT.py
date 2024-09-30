@@ -1225,10 +1225,10 @@ class TaxonGPT:
 
         try:
             # Get the output file path from the configuration
-            output_file_path = self.config["paths"]["taxonomic_description_path"]
+            taxonomic_description_path = self.config["paths"]["taxonomic_description_path"]
 
             # Save the taxonomic descriptions to the specified file
-            with open(output_file_path, 'w') as f:
+            with open(taxonomic_description_path, 'w') as f:
                 json.dump(taxonomic_descriptions, f, indent=4)
             print(f"Taxonomic descriptions have been saved to '{taxonomic_description_path}'.")
         except Exception as e:
