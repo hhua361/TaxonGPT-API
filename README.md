@@ -6,7 +6,7 @@ To use the TaxonGPT function, you can download the TaxonGPT.py file located in t
 > ### Steps:
 1. To use the TaxonGPT function, you can download the TaxonGPT.py file located in the main directory. Then, run it in your local Python environment.
 2. Ensure you have Python installed on your system.
-3. Run the following command in your terminal to execute the file:
+3. Run the following command in your terminal to execute the file or Run in Python IDE(Integrated Development Environment) environment, such as Pycharm, Vscode etc.:
 ```python
 python path/to/TaxonGPT.py
 ```
