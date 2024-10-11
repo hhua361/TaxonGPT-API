@@ -4,12 +4,10 @@
         "nexus_file_path": "C:/Users/25435/Desktop/Manuscript/Taxonomic Material/Trial Datasets/2 Lycopodiales/nexdata",
         "prompt_file_path": "C:/Users/25435/Desktop/Manuscript/Code/prompt_messages.json",
         "character_file_path": "C:/Users/25435/Desktop/Manuscript/Taxonomic Material/Trial Datasets/2 Lycopodiales/character_info.json",
-        
 	"csv_output_path": "C:/Users/25435/Desktop/test4/matrix.csv",
         "json_output_path": "C:/Users/25435/Desktop/test4/matrix_knowledge_graph.json",
 	"taxonomic_description_path": "C:/Users/25435/Desktop/test4/taxonomic_description.txt",
 	"taxonomic_key_path": "C:/Users/25435/Desktop/test4/taxonomic_key.txt",
-        
         "comparison_output_path": "C:/Users/25435/Desktop/test4/comparison_results.json",
         "enable_description_check": false
 
