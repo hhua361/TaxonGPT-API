@@ -4,6 +4,7 @@ import os
 import re
 import pandas as pd
 
+
 class TaxonGPT:
     """
     A class to process taxonomic datasets and generate knowledge graphs using OpenAI's API.
@@ -267,37 +268,44 @@ class TaxonGPT:
 
     def parse_classification_result(self, result_text):
         """
-        Parses the classification result from the API.
+        Parses the classification result from the API, which contains a JSON block embedded in textual data.
 
         Args:
-            result_text (str): Result text from the API.
+            result_text (str): The result text from the API, which includes extra text around a JSON block.
 
         Returns:
-            dict: Parsed classification result.
+            dict: Parsed classification result containing 'Character' and 'States'.
         """
         classification = {"Character": None, "States": {}}
 
         try:
-            character_match = re.search(r'"Character": "([^"]+)"', result_text)
+            # Use regular expression to extract the JSON content
+            json_match = re.search(r'\{.*\}', result_text, re.DOTALL)
 
-            if character_match:
-                classification["Character"] = character_match.group(1)
+            if not json_match:
+                raise ValueError("No valid JSON content found in the result text.")
+
+            # Extract the JSON portion
+            json_content = json_match.group(0)
+
+            # Parse the JSON content into a dictionary
+            result_json = json.loads(json_content)
+
+            # Check for the 'Character' field
+            if "Character" in result_json:
+                classification["Character"] = result_json["Character"]
             else:
-                raise ValueError("Character not found in the result text.")
+                raise ValueError("Character field not found in the result text.")
 
-            state_sections = re.findall(r'"(\d+|[^"]+)":\s*\[(.*?)\]', result_text)
+            # Check for the 'States' field
+            if "States" in result_json and isinstance(result_json["States"], dict):
+                classification["States"] = result_json["States"]
+            else:
+                raise ValueError("No valid 'States' found in the result text.")
 
-            if not state_sections:
-                raise ValueError("No states found in the result text.")
-
-            for state, species_block in state_sections:
-                species_list = re.findall(r'"([^"]+)"', species_block)
-
-                if not species_list:
-                    raise ValueError(f"No species found for state {state}.")
-
-                classification["States"][state] = species_list
-
+        except json.JSONDecodeError as e:
+            print(f"Error decoding the result text as JSON: {e}")
+            raise ValueError("Invalid JSON format.")
         except Exception as e:
             print(f"Error parsing classification result: {e}")
             raise e
@@ -377,7 +385,7 @@ class TaxonGPT:
         ]
 
         response = self.client.chat.completions.create(
-            model="gpt-4o-2024-08-06",
+            model="gpt-4o",
             messages=messages_secondary,
             stop=None,
             temperature=0,
@@ -386,7 +394,6 @@ class TaxonGPT:
         )
 
         result_secondary = response.choices[0].message.content
-
         content_with_data = self.prompt_messages["JSON_format_messages"][3]["content_template"].format(
             result_secondary=result_secondary
         )
@@ -399,7 +406,7 @@ class TaxonGPT:
         ]
 
         response = self.client.chat.completions.create(
-            model="gpt-4o-2024-08-06",
+            model="gpt-4o",
             messages=messages_JSON1,
             stop=None,
             temperature=0,
@@ -413,61 +420,78 @@ class TaxonGPT:
 
     def extract_json_string(self, json_string):
         """
-        Extracts a JSON string from the given string.
+        Extracts a JSON string from the given string, ensuring no invalid characters.
 
         Args:
             json_string (str): String containing JSON data.
 
         Returns:
-            str: Extracted JSON string.
+            str: Extracted and cleaned JSON string.
         """
         start = json_string.find('{')
         end = json_string.rfind('}') + 1
 
         if start != -1 and end != -1:
-            cleaned_string = json_string[start:end]
-            return cleaned_string.strip()
+            cleaned_string = json_string[start:end].strip()
+
+            # Remove invalid characters, such as the prefix 'n'
+            if cleaned_string.startswith('n'):
+                cleaned_string = cleaned_string[1:].strip()
+
+            return cleaned_string
 
         return ""
 
     def recursive_classification(self, groups, final_classification, classification_results, depth=0, max_depth=10):
         """
-        Recursively classifies species groups.
+        Recursively classifies groups, creating a hierarchical structure.
 
         Args:
-            groups (list): List of species groups to classify.
-            final_classification (dict): Final classification result.
-            classification_results (dict): Classification results at each step.
-            depth (int): Current depth of recursion.
-            max_depth (int): Maximum depth for recursion.
+            groups (list): List of species groups.
+            final_classification (dict): The final classification result being built.
+            classification_results (dict): Stores intermediate classification results.
+            depth (int): The current recursion depth.
+            max_depth (int): The maximum allowed depth for classification.
 
         Returns:
-            dict: Final classification result.
+            dict: The final classification result.
         """
         state, current_group = None, []
-
         while groups:
             try:
                 state, current_group = groups.pop(0)
                 print(f"Processing group with state: {state}, species: {current_group}, at depth: {depth}")
 
-                if len(current_group) == 1:
+                if isinstance(current_group, list) and len(current_group) == 1:
                     final_classification[current_group[0]] = current_group
                 elif depth >= max_depth:
                     print(f"Reached max depth {max_depth}. Stopping further classification for group: {current_group}")
                     final_classification[state] = current_group
+                elif isinstance(current_group, dict):
+                    next_character = current_group.get("Character")
+                    next_states = current_group.get("States", {})
+                    print(f"Found nested group, next Character: {next_character}, States: {next_states}")
+                    new_groups = [(s, species) for s, species in next_states.items()]
+                    self.recursive_classification(new_groups, final_classification, classification_results, depth + 1,
+                                                  max_depth)
                 else:
                     classification_result = self.classify_group(current_group)
                     cleaned_classification_result = self.extract_json_string(classification_result)
+                    # Check if the extracted JSON is valid
+                    if not cleaned_classification_result or cleaned_classification_result == "":
+                        raise ValueError(f"Extracted JSON string is invalid: {classification_result}")
+
+                    print(f"Extracted JSON: {cleaned_classification_result}")
+
                     classification_results[state] = cleaned_classification_result
                     parsed_result = self.parse_classification_result(classification_result)
                     new_groups = self.generate_groups_from_classification(parsed_result)
-                    self.recursive_classification(new_groups, final_classification, classification_results, depth + 1, max_depth)
+                    self.recursive_classification(new_groups, final_classification, classification_results, depth + 1,
+                                                  max_depth)
             except Exception as e:
                 print(f"Error processing group with state: {state}, species: {current_group}, at depth: {depth}")
                 print(f"Exception: {e}")
                 raise e
-
         return final_classification
 
     def extract_paths(self, node, path=None):
@@ -546,7 +570,8 @@ class TaxonGPT:
 
                         if correct_state is None or not self.check_state_match(state, correct_state):
                             mismatch = True
-                            incorrect_character_states[character] = {"error_state": state, "correct_state": correct_state}
+                            incorrect_character_states[character] = {"error_state": state,
+                                                                     "correct_state": correct_state}
 
                     if mismatch:
                         errors.append({
@@ -554,7 +579,9 @@ class TaxonGPT:
                             "key": key,
                             "error": "Mismatch",
                             "error_result": incorrect_character_states,
-                            "correct_result": {character: self.knowledge_graph[species]["Characteristics"].get(character) for character in incorrect_character_states}
+                            "correct_result": {
+                                character: self.knowledge_graph[species]["Characteristics"].get(character) for character
+                                in incorrect_character_states}
                         })
                 else:
                     errors.append({
@@ -641,7 +668,8 @@ class TaxonGPT:
             group_matrix = {s: self.knowledge_graph[s] for s in species_list}
             group_matrix_str = json.dumps(group_matrix, ensure_ascii=False)
             content_error = self.prompt_messages["correct_messages"][2]["content_template"].format(error=error)
-            content_group_matrix = self.prompt_messages["correct_messages"][4]["content_template"].format(group_matrix_str=group_matrix_str)
+            content_group_matrix = self.prompt_messages["correct_messages"][4]["content_template"].format(
+                group_matrix_str=group_matrix_str)
 
             messages_correct = [
                 self.prompt_messages["correct_messages"][0],
@@ -652,7 +680,7 @@ class TaxonGPT:
             ]
 
             response = self.client.chat.completions.create(
-                model="gpt-4o-2024-08-06",
+                model="gpt-4o",
                 messages=messages_correct,
                 stop=None,
                 temperature=0,
@@ -674,7 +702,7 @@ class TaxonGPT:
             ]
 
             response = self.client.chat.completions.create(
-                model="gpt-4o-2024-08-06",
+                model="gpt-4o",
                 messages=messages_JSON2,
                 stop=None,
                 temperature=0,
@@ -706,9 +734,11 @@ class TaxonGPT:
                 state_key = f"State {state}"
 
                 if isinstance(sub_node, list):
-                    converted[f"Character {character.replace('Character', '')}"][state_key] = sub_node[0] if len(sub_node) == 1 else sub_node
+                    converted[f"Character {character.replace('Character', '')}"][state_key] = sub_node[0] if len(
+                        sub_node) == 1 else sub_node
                 elif isinstance(sub_node, dict):
-                    converted[f"Character {character.replace('Character', '')}"][state_key] = self.convert_structure(sub_node)
+                    converted[f"Character {character.replace('Character', '')}"][state_key] = self.convert_structure(
+                        sub_node)
 
             return converted
 
@@ -787,7 +817,8 @@ class TaxonGPT:
 
                 for state in states:
                     individual_states = state.split("and")
-                    descriptions = [self.character_info[parent_char_index]["states"].get(s.strip(), "") for s in individual_states]
+                    descriptions = [self.character_info[parent_char_index]["states"].get(s.strip(), "") for s in
+                                    individual_states]
                     state_descriptions.append(" and ".join(filter(None, descriptions)))
 
                 state_key = f"State {' '.join(states)}: {';'.join(state_descriptions)}"
@@ -827,7 +858,8 @@ class TaxonGPT:
                     else:
                         # Provide a default or handle cases where the expected split is not present
                         full_state_description = f"{character}: {state}"
-                        print(f"Warning: character or state not in expected format. Character: {character}, State: {state}")
+                        print(
+                            f"Warning: character or state not in expected format. Character: {character}, State: {state}")
 
                     # Check if next_level is a dictionary and handle accordingly
                     if isinstance(next_level, dict):
@@ -852,115 +884,128 @@ class TaxonGPT:
 
     def process_key(self):
         """
-        Processes the key by converting NEXUS to knowledge graph, loading messages,
-        making initial API calls, and recursively classifying groups.
+        Processes the key by converting NEXUS to a knowledge graph, loading messages,
+        making initial API calls, parsing classification results, recursively classifying groups,
+        and finally generating the classification key.
         """
-        # Part 1: Convert NEXUS to knowledge graph and load messages
-        self.nexus_to_knowledge_graph()
-        self.load_character_messages()
-        self.load_prompt_messages()
-        initial_response_result = self.initial_api_call()
+        # Convert NEXUS to knowledge graph and load messages
+        self.nexus_to_knowledge_graph()  # Convert NEXUS file to a knowledge graph
+        self.load_character_messages()  # Load messages related to species characteristics
+        self.load_prompt_messages()  # Load messages related to prompts
+        initial_response_result = self.initial_api_call()  # Make an initial API call and retrieve results
+        print(initial_response_result)  # Output the initial result returned by the API
 
-        # Part 2: Parse API output, correct species, and generate groups
-        parsed_api_output = self.parse_classification_result(initial_response_result)
-        corrected_api_output = self.compare_and_correct_species(parsed_api_output)
-        groups = self.generate_groups_from_classification(corrected_api_output)
-        print(groups)
+        # Parse API output, correct species names, and generate classification groups
+        parsed_api_output = self.parse_classification_result(initial_response_result)  # Parse classification result
+        print(type(parsed_api_output))  # Output the type of parsed result
+        corrected_api_output = self.compare_and_correct_species(parsed_api_output)  # Compare and correct species
+        groups = self.generate_groups_from_classification(
+            corrected_api_output)  # Generate groups based on classification result
+        print(groups)  # Output the generated groups
 
-        # Part 3: Recursively classify groups
-        max_depth = 5
+        # Recursively classify the groups with a set maximum depth
+        max_depth = 5  # Set the maximum depth for recursive classification
         final_classification = {}
         classification_results = {}
-        final_classification = self.recursive_classification(groups, final_classification, classification_results, depth=0, max_depth=max_depth)
-        groups = self.generate_groups_from_classification(corrected_api_output)
+        final_classification = self.recursive_classification(groups, final_classification, classification_results,
+                                                             depth=0, max_depth=max_depth)
+        groups = self.generate_groups_from_classification(corrected_api_output)  # Regenerate groups
 
-        # Part 4: Extract paths and format results
+        # Extract paths and format the classification results
         final_results = {}
         for key, json_str in classification_results.items():
-            classification_data = json.loads(json_str)
-            species_paths = list(self.extract_paths(classification_data))
+            classification_data = json.loads(json_str)  # Parse JSON string into Python object
+            species_paths = list(self.extract_paths(classification_data))  # Extract species classification paths
 
             formatted_results = {}
             for species, path in species_paths:
-                formatted_results[species] = {"Characteristics": path}
+                formatted_results[species] = {
+                    "Characteristics": path}  # Store the paths as characteristics for each species
 
-            final_results[key] = formatted_results
+            final_results[key] = formatted_results  # Save the formatted results in the final results
 
-        # Part 5: Validate results and correct errors
-        errors = self.validate_results(final_results, groups)
-        print(errors)
-        correction_attempts = 0
-        max_correction_attempts = 10
+        # Validate the classification results and correct any errors
+        errors = self.validate_results(final_results, groups)  # Validate if there are errors in the final results
+        print(errors)  # Output the found errors
+        correction_attempts = 0  # Initialize a counter for the number of correction attempts
+        max_correction_attempts = 10  # Set the maximum number of correction attempts
 
         while errors and correction_attempts < max_correction_attempts:
-            correction_attempts += 1
-            classification_results = self.correct_classification(errors, classification_results, groups)
-            final_results = {}
+            correction_attempts += 1  # Increment the correction attempt counter
+            classification_results = self.correct_classification(errors, classification_results,
+                                                                 groups)  # Attempt to correct classification errors
+            final_results = {}  # Reinitialize the final results
 
             for key, json_str in classification_results.items():
                 try:
-                    classification_data = json.loads(json_str)
+                    classification_data = json.loads(json_str)  # Attempt to parse the JSON data
                 except json.JSONDecodeError as e:
-                    print(f"Error decoding JSON for key {key}: {e}")
-                    print(f"Invalid JSON string: {json_str}")
+                    print(f"Error decoding JSON for key {key}: {e}")  # Output the JSON decoding error
+                    print(f"Invalid JSON string: {json_str}")  # Output the invalid JSON data
                     raise
 
-                species_paths = list(self.extract_paths(classification_data))
+                species_paths = list(self.extract_paths(classification_data))  # Extract species paths
                 formatted_results = {}
 
                 for species, path in species_paths:
-                    formatted_results[species] = {"Characteristics": path}
+                    formatted_results[species] = {"Characteristics": path}  # Format species paths as characteristics
 
-                final_results[key] = formatted_results
+                final_results[key] = formatted_results  # Save the formatted results
 
-            errors = self.validate_results(final_results, groups)
+            errors = self.validate_results(final_results, groups)  # Validate classification results again
 
         if correction_attempts == 0:
-            print("No errors found. The initial classification results are correct.")
+            print("No errors found. The initial classification results are correct.")  # Output if no errors were found
         else:
-            print(f"Errors were corrected {correction_attempts} times before finalizing the results.")
+            print(
+                f"Errors were corrected {correction_attempts} times before finalizing the results.")  # Output how many times errors were corrected
 
         if correction_attempts >= max_correction_attempts:
             print(
-                "Due to the API repeatedly correcting errors during execution, it persistently repeats the same mistakes, resulting in an infinite loop. Therefore, it is recommended to restart the code execution process to avoid endlessly correcting the same issue.")
+                "Due to the API repeatedly correcting errors, an infinite loop has been triggered. It is recommended to restart the code execution process to avoid endlessly correcting the same issue."
+            )  # Output warning if max correction attempts are reached
 
-        with open('../../Taxon-GPT-API/complete-process/final_classification.json', 'w') as f:
+        # Save the final classification results as a JSON file
+        with open('final_classification.json', 'w') as f:
             json.dump(final_results, f, indent=4)
-
         print("Final classification results have been saved to 'final_classification.json'.")
-        print(json.dumps(final_results, indent=4))
+        print(json.dumps(final_results, indent=4))  # Output the final results
 
-        classification_result = {key: json.loads(value) for key, value in classification_results.items()}
+        classification_result = {key: json.loads(value) for key, value in
+                                 classification_results.items()}  # Convert results to a dictionary
 
-        # Part 6: Convert structure, combine results, and generate classification key
+        # Convert data structure, combine results, and generate the classification key
         converted_result = {}
-
         for key, value in classification_result.items():
-            converted_result[f"Character {key}"] = self.convert_structure(value)
+            converted_result[f"Character {key}"] = self.convert_structure(value)  # Convert structure
 
         for state_key, secondary in classification_result.items():
-            self.combine_results(corrected_api_output, secondary, state_key)
+            self.combine_results(corrected_api_output, secondary, state_key)  # Combine classification results
 
+        # Update the classification key
         converted_initial_classification = self.convert_structure(corrected_api_output)
-        updated_classification_key = self.replace_indices_with_descriptions_in_key(converted_initial_classification, self.character_info)
-
-        print(type(updated_classification_key))
+        updated_classification_key = self.replace_indices_with_descriptions_in_key(converted_initial_classification,
+                                                                                   self.character_info)
+        print(type(updated_classification_key))  # Output the type of updated classification key
         print("Updated Classification Key:")
-        print(json.dumps(updated_classification_key, indent=4, ensure_ascii=False))
+        print(json.dumps(updated_classification_key, indent=4,
+                         ensure_ascii=False))  # Output the updated classification key
 
-        self.step_counter = 1
-        self.steps = []
-        self.generate_classification_key(updated_classification_key, 1)
+        # Generate classification steps
+        self.step_counter = 1  # Initialize step counter
+        self.steps = []  # Initialize steps list
+        self.generate_classification_key(updated_classification_key, 1)  # Generate classification key
 
-        classification_key = "\n".join(self.steps)
-        print(classification_key)
+        classification_key = "\n".join(self.steps)  # Join steps into a single string
+        print(classification_key)  # Output the classification key
 
-        # Get the output file path from the configuration for the classification key
+        # Get the output file path for the classification key from the configuration
         taxonomic_key_path = self.config["paths"]["taxonomic_key_path"]
 
+        # Write the classification key to a file
         with open(taxonomic_key_path, "w") as f:
             f.write(classification_key)
-        print(f"Taxonomic key has been saved to '{taxonomic_key_path}'.")
+        print(f"Taxonomic key has been saved to '{taxonomic_key_path}'.")  # Output the save path
 
     def generate_taxonomic_description(self, species_name, species_data):
         """
@@ -1145,7 +1190,8 @@ class TaxonGPT:
         if mismatches:
             print(f"Mismatches found for {species_name}:")
             for m in mismatches:
-                print(f"{m['Character']}: Original states {m['OriginalStates']}, Extracted states {m['ExtractedStates']}")
+                print(
+                    f"{m['Character']}: Original states {m['OriginalStates']}, Extracted states {m['ExtractedStates']}")
         else:
             print(f"All character states match for {species_name}.")
 
@@ -1225,10 +1271,10 @@ class TaxonGPT:
 
         try:
             # Get the output file path from the configuration
-            taxonomic_description_path = self.config["paths"]["taxonomic_description_path"]
+            output_file_path = self.config["paths"]["taxonomic_description_path"]
 
             # Save the taxonomic descriptions to the specified file
-            with open(taxonomic_description_path, 'w') as f:
+            with open(output_file_path, 'w') as f:
                 json.dump(taxonomic_descriptions, f, indent=4)
             print(f"Taxonomic descriptions have been saved to '{taxonomic_description_path}'.")
         except Exception as e:
@@ -1242,6 +1288,7 @@ class TaxonGPT:
         else:
             print("Description check is disabled by configuration.")
 
+
 # The config.json file template
 """
 {
@@ -1249,13 +1296,13 @@ class TaxonGPT:
     "nexus_file_path": "<Full path to the input Nexus file>",
     "prompt_file_path": "<Full path to the input Prompt file>",
     "character_file_path": "<Full path to the input character info file>",
-    
+
     "csv_output_path": "<Full path to  output CSV format matrix file>",
     "json_output_path": "<Full path to output JSON format matrix file>",
     "taxonomic_description_path": "<Full path to output taxonomic description file>"
     "taxonomic_key_path": "<Full path to output taxonomic key file>"
 
-    
+
     "comparison_output_path": "<Full path to output taxonomic key file>",
     # By default, the description check feature is disabled to prevent generating excessive redundant results. If you need to check the execution steps, please set "enable_description_check": false to true in the configuration file.
     "enable_description_check": false
@@ -1279,7 +1326,6 @@ with open(config_file_path, 'r') as config_file:
 
 # Print the read configuration data
 print(f"Read the profile data: {config_data}")
-
 
 # Through TaxonGPT() to generate the related result
 TaxonGPT = TaxonGPT(config_file_path)
