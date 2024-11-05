@@ -1,4 +1,4 @@
-TaxonGPT: A program for taxonomic classification using generative AI natural language capabilities
+TaxonGPT: Taxonomic Classification Using Generative Artificial Intelligence
 ====
 
 ## Installation
