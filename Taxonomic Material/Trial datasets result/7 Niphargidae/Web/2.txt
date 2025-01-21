@@ -1,0 +1,41 @@
+{
+    "Character12": {
+        "1,2": {
+            "Character14": {
+                "1": "Khoikhoia_anthelion_Sharkey_2009",
+                "1,2": "Sania_masneri_Sharkey_2009",
+                "2": "Sania_masoni_Sharkey_2009"
+            }
+        },
+        "1": {
+            "Character23": {
+                "1,2": "Khoikhoia_lission_Mason_1984",
+                "2": {
+                    "Character16": {
+                        "2": "Khoikhoia_oligospilos_Sharkey_2009",
+                        "1": "Khoikhoia_solata_Mason_1983"
+                    }
+                },
+                "1": {
+                    "Character15": {
+                        "1": "Khoikhoia_semiadusta_Mason_1983",
+                        "2": "Khoikhoia_townesi_Mason_1983",
+                        "3": "Khoikhoia_turneri_Mason_1984"
+                    }
+                }
+            }
+        },
+        "2": {
+            "Character20": {
+                "2": "Sania_browni_Sharkey_2009",
+                "1": {
+                    "Character5": {
+                        "2": "Sania_capensis_Mason_1983",
+                        "1": "Sania_marjoriae_Mason_1983"
+                    }
+                },
+                "1,2": "Sania_henryi_Mason_1983"
+            }
+        }
+    }
+}

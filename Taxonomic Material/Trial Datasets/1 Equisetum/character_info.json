@@ -1,0 +1,216 @@
+{
+    "1": {
+        "description": "The rhizomes <whether tuberous>",
+        "states": {
+            "1": "bearing tubers",
+            "2": "not tuberous"
+        }
+    },
+    "2": {
+        "description": "The shoots <dimorphism>",
+        "states": {
+            "1": "conspicuously dimorphic: the cone-bearing stems thick, unbranched, brown and non-assimilating, appearing in early spring and withering before the emergence of the sterile, branched, green, persistent ones",
+            "2": "distinguishable as fertile and sterile: both types produced at the same time, but those bearing cones remaining non-green and unbranched until after spore dispersal, and only later becoming green and branching so as to resemble the sterile stems vegetatively",
+            "3": "all green and alike vegetatively, the sterile and cone-bearing shoots emerging at the same time"
+        }
+    },
+    "3": {
+        "description": "The brown, non-assimilating fertile stems <number of sheaths>",
+        "states": {
+            "1": "with numerous sheaths and relatively short internodes",
+            "2": "with only 4 to 6 relatively distant sheaths"
+        }
+    },
+    "4": {
+        "description": "The main stems <of the assimilating shoots, carriage>",
+        "states": {
+            "1": "erect",
+            "2": "decumbent"
+        }
+    },
+    "5": {
+        "description": "The main stems <of the assimilating shoots, carriage>",
+        "states": {
+            "1": "bright green",
+            "2": "dull green"
+        }
+    },
+    "6": {
+        "description": "The main stems <of the assimilating shoots, rough or smooth>",
+        "states": {
+            "1": "very rough",
+            "2": "slightly rough",
+            "3": "smooth"
+        }
+    },
+    "7": {
+        "description": "The main stems <of the assimilating shoots, branching>",
+        "states": {
+            "1": "bearing whorls of slender branches at the nodes",
+            "2": "sparingly branched, the branches solitary and similar to the main stem",
+            "3": "simple"
+        }
+    },
+    "8": {
+        "description": "The main stems <of the assimilating shoots, persistence>",
+        "states": {
+            "1": "persisting through the winter",
+            "2": "dying down in autumn"
+        }
+    },
+    "9": {
+        "description": "The main stem internodes <of the assimilating shoots, whether swollen>",
+        "states": {
+            "1": "somewhat swollen",
+            "2": "not swollen"
+        }
+    },
+    "10": {
+        "description": "The <longitudinal internodal> grooves <in the main stem internodes of the assimilating shoots, details>",
+        "states": {
+            "1": "fine, the ribs between them not prominent",
+            "2": "deep, with prominent ridges between"
+        }
+    },
+    "11": {
+        "description": "The main stem internodes <of the assimilating shoots, presence of a central hollow>",
+        "states": {
+            "1": "solid",
+            "2": "with a central hollow"
+        }
+    },
+    "12": {
+        "description": "Central hollow <of the main stem internodes of assimilating shoots, relative diameter>",
+        "states": {
+            "1": "much less than half the diameter of the internode",
+            "2": "about half the diameter of the internode",
+            "3": "more than half the diameter of the internode"
+        }
+    },
+    "13": {
+        "description": "Endodermis <in main stem internodes of assimilating shoots, location>",
+        "states": {
+            "1": "surrounding the individual vascular bundles",
+            "2": "comprising a single layer outside the ring of vascular bundles",
+            "3": "comprising two layers, one outside and the other inside the ring of vascular bundles"
+        }
+    },
+    "14": {
+        "description": "The main stem sheaths <of assimilating shoots, length relative to breadth>",
+        "states": {
+            "1": "about as broad as long",
+            "2": "longer than broad"
+        }
+    },
+    "15": {
+        "description": "The main stem sheaths <of assimilating shoots, loose or appressed>",
+        "states": {
+            "1": "loose",
+            "2": "appressed"
+        }
+    },
+    "16": {
+        "description": "The teeth <of the main stem sheaths of assimilating shoots, ribbing>",
+        "states": {
+            "1": "ribbed",
+            "2": "not ribbed"
+        }
+    },
+    "17": {
+        "description": "The teeth <of the main stem sheaths of assimilating shoots, persistence>",
+        "states": {
+            "1": "persistent",
+            "2": "caducous"
+        }
+    },
+    "18": {
+        "description": "The primary branching <regularity>",
+        "states": {
+            "1": "symmetrical",
+            "2": "asymmetrical"
+        }
+    },
+    "19": {
+        "description": "The primary branches <when present, few or many>",
+        "states": {
+            "1": "few",
+            "2": "numerous"
+        }
+    },
+    "20": {
+        "description": "the primary branches <carriage>",
+        "states": {
+            "1": "ascending",
+            "2": "spreading",
+            "3": "drooping"
+        }
+    },
+    "21": {
+        "description": "The primary branches <of assimilating shoots, whether themselves branched>",
+        "states": {
+            "1": "simple",
+            "2": "secondarily branched"
+        }
+    },
+    "22": {
+        "description": "The first <primary> branch internodes <of assimilating shoots, relative length>",
+        "states": {
+            "1": "much shorter than the subtending sheaths",
+            "2": "at least as long as the subtending sheaths, at least on the upper parts of the stem"
+        }
+    },
+    "23": {
+        "description": "The primary branch internodes <of assimilating shoots, solid or hollow>",
+        "states": {
+            "1": "solid",
+            "2": "hollow"
+        }
+    },
+    "24": {
+        "description": "Stomata <of assimilating shoots, insertion relative to the adjacent epidermal cells>",
+        "states": {
+            "1": "sunken",
+            "2": "not sunken"
+        }
+    },
+    "25": {
+        "description": "The cones <blunt or apiculate>",
+        "states": {
+            "1": "blunt",
+            "2": "apiculate"
+        }
+    },
+    "26": {
+        "description": "The cones <blunt or apiculate>",
+        "states": {
+            "1": "fertile",
+            "2": "abortive"
+        }
+    },
+    "27": {
+        "description": "Spores released <months released>",
+        "states": {
+            "1": "April",
+            "2": "May",
+            "3": "June",
+            "4": "July",
+            "5": "August",
+            "6": "September"
+        }
+    },
+    "28": {
+        "description": "Subgenus",
+        "states": {
+            "1": "Equisetum",
+            "2": "Hippochaete"
+        }
+    },
+    "29": {
+        "description": "Section <of subgenus Equisetum>",
+        "states": {
+            "1": "Aestivalia",
+            "2": "Subvernalia",
+            "3": "Vernalia"
+        }
+    }
+}

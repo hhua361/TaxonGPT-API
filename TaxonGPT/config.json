@@ -1,0 +1,16 @@
+{
+    "api_key": "YOUR_API_KEY",
+    "paths": {
+        "nexus_file_path": "PUT_YOUR_NEXUS_FILE_PATH_HERE/2 Lycopodiales/nexdata",
+        "prompt_file_path": "PUT_YOUR_PROMPT_FILE_PATH_HERE/prompt_messages.json",
+        "character_file_path": "PUT_YOUR_CHARACTER_FILE_PATH_HERE/2 Lycopodiales/character_info.json",
+	"csv_output_path": "PUT_YOUR_CSV_OUTPUT_FILE_PATH_HERE/matrix.csv",
+        "json_output_path": "PUT_YOUR_JSON_OUTPUT_FILE_PATH_HERE/matrix_knowledge_graph.json",
+	"taxonomic_description_path": "PUT_YOUR_TAXONOMIC_DESCRIPTION_OUTPUT_FILE_PATH_HERE/taxonomic_description.txt",
+	"taxonomic_key_path": "PUT_YOUR_TAXONOMIC_KEY_OUTPUT_FILE_PATH_HERE/taxonomic_key.txt",
+        "comparison_output_path": "PUT_YOUR_COMPARISON_OUTPUT_PATH_HERE/comparison_results.json",
+        "enable_description_check": false
+
+    }
+}
+

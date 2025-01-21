@@ -1,0 +1,163 @@
+{
+    "1": {
+        "description": "Stems elongation",
+        "states": {
+            "1": "elongated, with numerous small leaves",
+            "2": "short and tuberous, with sheathing leaves crowded in dense rosettes"
+        }
+    },
+    "2": {
+        "description": "Stems carriage",
+        "states": {
+            "1": "suberect, and rooting directly at the base only",
+            "2": "creeping, and rooting directly at intervals along their length",
+            "3": "creeping, and rooting from characteristic, leafless, root-bearing branches (rhizophores)"
+        }
+    },
+    "3": {
+        "description": "Stems manner of branching",
+        "states": {
+            "1": "overtly dichotomising vegetatively",
+            "2": "ostensibly monopodial vegetatively owing to unequal development from the original dichotomies"
+        }
+    },
+    "4": {
+        "description": "Stems whether dorsiventral",
+        "states": {
+            "1": "dorsiventrally organized, with four ranks of leaves",
+            "2": "not dorsiventrally organized"
+        }
+    },
+    "5": {
+        "description": "Stems whether with flattened branches",
+        "states": {
+            "1": "with non-flattened branches",
+            "2": "with only slightly flattened branches",
+            "3": "with strongly flattened branches"
+        }
+    },
+    "6": {
+        "description": "Stems presence of secondary thickening",
+        "states": {
+            "1": "with anomalous secondary thickening via a cambium external to the primary phloem, producing small quantities of vascular tissue centripetally, and generating centrifugally large quantities of so-called prismatic tissue, comprising a mixture of xylem, phloem and parenchyma",
+            "2": "without secondary thickening"
+        }
+    },
+    "7": {
+        "description": "The old leaf bases in Isoetes, persistence",
+        "states": {
+            "1": "persistent on the stem, short and blackish, each with two long points",
+            "2": "not persistent"
+        }
+    },
+    "8": {
+        "description": "Leaves whether ligulate",
+        "states": {
+            "1": "ligulate",
+            "2": "eligulate"
+        }
+    },
+    "9": {
+        "description": "Leaves arrangement",
+        "states": {
+            "1": "4-ranked on the branches",
+            "2": "not 4-ranked"
+        }
+    },
+    "10": {
+        "description": "Foliage leaves heterophylly",
+        "states": {
+            "1": "of two kinds: those of the two ranks on the upper side of the stem appressed and directed towards the stem apex, and those of the two lower ranks larger and spreading laterally",
+            "2": "all alike and spirally arranged"
+        }
+    },
+    "11": {
+        "description": "Foliage leaves appressed or spreading",
+        "states": {
+            "1": "appressed",
+            "2": "spreading"
+        }
+    },
+    "12": {
+        "description": "Leaves whether hair-pointed",
+        "states": {
+            "1": "with long, filiform hair-like tips",
+            "2": "not hair-pointed"
+        }
+    },
+    "13": {
+        "description": "Heterosporous or homosporous",
+        "states": {
+            "1": "homosporous",
+            "2": "heterosporous"
+        }
+    },
+    "14": {
+        "description": "Sporophylls modified or leaflike",
+        "states": {
+            "1": "resembling the foliage leaves",
+            "2": "differing markedly from the foliage leaves"
+        }
+    },
+    "15": {
+        "description": "Sporophylls arrangement",
+        "states": {
+            "1": "aggregated into well defined terminal cones",
+            "2": "in fertile zones tending to alternate with sterile zones along the stems, rather than in well defined terminal cones"
+        }
+    },
+    "16": {
+        "description": "Cones carriage",
+        "states": {
+            "1": "sessile at the tips of the normal shoots",
+            "2": "on long, erect peduncles which bear distant, appressed, scale-like leaves"
+        }
+    },
+    "17": {
+        "description": "The sporangia",
+        "states": {
+            "1": "basal and subsessile on the adaxial surfaces of the sporophylls, non-septate",
+            "2": "very large, transversely and longitudinally septate and embedded in the leaf bases"
+        }
+    },
+    "18": {
+        "description": "The megaspores of Isoetes, surface ornamentation",
+        "states": {
+            "1": "covered with short, blunt tubercles",
+            "2": "covered with long, fragile spines",
+            "3": "with a reticulate ornamentation, neither tuberculate nor spiny"
+        }
+    },
+    "19": {
+        "description": "Terrestrial or aquatic",
+        "states": {
+            "1": "terrestrial",
+            "2": "aquatic"
+        }
+    },
+    "20": {
+        "description": "Habitat elevation",
+        "states": {
+            "1": "lowland",
+            "2": "upland",
+            "3": "montane"
+        }
+    },
+    "21": {
+        "description": "Habitat when terrestrial",
+        "states": {
+            "1": "bogs",
+            "2": "heaths",
+            "3": "sandy places",
+            "4": "rock ledges"
+        }
+    },
+    "22": {
+        "description": "Family",
+        "states": {
+            "1": "Lycopodiaceae",
+            "2": "Selaginellacae",
+            "3": "Isoetaceae"
+        }
+    }
+}

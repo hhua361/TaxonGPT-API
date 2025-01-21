@@ -1,0 +1,41 @@
+Character15:
+	• State 3:
+		1. Character9:
+			§ State 1:
+				1. Character4:
+					® State 2:
+						1. Character6:
+							} State 1: Agathis
+							} State 2:
+								1. Character10:
+									w State 2:
+										1. Character2:
+											w State 3:
+												1. Character3:
+													w State 2: Camptothlipsis
+													w State 2,3: Aneurobracon
+											w State 2: Bassus
+											w State 1: Earinus
+									w State 1: Amputostypos
+					® State 1,2: Lytopylus
+			§ State 2: Braunsia
+			§ State 1,2:
+				1. Character2:
+					® State 2: Therophilus
+					® State 1,2: Euagathis
+	• State 1:
+		1. Character6:
+			§ State 1: Biroia
+			§ State 2:
+				1. Character1:
+					® State 3: Gyrochus
+					® State 2: Troticus
+			§ State 1,2:
+				1. Character10:
+					® State 1: Disophrys
+					® State 2: Cremnoptoides
+	• State 2:
+		1. Character1:
+			§ State 1: Coccygidium
+			§ State 2: Hypsostypos
+			§ State 1,2: Cremnops

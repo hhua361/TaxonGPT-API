@@ -1,0 +1,130 @@
+Updated Classification Key:
+{
+    "Character 1: body size": {
+        "State 1: up to 10 mm": {
+            "Character 2: telson with": {
+                "State 1: apical, lateral and dorsal spines": {
+                    "Character 7: inner lobe of maxilla I": {
+                        "State 1: one to two setae": "setiferus",
+                        "State 1 and 2: one to two setae;;three or more setae": {
+                            "Character 6: urosoma segment I": {
+                                "State 1: single seta or spine dorso-postero-laterally": "luchoffmani",
+                                "State 1 and 2: single seta or spine dorso-postero-laterally;;two or more setae and/or spines dorso-postero-laterally": "muotae"
+                            }
+                        }
+                    }
+                },
+                "State 2: apical and lateral spines": {
+                    "Character 9: propodus and carpus of gnathopods I - II": {
+                        "State 1: carpus longer than propodus, propods elongated and small": "caspary",
+                        "State 2: carpus as long as propodus or shorter, propodus mid-sized and of quadratic shape": {
+                            "Character 17: uropod I <sexual dimorphism>": {
+                                "State 2: sexually non-dimorphic: the ratio between inner and outer ramus is roughly the same both sexes": {
+                                    "Character 14: dactyli III-IV": {
+                                        "State 1: long and slender, longer than 1/2 of propodus length": "forelii",
+                                        "State 2: slender or stout, at most 1/2 of propodus length": {
+                                            "Character 11: gnathopod dactylus with": {
+                                                "State 1: single seta at outer margin": "aquilex",
+                                                "State 2: more than one seta on outer margin": "thienemanni"
+                                            }
+                                        }
+                                    }
+                                },
+                                "State 3: sexual dimorphism not know": "auerbachi"
+                            }
+                        },
+                        "State 3: carpus as long as propodus or shorter, propodus large and in a shape of a hoof": "tonywhitteni"
+                    }
+                }
+            }
+        },
+        "State 2: more than 10 mm": {
+            "Character 3: telson with": {
+                "State 1: 3, rarely 4 apical spines per lobe": {
+                    "Character 17: uropod I <sexual dimorphism>": {
+                        "State 1: sexually dimorphic: inner ramus elongated and measures 1.3¨C2.0 of outer ramus in males. Females with subequal rami.": {
+                            "Character 5: epimeral plate III": {
+                                "State 1: subrounded, posterior and ventral corner always convex, postero-ventral corner sometimes marked only with seta": "thuringius",
+                                "State 2: angular, ventral margin slightly convex, posterior margin straight or concave, postero-ventral corner always distinct": {
+                                    "Character 12: dactylus of pereopod III-VII": {
+                                        "State 1: at most one spine at the base of the nail": "rhenorhodanesis species complex",
+                                        "State 2: at least one additional spine in addition to the spine at the base of the nail (some polymorphism may exist, e.g., left-right assymetry, spines not on all appendages)": "puteanus"
+                                    }
+                                }
+                            }
+                        },
+                        "State 2: sexually non-dimorphic: the ratio between inner and outer ramus is roughly the same both sexes": {
+                            "Character 9: propodus and carpus of gnathopods I - II": {
+                                "State 3: carpus as long as propodus or shorter, propodus large and in a shape of a hoof": {
+                                    "Character 5: epimeral plate III": {
+                                        "State 1: subrounded, posterior and ventral corner always convex, postero-ventral corner sometimes marked only with seta": "A-(cf.stygius)",
+                                        "State 2: angular, ventral margin slightly convex, posterior margin straight or concave, postero-ventral corner always distinct": "styx"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "State 2: 5 or more apical spines per lobe": {
+                    "Character 7: inner lobe of maxilla I": {
+                        "State 1: one to two setae": "murimali",
+                        "State 2: three or more setae": {
+                            "Character 13: coxal plate IV": {
+                                "State 1: much deeper than broad, proximally with deep excavation": "virei",
+                                "State 2: more broad than deep, or as broad as deep, or slightly deeper than broad, but never with deep proximal excavation": "brixianus"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+1.
+    -  body size: up to 10 mm ........ 2
+    -  body size: more than 10 mm ........ 3
+2(1).
+    -  telson with: apical, lateral and dorsal spines ........ 4
+    -  telson with: apical and lateral spines ........ 5
+4(2).
+    -  inner lobe of maxilla I: one to two setae ........ setiferus
+    -  inner lobe of maxilla I: one to two setae;;three or more setae ........ 6
+6(4).
+    -  urosoma segment I: single seta or spine dorso-postero-laterally ........ luchoffmani
+    -  urosoma segment I: single seta or spine dorso-postero-laterally;;two or more setae and/or spines dorso-postero-laterally ........ muotae
+5(2).
+    -  propodus and carpus of gnathopods I - II: carpus longer than propodus, propods elongated and small ........ caspary
+    -  propodus and carpus of gnathopods I - II: carpus as long as propodus or shorter, propodus mid-sized and of quadratic shape ........ 7
+    -  propodus and carpus of gnathopods I - II: carpus as long as propodus or shorter, propodus large and in a shape of a hoof ........ tonywhitteni
+7(5).
+    -  uropod I <sexual dimorphism>: sexually non-dimorphic ........ 8
+    -  uropod I <sexual dimorphism>: sexual dimorphism not know ........ auerbachi
+8(7).
+    -  dactyli III-IV: long and slender, longer than 1/2 of propodus length ........ forelii
+    -  dactyli III-IV: slender or stout, at most 1/2 of propodus length ........ 9
+9(8).
+    -  gnathopod dactylus with: single seta at outer margin ........ aquilex
+    -  gnathopod dactylus with: more than one seta on outer margin ........ thienemanni
+3(1).
+    -  telson with: 3, rarely 4 apical spines per lobe ........ 10
+    -  telson with: 5 or more apical spines per lobe ........ 11
+10(3).
+    -  uropod I <sexual dimorphism>: sexually dimorphic ........ 12
+    -  uropod I <sexual dimorphism>: sexually non-dimorphic ........ 13
+12(10).
+    -  epimeral plate III: subrounded, posterior and ventral corner always convex, postero-ventral corner sometimes marked only with seta ........ thuringius
+    -  epimeral plate III: angular, ventral margin slightly convex, posterior margin straight or concave, postero-ventral corner always distinct ........ 14
+14(12).
+    -  dactylus of pereopod III-VII: at most one spine at the base of the nail ........ rhenorhodanesis species complex
+    -  dactylus of pereopod III-VII: at least one additional spine in addition to the spine at the base of the nail (some polymorphism may exist, e.g., left-right assymetry, spines not on all appendages) ........ puteanus
+13(10).
+    -  propodus and carpus of gnathopods I - II: carpus as long as propodus or shorter, propodus large and in a shape of a hoof ........ 15
+15(13).
+    -  epimeral plate III: subrounded, posterior and ventral corner always convex, postero-ventral corner sometimes marked only with seta ........ A-(cf.stygius)
+    -  epimeral plate III: angular, ventral margin slightly convex, posterior margin straight or concave, postero-ventral corner always distinct ........ styx
+11(3).
+    -  inner lobe of maxilla I: one to two setae ........ murimali
+    -  inner lobe of maxilla I: three or more setae ........ 16
+16(11).
+    -  coxal plate IV: much deeper than broad, proximally with deep excavation ........ virei
+    -  coxal plate IV: more broad than deep, or as broad as deep, or slightly deeper than broad, but never with deep proximal excavation ........ brixianus

@@ -1,0 +1,75 @@
+#NEXUS
+
+BEGIN DATA;
+DIMENSIONS NTAX=12 NCHAR=11;
+
+[! ]
+FORMAT MISSING=? GAP=- SYMBOLS="123456789ABC";
+
+CHARLABELS
+[1(1)] 'click on all lateral habitus i'
+[2(2)] 'forewing color pattern'
+[3(3)] 'sculpture of third lobe of med'
+[4(4)] 'presence of protuberences on o'
+[5(5)] 'color pattern of femur'
+[6(6)] 'color of hind coxa'
+[7(7)] 'color of metasoma'
+[8(8)] 'shape of posterior margin of s'
+[9(9)] 'sculpture of propodeum'
+[10(10)] 'sculpture of notauli'
+[11(11)] 'shape of gena'
+;
+
+STATELABELS
+1 'L. vaughntani' 'L. bradzlotnicki' 'L. rebeccashapleyae' 'L. sandraberriosae'
+     'L. flavicalcar' 'L. robpringlei' 'L. gregburtoni' 'L. colleenhitchcockae'
+     'L. jessicadimauroae' 'L. macadamiae' 'L. jessiehillae' 'L. mingfangi',
+2 'banded yellow and infuscate' 'mostly or entirely infuscate'
+     'mostly or entirely hyaline (cl',
+3 'mostly or entirely longitudina' 'mostly or entirely smooth',
+4 'present' 'absent',
+5 'mostly or entiely melanic' 'mostly or entirely pale',
+6 'mostly or entirely melanic' 'mostly or entirely pale',
+7 'mostly or entirely melanic' 'mostly or entirely pale',
+8 'convex, covering most of termi' 'straight',
+9 'with carinae forming areolae,' 'mostly smooth, lacking areolae'
+     'with carinae forming areolae,',
+10 'with crenulae extending well a' 'smooth without crenulae, or wi',
+11 'acute posterolaterally' 'rounded or with an obtuse angl',
+;
+
+MATRIX 
+'Lytopylus bradzlotnicki'                                                       
+23222112312                                                                     
+'Lytopylus colleenhitchcockae'                                                  
+821211223(12)(12)                                                               
+'Lytopylus flavicalcar'                                                         
+5222(12)(12)22222                                                               
+'Lytopylus gregburtoni'                                                         
+7221112232(12)                                                                  
+'Lytopylus jessicadimauroae'                                                    
+92122222321                                                                     
+'Lytopylus jessiehillae'                                                        
+(BC)212(12)121122                                                               
+'Lytopylus macadamiae'                                                          
+A212(12)222322                                                                  
+'Lytopylus mingfangi'                                                           
+(BC)222(12)121122                                                               
+'Lytopylus rebeccashapleyae'                                                    
+33222112(13)21                                                                  
+'Lytopylus robpringlei'                                                         
+62122(12)22322                                                                  
+'Lytopylus sandraberriosae'                                                     
+41-22112(13)22                                                                  
+'Lytopylus vaughntani'                                                          
+1222111232(12)                                                                  
+;
+
+END;
+BEGIN ASSUMPTIONS;
+OPTIONS DEFTYPE=unord PolyTCount=MINSTEPS;
+TYPESET * untitled = unord: 1-11;
+
+WTSET * untitled = 1: 1-11;
+
+END;

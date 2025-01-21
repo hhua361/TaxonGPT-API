@@ -1,0 +1,118 @@
+#NEXUS
+
+BEGIN DATA;
+DIMENSIONS NTAX=17 NCHAR=28;
+
+[! ]
+FORMAT MISSING=? GAP=- SYMBOLS="12345678";
+
+CHARLABELS
+[1(2)] '<sex of imago>'
+[2(3)] 'the compound eyes <of imagines'
+[3(4)] 'the compound eyes <of imagines'
+[4(5)] 'the upper lobe <of the compoun'
+[5(6)] 'second antennal segment <of im'
+[6(7)] 'wings <whether fringed>'
+[7(8)] 'wings <of imagines and sub-ima'
+[8(9)] 'fore-wings <of imagines and su'
+[9(10)] 'fore-wings <of imagines and su'
+[10(11)] 'the marginal fore-wing veinlet'
+[11(12)] 'hind-wings <of imagines, prese'
+[12(13)] 'the hind-wings of the female i'
+[13(14)] 'the hind-wing costa <of imagin'
+[14(15)] 'the fore-legs <of imagines, in'
+[15(16)] 'hind tarsi <of imagines and su'
+[16(17)] 'hind tarsi <of imagines and su'
+[17(18)] 'the first segment of the hind'
+[18(19)] 'the hind tarsal claws <of imag'
+[19(20)] 'the abdomen <of imagines, numb'
+[20(21)] 'male claspers <crossed or sepa'
+[21(22)] 'the lobes of the penis <broad'
+[22(23)] 'the lobes of the penis <append'
+[23(24)] 'the outer tails <of nymphs, di'
+[24(25)] 'gills <of nymphs, position on'
+[25(26)] 'gills <of nymphs, fringing>'
+[26(27)] 'gills <of nymphs, whether cons'
+[27(28)] 'superfamily'
+[28(29)] 'family'
+;
+
+STATELABELS
+1 'male' 'female',
+2 'contiguous' 'widely separated',
+3 'distinctly two-lobed' 'rounded',
+4 'turbanate' 'rounded',
+5 'three times as long as the fir' 'no more than twice as long as',
+6 'fringed in the imago' 'fringed only in sub-imagines',
+7 'more or less spotted with brow' 'unspotted',
+8 'with veins M1 and Cu1 strongly' 'with veins M1 and Cu1 sub-para',
+9 'with R5 detached basally from' 'with R5 and R4 joined basally',
+10 'single' 'paired',
+11 'present' 'absent',
+12 'no more than one fifth the len' 'more than one fifth the length',
+13 'smoothly curved' 'with a conspicuous projection',
+14 'inserted relatively close toge' 'widely separated under the tho',
+15 'about one-and-a-half times the' 'slightly shorter than the tibi',
+16 'with 5 moveable segments' 'with 4 moveable segments'
+     'with 2-3 moveable segments',
+17 'about twice as long as the sec' 'about three times as long as t',
+18 'both pointed' 'unalike, being one pointed and',
+19 'with two tails' 'with three tails',
+20 'crossed' 'separate',
+21 'very broad-tipped, and closely' 'narrow, rod-shaped, and widely',
+22 'each with one recurved appenda' 'each with two recurved appenda'
+     'without recurved appendages',
+23 'hairy on the inner side only' 'hairy on both sides',
+24 'mostly at the sides of the abd' 'mostly lying on the upper surf',
+25 'all densely fringed with filam' 'not fringed with filaments on',
+26 'mostly consisting of a plate b' 'never comprising a plate beari',
+27 'Ephemeroidea' 'Baetoidea' 'Heptagenioidea',
+28 'Baetidae' 'Caenidae' 'Ephemeridae' 'Ephemerellidae' 'Heptageniidae'
+     'Leptophlebiidae' 'Potamanthidae' 'Siphlonuridae',
+;
+
+MATRIX 
+'Ameletus'                                                                      
+(12)(12)2-?2222?12??22?212??112?38                                              
+'Baetis'                                                                        
+(12)?(12)1?2221211(12)??(23)??1???112221                                        
+'Brachycercus'                                                                  
+(12)?2-11222?2?-2?2??2????22?22                                                 
+'Caenis'                                                                        
+(12)?2-21222?2?-1?2??2????22?22                                                 
+'Centroptilum'                                                                  
+(12)?(12)1?22211112??(23)??1???112?21                                           
+'Cloeon'                                                                        
+(12)?2-?2221?22-??21?1???112?21                                                 
+'Ecdyonurus'                                                                    
+(12)(12)2-?2122?12???1?2111??12135                                              
+'Ephemera'                                                                      
+(12)?2-?2112?1?1??(23)??2??3??1?13                                              
+'Ephemerella'                                                                   
+(12)?2-?2222?1?1??2??2??3?22?24                                                 
+'Habrophlebia'                                                                  
+(12)?(12)2?2222?1?2??2??2???212226                                              
+'Heptagenia'                                                                    
+(12)22-?2222?12???1?21??3?12135                                                 
+'Leptophlebia'                                                                  
+(12)?(12)2?2222?1?1??2??2??1212226                                              
+'Paraleptophlebia'                                                              
+(12)?(12)2?2222?1?1??2??2??2212226                                              
+'Potamanthus'                                                                   
+(12)?2-?2212?1????(23)??2?????1?17                                              
+'Procloeon'                                                                     
+(12)?2-?2221?22-??22?1???112?21                                                 
+'Rhithrogena'                                                                   
+(12)(12)2-?2222?12???1?21123?12135                                              
+'Siphlonurus'                                                                   
+(12)?2-?2222?12??12?11???112?38                                                 
+;
+
+END;
+BEGIN ASSUMPTIONS;
+OPTIONS DEFTYPE=unord PolyTCount=MINSTEPS;
+TYPESET * untitled = unord: 1-28;
+
+WTSET * untitled = 1: 1-28;
+
+END;

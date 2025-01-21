@@ -1,0 +1,51 @@
+{
+    "Character11": {
+        "1,2": {
+            "Character31": {
+                "1": {
+                    "Character1": {
+                        "1": "Chilo",
+                        "2": "Schoenobius"
+                    }
+                },
+                "1,2": "Platytes",
+                "3": "Calamotropha"
+            }
+        },
+        "1,3": {
+            "Character14": {
+                "1": "Pediasia",
+                "1,2": "Agriphila",
+                "2": "Crambus"
+            }
+        },
+        "2,3": {
+            "Character1": {
+                "1": "Euchromius",
+                "2": {
+                    "Character2": {
+                        "1": "Chrysoteuchia",
+                        "2": "Donacaula"
+                    }
+                }
+            }
+        },
+        "3": {
+            "Character15": {
+                "1": {
+                    "Character5": {
+                        "1": "Thisanotia",
+                        "2": "Ancylolomia"
+                    }
+                },
+                "1,2": "Catoptria",
+                "2": {
+                    "Character1": {
+                        "1": "Haimbachia",
+                        "2": "Chrysocrambus"
+                    }
+                }
+            }
+        }
+    }
+}

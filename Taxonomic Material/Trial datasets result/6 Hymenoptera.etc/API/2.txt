@@ -1,0 +1,105 @@
+Updated Classification Key:
+{
+    "Character 28: Family.": {
+        "State 1: Baetidae": {
+            "Character 11: Hind-wings of imagines, present or absent.": {
+                "State 1: present (though sometimes very reduced)": {
+                    "Character 10: The marginal fore-wing veinlets of imagines and sub-imagines, whether single or paired between the main longitudinal veins.": {
+                        "State 1: single": "Centroptilum",
+                        "State 2: paired": "Baetis"
+                    }
+                },
+                "State 2: absent (even as vestiges)": {
+                    "Character 17: The first segment of the hind tarsus of imagines, length relative to the second segment.": {
+                        "State 1: about twice as long as the second": "Cloeon",
+                        "State 2: about three times as long as the second": "Procloeon"
+                    }
+                }
+            }
+        },
+        "State 2: Caenidae": {
+            "Character 5: Second antennal segment of imagines and sub-imagines, relative length.": {
+                "State 1: three times as long as the first": "Brachycercus",
+                "State 2: no more than twice as long as the first": "Caenis",
+                "State Missing: ": "Ephemerella"
+            }
+        },
+        "State 3: Ephemeridae": {
+            "Character 7: Wings of imagines and sub-imagines, spotted or unspotted.": {
+                "State 1: more or less spotted with brown or blackish": "Ephemera",
+                "State 2: unspotted (dubiously implicit)": "Potamanthus"
+            }
+        },
+        "State 4: Ephemerellidae": "Ephemerella",
+        "State 5: Heptageniidae": {
+            "Character 7: Wings of imagines and sub-imagines, spotted or unspotted.": {
+                "State 1: more or less spotted with brown or blackish": "Ecdyonurus",
+                "State 2: unspotted (dubiously implicit)": {
+                    "Character 21: The lobes of the penis, broad or narrow.": {
+                        "State Missing: ": "Heptagenia",
+                        "State 2: narrow, rod-shaped, and widely separated": "Rhithrogena"
+                    }
+                }
+            }
+        },
+        "State 6: Leptophlebiidae": {
+            "Character 13: The hind-wing costa of imagines and sub-imagines, smoothly curved or with a projection.": {
+                "State 1: smoothly curved": {
+                    "Character 22: The lobes of the penis, appendages/spurs.": {
+                        "State 1: each with one recurved appendage (spur)": "Leptophlebia",
+                        "State 2: each with two recurved appendages (spurs)": "Paraleptophlebia"
+                    }
+                },
+                "State 2: with a conspicuous projection": "Habrophlebia"
+            }
+        },
+        "State 7: Potamanthidae": "Potamanthus",
+        "State 8: Siphlonuridae": {
+            "Character 15: Hind tarsi of imagines and sub-imagines, length relative to the tibia.": {
+                "State 1: about one-and-a-half times the length of the tibia (Siphlonurus)": "Siphlonurus",
+                "State 2: slightly shorter than the tibia (Ameletus)": "Ameletus"
+            }
+        }
+    }
+}
+
+1.
+    -  Family.: Baetidae ........ 2
+    -  Family.: Caenidae ........ 3
+    -  Family.: Ephemeridae ........ 4
+    -  Family.: Ephemerellidae ........ Ephemerella
+    -  Family.: Heptageniidae ........ 5
+    -  Family.: Leptophlebiidae ........ 6
+    -  Family.: Potamanthidae ........ Potamanthus
+    -  Family.: Siphlonuridae ........ 7
+2(1).
+    -  Hind-wings of imagines, present or absent.: present (though sometimes very reduced) ........ 8
+    -  Hind-wings of imagines, present or absent.: absent (even as vestiges) ........ 9
+8(2).
+    -  The marginal fore-wing veinlets of imagines and sub-imagines, whether single or paired between the main longitudinal veins.: single ........ Centroptilum
+    -  The marginal fore-wing veinlets of imagines and sub-imagines, whether single or paired between the main longitudinal veins.: paired ........ Baetis
+9(2).
+    -  The first segment of the hind tarsus of imagines, length relative to the second segment.: about twice as long as the second ........ Cloeon
+    -  The first segment of the hind tarsus of imagines, length relative to the second segment.: about three times as long as the second ........ Procloeon
+3(1).
+    -  Second antennal segment of imagines and sub-imagines, relative length.: three times as long as the first ........ Brachycercus
+    -  Second antennal segment of imagines and sub-imagines, relative length.: no more than twice as long as the first ........ Caenis
+    -  Second antennal segment of imagines and sub-imagines, relative length.: Missing ........ Ephemerella
+4(1).
+    -  Wings of imagines and sub-imagines, spotted or unspotted.: more or less spotted with brown or blackish ........ Ephemera
+    -  Wings of imagines and sub-imagines, spotted or unspotted.: unspotted (dubiously implicit) ........ Potamanthus
+5(1).
+    -  Wings of imagines and sub-imagines, spotted or unspotted.: more or less spotted with brown or blackish ........ Ecdyonurus
+    -  Wings of imagines and sub-imagines, spotted or unspotted.: unspotted (dubiously implicit) ........ 10
+10(5).
+    -  The lobes of the penis, broad or narrow.:  Missing........ Heptagenia
+    -  The lobes of the penis, broad or narrow.: narrow, rod-shaped, and widely separated ........ Rhithrogena
+6(1).
+    -  The hind-wing costa of imagines and sub-imagines, smoothly curved or with a projection.: smoothly curved ........ 11
+    -  The hind-wing costa of imagines and sub-imagines, smoothly curved or with a projection.: with a conspicuous projection ........ Habrophlebia
+11(6).
+    -  The lobes of the penis, appendages/spurs.: each with one recurved appendage (spur) ........ Leptophlebia
+    -  The lobes of the penis, appendages/spurs.: each with two recurved appendages (spurs) ........ Paraleptophlebia
+7(1).
+    -  Hind tarsi of imagines and sub-imagines, length relative to the tibia.: about one-and-a-half times the length of the tibia (Siphlonurus) ........ Siphlonurus
+    -  Hind tarsi of imagines and sub-imagines, length relative to the tibia.: slightly shorter than the tibia (Ameletus) ........ Ameletus

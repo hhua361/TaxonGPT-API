@@ -1,0 +1,26 @@
+Character11:
+  1,3:
+    Character14:
+      1,2: Agriphila
+      2: Crambus
+      1: Pediasia
+  3:
+    Character28:
+      7,8:
+        Character8:
+          1: Ancylolomia
+          2: Catoptria
+      6: Chrysocrambus
+      7: Haimbachia
+      5,6: Thisanotia
+  1,2:
+    Character13:
+      4: Calamotropha
+      3,4: Chilo
+      1: Platytes
+      1,4: Schoenobius
+  2,3:
+    Character13:
+      3: Chrysoteuchia
+      1,2: Donacaula
+      2,3: Euchromius

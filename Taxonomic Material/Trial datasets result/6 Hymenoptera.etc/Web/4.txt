@@ -1,0 +1,116 @@
+{
+  "Character": "Character16",
+  "Branches": {
+    "2": {
+      "Character": "Character11",
+      "Branches": {
+        "1": {
+          "Character": "Character28",
+          "Branches": {
+            "8": {
+              "Character": "Character15",
+              "Branches": {
+                "2": {
+                  "Species": "Ameletus"
+                },
+                "1": {
+                  "Species": "Siphlonurus"
+                }
+              }
+            },
+            "4": {
+              "Species": "Ephemerella"
+            },
+            "6": {
+              "Character": "Character13",
+              "Branches": {
+                "2": {
+                  "Species": "Habrophlebia"
+                },
+                "1": {
+                  "Character": "Character22",
+                  "Branches": {
+                    "1": {
+                      "Species": "Leptophlebia"
+                    },
+                    "2": {
+                      "Species": "Paraleptophlebia"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "Character": "Character19",
+          "Branches": {
+            "2": {
+              "Character": "Character14",
+              "Branches": {
+                "2": {
+                  "Species": "Brachycercus"
+                },
+                "1": {
+                  "Species": "Caenis"
+                }
+              }
+            },
+            "1": {
+              "Character": "Character17",
+              "Branches": {
+                "1": {
+                  "Species": "Cloeon"
+                },
+                "2": {
+                  "Species": "Procloeon"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "2,3": {
+      "Character": "Character28",
+      "Branches": {
+        "1": {
+          "Character": "Character10",
+          "Branches": {
+            "2": {
+              "Species": "Baetis"
+            },
+            "1": {
+              "Species": "Centroptilum"
+            }
+          }
+        },
+        "3": {
+          "Species": "Ephemera"
+        },
+        "7": {
+          "Species": "Potamanthus"
+        }
+      }
+    },
+    "1": {
+      "Character": "Character2",
+      "Branches": {
+        "1,2": {
+          "Character": "Character21",
+          "Branches": {
+            "1": {
+              "Species": "Ecdyonurus"
+            },
+            "2": {
+              "Species": "Rhithrogena"
+            }
+          }
+        },
+        "2": {
+          "Species": "Heptagenia"
+        }
+      }
+    }
+  }
+}

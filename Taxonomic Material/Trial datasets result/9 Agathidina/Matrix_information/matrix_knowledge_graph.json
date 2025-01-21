@@ -1,0 +1,380 @@
+{
+    "Agathis": {
+        "Characteristics": {
+            "Character1": "4",
+            "Character2": "1 and 2",
+            "Character3": "2",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "1",
+            "Character7": "2",
+            "Character8": "1",
+            "Character9": "1",
+            "Character10": "2",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "2",
+            "Character14": "2",
+            "Character15": "3",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Lytopylus": {
+        "Characteristics": {
+            "Character1": "4",
+            "Character2": "2",
+            "Character3": "2",
+            "Character4": "1 and 2",
+            "Character5": "2",
+            "Character6": "2",
+            "Character7": "2",
+            "Character8": "1",
+            "Character9": "1",
+            "Character10": "2",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "2",
+            "Character14": "1",
+            "Character15": "3",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Braunsia": {
+        "Characteristics": {
+            "Character1": "4",
+            "Character2": "1 and 2",
+            "Character3": "2",
+            "Character4": "1",
+            "Character5": "2",
+            "Character6": "2",
+            "Character7": "2",
+            "Character8": "1",
+            "Character9": "2",
+            "Character10": "2",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "2",
+            "Character14": "1",
+            "Character15": "3",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Camptothlipsis": {
+        "Characteristics": {
+            "Character1": "4",
+            "Character2": "3",
+            "Character3": "2",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "2",
+            "Character7": "2",
+            "Character8": "3",
+            "Character9": "1",
+            "Character10": "2",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "2",
+            "Character14": "2",
+            "Character15": "3",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Therophilus": {
+        "Characteristics": {
+            "Character1": "4",
+            "Character2": "2",
+            "Character3": "2",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "2",
+            "Character7": "2",
+            "Character8": "1",
+            "Character9": "1 and 2",
+            "Character10": "2",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "1 and 2",
+            "Character14": "2",
+            "Character15": "3",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Bassus": {
+        "Characteristics": {
+            "Character1": "4",
+            "Character2": "2",
+            "Character3": "3",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "2",
+            "Character7": "2",
+            "Character8": "1",
+            "Character9": "1",
+            "Character10": "2",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "2",
+            "Character14": "2",
+            "Character15": "3",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Earinus": {
+        "Characteristics": {
+            "Character1": "4",
+            "Character2": "1",
+            "Character3": "2",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "2",
+            "Character7": "2",
+            "Character8": "1 and 2",
+            "Character9": "1",
+            "Character10": "2",
+            "Character11": "2",
+            "Character12": "2",
+            "Character13": "2",
+            "Character14": "2",
+            "Character15": "3",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Biroia": {
+        "Characteristics": {
+            "Character1": "1",
+            "Character2": "1",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "1",
+            "Character7": "1",
+            "Character8": "2",
+            "Character9": "1",
+            "Character10": "2",
+            "Character11": "2",
+            "Character12": "1",
+            "Character13": "2",
+            "Character14": "2",
+            "Character15": "1",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Gyrochus": {
+        "Characteristics": {
+            "Character1": "3",
+            "Character2": "1",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "2",
+            "Character7": "1",
+            "Character8": "2",
+            "Character9": "2",
+            "Character10": "1",
+            "Character11": "2",
+            "Character12": "1",
+            "Character13": "2",
+            "Character14": "2",
+            "Character15": "1",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Troticus": {
+        "Characteristics": {
+            "Character1": "2",
+            "Character2": "1",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "2",
+            "Character7": "1",
+            "Character8": "2",
+            "Character9": "2",
+            "Character10": "1",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "2",
+            "Character14": "2",
+            "Character15": "1",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Coccygidium": {
+        "Characteristics": {
+            "Character1": "1",
+            "Character2": "1 and 2",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "1",
+            "Character6": "2",
+            "Character7": "1",
+            "Character8": "2",
+            "Character9": "1",
+            "Character10": "1",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "1",
+            "Character14": "2",
+            "Character15": "2",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Hypsostypos": {
+        "Characteristics": {
+            "Character1": "2",
+            "Character2": "1 and 2",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "2",
+            "Character7": "1",
+            "Character8": "2",
+            "Character9": "1",
+            "Character10": "1",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "1",
+            "Character14": "2",
+            "Character15": "2",
+            "Character16": "2",
+            "Character17": "1"
+        }
+    },
+    "Amputostypos": {
+        "Characteristics": {
+            "Character1": "4",
+            "Character2": "1 and 2",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "2",
+            "Character7": "2",
+            "Character8": "2",
+            "Character9": "1",
+            "Character10": "1",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "1",
+            "Character14": "2",
+            "Character15": "3",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Euagathis": {
+        "Characteristics": {
+            "Character1": "4",
+            "Character2": "1 and 2",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "1 and 2",
+            "Character7": "2",
+            "Character8": "2",
+            "Character9": "1 and 2",
+            "Character10": "1",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "2",
+            "Character14": "2",
+            "Character15": "3",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Disophrys": {
+        "Characteristics": {
+            "Character1": "1",
+            "Character2": "1",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "1 and 2",
+            "Character7": "1",
+            "Character8": "2",
+            "Character9": "1 and 2",
+            "Character10": "1",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "2",
+            "Character14": "2",
+            "Character15": "1",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Cremnops": {
+        "Characteristics": {
+            "Character1": "1 and 2",
+            "Character2": "1",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "1",
+            "Character7": "1",
+            "Character8": "2",
+            "Character9": "1",
+            "Character10": "2",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "2",
+            "Character14": "2",
+            "Character15": "2",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Cremnoptoides": {
+        "Characteristics": {
+            "Character1": "1",
+            "Character2": "1",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "1 and 2",
+            "Character7": "1",
+            "Character8": "2",
+            "Character9": "1 and 2",
+            "Character10": "2",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "1",
+            "Character14": "2",
+            "Character15": "1",
+            "Character16": "2",
+            "Character17": "2"
+        }
+    },
+    "Aneurobracon": {
+        "Characteristics": {
+            "Character1": "4",
+            "Character2": "3",
+            "Character3": "2 and 3",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "2",
+            "Character7": "2",
+            "Character8": "3",
+            "Character9": "1",
+            "Character10": "2",
+            "Character11": "1",
+            "Character12": "1",
+            "Character13": "2",
+            "Character14": "2",
+            "Character15": "3",
+            "Character16": "1",
+            "Character17": "2"
+        }
+    }
+}

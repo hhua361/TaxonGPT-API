@@ -1,0 +1,6 @@
+1. 27.6s
+2. 27.52s
+3. 24.9s
+4. 32s (correct 1 times)
+5. 31.57s
+6. 45.6m (correct 3 times)

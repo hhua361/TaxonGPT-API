@@ -1,0 +1,42 @@
+Character16:
+	• State 2:
+		○ Character11:
+			§ State 1:
+				□ Character28:
+					® State 8:
+						◊ Character15:
+							} State 2: Ameletus
+							} State 1: Siphlonurus
+					® State 4: Ephemerella
+					® State 6:
+						◊ Character13:
+							} State 2: Habrophlebia
+							} State 1:
+								– Character22:
+									w State 1: Leptophlebia
+									w State 2: Paraleptophlebia
+			§ State 2:
+				□ Character6:
+					® State 1:
+						◊ Character5:
+							} State 1: Brachycercus
+							} State 2: Caenis
+					® State 2:
+						◊ Character17:
+							} State 1: Cloeon
+							} State 2: Procloeon
+	• State 2,3:
+		○ Character28:
+			§ State 1:
+				□ Character10:
+					® State 2: Baetis
+					® State 1: Centroptilum
+			§ State 3: Ephemera
+			§ State 7: Potamanthus
+	• State 1:
+		○ Character2:
+			§ State 1,2:
+				□ Character7:
+					® State 1: Ecdyonurus
+					® State 2: Rhithrogena
+			§ State 2: Heptagenia

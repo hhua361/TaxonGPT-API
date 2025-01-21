@@ -1,0 +1,79 @@
+Updated Classification Key:
+{
+    "Character 1: The rhizomes <whether tuberous>": {
+        "State 1: Bearing tubers": {
+            "Character 10: The longitudinal internodal grooves <in the main stem internodes of the assimilating shoots, details>": {
+                "State 1: Fine, the ribs between them not prominent": "Equisetum litorale",
+                "State 2: Deep, with prominent ridges between": "Equisetum palustre"
+            }
+        },
+        "State 1 and 2: Bearing tubers;;Not tuberous": {
+            "Character 2: The shoots <dimorphism>": {
+                "State 1: Conspicuously dimorphic: the cone-bearing stems thick, unbranched, brown and non-assimilating, appearing in early spring and withering before the emergence of the sterile, branched, green, persistent ones": {
+                    "Character 3: The brown, non-assimilating fertile stems <number of sheaths>": {
+                        "State 1: With numerous sheaths and relatively short internodes": "Equisetum telmateia",
+                        "State 2: With only 4 to 6 relatively distant sheaths": "Equisetum arvense"
+                    }
+                },
+                "State 2: Distinguishable as fertile and sterile: both types produced at the same time, but those bearing cones remaining non-green and unbranched until after spore dispersal, and only later becoming green and branching so as to resemble the sterile stems vegetatively": "Equisetum sylvaticum",
+                "State 3: All green and alike vegetatively, the sterile and cone-bearing shoots emerging at the same time": "Equisetum fluviatile"
+            }
+        },
+        "State 2: Not tuberous": {
+            "Character 12: Central hollow <of the main stem internodes of assimilating shoots, relative diameter>": {
+                "State 1: Much less than half the diameter of the internode": {
+                    "Character 6: The main stems <of the assimilating shoots, rough or smooth>": {
+                        "State 1: Very rough": "Equisetum trachyodon",
+                        "State 2: Slightly rough": "Equisetum variegatum"
+                    }
+                },
+                "State 2 and 3: About half the diameter of the internode;;More than half the diameter of the internode": {
+                    "Character 2: The shoots <dimorphism>": {
+                        "State 2: Distinguishable as fertile and sterile: both types produced at the same time, but those bearing cones remaining non-green and unbranched until after spore dispersal, and only later becoming green and branching so as to resemble the sterile stems vegetatively": "Equisetum pratense",
+                        "State 3: All green and alike vegetatively, the sterile and cone-bearing shoots emerging at the same time": {
+                            "Character 9: The main stem internodes <of the assimilating shoots, whether swollen>": {
+                                "State 1: Somewhat swollen": "Equisetum hyemale",
+                                "State 2: Not swollen": {
+                                    "Character 7: The main stems <of the assimilating shoots, branching>": {
+                                        "State 1: Bearing whorls of slender branches at the nodes": "Equisetum ramosissimum",
+                                        "State 3: Simple": "Equisetum moorei"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+1.
+    -  The rhizomes <whether tuberous>: Bearing tubers ........ 2
+    -  The rhizomes <whether tuberous>: Bearing tubers;;Not tuberous ........ 3
+    -  The rhizomes <whether tuberous>: Not tuberous ........ 4
+2(1).
+    -  The longitudinal internodal grooves <in the main stem internodes of the assimilating shoots, details>: Fine, the ribs between them not prominent ........ Equisetum litorale
+    -  The longitudinal internodal grooves <in the main stem internodes of the assimilating shoots, details>: Deep, with prominent ridges between ........ Equisetum palustre
+3(1).
+    -  The shoots <dimorphism>: Conspicuously dimorphic ........ 5
+    -  The shoots <dimorphism>: Distinguishable as fertile and sterile ........ Equisetum sylvaticum
+    -  The shoots <dimorphism>: All green and alike vegetatively, the sterile and cone-bearing shoots emerging at the same time ........ Equisetum fluviatile
+5(3).
+    -  The brown, non-assimilating fertile stems <number of sheaths>: With numerous sheaths and relatively short internodes ........ Equisetum telmateia
+    -  The brown, non-assimilating fertile stems <number of sheaths>: With only 4 to 6 relatively distant sheaths ........ Equisetum arvense
+4(1).
+    -  Central hollow <of the main stem internodes of assimilating shoots, relative diameter>: Much less than half the diameter of the internode ........ 6
+    -  Central hollow <of the main stem internodes of assimilating shoots, relative diameter>: About half the diameter of the internode;;More than half the diameter of the internode ........ 7
+6(4).
+    -  The main stems <of the assimilating shoots, rough or smooth>: Very rough ........ Equisetum trachyodon
+    -  The main stems <of the assimilating shoots, rough or smooth>: Slightly rough ........ Equisetum variegatum
+7(4).
+    -  The shoots <dimorphism>: Distinguishable as fertile and sterile ........ Equisetum pratense
+    -  The shoots <dimorphism>: All green and alike vegetatively, the sterile and cone-bearing shoots emerging at the same time ........ 8
+8(7).
+    -  The main stem internodes <of the assimilating shoots, whether swollen>: Somewhat swollen ........ Equisetum hyemale
+    -  The main stem internodes <of the assimilating shoots, whether swollen>: Not swollen ........ 9
+9(8).
+    -  The main stems <of the assimilating shoots, branching>: Bearing whorls of slender branches at the nodes ........ Equisetum ramosissimum
+    -  The main stems <of the assimilating shoots, branching>: Simple ........ Equisetum moorei

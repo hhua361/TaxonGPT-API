@@ -1,0 +1,84 @@
+Updated Classification Key:
+{
+    "Character 1: <habit: pachycaul or leptocaul>": {
+        "State 1: pachycaul": {
+            "Character 13: the <cycad> leaflets <venation>": {
+                "State 1: with a prominent midrib and no laterals <Cycadaceae>": "Cycadaceae",
+                "State 2: with pinnate venation, having a prominent midrib and dichotomously branching laterals <Stangeriaceae>": "Stangeriaceae"
+            }
+        },
+        "State 2: leptocaul": {
+            "Character 8: main branches <insertion>": {
+                "State 1 and 2: spiral;;whorled": {
+                    "Character 3: <habit>": {
+                        "State 1: trees": "Ginkgoaceae",
+                        "State 1 and 2: trees;;shrubs": {
+                            "Character 9: the leafy branchlets": {
+                                "State 1: flattened in one plane": "Taxaceae",
+                                "State 2: not flattened": "Pinaceae"
+                            }
+                        }
+                    }
+                },
+                "State 2: whorled": {
+                    "Character 9: the leafy branchlets": {
+                        "State 1: flattened in one plane": "Cephalotaxaceae",
+                        "State 2: not flattened": {
+                            "Character 5: <whether exhibiting switch-plant morphology>": {
+                                "State 1: Casuarina-like switch-plants photosynthesizing mainly via their grooved and jointed stems, the leaves reduced to small scales which are soon shed": "Ephedraceae",
+                                "State 2: not Casuarina-like switch plants": "Araucariaceae"
+                            }
+                        }
+                    }
+                },
+                "State Not applicable: ": {
+                    "Character 9: the leafy branchlets": {
+                        "State 1 and 2: flattened in one plane;;not flattened": {
+                            "Character 18: mature <foliage> leaves <phyllotaxy>": {
+                                "State 1 and 2: alternate <spiral>;;opposite and decussate": "Podocarpaceae",
+                                "State 2 and 3: opposite and decussate;;whorled": "Cupressaceae"
+                            }
+                        },
+                        "State 2: not flattened": {
+                            "Character 18: mature <foliage> leaves <phyllotaxy>": {
+                                "State 2: opposite and decussate": "Gnetaceae",
+                                "State 3: whorled": "Sciadopityaceae"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+1.
+    -  <habit: pachycaul ........ 2
+    -  <habit: leptocaul ........ 3
+2(1).
+    -  the <cycad> leaflets <venation>: with a prominent midrib and no laterals <Cycadaceae> ........ Cycadaceae
+    -  the <cycad> leaflets <venation>: with pinnate venation, having a prominent midrib and dichotomously branching laterals <Stangeriaceae> ........ Stangeriaceae
+3(1).
+    -  main branches <insertion>: spiral;;whorled ........ 4
+    -  main branches <insertion>: whorled ........ 5
+    -  main branches <insertion>: Not applicable ........ 6
+4(3).
+    -  <habit>: trees ........ Ginkgoaceae
+    -  <habit>: trees;;shrubs ........ 7
+7(4).
+    -  the leafy branchlets: flattened in one plane ........ Taxaceae
+    -  the leafy branchlets: not flattened ........ Pinaceae
+5(3).
+    -  the leafy branchlets: flattened in one plane ........ Cephalotaxaceae
+    -  the leafy branchlets: not flattened ........ 8
+8(5).
+    -  <whether exhibiting switch-plant morphology>: Casuarina-like switch-plants photosynthesizing mainly via their grooved and jointed stems, the leaves reduced to small scales which are soon shed ........ Ephedraceae
+    -  <whether exhibiting switch-plant morphology>: not Casuarina-like switch plants ........ Araucariaceae
+6(3).
+    -  the leafy branchlets: flattened in one plane;;not flattened ........ 9
+    -  the leafy branchlets: not flattened ........ 10
+9(6).
+    -  mature <foliage> leaves <phyllotaxy>: alternate <spiral>;;opposite and decussate ........ Podocarpaceae
+    -  mature <foliage> leaves <phyllotaxy>: opposite and decussate;;whorled ........ Cupressaceae
+10(6).
+    -  mature <foliage> leaves <phyllotaxy>: opposite and decussate ........ Gnetaceae
+    -  mature <foliage> leaves <phyllotaxy>: whorled ........ Sciadopityaceae

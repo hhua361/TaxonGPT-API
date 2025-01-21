@@ -1,0 +1,124 @@
+#NEXUS
+
+BEGIN DATA;
+DIMENSIONS NTAX=15 NCHAR=32;
+
+[! ]
+FORMAT MISSING=? GAP=- SYMBOLS="123456789ABC";
+
+CHARLABELS
+[1(2)] 'face <whether with conical pro'
+[2(3)] 'proboscis <functional or atrop'
+[3(4)] 'labial palps <porrected, relat'
+[4(6)] 'the adults <sexual dimorphism>'
+[5(8)] 'the <forewing> fringe <metalli'
+[6(9)] 'the <forewing> fringe <whether'
+[7(10)] 'forewing apices <rounded or po'
+[8(11)] '<forewing> termen <sinuate or'
+[9(12)] 'forewing of the male <semitran'
+[10(13)] 'ground colour of the forewings'
+[11(14)] 'forewings <forewings, extent o'
+[12(15)] 'the <forewing> patterning <sim'
+[13(16)] 'the <forewing> patterning <nat'
+[14(17)] 'forewings <presence of a media'
+[15(18)] 'forewings <whether postmedianl'
+[16(19)] 'the subterminal lines <whether'
+[17(20)] 'forewings <whether with a stro'
+[18(21)] 'the median streak <of the fore'
+[19(22)] 'forewings <whether with white'
+[20(23)] 'forewings <whether with scatte'
+[21(24)] 'forewing vein 7 <origin>'
+[22(25)] 'hindwings <colour>'
+[23(26)] 'hindwings <patterning>'
+[24(28)] '<geographical restriction in B'
+[25(29)] '<broad geographical range in t'
+[26(30)] 'occurring <habitats>'
+[27(31)] '<habitat restrictions <to be q'
+[28(33)] 'adults abroad <months when liv'
+[29(34)] 'adults <whether hibernating>'
+[30(35)] 'larvae feeding on'
+[31(36)] 'larvae feeding on <monocots>'
+[32(38)] '<Subfamily>'
+;
+
+STATELABELS
+1 'with a conical hairy prominenc' 'without a conical hairy promin',
+2 'functional' 'atrophied',
+3 'relatively very long' 'short',
+4 'conspicuously sexually dimorph' 'not very sexually dimorphic',
+5 'glistening-metallic' 'not glistening-metallic',
+6 'conspicuously chequered' 'somewhat chequered' 'not chequered',
+7 'rounded' 'pointed',
+8 'sinuate' 'non-sinuate',
+9 'with a semitransparent patch i' 'without a semitransparent patc',
+10 'whitish' 'ochreous' 'brown' 'grey' 'light fuscous' 'dark fuscous',
+11 'plain' 'inconspicuously patterned' 'conspicuously patterned with c',
+12 'complex' 'simple',
+13 'restricted to longitudinal str' 'restricted to transverse marki'
+     'comprising both longitudinal s' 'consisting of dark dots',
+14 'with a median line' 'without a median line',
+15 'transversely dark-lined toward' 'not transversely dark-lined to',
+16 'conspicuously white-edged' 'not white-edged',
+17 'with a strong white median str' 'without a strong white median',
+18 'interrupted by a cross-bar' 'without a cross-bar',
+19 'with a conspicuous white apica' 'with both a conspicuous white'
+     'without conspicuous white mark',
+20 'with scattered large black sca' 'without a scattering of large',
+21 'arising from vein 8' 'free',
+22 'white' 'whitish' 'ochreous whitish' 'ochreous grey' 'pale fuscous'
+     'pale grey' 'dark grey' 'dark fuscous',
+23 'plain' 'suffused whitish' 'suffused grey' 'with a subterminal dark line'
+     'with a subterminal dark line a',
+24 'found only in southern England' 'widespread',
+25 'England' 'Wales' 'Scotland' 'Ireland',
+26 'in coastal locations' 'inland',
+27 'in wet places' 'mesophytic habitats' 'dry places',
+28 'January' 'February' 'March' 'April' 'May' 'June' 'July' 'August'
+     'September' 'October' 'November' 'December',
+29 'hibernating' 'not hibernating',
+30 'monocots' 'mosses' 'stored products or dead vegeta',
+31 'Poaceae' 'Cyperaceae' 'Typha',
+32 'Crambinae' 'Schoenobiinae',
+;
+
+MATRIX 
+'Agriphila'                                                                     
+(12)12(12)(12)3?22(234)(13)(12)(123)(12)(12)(12)(12)?3?1(467)12(1234)(12)(123)(789)2111                                                                       
+'Ancylolomia'                                                                   
+212223212(23)313211123?16(15)11??(78)2111                                       
+'Calamotropha'                                                                  
+222(12)212(12)2(134)(12)2422-2-3?1112??1(78)2131                                
+'Catoptria'                                                                     
+21222(123)?22(234)3(12)(13)2(12)1(12)(12)(13)21(67)12(1234)(12)(123)(78)2(12)(12)1                                                                           
+'Chilo'                                                                         
+111123212(23)(12)2(34)22-2-3?2(123)12(12)(12)1(67)2111                          
+'Chrysocrambus'                                                                 
+212213?22(12)31312-2-321(67)111(12)?62111                                       
+'Chrysoteuchia'                                                                 
+212213222(23)(23)132122-3?1(567)12(1234)(12)(123)(678)1111                      
+'Crambus'                                                                       
+2122(12)3?(12)2(123)(13)(12)(13)2(12)1(12)(12)(123)?1(267)(13)2(1234)(12)(123)(5678)21(12)1                                                                   
+'Donacaula'                                                                     
+221123?12(23)(23)2(12)2(12)22-3??(235)12(1234)(12)1(67)21(12)2                  
+'Euchromius'                                                                    
+112223121(23)(23)1(23)-112-3?2(26)12(1234)??(123456789ABC)1111                  
+'Haimbachia'                                                                    
+11212(23)(12)22(23)3(12)(23)22-2-3?22(13)11??72121                              
+'Pediasia'                                                                      
+212(12)2(13)(12)(12)2(126)(13)131122-321(2568)(14)21(12)(123)(6789)2111         
+'Platytes'                                                                      
+212(12)(12)3?(12)2(13)(12)11(12)1(12)(12)23?2(567)12(14)(12)(23)(678)2(12)(12)1 
+'Schoenobius'                                                                   
+2211231(12)2(234)(12)2(14)22-2-3??(123)(15)21(12)172112                         
+'Thisanotia'                                                                    
+212213?22331311(12)?-311(67)111(12)(23)(56)2111                                 
+;
+
+END;
+BEGIN ASSUMPTIONS;
+OPTIONS DEFTYPE=unord PolyTCount=MINSTEPS;
+TYPESET * untitled = unord: 1-21 23-27 29-32, ord: 22 28;
+
+WTSET * untitled = 1: 1-32;
+
+END;

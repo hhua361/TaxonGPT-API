@@ -1,0 +1,116 @@
+<class 'dict'>
+Updated Classification Key:
+{
+    "Character 1: Face, whether with conical prominence.": {
+        "State 1: with a conical hairy prominence": {
+            "Character 1: Face, whether with conical prominence.": {
+                "State 1: with a conical hairy prominence": {
+                    "Character 3: Labial palps, porrected, relative length.": {
+                        "State 1: relatively very long (exceeding the head and thorax in length)": "Chilo",
+                        "State 2: short (shorter than the head and thorax)": {
+                            "Character 9: Forewing of the male, semitransparent patch.": {
+                                "State 1: with a semitransparent patch in the cell towards the base": "Euchromius",
+                                "State 2: without a semitransparent patch in the cell": "Haimbachia"
+                            }
+                        }
+                    }
+                },
+                "State 1 and 2: with a conical hairy prominence;;without a conical hairy prominence": "Agriphila"
+            }
+        },
+        "State 2: without a conical hairy prominence": {
+            "Character 5: The forewing fringe, metallic or not.": {
+                "State 1: glistening-metallic": {
+                    "Character 14: Forewings, presence of a median line.": {
+                        "State 1: with a median line": {
+                            "Character 16: The subterminal lines, whether white-edged.": {
+                                "State 1: conspicuously white-edged": "Thisanotia",
+                                "State Not Applicable: ;": "Chrysocrambus"
+                            }
+                        },
+                        "State 2: without a median line": "Chrysoteuchia"
+                    }
+                },
+                "State 2: not glistening-metallic": {
+                    "Character 2: Proboscis, functional or atrophied.": {
+                        "State 1: functional": {
+                            "Character 16: The subterminal lines, whether white-edged.": {
+                                "State 1: conspicuously white-edged": {
+                                    "Character 12: The forewing patterning, simple or complex.": {
+                                        "State 1: complex": "Ancylolomia",
+                                        "State 1 and 2: complex;;simple": {
+                                            "Character 10: Ground colour of the forewings.": {
+                                                "State 2 and 3 and 4: ochreous;;brown;;grey": "Catoptria",
+                                                "State 1 and 2 and 3: whitish;;ochreous;;brown": "Crambus"
+                                            }
+                                        }
+                                    }
+                                },
+                                "State 2: not white-edged": {
+                                    "Character 21: Forewing vein 7, origin.": {
+                                        "State 1: arising from vein 8": "Pediasia",
+                                        "State 2: free": "Platytes"
+                                    }
+                                }
+                            }
+                        },
+                        "State 2: atrophied": {
+                            "Character 4: The adults, sexual dimorphism.": {
+                                "State 1: conspicuously sexually dimorphic": {
+                                    "Character 8: Forewing termen, sinuate or not.": {
+                                        "State 1: sinuate": "Donacaula",
+                                        "State 1 and 2: sinuate;;non-sinuate": "Schoenobius"
+                                    }
+                                },
+                                "State 1 and 2: conspicuously sexually dimorphic;;not very sexually dimorphic": "Calamotropha"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+1.
+    -  Face, whether with conical prominence.: with a conical hairy prominence ........ 2
+    -  Face, whether with conical prominence.: without a conical hairy prominence ........ 3
+2(1).
+    -  Face, whether with conical prominence.: with a conical hairy prominence ........ 4
+    -  Face, whether with conical prominence.: with a conical hairy prominence;;without a conical hairy prominence ........ Agriphila
+4(2).
+    -  Labial palps, porrected, relative length.: relatively very long (exceeding the head and thorax in length) ........ Chilo
+    -  Labial palps, porrected, relative length.: short (shorter than the head and thorax) ........ 5
+5(4).
+    -  Forewing of the male, semitransparent patch.: with a semitransparent patch in the cell towards the base ........ Euchromius
+    -  Forewing of the male, semitransparent patch.: without a semitransparent patch in the cell ........ Haimbachia
+3(1).
+    -  The forewing fringe, metallic or not.: glistening-metallic ........ 6
+    -  The forewing fringe, metallic or not.: not glistening-metallic ........ 7
+6(3).
+    -  Forewings, presence of a median line.: with a median line ........ 8
+    -  Forewings, presence of a median line.: without a median line ........ Chrysoteuchia
+8(6).
+    -  The subterminal lines, whether white-edged.: conspicuously white-edged ........ Thisanotia
+    -  The subterminal lines, whether white-edged.: Not Applicable; ........ Chrysocrambus
+7(3).
+    -  Proboscis, functional or atrophied.: functional ........ 9
+    -  Proboscis, functional or atrophied.: atrophied ........ 10
+9(7).
+    -  The subterminal lines, whether white-edged.: conspicuously white-edged ........ 11
+    -  The subterminal lines, whether white-edged.: not white-edged ........ 12
+11(9).
+    -  The forewing patterning, simple or complex.: complex ........ Ancylolomia
+    -  The forewing patterning, simple or complex.: complex;;simple ........ 13
+13(11).
+    -  Ground colour of the forewings.: ochreous;;brown;;grey ........ Catoptria
+    -  Ground colour of the forewings.: whitish;;ochreous;;brown ........ Crambus
+12(9).
+    -  Forewing vein 7, origin.: arising from vein 8 ........ Pediasia
+    -  Forewing vein 7, origin.: free ........ Platytes
+10(7).
+    -  The adults, sexual dimorphism.: conspicuously sexually dimorphic ........ 14
+    -  The adults, sexual dimorphism.: conspicuously sexually dimorphic;;not very sexually dimorphic ........ Calamotropha
+14(10).
+    -  Forewing termen, sinuate or not.: sinuate ........ Donacaula
+    -  Forewing termen, sinuate or not.: sinuate;;non-sinuate ........ Schoenobius

@@ -1,0 +1,25 @@
+Character 1:
+	State 1:
+		1. **Character13**
+		   - **State 1**: Cycadaceae
+		   - **State 2**: Stangeriaceae
+	State 2:
+		1. **Character 9**:
+		   - **State 1**:
+		     - **Character 44**:
+		       - **State 2**: **Taxaceae**
+		       - **State 3**: **Cephalotaxaceae**
+		   - **State 2**:
+		     - **Character 28**:
+		       - **State 1**:
+		         - **Character 44**:
+		           - **State 1**: **Araucariaceae**
+		           - **State 2**: **Pinaceae**
+		           - **State 3**:
+		             - **Character 62**:
+		               - **State 1**: **Sciadopityaceae**
+		               - **State 2**: **Cupressaceae**
+		               - **State 3**: **Podocarpaceae**
+		       - **State 2**: **Ginkgoaceae**
+		       - **State 5**: **Ephedraceae**
+		       - **State 4**: **Gnetaceae**

@@ -1,0 +1,48 @@
+Character15 is used for the initial classification:
+	• 1.1 Character15 = 1:
+		○ 2.1 Character6 = 1:
+			§ 3.1 Biroia: If Character15 is 1 and Character6 is 1, the species is Biroia.
+		○ 2.2 Character6 = 1,2:
+			§ 3.1 Character10 = 1:
+				□ 4.1 Disophrys: If Character15 is 1, Character6 is 1,2, and Character10 is 1, the species is Disophrys.
+			§ 3.2 Character10 = 2:
+				□ 4.1 Cremnoptoides: If Character15 is 1, Character6 is 1,2, and Character10 is 2, the species is Cremnoptoides.
+		○ 2.3 Character6 = 2:
+			§ 3.1 Character1 = 2:
+				□ 4.1 Troticus: If Character15 is 1, Character6 is 2, and Character1 is 2, the species is Troticus.
+			§ 3.2 Character1 = 3:
+				□ 4.1 Gyrochus: If Character15 is 1, Character6 is 2, and Character1 is 3, the species is Gyrochus.
+	• 1.2 Character15 = 2:
+		○ 2.1 Character1 = 1:
+			§ 3.1 Coccygidium: If Character15 is 2 and Character1 is 1, the species is Coccygidium.
+		○ 2.2 Character1 = 1,2:
+			§ 3.1 Cremnops: If Character15 is 2 and Character1 is 1,2, the species is Cremnops.
+		○ 2.3 Character1 = 2:
+			§ 3.1 Hypsostypos: If Character15 is 2 and Character1 is 2, the species is Hypsostypos.
+	• 1.3 Character15 = 3:
+		○ 2.1 Character9 = 1:
+			§ 3.1 Character4 = 1,2:
+				□ 4.1 Lytopylus: If Character15 is 3, Character9 is 1, and Character4 is 1,2, the species is Lytopylus.
+			§ 3.2 Character4 = 2:
+				□ 4.1 Character6 = 1:
+					® 5.1 Agathis: If Character15 is 3, Character9 is 1, Character4 is 2, and Character6 is 1, the species is Agathis.
+				□ 4.2 Character6 = 2:
+					® 5.1 Character10 = 1:
+						◊ 6.1 Amputostypos: If Character15 is 3, Character9 is 1, Character4 is 2, Character6 is 2, and Character10 is 1, the species is Amputostypos.
+					® 5.2 Character10 = 2:
+						◊ 6.1 Character2 = 1:
+							} 7.1 Earinus: If Character15 is 3, Character9 is 1, Character4 is 2, Character6 is 2, Character10 is 2, and Character2 is 1, the species is Earinus.
+						◊ 6.2 Character2 = 2:
+							} 7.1 Bassus: If Character15 is 3, Character9 is 1, Character4 is 2, Character6 is 2, Character10 is 2, and Character2 is 2, the species is Bassus.
+						◊ 6.3 Character2 = 3:
+							} 7.1 Character3 = 2:
+								– 8.1 Camptothlipsis: If Character15 is 3, Character9 is 1, Character4 is 2, Character6 is 2, Character10 is 2, Character2 is 3, and Character3 is 2, the species is Camptothlipsis.
+							} 7.2 Character3 = 2,3:
+								– 8.1 Aneurobracon: If Character15 is 3, Character9 is 1, Character4 is 2, Character6 is 2, Character10 is 2, Character2 is 3, and Character3 is 2,3, the species is Aneurobracon.
+		○ 2.2 Character9 = 1,2:
+			§ 3.1 Character2 = 1,2:
+				□ 4.1 Euagathis: If Character15 is 3, Character9 is 1,2, and Character2 is 1,2, the species is Euagathis.
+			§ 3.2 Character2 = 2:
+				□ 4.1 Therophilus: If Character15 is 3, Character9 is 1,2, and Character2 is 2, the species is Therophilus.
+		○ 2.3 Character9 = 2:
+			§ 3.1 Braunsia: If Character15 is 3 and Character9 is 2, the species is Braunsia.

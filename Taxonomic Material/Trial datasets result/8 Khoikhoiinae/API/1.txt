@@ -1,0 +1,38 @@
+1. **Character1:**
+   - State "1":
+    1. **Character6:**
+       - State "1": Biroia
+       - State "2": Coccygidium
+       - State "1 and 2":
+        1. **Character9:**
+           - State "1 and 2": Cremnoptoides
+           - State "1": Disophrys
+   - State "2":
+    1. **Character9:**
+       - State "1": Hypsostypos
+       - State "2": Troticus
+   - State "3": Gyrochus
+   - State "4":
+    1. **Character2:**
+       - State "1 and 2":
+        1. **Character3:**
+           - State "1":
+            1. **Character6:**
+               - State "1 and 2": Euagathis
+               - State "2": Amputostypos
+           - State "2":
+            1. **Character4:**
+               - State "1": Braunsia
+               - State "2": Agathis
+       - State "2":
+        1. **Character3:**
+           - State "2":
+            1. **Character4:**
+               - State "1 and 2": Lytopylus
+               - State "2": Therophilus
+           - State "3": Bassus
+       - State "3":
+        1. **Character3:**
+           - State "2": Camptothlipsis
+           - State "2 and 3": Aneurobracon
+   - State "1 and 2": Cremnops

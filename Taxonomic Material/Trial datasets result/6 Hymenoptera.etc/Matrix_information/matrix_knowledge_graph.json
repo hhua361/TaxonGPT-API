@@ -1,0 +1,182 @@
+{
+    "Lytopylus_bradzlotnicki": {
+        "Characteristics": {
+            "Character1": "2",
+            "Character2": "3",
+            "Character3": "2",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "1",
+            "Character7": "1",
+            "Character8": "2",
+            "Character9": "3",
+            "Character10": "1",
+            "Character11": "2"
+        }
+    },
+    "Lytopylus_colleenhitchcockae": {
+        "Characteristics": {
+            "Character1": "8",
+            "Character2": "2",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "1",
+            "Character6": "1",
+            "Character7": "2",
+            "Character8": "2",
+            "Character9": "3",
+            "Character10": "1 and 2",
+            "Character11": "1 and 2"
+        }
+    },
+    "Lytopylus_flavicalcar": {
+        "Characteristics": {
+            "Character1": "5",
+            "Character2": "2",
+            "Character3": "2",
+            "Character4": "2",
+            "Character5": "1 and 2",
+            "Character6": "1 and 2",
+            "Character7": "2",
+            "Character8": "2",
+            "Character9": "2",
+            "Character10": "2",
+            "Character11": "2"
+        }
+    },
+    "Lytopylus_gregburtoni": {
+        "Characteristics": {
+            "Character1": "7",
+            "Character2": "2",
+            "Character3": "2",
+            "Character4": "1",
+            "Character5": "1",
+            "Character6": "1",
+            "Character7": "2",
+            "Character8": "2",
+            "Character9": "3",
+            "Character10": "2",
+            "Character11": "1 and 2"
+        }
+    },
+    "Lytopylus_jessicadimauroae": {
+        "Characteristics": {
+            "Character1": "9",
+            "Character2": "2",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "2",
+            "Character7": "2",
+            "Character8": "2",
+            "Character9": "3",
+            "Character10": "2",
+            "Character11": "1"
+        }
+    },
+    "Lytopylus_jessiehillae": {
+        "Characteristics": {
+            "Character1": "11 and 12",
+            "Character2": "2",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "1 and 2",
+            "Character6": "1",
+            "Character7": "2",
+            "Character8": "1",
+            "Character9": "1",
+            "Character10": "2",
+            "Character11": "2"
+        }
+    },
+    "Lytopylus_macadamiae": {
+        "Characteristics": {
+            "Character1": "10",
+            "Character2": "2",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "1 and 2",
+            "Character6": "2",
+            "Character7": "2",
+            "Character8": "2",
+            "Character9": "3",
+            "Character10": "2",
+            "Character11": "2"
+        }
+    },
+    "Lytopylus_mingfangi": {
+        "Characteristics": {
+            "Character1": "11 and 12",
+            "Character2": "2",
+            "Character3": "2",
+            "Character4": "2",
+            "Character5": "1 and 2",
+            "Character6": "1",
+            "Character7": "2",
+            "Character8": "1",
+            "Character9": "1",
+            "Character10": "2",
+            "Character11": "2"
+        }
+    },
+    "Lytopylus_rebeccashapleyae": {
+        "Characteristics": {
+            "Character1": "3",
+            "Character2": "3",
+            "Character3": "2",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "1",
+            "Character7": "1",
+            "Character8": "2",
+            "Character9": "1 and 3",
+            "Character10": "2",
+            "Character11": "1"
+        }
+    },
+    "Lytopylus_robpringlei": {
+        "Characteristics": {
+            "Character1": "6",
+            "Character2": "2",
+            "Character3": "1",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "1 and 2",
+            "Character7": "2",
+            "Character8": "2",
+            "Character9": "3",
+            "Character10": "2",
+            "Character11": "2"
+        }
+    },
+    "Lytopylus_sandraberriosae": {
+        "Characteristics": {
+            "Character1": "4",
+            "Character2": "1",
+            "Character3": "Not Applicable",
+            "Character4": "2",
+            "Character5": "2",
+            "Character6": "1",
+            "Character7": "1",
+            "Character8": "2",
+            "Character9": "1 and 3",
+            "Character10": "2",
+            "Character11": "2"
+        }
+    },
+    "Lytopylus_vaughntani": {
+        "Characteristics": {
+            "Character1": "1",
+            "Character2": "2",
+            "Character3": "2",
+            "Character4": "2",
+            "Character5": "1",
+            "Character6": "1",
+            "Character7": "1",
+            "Character8": "2",
+            "Character9": "3",
+            "Character10": "2",
+            "Character11": "1 and 2"
+        }
+    }
+}

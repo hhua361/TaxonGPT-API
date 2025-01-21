@@ -1,0 +1,135 @@
+{
+    "1": {
+        "description": "body size",
+        "states": {
+            "1": "up to 10 mm",
+            "2": "more than 10 mm"
+        }
+    },
+    "2": {
+        "description": "telson with",
+        "states": {
+            "1": "apical, lateral and dorsal spines",
+            "2": "apical and lateral spines",
+            "3": "apical spines alone",
+            "4": "apical and dorsal spines"
+        }
+    },
+    "3": {
+        "description": "telson with",
+        "states": {
+            "1": "3, rarely 4 apical spines per lobe",
+            "2": "5 or more apical spines per lobe"
+        }
+    },
+    "4": {
+        "description": "telson spines <length>",
+        "states": {
+            "1": "long, longer than 1/2 of the telson length",
+            "2": "short-to mid sized, at most 0.4 telson length"
+        }
+    },
+    "5": {
+        "description": "epimeral plate III",
+        "states": {
+            "1": "subrounded, posterior and ventral corner always convex, postero-ventral corner sometimes marked only with seta",
+            "2": "angular, ventral margin slightly convex, posterior margin straight or concave, postero-ventral corner always distinct"
+        }
+    },
+    "6": {
+        "description": "urosoma segment I",
+        "states": {
+            "1": "single seta or spine dorso-postero-laterally",
+            "2": "two or more setae and/or spines dorso-postero-laterally"
+        }
+    },
+    "7": {
+        "description": "inner lobe of maxilla I",
+        "states": {
+            "1": "one to two setae",
+            "2": "three or more setae"
+        }
+    },
+    "8": {
+        "description": "outer lobe of maxilla I",
+        "states": {
+            "1": "with 7 spines, typically inner with several denticle and other with at most three denticles",
+            "2": "with 7 spines, inner four with several denticles, the outer three can have less than three denticles",
+            "3": "with 7 spines, all with several denticles",
+            "4": "more than 7 spines, all fine pectinated forming combs"
+        }
+    },
+    "9": {
+        "description": "propodus and carpus of gnathopods I - II",
+        "states": {
+            "1": "carpus longer than propodus, propods elongated and small",
+            "2": "carpus as long as propodus or shorter, propodus mid-sized and of quadratic shape",
+            "3": "carpus as long as propodus or shorter, propodus large and in a shape of a hoof"
+        }
+    },
+    "10": {
+        "description": "propodus of gnathopod II <size>",
+        "states": {
+            "1": "much larger than propodus of gnathopod I, larger than head capsulae",
+            "2": "slightly larger than propodus of gnathopod I, at most of the size of head capsulae"
+        }
+    },
+    "11": {
+        "description": "gnathopod dactylus with",
+        "states": {
+            "1": "single seta at outer margin",
+            "2": "more than one seta on outer margin"
+        }
+    },
+    "12": {
+        "description": "dactylus of pereopod III-VII",
+        "states": {
+            "1": "at most one spine at the base of the nail",
+            "2": "at least one additional spine in addition to the spine at the base of the nail (some polymorphism may exist, e.g., left-right assymetry, spines not on all appendages)"
+        }
+    },
+    "13": {
+        "description": "coxal plate IV",
+        "states": {
+            "1": "much deeper than broad, proximally with deep excavation",
+            "2": "more broad than deep, or as broad as deep, or slightly deeper than broad, but never with deep proximal excavation"
+        }
+    },
+    "14": {
+        "description": "dactyli III-IV",
+        "states": {
+            "1": "long and slender, longer than 1/2 of propodus length",
+            "2": "slender or stout, at most 1/2 of propodus length"
+        }
+    },
+    "15": {
+        "description": "uropod I <distal setae>",
+        "states": {
+            "1": "distal setae on rami not remarkably longer than spines",
+            "2": "long setae distally on rami (broom-like appearance)"
+        }
+    },
+    "16": {
+        "description": "uropod I <ratio of uropod rami>",
+        "states": {
+            "1": "inner ramus slightly to remarkably longer than outer ramus in both sexes",
+            "2": "inner ramus shorter than outer ramus in both sexes"
+        }
+    },
+    "17": {
+        "description": "uropod I <sexual dimorphism>",
+        "states": {
+            "1": "sexually dimorphic: inner ramus elongated and measures 1.3¨C2.0 of outer ramus in males. Females with subequal rami.",
+            "2": "sexually non-dimorphic: the ratio between inner and outer ramus is roughly the same both sexes",
+            "3": "sexual dimorphism not know"
+        }
+    },
+    "18": {
+        "description": "uropod III",
+        "states": {
+            "1": "sexually dimorphic: distal article of expopodite in males elongated and measures 0.3¨C1.0 of proximal article. In females and juvenile individuals at most 0.1 of proximal article.",
+            "2": "sexually non-dimorphic: distal article of expodite at most 0.1 of proximal article in both sexes",
+            "3": "sexual dimorphism not known"
+        }
+    }
+}

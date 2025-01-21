@@ -1,0 +1,56 @@
+{
+    "Character24": {
+        "1": {
+            "Character12": {
+                "1": {
+                    "Character6": {
+                        "1": "Equisetum_trachyodon",
+                        "2": "Equisetum_variegatum"
+                    }
+                },
+                "2,3": {
+                    "Character6": {
+                        "1": {
+                            "Character8": {
+                                "1": "Equisetum_hyemale",
+                                "2": "Equisetum_moorei"
+                            }
+                        },
+                        "1,2": "Equisetum_ramosissimum"
+                    }
+                }
+            }
+        },
+        "2": {
+            "Character23": {
+                "1": {
+                    "Character2": {
+                        "1": {
+                            "Character3": {
+                                "1": "Equisetum_telmateia",
+                                "2": "Equisetum_arvense"
+                            }
+                        },
+                        "2": {
+                            "Character1": {
+                                "1,2": "Equisetum_sylvaticum",
+                                "2": "Equisetum_pratense"
+                            }
+                        }
+                    }
+                },
+                "2": {
+                    "Character1": {
+                        "1": {
+                            "Character4": {
+                                "1": "Equisetum_litorale",
+                                "1,2": "Equisetum_palustre"
+                            }
+                        },
+                        "1,2": "Equisetum_fluviatile"
+                    }
+                }
+            }
+        }
+    }
+}

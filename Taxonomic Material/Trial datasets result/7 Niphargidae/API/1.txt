@@ -1,0 +1,42 @@
+**Character1**:
+- **State 1**:
+	  1. Character5
+	   - State 1: Sania_marjoriae_Mason_1983
+	   - State 2: Sania_capensis_Mason_1983
+- **State 2**:
+  - Sania_masoni_Sharkey_2009
+
+- **State 3**:
+  - Sania_browni_Sharkey_2009
+
+- **State 4**:
+	1. Character1: State 1 and 4
+	   - Sania_marjoriae_Mason_1983
+	2. Character1: State 4
+	   - Character10: State 1
+	     - Sania_henryi_Mason_1983
+	   - Character10: State 2
+	     - Sania_masneri_Sharkey_2009
+- **State 5**:
+  - Khoikhoia_semiadusta_Mason_1983
+
+- **State 6**:
+  - Khoikhoia_townesi_Mason_1983
+
+- **State 7**:
+  - Khoikhoia_turneri_Mason_1984
+
+- **State 8**:
+  - Khoikhoia_solata_Mason_1983
+
+- **State 9**:
+  - Khoikhoia_lission_Mason_1984
+
+- **State 10**:
+  - Khoikhoia_anthelion_Sharkey_2009
+
+- **State 11**:
+  - Khoikhoia_oligospilos_Sharkey_2009
+
+- **State 1 and 4**:
+  - Sania_marjoriae_Mason_1983

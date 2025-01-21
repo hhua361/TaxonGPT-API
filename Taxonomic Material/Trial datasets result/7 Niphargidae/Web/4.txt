@@ -1,0 +1,33 @@
+Character6:
+  2:
+    Character10:
+      3: Khoikhoia_anthelion_Sharkey_2009
+      1:
+        Character21:
+          2: Sania_henryi_Mason_1983
+          1: Sania_marjoriae_Mason_1983
+      2: Sania_masneri_Sharkey_2009
+  1:
+    Character2:
+      3:
+        Character1:
+          9: Khoikhoia_lission_Mason_1984
+          8: Khoikhoia_solata_Mason_1983
+          7: Khoikhoia_turneri_Mason_1984
+      1:
+        Character1:
+          11: Khoikhoia_oligospilos_Sharkey_2009
+          5: Khoikhoia_semiadusta_Mason_1983
+          6: Khoikhoia_townesi_Mason_1983
+      2:
+        Character1:
+          5: Khoikhoia_semiadusta_Mason_1983
+          6: Khoikhoia_townesi_Mason_1983
+  3:
+    Character22:
+      1:
+        Character28:
+          8: Sania_browni_Sharkey_2009
+          9: Sania_capensis_Mason_1983
+          11: Sania_marjoriae_Mason_1983
+      2: Sania_masoni_Sharkey_2009

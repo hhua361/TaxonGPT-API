@@ -1,0 +1,33 @@
+Character24:
+	• 1:
+		○ Character26:
+			§ 1:
+				□ Character7:
+					® 1: Equisetum_ramosissimum
+					® 2: Equisetum_variegatum
+					® 3:
+						◊ Character6:
+							} 1: Equisetum_hyemale
+							} 2: Equisetum_variegatum
+			§ 2:
+				□ Character8:
+					® 1: Equisetum_trachyodon
+					® 2: Equisetum_moorei
+	• 2:
+		○ Character2:
+			§ 1:
+				□ Character3:
+					® 1: Equisetum_telmateia
+					® 2: Equisetum_arvense
+			§ 2:
+				□ Character6:
+					® 1: Equisetum_pratense
+					® 2: Equisetum_sylvaticum
+					® 3: Equisetum_sylvaticum
+			§ 3:
+				□ Character6:
+					® 2:
+						◊ Character10:
+							} 1: Equisetum_litorale
+							} 2: Equisetum_palustre
+					® 3: Equisetum_fluviatile

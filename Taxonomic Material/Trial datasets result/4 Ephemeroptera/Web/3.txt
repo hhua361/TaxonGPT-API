@@ -1,0 +1,33 @@
+Character33:
+	• State 1:
+		○ Character30:
+			§ State 1:
+				□ Character14:
+					® State 1:
+						◊ Character29:
+							} State 3: Pinaceae
+							} State 5: Araucariaceae
+					® State 2: Sciadopityaceae
+			§ State 2:
+				□ Character5:
+					® State 1:
+						◊ Character22:
+							} State 1: Cupressaceae
+							} State 2: Gnetaceae
+					® State 2: Ephedraceae
+	• State 2:
+		○ Character32:
+			§ State 1:
+				□ Character44:
+					® State 1:
+						◊ Character48:
+							} State 2: Podocarpaceae
+							} State 3: Cephalotaxaceae
+					® State 3: Taxaceae
+			§ State 2:
+				□ Character1:
+					® State 1: Ginkgoaceae
+					® State 2:
+						◊ Character13:
+							} State 2: Stangeriaceae
+							} State 3: Cycadaceae

@@ -1,0 +1,127 @@
+{
+    "1": {
+        "description": "Position of lateral carina of frons",
+        "states": {
+            "1": "with posterior ends directed towards lateral ocelli",
+            "2": "with posterior ends directed towards median ocellus",
+            "3": "with posterior ends meeting anterior to ocelli forming a complete circle",
+            "4": "absent"
+        }
+    },
+    "2": {
+        "description": "Presence and shape of 2nd submarginal cell of forewing",
+        "states": {
+            "1": "quadrate, or slightly narrowing anteriorly",
+            "2": "triangular",
+            "3": "absent"
+        }
+    },
+    "3": {
+        "description": "Shape of tarsal claws",
+        "states": {
+            "1": "fore and mid claws cleft",
+            "2": "fore and mid claws with a basal lobe",
+            "3": "Fore and mid claws simple"
+        }
+    },
+    "4": {
+        "description": "Sculpture of median tergite 3",
+        "states": {
+            "1": "extensively striate in anterior half or more",
+            "2": "not extensively striate, usually smooth or weakly coriarious"
+        }
+    },
+    "5": {
+        "description": "Length of foretibial spurs",
+        "states": {
+            "1": "about as long as basitarsus, and ending in a long thin style",
+            "2": "less that 3/4 length of fore basitarsus, and ending abruptly"
+        }
+    },
+    "6": {
+        "description": "Length of mouthparts",
+        "states": {
+            "1": "Mouthparts long, galea significantly longer than wide; gena often elongate",
+            "2": "Mouthparts short (normal), galea not longer than wide; gena not especially elongate"
+        }
+    },
+    "7": {
+        "description": "Frons, with or without lateral carinae",
+        "states": {
+            "1": "bordered with carinae",
+            "2": "not bordered with carinae"
+        }
+    },
+    "8": {
+        "description": "Sculpture of first median tergite",
+        "states": {
+            "1": "mostly striate",
+            "2": "entirely smooth",
+            "3": "mostly granulate or coriarious"
+        }
+    },
+    "9": {
+        "description": "Presence of adventitious vein (2RS) on r-m crossvein of forewing",
+        "states": {
+            "1": "absent or indicated only by slight swelling",
+            "2": "present and distinct"
+        }
+    },
+    "10": {
+        "description": "Length of ovipositor",
+        "states": {
+            "1": "short, barely exerted or less than half length of metasoma",
+            "2": "longer than half length of metasoma"
+        }
+    },
+    "11": {
+        "description": "Presence of notauli",
+        "states": {
+            "1": "present but not necessarily complete",
+            "2": "absent"
+        }
+    },
+    "12": {
+        "description": "Presence of RS+M vein of forewing",
+        "states": {
+            "1": "mostly or entirely absent",
+            "2": "present and complete"
+        }
+    },
+    "13": {
+        "description": "Presence of ventral longitudinal carinae on hind trochantellus",
+        "states": {
+            "1": "Hind trochantellus with one or two distinct carinae",
+            "2": "Hind trochantellus lacking carinae"
+        }
+    },
+    "14": {
+        "description": "Position of metasomal cavity (MC) (where the metasoma inserts into the mesosoma)",
+        "states": {
+            "1": "situated entirely dorsal to coxal cavities (CC); wide, high, straight, transverse carinae (TC) between metasomal (MC) and coxal cavities",
+            "2": "situated partly between coxal cavities (CC); wide, high, straight, transverse carinae (TC) between metasomal (MC) and coxal cavities absent, usually curved and relatively shallow if present"
+        }
+    },
+    "15": {
+        "description": "Shape of lateral carina of frons",
+        "states": {
+            "1": "lamellate (high and thin)",
+            "2": "in the form of a blunt ridge, not lamellate",
+            "3": "absent"
+        }
+    },
+    "16": {
+        "description": "Presence of RS vein of forewing",
+        "states": {
+            "1": "completely absent",
+            "2": "present, though sometimes interrupted at midlength"
+        }
+    },
+    "17": {
+        "description": "Tubular carinae surrounding antennal sockets",
+        "states": {
+            "1": "present and high, resulting in a deep groove between antennae",
+            "2": "absent or low, groove between antennae may be present but not so pronounced"
+        }
+    }
+}

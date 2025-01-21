@@ -1,0 +1,134 @@
+Updated Classification Key:
+{
+    "Character 1: body size": {
+        "State 1: up to 10 mm": {
+            "Character 2: telson with": {
+                "State 1: apical, lateral and dorsal spines": {
+                    "Character 7: inner lobe of maxilla I": {
+                        "State 1 and 2: one to two setae;;three or more setae": {
+                            "Character 6: urosoma segment I": {
+                                "State 1: single seta or spine dorso-postero-laterally": "luchoffmani",
+                                "State 1 and 2: single seta or spine dorso-postero-laterally;;two or more setae and/or spines dorso-postero-laterally": "muotae"
+                            }
+                        },
+                        "State 1: one to two setae": "setiferus"
+                    }
+                },
+                "State 2: apical and lateral spines": {
+                    "Character 8: outer lobe of maxilla I": {
+                        "State 1: with 7 spines, typically inner with several denticle and other with at most three denticles": {
+                            "Character 9: propodus and carpus of gnathopods I - II": {
+                                "State 2: carpus as long as propodus or shorter, propodus mid-sized and of quadratic shape": {
+                                    "Character 5: epimeral plate III": {
+                                        "State 1: subrounded, posterior and ventral corner always convex, postero-ventral corner sometimes marked only with seta": "aquilex",
+                                        "State 2: angular, ventral margin slightly convex, posterior margin straight or concave, postero-ventral corner always distinct": {
+                                            "Character 17: uropod I <sexual dimorphism>": {
+                                                "State 2: sexually non-dimorphic: the ratio between inner and outer ramus is roughly the same both sexes": {
+                                                    "Character 14: dactyli III-IV": {
+                                                        "State 1: long and slender, longer than 1/2 of propodus length": "forelii",
+                                                        "State 2: slender or stout, at most 1/2 of propodus length": "thienemanni"
+                                                    }
+                                                },
+                                                "State 3: sexual dimorphism not know": "auerbachi"
+                                            }
+                                        }
+                                    }
+                                },
+                                "State 3: carpus as long as propodus or shorter, propodus large and in a shape of a hoof": "tonywhitteni"
+                            }
+                        },
+                        "State 3: with 7 spines, all with several denticles": "inopinatus",
+                        "State 4: more than 7 spines, all fine pectinated forming combs": "caspary",
+                        "State Not applicable: ": "B-(cf.thienemanni)"
+                    }
+                }
+            }
+        },
+        "State 2: more than 10 mm": {
+            "Character 2: telson with": {
+                "State 1: apical, lateral and dorsal spines": {
+                    "Character 3: telson with": {
+                        "State 1: 3, rarely 4 apical spines per lobe": {
+                            "Character 5: epimeral plate III": {
+                                "State 1: subrounded, posterior and ventral corner always convex, postero-ventral corner sometimes marked only with seta": "thuringius",
+                                "State 2: angular, ventral margin slightly convex, posterior margin straight or concave, postero-ventral corner always distinct": {
+                                    "Character 7: inner lobe of maxilla I": {
+                                        "State 1: one to two setae": "rhenorhodanesis species complex",
+                                        "State 2: three or more setae": {
+                                            "Character 9: propodus and carpus of gnathopods I - II": {
+                                                "State 2: carpus as long as propodus or shorter, propodus mid-sized and of quadratic shape": "puteanus",
+                                                "State 3: carpus as long as propodus or shorter, propodus large and in a shape of a hoof": "styx"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "State 1 and 2: apical, lateral and dorsal spines;;apical and lateral spines": {
+                    "Character 9: propodus and carpus of gnathopods I - II": {
+                        "State 3: carpus as long as propodus or shorter, propodus large and in a shape of a hoof": {
+                            "Character 6: urosoma segment I": {
+                                "State 1: single seta or spine dorso-postero-laterally": "A-(cf.stygius)",
+                                "State 1 and 2: single seta or spine dorso-postero-laterally;;two or more setae and/or spines dorso-postero-laterally": "brixianus"
+                            }
+                        }
+                    }
+                },
+                "State 1 and 4: apical, lateral and dorsal spines;;apical and dorsal spines": "virei",
+                "State 3 and 4: apical spines alone;;apical and dorsal spines": "murimali"
+            }
+        }
+    }
+}
+1.
+    -  body size: up to 10 mm ........ 2
+    -  body size: more than 10 mm ........ 3
+2(1).
+    -  telson with: apical, lateral and dorsal spines ........ 4
+    -  telson with: apical and lateral spines ........ 5
+4(2).
+    -  inner lobe of maxilla I: one to two setae;;three or more setae ........ 6
+    -  inner lobe of maxilla I: one to two setae ........ setiferus
+6(4).
+    -  urosoma segment I: single seta or spine dorso-postero-laterally ........ luchoffmani
+    -  urosoma segment I: single seta or spine dorso-postero-laterally;;two or more setae and/or spines dorso-postero-laterally ........ muotae
+5(2).
+    -  outer lobe of maxilla I: with 7 spines, typically inner with several denticle and other with at most three denticles ........ 7
+    -  outer lobe of maxilla I: with 7 spines, all with several denticles ........ inopinatus
+    -  outer lobe of maxilla I: more than 7 spines, all fine pectinated forming combs ........ caspary
+    -  outer lobe of maxilla I: Not applicable ........ B-(cf.thienemanni)
+7(5).
+    -  propodus and carpus of gnathopods I - II: carpus as long as propodus or shorter, propodus mid-sized and of quadratic shape ........ 8
+    -  propodus and carpus of gnathopods I - II: carpus as long as propodus or shorter, propodus large and in a shape of a hoof ........ tonywhitteni
+8(7).
+    -  epimeral plate III: subrounded, posterior and ventral corner always convex, postero-ventral corner sometimes marked only with seta ........ aquilex
+    -  epimeral plate III: angular, ventral margin slightly convex, posterior margin straight or concave, postero-ventral corner always distinct ........ 9
+9(8).
+    -  uropod I <sexual dimorphism>: sexually non-dimorphic ........ 10
+    -  uropod I <sexual dimorphism>: sexual dimorphism not know ........ auerbachi
+10(9).
+    -  dactyli III-IV: long and slender, longer than 1/2 of propodus length ........ forelii
+    -  dactyli III-IV: slender or stout, at most 1/2 of propodus length ........ thienemanni
+3(1).
+    -  telson with: apical, lateral and dorsal spines ........ 11
+    -  telson with: apical, lateral and dorsal spines;;apical and lateral spines ........ 12
+    -  telson with: apical, lateral and dorsal spines;;apical and dorsal spines ........ virei
+    -  telson with: apical spines alone;;apical and dorsal spines ........ murimali
+11(3).
+    -  telson with: 3, rarely 4 apical spines per lobe ........ 13
+13(11).
+    -  epimeral plate III: subrounded, posterior and ventral corner always convex, postero-ventral corner sometimes marked only with seta ........ thuringius
+    -  epimeral plate III: angular, ventral margin slightly convex, posterior margin straight or concave, postero-ventral corner always distinct ........ 14
+14(13).
+    -  inner lobe of maxilla I: one to two setae ........ rhenorhodanesis species complex
+    -  inner lobe of maxilla I: three or more setae ........ 15
+15(14).
+    -  propodus and carpus of gnathopods I - II: carpus as long as propodus or shorter, propodus mid-sized and of quadratic shape ........ puteanus
+    -  propodus and carpus of gnathopods I - II: carpus as long as propodus or shorter, propodus large and in a shape of a hoof ........ styx
+12(3).
+    -  propodus and carpus of gnathopods I - II: carpus as long as propodus or shorter, propodus large and in a shape of a hoof ........ 16
+16(12).
+    -  urosoma segment I: single seta or spine dorso-postero-laterally ........ A-(cf.stygius)
+    -  urosoma segment I: single seta or spine dorso-postero-laterally;;two or more setae and/or spines dorso-postero-laterally ........ brixianus

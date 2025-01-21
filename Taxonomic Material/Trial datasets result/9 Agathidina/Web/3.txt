@@ -1,0 +1,82 @@
+{
+    "Character32": {
+        "1": {
+            "Character72": {
+                "1": {
+                    "Character1": {
+                        "1,2": {
+                            "Species": "Eleusine"
+                        },
+                        "2": {
+                            "Species": "Festuca"
+                        }
+                    }
+                },
+                "1,2": {
+                    "Character3": {
+                        "1,2": {
+                            "Species": "Panicum"
+                        },
+                        "2": {
+                            "Species": "Chloris"
+                        }
+                    }
+                },
+                "2": {
+                    "Character1": {
+                        "1,2": {
+                            "Species": "Echinochloa"
+                        },
+                        "2": {
+                            "Species": "Phragmites"
+                        }
+                    }
+                }
+            }
+        },
+        "1,2": {
+            "Character1": {
+                "1,2": {
+                    "Species": "Poa"
+                },
+                "2": {
+                    "Species": "Cynodon"
+                }
+            }
+        },
+        "2": {
+            "Character10": {
+                "1": {
+                    "Character2": {
+                        "1": {
+                            "Species": "Agrostis"
+                        },
+                        "1,2": {
+                            "Species": "Oryza"
+                        }
+                    }
+                },
+                "1,2": {
+                    "Character1": {
+                        "1,2": {
+                            "Species": "Andropogon"
+                        },
+                        "2": {
+                            "Species": "Bambusa"
+                        }
+                    }
+                },
+                "2": {
+                    "Character1": {
+                        "1": {
+                            "Species": "Zea"
+                        },
+                        "2": {
+                            "Species": "Anisopogon"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

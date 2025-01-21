@@ -1,0 +1,259 @@
+{
+    "1": {
+        "description": "Face, whether with conical prominence.",
+        "states": {
+            "1": "with a conical hairy prominence",
+            "2": "without a conical hairy prominence"
+        }
+    },
+    "2": {
+        "description": "Proboscis, functional or atrophied.",
+        "states": {
+            "1": "functional",
+            "2": "atrophied"
+        }
+    },
+    "3": {
+        "description": "Labial palps, porrected, relative length.",
+        "states": {
+            "1": "relatively very long (exceeding the head and thorax in length)",
+            "2": "short (shorter than the head and thorax)"
+        }
+    },
+    "4": {
+        "description": "The adults, sexual dimorphism.",
+        "states": {
+            "1": "conspicuously sexually dimorphic",
+            "2": "not very sexually dimorphic"
+        }
+    },
+    "5": {
+        "description": "The forewing fringe, metallic or not.",
+        "states": {
+            "1": "glistening-metallic",
+            "2": "not glistening-metallic"
+        }
+    },
+    "6": {
+        "description": "The forewing fringe, whether chequered.",
+        "states": {
+            "1": "conspicuously chequered",
+            "2": "somewhat chequered",
+            "3": "not chequered"
+        }
+    },
+    "7": {
+        "description": "Forewing apices, rounded or pointed.",
+        "states": {
+            "1": "rounded",
+            "2": "pointed"
+        }
+    },
+    "8": {
+        "description": "Forewing termen, sinuate or not.",
+        "states": {
+            "1": "sinuate",
+            "2": "non-sinuate"
+        }
+    },
+    "9": {
+        "description": "Forewing of the male, semitransparent patch.",
+        "states": {
+            "1": "with a semitransparent patch in the cell towards the base",
+            "2": "without a semitransparent patch in the cell"
+        }
+    },
+    "10": {
+        "description": "Ground colour of the forewings.",
+        "states": {
+            "1": "whitish",
+            "2": "ochreous",
+            "3": "brown",
+            "4": "grey",
+            "5": "light fuscous",
+            "6": "dark fuscous"
+        }
+    },
+    "11": {
+        "description": "Forewings, extent of patterning.",
+        "states": {
+            "1": "plain",
+            "2": "inconspicuously patterned",
+            "3": "conspicuously patterned with contrasting colours"
+        }
+    },
+    "12": {
+        "description": "The forewing patterning, simple or complex.",
+        "states": {
+            "1": "complex",
+            "2": "simple"
+        }
+    },
+    "13": {
+        "description": "The forewing patterning, nature.",
+        "states": {
+            "1": "restricted to longitudinal streaking",
+            "2": "restricted to transverse markings",
+            "3": "comprising both longitudinal streaking and transverse markings",
+            "4": "consisting of dark dots"
+        }
+    },
+    "14": {
+        "description": "Forewings, presence of a median line.",
+        "states": {
+            "1": "with a median line",
+            "2": "without a median line"
+        }
+    },
+    "15": {
+        "description": "Forewings, whether postmedianly or subterminally transversely dark-lined.",
+        "states": {
+            "1": "transversely dark-lined towards the termen",
+            "2": "not transversely dark-lined towards the termen"
+        }
+    },
+    "16": {
+        "description": "The subterminal lines, whether white-edged.",
+        "states": {
+            "1": "conspicuously white-edged",
+            "2": "not white-edged"
+        }
+    },
+    "17": {
+        "description": "Forewings, whether with a strong white median streak.",
+        "states": {
+            "1": "with a strong white median streak (to 3/4 or beyond)",
+            "2": "without a strong white median streak"
+        }
+    },
+    "18": {
+        "description": "The median streak of the forewing, whether interrupted.",
+        "states": {
+            "1": "interrupted by a cross-bar",
+            "2": "without a cross-bar"
+        }
+    },
+    "19": {
+        "description": "Forewings, whether with white markings at or towards apex.",
+        "states": {
+            "1": "with a conspicuous white apical mark (but no costal one nearby)",
+            "2": "with both a conspicuous white apical mark and a costal one nearby",
+            "3": "without conspicuous white marks at or near the apex"
+        }
+    },
+    "20": {
+        "description": "Forewings, whether with scattered large black scales.",
+        "states": {
+            "1": "with scattered large black scales",
+            "2": "without a scattering of large black scales"
+        }
+    },
+    "21": {
+        "description": "Forewing vein 7, origin.",
+        "states": {
+            "1": "arising from vein 8",
+            "2": "free"
+        }
+    },
+    "22": {
+        "description": "Hindwings, colour.",
+        "states": {
+            "1": "white",
+            "2": "whitish",
+            "3": "ochreous whitish",
+            "4": "ochreous grey",
+            "5": "pale fuscous",
+            "6": "pale grey",
+            "7": "dark grey",
+            "8": "dark fuscous"
+        }
+    },
+    "23": {
+        "description": "Hindwings, patterning.",
+        "states": {
+            "1": "plain",
+            "2": "suffused whitish",
+            "3": "suffused grey",
+            "4": "with a subterminal dark line",
+            "5": "with a subterminal dark line and fuscous termen"
+        }
+    },
+    "24": {
+        "description": "Geographical restriction in Britain.",
+        "states": {
+            "1": "found only in southern England",
+            "2": "widespread"
+        }
+    },
+    "25": {
+        "description": "Broad geographical range in the British Isles.",
+        "states": {
+            "1": "England",
+            "2": "Wales",
+            "3": "Scotland",
+            "4": "Ireland"
+        }
+    },
+    "26": {
+        "description": "Occurring habitats.",
+        "states": {
+            "1": "in coastal locations",
+            "2": "inland"
+        }
+    },
+    "27": {
+        "description": "Habitat restrictions.",
+        "states": {
+            "1": "in wet places (associated with helophytes)",
+            "2": "mesophytic habitats",
+            "3": "dry places"
+        }
+    },
+    "28": {
+        "description": "Adults abroad, months when living adults may be found.",
+        "states": {
+            "1": "January",
+            "2": "February",
+            "3": "March",
+            "4": "April",
+            "5": "May",
+            "6": "June",
+            "7": "July",
+            "8": "August",
+            "9": "September",
+            "10": "October",
+            "11": "November",
+            "12": "December"
+        }
+    },
+    "29": {
+        "description": "Adults, whether hibernating.",
+        "states": {
+            "1": "hibernating",
+            "2": "not hibernating"
+        }
+    },
+    "30": {
+        "description": "Larvae feeding on.",
+        "states": {
+            "1": "living monocots",
+            "2": "living mosses",
+            "3": "stored products or dead vegetation"
+        }
+    },
+    "31": {
+        "description": "Larvae feeding on monocots.",
+        "states": {
+            "1": "Poaceae",
+            "2": "Cyperaceae",
+            "3": "Typha"
+        }
+    },
+    "32": {
+        "description": "Subfamily.",
+        "states": {
+            "1": "Crambinae",
+            "2": "Schoenobiinae"
+        }
+    }
+}

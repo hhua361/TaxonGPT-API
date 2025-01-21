@@ -1,0 +1,86 @@
+{
+  "Character7": {
+    "2": {
+      "Character10": {
+        "2": {
+          "Character14": {
+            "2": {
+              "Character6": {
+                "1": "Agathis",
+                "2": {
+                  "Character9": {
+                    "1": {
+                      "Character11": {
+                        "1": {
+                          "Character2": {
+                            "3": {
+                              "Character3": {
+                                "2": "Camptothlipsis",
+                                "2,3": "Aneurobracon"
+                              }
+                            },
+                            "2": "Bassus"
+                          }
+                        },
+                        "2": "Earinus"
+                      }
+                    },
+                    "1,2": "Therophilus"
+                  }
+                }
+              }
+            },
+            "1": {
+              "Character2": {
+                "2": "Lytopylus",
+                "1,2": "Braunsia"
+              }
+            }
+          }
+        },
+        "1": {
+          "Character6": {
+            "2": "Amputostypos",
+            "1,2": "Euagathis"
+          }
+        }
+      }
+    },
+    "1": {
+      "Character10": {
+        "2": {
+          "Character1": {
+            "1": {
+              "Character6": {
+                "1": "Biroia",
+                "1,2": "Cremnoptoides"
+              }
+            },
+            "1,2": "Cremnops"
+          }
+        },
+        "1": {
+          "Character2": {
+            "1": {
+              "Character6": {
+                "2": {
+                  "Character1": {
+                    "3": "Gyrochus",
+                    "2": "Troticus"
+                  }
+                },
+                "1,2": "Disophrys"
+              }
+            },
+            "1,2": {
+              "Character1": {
+                "1": "Coccygidium",
+                "2": "Hypsostypos"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

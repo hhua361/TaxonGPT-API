@@ -1,0 +1,33 @@
+Character32
+	• 2
+		○ Character10
+			§ 1
+				□ Character2
+					® 1: Agrostis
+					® 1,2: Oryza
+			§ 1,2
+				□ Character1
+					® 1,2: Andropogon
+					® 2: Bambusa
+			§ 2
+				□ Character1
+					® 2: Anisopogon
+					® 1: Zea
+	• 1
+		○ Character72
+			§ 1,2
+				□ Character3
+					® 2: Chloris
+					® 1,2: Panicum
+			§ 2
+				□ Character1
+					® 1,2: Echinochloa
+					® 2: Phragmites
+			§ 1
+				□ Character1
+					® 1,2: Eleusine
+					® 2: Festuca
+	• 1,2
+		○ Character1
+			§ 2: Cynodon
+			§ 1,2: Poa

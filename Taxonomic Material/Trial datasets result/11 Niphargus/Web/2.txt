@@ -1,0 +1,69 @@
+Character3
+	• State 1
+		1. Character8
+			§ State 1
+				1. Character6
+					® State 2
+						1. Character17
+							} State 1
+								1. Character12
+									w State 1
+										1. Character5
+											w State 1
+												1. Character1
+													w State 5: Niphargus_altagahizi
+													w State 5,6: Niphargus_nadarini
+											w State 2: Niphargus_itus_Karaman_1986
+									w State 1,2
+											1. Character1
+												w State 4: Niphargus_nadarini_favitor
+												w State 3: Niphargus_nadarini_iraquensis
+							} State 3: Niphargus_darvishi_sp.n.
+					® State 1,2
+						1. Character1
+							} State 2: Niphargus_sertaci
+							} State 1,2: Niphargus_valachicus_Dobreanu_&_Manolache_1933
+			§ State 2
+				1. Character10
+					® State 2
+						1. Character5
+							} State 1
+								1. Character6
+									w State 2: Niphargus_bisitunicus_sp.n.
+									w State 1: Niphargus_borisi_sp.n.
+							} State 2: Niphargus_sharifi_sp._n.
+					® State 1
+						1. Character1
+							} State 1
+								1. Character4
+									w State 2: Niphargus_daniali
+									w State 1: Niphargus_khayyami
+							} State 2: Niphargus_religiosus_Karaman_2012
+	• State 2
+		1. Character20
+			§ State 1
+				1. Character1
+					® State 1
+						1. Character8
+							} State 1: Niphargus_alisadri
+							} State 2: Niphargus_khwarizmi
+					® State 2
+						1. Character12
+							} State 1
+								1. Character4
+									w State 1: Niphargus_anatolicus
+									w State 2: Niphargus_turcicus_Andreev_&_Kenderov_2012
+							} State 2
+								1. Character13
+									w State 1: Niphargus_incus_Karaman_2012
+									w State 2: Niphargus_orientalis_Karaman_1950
+			§ State 2
+				1. Character17
+					® State 1
+						1. Character11
+							} State 2: Niphargus_imitator_Karaman_2012
+							} State 1: Niphargus_krigizi
+					® State 2
+						1. Character6
+							} State 1: Niphargus_tauri_tauri_Schellenberg_1933
+							} State 2: Niphargus_tauri_afioni_Karaman_2012

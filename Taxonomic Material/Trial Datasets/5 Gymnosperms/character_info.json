@@ -1,0 +1,550 @@
+{
+    "1": {
+        "description": "<habit: pachycaul or leptocaul>",
+        "states": {
+            "1": "pachycaul",
+            "2": "leptocaul"
+        }
+    },
+    "2": {
+        "description": "<evergreen or deciduous>",
+        "states": {
+            "1": "evergreen",
+            "2": "deciduous"
+        }
+    },
+    "3": {
+        "description": "<habit>",
+        "states": {
+            "1": "trees",
+            "2": "shrubs",
+            "3": "vines",
+            "4": "a long-lived, woody herbaceous perennial, the woody, tap-rooted stem widening into a concave disc up to a metre across <Welwitschia>"
+        }
+    },
+    "4": {
+        "description": "<bizarre plant form - Welwitschia>",
+        "states": {
+            "1": "a bizarre southern African gymnospermous monotypic with a short, woody, unbranched stem bearing only 2 (rarely 3) strap-shaped amphistomatous leaves, the latter continuing to grow from basal meristems throughout the long life of the plant, spreading laterally along the ground, progressively fraying and twisting",
+            "2": "plants of conventional form"
+        }
+    },
+    "5": {
+        "description": "<whether exhibiting switch-plant morphology>",
+        "states": {
+            "1": "Casuarina-like switch-plants photosynthesizing mainly via their grooved and jointed stems, the leaves reduced to small scales which are soon shed",
+            "2": "not Casuarina-like switch plants"
+        }
+    },
+    "6": {
+        "description": "<whether exhibiting coralloid masses of apogeotropic roots>",
+        "states": {
+            "1": "with apogeotropic roots bearing cyanobacteria, born in coralloid masses just above ground level <Cycadales>",
+            "2": "without coralloid, cyanobacteria-containing root masses"
+        }
+    },
+    "7": {
+        "description": "<whether plants resinous>",
+        "states": {
+            "1": "resinous <with resin-containing cells, cavities or canals conspicuous somewhere in the plant>",
+            "2": "not resinous"
+        }
+    },
+    "8": {
+        "description": "main branches <insertion>",
+        "states": {
+            "1": "spiral",
+            "2": "whorled",
+            "3": "opposite"
+        }
+    },
+    "9": {
+        "description": "the leafy branchlets",
+        "states": {
+            "1": "flattened in one plane",
+            "2": "not flattened"
+        }
+    },
+    "10": {
+        "description": "the vegetative branch systems",
+        "states": {
+            "1": "without conspicuously specialised short-shoots",
+            "2": "including highly specialised, leaf-bearing short-shoots <spurs>"
+        }
+    },
+    "11": {
+        "description": "<presence of phyllodes>",
+        "states": {
+            "1": "phyllocladineous",
+            "2": "with normal leaves"
+        }
+    },
+    "12": {
+        "description": "mature <foliage> leaves <simple or compound>",
+        "states": {
+            "1": "simple",
+            "2": "pinnate",
+            "3": "bipinnate"
+        }
+    },
+    "13": {
+        "description": "the <cycad> leaflets <venation>",
+        "states": {
+            "1": "with a prominent midrib and no laterals <Cycadaceae>",
+            "2": "with pinnate venation, having a prominent midrib and dichotomously branching laterals <Stangeriaceae>",
+            "3": "with numerous parallel or wavy, single or forked longitudinal veins but no prominent midrib <Zamiaceae>"
+        }
+    },
+    "14": {
+        "description": "mature <foliage> leaves <whether dimorphic>",
+        "states": {
+            "1": "dimorphic",
+            "2": "not dimorphic"
+        }
+    },
+    "15": {
+        "description": "mature <foliage> leaves <form>",
+        "states": {
+            "1": "broad and flat",
+            "2": "linear",
+            "3": "scale-like",
+            "4": "2-veined, evidently representing pairs of 'needles' united lengthwise <Sciadopitys>"
+        }
+    },
+    "16": {
+        "description": "mature <foliage> leaves <linear, whether acicular>",
+        "states": {
+            "1": "acicular",
+            "2": "relatively soft"
+        }
+    },
+    "17": {
+        "description": "mature <foliage> leaves <organization>",
+        "states": {
+            "1": "in tight clusters on short-shoots, each cluster with a basal sheath of scales",
+            "2": "not <tightly> clustered"
+        }
+    },
+    "18": {
+        "description": "mature <foliage> leaves <phyllotaxy>",
+        "states": {
+            "1": "alternate <spiral>",
+            "2": "opposite and decussate",
+            "3": "whorled"
+        }
+    },
+    "19": {
+        "description": "longitudinal resin canals <presence in leaves>",
+        "states": {
+            "1": "present in the leaves",
+            "2": "absent from the leaves"
+        }
+    },
+    "20": {
+        "description": "longitudinal resin canals <location in transverse sections>",
+        "states": {
+            "1": "1 per leaf, this median-abaxial",
+            "2": "2 per leaf, these lateral",
+            "3": "in a horizontal row",
+            "4": "in a peripheral ring",
+            "5": "in an abaxial arc",
+            "6": "in an adaxial arc"
+        }
+    },
+    "21": {
+        "description": "<sexuality>",
+        "states": {
+            "1": "monoecious",
+            "2": "dioecious"
+        }
+    },
+    "22": {
+        "description": "<possession of flower-like reproductive structures>",
+        "states": {
+            "1": "the reproductive structures organized like reduced angiosperm flowers <with stamen-like antherophores and exposed, gymnospermous ovules: Gnetales>",
+            "2": "the reproductive organization not flower-like"
+        }
+    },
+    "23": {
+        "description": "the ovules <whether in cones>",
+        "states": {
+            "1": "borne in female cones",
+            "2": "not in cones"
+        }
+    },
+    "24": {
+        "description": "the female cones <woody or berry-like>",
+        "states": {
+            "1": "woody",
+            "2": "fleshy and berry-like"
+        }
+    },
+    "25": {
+        "description": "the seed-cone scales <arrangement>",
+        "states": {
+            "1": "spirally arranged",
+            "2": "opposite and decussate",
+            "3": "whorled"
+        }
+    },
+    "26": {
+        "description": "the seed-cone scales <persistent or deciduous>",
+        "states": {
+            "1": "persistent",
+            "2": "deciduous, the cones disintegrating at maturity"
+        }
+    },
+    "27": {
+        "description": "the seed-cone scales <texture>",
+        "states": {
+            "1": "fleshy",
+            "2": "leathery",
+            "3": "woody"
+        }
+    },
+    "28": {
+        "description": "the ovules <location>",
+        "states": {
+            "1": "borne proximal-adaxially on the seed-cone scales",
+            "2": "terminating axes",
+            "3": "marginal or in notches, on discrete megasporophylls with sterile tips",
+            "4": "axillary",
+            "5": "borne erect in the centre of the 'flowers'"
+        }
+    },
+    "29": {
+        "description": "the bract-scales <free or fused>",
+        "states": {
+            "1": "more or less free of the seed-cone scales",
+            "2": "extensively fused to the seed-cone scales",
+            "3": "not clearly resolvable from the seed-cone scales"
+        }
+    },
+    "30": {
+        "description": "the <mature> ovules <orientation>",
+        "states": {
+            "1": "orthotropus",
+            "2": "anatropous"
+        }
+    },
+    "31": {
+        "description": "pollen <whether with bladders>",
+        "states": {
+            "1": "with air bladders",
+            "2": "without air bladders"
+        }
+    },
+    "32": {
+        "description": "fertilization <whether involving production of motile spermatozoids>",
+        "states": {
+            "1": "involving spirally flagellate, motile spermatozoids",
+            "2": "not involving motile spermatozoids"
+        }
+    },
+    "33": {
+        "description": "seeds <whether with fleshy investment>",
+        "states": {
+            "1": "with a fleshy investment",
+            "2": "with no fleshy investment"
+        }
+    },
+    "34": {
+        "description": "the fleshy investment <of the seeds, derivation>",
+        "states": {
+            "1": "receptacular",
+            "2": "representing a genuine aril",
+            "3": "developed from the cone-scales",
+            "4": "developed from the integument"
+        }
+    },
+    "35": {
+        "description": "seeds <winged or wingless>",
+        "states": {
+            "1": "winged",
+            "2": "wingless"
+        }
+    },
+    "36": {
+        "description": "growth rings <of wood, whether distinct>",
+        "states": {
+            "1": "indistict",
+            "2": "distinct"
+        }
+    },
+    "37": {
+        "description": "heartwood <whether distinctively coloured>",
+        "states": {
+            "1": "present and distinctively coloured",
+            "2": "present but not distinctively coloured, or absent"
+        }
+    },
+    "38": {
+        "description": "latewood <whether conspicuous>",
+        "states": {
+            "1": "not conspicuous",
+            "2": "conspicuous"
+        }
+    },
+    "39": {
+        "description": "wood <whether with distinct odour>",
+        "states": {
+            "1": "with a distinct odour",
+            "2": "without distinct odour"
+        }
+    },
+    "40": {
+        "description": "wood <whether with distinct taste>",
+        "states": {
+            "1": "with a distinct taste",
+            "2": "without distinct taste"
+        }
+    },
+    "41": {
+        "description": "wood <whether greasy>",
+        "states": {
+            "1": "greasy to the touch",
+            "2": "not greasy"
+        }
+    },
+    "42": {
+        "description": "wood <whether with dimpled grain>",
+        "states": {
+            "1": "with dimpled grain",
+            "2": "without dimpled grain"
+        }
+    },
+    "43": {
+        "description": "secondary xylem <presence of vessels>",
+        "states": {
+            "1": "with vessels",
+            "2": "lacking vessels"
+        }
+    },
+    "44": {
+        "description": "tracheids <arrangement of pits>",
+        "states": {
+            "1": "with alternate bordered pits",
+            "2": "with opposite and multiseriate bordered pits",
+            "3": "with neither alternate nor opposite bordered pits"
+        }
+    },
+    "45": {
+        "description": "tracheids <presence of callitroid pit-border thickenings>",
+        "states": {
+            "1": "with callitroid pit-border thickenings",
+            "2": "without callitroid pit-border thickenings"
+        }
+    },
+    "46": {
+        "description": "margins of the tori <whether scalloped>",
+        "states": {
+            "1": "scalloped",
+            "2": "not scalloped"
+        }
+    },
+    "47": {
+        "description": "torus extensions <presence>",
+        "states": {
+            "1": "conspicuously present",
+            "2": "absent"
+        }
+    },
+    "48": {
+        "description": "earlywood tracheids <with or without spirals>",
+        "states": {
+            "1": "with spiral thickenings",
+            "2": "without spiral thickenings"
+        }
+    },
+    "49": {
+        "description": "axial parenchyma <presence>",
+        "states": {
+            "1": "present",
+            "2": "absent"
+        }
+    },
+    "50": {
+        "description": "axial parenchyma <when present, abundance>",
+        "states": {
+            "1": "abundant",
+            "2": "scarce"
+        }
+    },
+    "51": {
+        "description": "axial parenchyma <whether zonate>",
+        "states": {
+            "1": "zonate",
+            "2": "not zonate"
+        }
+    },
+    "52": {
+        "description": "axial parenchyma <presence of nodular or bead-like thickenings on transverse or end-walls>",
+        "states": {
+            "1": "with nodular thickenings or bead-like on the transverse or end-walls",
+            "2": "without nodular thickenings on the transverse or end-walls"
+        }
+    },
+    "53": {
+        "description": "rays <in TLS, whether exclusively uniseriate>",
+        "states": {
+            "1": "exclusively uniseriate",
+            "2": "not exclusively uniseriate"
+        }
+    },
+    "54": {
+        "description": "ray tracheids <presence>",
+        "states": {
+            "1": "regularly present",
+            "2": "absent or very infrequent"
+        }
+    },
+    "55": {
+        "description": "ray tracheids <when present, whether dentate>",
+        "states": {
+            "1": "dentate",
+            "2": "not dentate"
+        }
+    },
+    "56": {
+        "description": "earlywood ray cells <whether with thin horizontal walls>",
+        "states": {
+            "1": "with horizontal walls thinner than those of the adjacent vertical tracheids above and below the ray",
+            "2": "with walls similar in thickness to those of adjacent vertical tracheids"
+        }
+    },
+    "57": {
+        "description": "latewood ray cells <pitting of horizontal walls>",
+        "states": {
+            "1": "with pitted horizontal walls",
+            "2": "with unpitted horizontal walls"
+        }
+    },
+    "58": {
+        "description": "the pitting <in horizontal walls of latewood rays, strength>",
+        "states": {
+            "1": "strong",
+            "2": "weak"
+        }
+    },
+    "59": {
+        "description": "ray cells <whether exhibiting indentures>",
+        "states": {
+            "1": "exhibiting indentures at the corners",
+            "2": "without indentures"
+        }
+    },
+    "60": {
+        "description": "ray cells <presence of nodular or bead-like thickenings on their end walls>",
+        "states": {
+            "1": "exhibiting nodular or bead-like thickenings on their end walls",
+            "2": "without nodular thickenings on their end walls"
+        }
+    },
+    "61": {
+        "description": "ray tissue <presence of crystals>",
+        "states": {
+            "1": "exhibiting crystals",
+            "2": "without crystals"
+        }
+    },
+    "62": {
+        "description": "earlywood cross-field pits <configuration>",
+        "states": {
+            "1": "1(-3), large and simple (or nearly so)",
+            "2": "piceoid",
+            "3": "cupressoid",
+            "4": "taxodioid",
+            "5": "1-6 pinoid"
+        }
+    },
+    "63": {
+        "description": "normal vertical resin ducts <presence, exclusive of traumatic resin ducts>",
+        "states": {
+            "1": "present",
+            "2": "absent"
+        }
+    },
+    "64": {
+        "description": "the normal resin ducts <thickness of epithelial cell walls>",
+        "states": {
+            "1": "with at least some thick-walled epithelial cells",
+            "2": "with only thin-walled epithelial cells"
+        }
+    },
+    "65": {
+        "description": "the normal resin ducts <number of epithelial cells, in cases where the epithelial cells are thick-walled>",
+        "states": {
+            "1": "with 5-6 epithelial cells",
+            "2": "with 7-12 epithelial cells"
+        }
+    },
+    "66": {
+        "description": "<climatic distribution>",
+        "states": {
+            "1": "frigid zone",
+            "2": "temperate",
+            "3": "sub-tropical",
+            "4": "tropical"
+        }
+    },
+    "67": {
+        "description": "<natural geographical distribution>",
+        "states": {
+            "1": "Western and Northern Eurasia, U.S.S.R.",
+            "2": "Middle East",
+            "3": "Mediterranean",
+            "4": "Eastern and Southern Asia",
+            "5": "North Africa",
+            "6": "Central, East tropical and West tropical Africa",
+            "7": "South Africa",
+            "8": "Madagascar",
+            "9": "Malay Archipelago",
+            "10": "Australasia",
+            "11": "Pacific Islands",
+            "12": "North America",
+            "13": "Central America",
+            "14": "West Indies",
+            "15": "South America",
+            "16": "Arctic",
+            "17": "Antarctic"
+        }
+    },
+    "68": {
+        "description": "Subclass (after Christenhusz et al., 2011)",
+        "states": {
+            "1": "Cycadidae",
+            "2": "Ginkgoidae",
+            "3": "Gnetidae",
+            "4": "Pinidae"
+        }
+    },
+    "69": {
+        "description": "<Order of Cycadidae>",
+        "states": {
+            "1": "Cycadales",
+            "2": "Bennettitales"
+        }
+    },
+    "70": {
+        "description": "<Order of Ginkgoidae>",
+        "states": {
+            "1": "Ginkgoales"
+        }
+    },
+    "71": {
+        "description": "<Order of Gnetidae>",
+        "states": {
+            "1": "Welwitschiales",
+            "2": "Gnetales",
+            "3": "Ephedrales"
+        }
+    },
+    "72": {
+        "description": "<Order of Pinidae>",
+        "states": {
+            "1": "Pinales",
+            "2": "Araucariales",
+            "3": "Cupressales"
+        }
+    }
+}

@@ -1,0 +1,41 @@
+1. **Character1:**
+   - State "1":
+    1. **Character6:**
+       - State "1": Niphargus_borisi_sp.n.
+       - State "2":
+        1. **Character8:**
+           - State "1": Niphargus_alisadri, Niphargus_darvishi_sp.n.
+           - State "2":
+            1. **Character10:**
+               - State "1": Niphargus_daniali, Niphargus_khwarizmi
+               - State "2": Niphargus_bisitunicus_sp.n., Niphargus_sharifi_sp._n.
+   - State "2":
+    1. **Character1:**
+       - State "2":
+        1. **Character2:**
+           - State "2":
+            1. **Character3:**
+               - State "1": Niphargus_sertaci, Niphargus_religiosus_Karaman_2012
+               - State "2":
+                1. **Character4:**
+                   - State "1":
+                    1. **Character6:**
+                       - State "1": Niphargus_tauri_tauri_Schellenberg_1933, Niphargus_krigizi
+                       - State "2": Niphargus_tauri_afioni_Karaman_2012, Niphargus_orientalis_Karaman_1950
+           - State "1": Niphargus_turcicus_Andreev_&_Kenderov_2012
+           - State "Not applicable":
+            1. **Character3:**
+               - State "2":
+                1. **Character6:**
+                   - State "1": Niphargus_imitator_Karaman_2012
+                   - State "2":
+                    1. **Character11:**
+                       - State "1": Niphargus_anatolicus, Niphargus_incus_Karaman_2012
+   - State "3": Niphargus_nadarini_iraquensis
+   - State "4": Niphargus_nadarini_favitor
+   - State "5":
+    1. **Character1:**
+       - State "5": Niphargus_altagahizi
+       - State "5 and 6": Niphargus_nadarini
+   - State "6": Niphargus_itus_Karaman_1986
+   - State "5 and 6": Niphargus_nadarini

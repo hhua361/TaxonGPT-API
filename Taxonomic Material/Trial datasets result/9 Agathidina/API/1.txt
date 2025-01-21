@@ -1,0 +1,82 @@
+Updated Classification Key:
+{
+    "Character 1: longevity of plants": {
+        "State 1 and 2: annual or biennial, without remains of old sheaths or culms;;perennial with remains of old sheaths and/or culms": {
+            "Character 25: female-fertile spikelets plane of compression": {
+                "State 1: compressed laterally lying on the side when placed on a flat surface": {
+                    "Character 26: female-fertile spikelets location of disarticulation positions": {
+                        "State 1: readily disarticulating above the glumes when mature": {
+                            "Character 10: adaxial ligule form; avoid seedlings": {
+                                "State 1: an unfringed membrane may be variously hairy or ciliolate": {
+                                    "Character 30: glumes of female-fertile spikelets, present or absent": {
+                                        "State 1: present": "Agrostis",
+                                        "State 1 and 2: present;;absent": "Oryza"
+                                    }
+                                },
+                                "State 2 and 3: a fringed membrane;;a fringe of hairs": "Chloris",
+                                "State 1 and 2: an unfringed membrane may be variously hairy or ciliolate;;a fringed membrane": "Poa"
+                            }
+                        },
+                        "State 1 and 4: readily disarticulating above the glumes when mature;;not disarticulating common in cultivated cereals": "Eleusine"
+                    }
+                },
+                "State 3: compressed dorsally, ventrally or dorsiventrally lying on front or back when placed on a flat surface": {
+                    "Character 26: female-fertile spikelets location of disarticulation positions": {
+                        "State 3 and 4: falling with the glumes when mature pending data changes, including forms where the spikelets are shed by inflorescence disarticulation;;not disarticulating common in cultivated cereals": "Panicum",
+                        "State 3: falling with the glumes when mature pending data changes, including forms where the spikelets are shed by inflorescence disarticulation": "Echinochloa"
+                    }
+                },
+                "State 1 and 2 and 3: compressed laterally lying on the side when placed on a flat surface;;not noticeably compressed terete;;compressed dorsally, ventrally or dorsiventrally lying on front or back when placed on a flat surface": "Andropogon"
+            }
+        },
+        "State 2: perennial with remains of old sheaths and/or culms": {
+            "Character 2: mature culms maximum height: data unreliable for large genera": {
+                "State 1: up to 199 cm high": {
+                    "Character 18: spikelets whether secund": {
+                        "State 1: secund": "Cynodon",
+                        "State 2: not secund": "Anisopogon"
+                    }
+                },
+                "State 2: 200 to 499 cm high": {
+                    "Character 10: adaxial ligule form; avoid seedlings": {
+                        "State 1: an unfringed membrane may be variously hairy or ciliolate": "Festuca",
+                        "State 3: a fringe of hairs": "Phragmites"
+                    }
+                },
+                "State 3: 500 cm high or more": "Bambusa"
+            }
+        },
+        "State 1: annual or biennial, without remains of old sheaths or culms": "Zea"
+    }
+}
+1.
+    -  longevity of plants: annual or biennial, without remains of old sheaths or culms;;perennial with remains of old sheaths and/or culms ........ 2
+    -  longevity of plants: perennial with remains of old sheaths and/or culms ........ 3
+    -  longevity of plants: annual or biennial, without remains of old sheaths or culms ........ Zea
+2(1).
+    -  female-fertile spikelets plane of compression: compressed laterally lying on the side when placed on a flat surface ........ 4
+    -  female-fertile spikelets plane of compression: compressed dorsally, ventrally or dorsiventrally lying on front or back when placed on a flat surface ........ 5
+    -  female-fertile spikelets plane of compression: compressed laterally lying on the side when placed on a flat surface;;not noticeably compressed terete;;compressed dorsally, ventrally or dorsiventrally lying on front or back when placed on a flat surface ........ Andropogon
+4(2).
+    -  female-fertile spikelets location of disarticulation positions: readily disarticulating above the glumes when mature ........ 6
+    -  female-fertile spikelets location of disarticulation positions: readily disarticulating above the glumes when mature;;not disarticulating common in cultivated cereals ........ Eleusine
+6(4).
+    -  adaxial ligule form; avoid seedlings: an unfringed membrane may be variously hairy or ciliolate ........ 7
+    -  adaxial ligule form; avoid seedlings: a fringed membrane;;a fringe of hairs ........ Chloris
+    -  adaxial ligule form; avoid seedlings: an unfringed membrane may be variously hairy or ciliolate;;a fringed membrane ........ Poa
+7(6).
+    -  glumes of female-fertile spikelets, present or absent: present ........ Agrostis
+    -  glumes of female-fertile spikelets, present or absent: present;;absent ........ Oryza
+5(2).
+    -  female-fertile spikelets location of disarticulation positions: falling with the glumes when mature pending data changes, including forms where the spikelets are shed by inflorescence disarticulation;;not disarticulating common in cultivated cereals ........ Panicum
+    -  female-fertile spikelets location of disarticulation positions: falling with the glumes when mature pending data changes, including forms where the spikelets are shed by inflorescence disarticulation ........ Echinochloa
+3(1).
+    -  mature culms maximum height: up to 199 cm high ........ 8
+    -  mature culms maximum height: 200 to 499 cm high ........ 9
+    -  mature culms maximum height: 500 cm high or more ........ Bambusa
+8(3).
+    -  spikelets whether secund: secund ........ Cynodon
+    -  spikelets whether secund: not secund ........ Anisopogon
+9(3).
+    -  adaxial ligule form; avoid seedlings: an unfringed membrane may be variously hairy or ciliolate ........ Festuca
+    -  adaxial ligule form; avoid seedlings: a fringe of hairs ........ Phragmites

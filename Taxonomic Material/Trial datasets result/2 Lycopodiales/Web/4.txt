@@ -1,0 +1,21 @@
+Taxonomic Key
+	• Character1 = 1
+		○ Character8 = 2
+			§ Character2 = 2
+				□ Character9 = 1
+					® Character5 = 2: Diphasiastrum_alpinum
+					® Character5 = 3: Diphasiastrum_complanatum
+				□ Character9 = 2
+					® Character11 = 2
+						◊ Character20 = 1: Lycopodiella_inundata
+						◊ Character20 = 2,3: Lycopodium_annotinum
+					® Character11 = Missing: Lycopodium_clavatum
+			§ Character2 = 1: Huperzia_selago
+		○ Character8 = 1
+			§ Character4 = 1: Selaginella_kraussiana
+			§ Character4 = 2: Selaginella_selaginoides
+	• Character1 = 2
+		○ Character7 = 2
+			§ Character18 = 2: Isoetes_echinospora
+			§ Character18 = 1: Isoetes_lacustris
+		○ Character7 = 1: Isoetes_histrix

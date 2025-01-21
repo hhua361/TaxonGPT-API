@@ -1,0 +1,19 @@
+Character1:
+  - 2: Lytopylus_bradzlotnicki
+  - 8: Lytopylus_colleenhitchcockae
+  - 5: Lytopylus_flavicalcar
+  - 7: Lytopylus_gregburtoni
+  - 9: Lytopylus_jessicadimauroae
+  - 11:
+    Character3:
+      - 1: Lytopylus_jessiehillae
+      - 2: Lytopylus_mingfangi
+  - 12:
+    Character3:
+      - 1: Lytopylus_jessiehillae
+      - 2: Lytopylus_mingfangi
+  - 10: Lytopylus_macadamiae
+  - 3: Lytopylus_rebeccashapleyae
+  - 6: Lytopylus_robpringlei
+  - 4: Lytopylus_sandraberriosae
+  - 1: Lytopylus_vaughntani

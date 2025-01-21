@@ -1,0 +1,206 @@
+#NEXUS
+
+BEGIN DATA;
+DIMENSIONS NTAX=12 NCHAR=72;
+
+[! ]
+FORMAT MISSING=? GAP=- SYMBOLS="123456789ABCDEFGH";
+
+CHARLABELS
+[1(3)] '<habit: pachycaul or leptocaul'
+[2(4)] '<evergreen or deciduous>'
+[3(5)] '<habit>'
+[4(6)] '<bizarre plant form - Welwitsc'
+[5(7)] '<whether exhibiting switch-pla'
+[6(8)] '<whether exhibiting coralloid'
+[7(9)] '<whether plants resinous>'
+[8(10)] 'main branches <insertion>'
+[9(11)] 'the leafy branchlets'
+[10(12)] 'the vegetative branch systems'
+[11(13)] '<presence of phyllodes>'
+[12(14)] 'mature <foliage> leaves <simpl'
+[13(15)] 'the <cycad> leaflets <venation'
+[14(16)] 'mature <foliage> leaves <wheth'
+[15(17)] 'mature <foliage> leaves <form>'
+[16(18)] 'mature <foliage> leaves <linea'
+[17(19)] 'mature <foliage> leaves <organ'
+[18(20)] 'mature <foliage> leaves <phyll'
+[19(21)] 'longitudinal resin canals <pre'
+[20(22)] 'longitudinal resin canals <loc'
+[21(23)] '<sexuality>'
+[22(24)] '<possession of flower-like rep'
+[23(26)] 'the ovules <whether in cones>'
+[24(27)] 'the female cones <woody or ber'
+[25(28)] 'the seed-cone scales <arrangem'
+[26(29)] 'the seed-cone scales <persiste'
+[27(30)] 'the seed-cone scales <texture>'
+[28(31)] 'the ovules <location>'
+[29(32)] 'the bract-scales <free or fuse'
+[30(35)] 'the <mature> ovules <orientati'
+[31(39)] 'pollen <whether with bladders>'
+[32(41)] 'fertilization <whether involvi'
+[33(42)] 'seeds <whether with fleshy inv'
+[34(43)] 'the fleshy investment <of the'
+[35(44)] 'seeds <winged or wingless>'
+[36(46)] 'growth rings <of wood, whether'
+[37(47)] 'heartwood <whether distinctive'
+[38(48)] 'latewood <whether conspicuous>'
+[39(49)] 'wood <whether with distinct od'
+[40(50)] 'wood <whether with distinct ta'
+[41(51)] 'wood <whether greasy>'
+[42(52)] 'wood <whether with dimpled gra'
+[43(53)] 'secondary xylem <presence of v'
+[44(54)] 'tracheids <arrangement of pits'
+[45(55)] 'tracheids <presence of callitr'
+[46(56)] 'margins of the tori <whether s'
+[47(57)] 'torus extensions <presence>'
+[48(58)] 'earlywood tracheids <with or w'
+[49(59)] 'axial parenchyma <presence>'
+[50(60)] 'axial parenchyma <when present'
+[51(61)] 'axial parenchyma <whether zona'
+[52(62)] 'axial parenchyma <presence of'
+[53(63)] 'rays <in TLS, whether exclusiv'
+[54(64)] 'ray tracheids <presence>'
+[55(65)] 'ray tracheids <when present, w'
+[56(66)] 'earlywood ray cells <whether w'
+[57(67)] 'latewood ray cells <pitting of'
+[58(68)] 'the pitting <in horizontal wal'
+[59(69)] 'ray cells <whether exhibiting'
+[60(70)] 'ray cells <presence of nodular'
+[61(71)] 'ray tissue <presence of crysta'
+[62(72)] 'earlywood cross-field pits <co'
+[63(73)] 'normal vertical resin ducts <p'
+[64(74)] 'the normal resin ducts <thickn'
+[65(75)] 'the normal resin ducts <number'
+[66(76)] '<climatic distribution:>'
+[67(78)] '<natural geographical distribu'
+[68(82)] 'Subclass (after Christenhusz e'
+[69(83)] '<Order of Cycadidae>'
+[70(84)] '<Order of Ginkgoidae>'
+[71(85)] '<Order of Gnetidae>'
+[72(86)] '<Order of Pinidae>'
+;
+
+STATELABELS
+1 'pachycaul' 'leptocaul',
+2 'evergreen' 'deciduous',
+3 'trees' 'shrubs' 'vines' 'a long-lived, woody herbaceous',
+4 'a bizarre southern African gym' 'plants of conventional form',
+5 'Casuarina-like switch-plants p' 'not Casuarina-like switch plan',
+6 'with apogeotropic roots bearin' 'without coralloid, cyanobacter',
+7 'resinous' 'not resinous',
+8 'spiral' 'whorled' 'opposite',
+9 'flattened in one plane' 'not flattened',
+10 'without conspicuously speciali' 'including highly specialised,',
+11 'phyllocladineous' 'with normal leaves',
+12 'simple' 'pinnate' 'bipinnate',
+13 'with a prominent midrib and no' 'with pinnate venation, having'
+     'with numerous parallel or wavy',
+14 'dimorphic' 'not dimorphic',
+15 'broad and flat' 'linear' 'scale-like' '2-veined, evidently representi',
+16 'acicular' 'relatively soft',
+17 'in tight clusters on short-sho' 'not clustered',
+18 'alternate' 'opposite and decussate' 'whorled',
+19 'present in the leaves' 'absent from the leaves',
+20 '1 per leaf, this median-abaxia' '2 per leaf, these lateral'
+     'in a horizontal row' 'in a peripheral ring' 'in an abaxial arc'
+     'in an adaxial arc',
+21 'monoecious' 'dioecious',
+22 'the reproductive structures or' 'the reproductive organization',
+23 'borne in female cones' 'not in cones',
+24 'woody' 'fleshy and berry-like',
+25 'spirally arranged' 'opposite and decussate' 'whorled',
+26 'persistent' 'deciduous, the cones disintegr',
+27 'fleshy' 'leathery' 'woody',
+28 'borne proximal-adaxially on th' 'terminating axes'
+     'marginal or in notches, on dis' 'axillary'
+     'borne erect in the centre of t',
+29 'more or less free of the seed-' 'extensively fused to the seed-'
+     'not clearly resolvable from th',
+30 'orthotropus' 'anatropous',
+31 'with air bladders' 'without air bladders',
+32 'involving spirally flagellate,' 'not involving motile spermatoz',
+33 'with a fleshy investment' 'with no fleshy investment',
+34 'receptacular' 'representing a genuine aril'
+     'developed from the cone-scales' 'developed from the integument',
+35 'winged' 'wingless',
+36 'indistict' 'distinct',
+37 'present and distinctively colo' 'present but not distinctively',
+38 'not conspicuous' 'conspicuous',
+39 'with a distinct odour' 'without distinct odour',
+40 'with a distinct taste' 'without distinct taste',
+41 'greasy to the touch' 'not greasy',
+42 'with dimpled grain' 'without dimpled grain',
+43 'with vessels' 'lacking vessels',
+44 'with alternate bordered pits' 'with opposite and multiseriate'
+     'with neither alternate nor opp',
+45 'with callitroid pit-border thi' 'without callitroid pit-border',
+46 'scalloped' 'not scalloped',
+47 'conspicuously present' 'absent',
+48 'with spiral thickenings' 'without spiral thickenings',
+49 'present' 'absent',
+50 'abundant' 'scarce',
+51 'zonate' 'not zonate',
+52 'with nodular thickenings or be' 'without nodular thickenings on',
+53 'exclusively uniseriate' 'not exclusively uniseriate',
+54 'regularly present' 'absent or very infrequent',
+55 'dentate' 'not dentate',
+56 'with horizontal walls thinner' 'with walls similar in thicknes',
+57 'with pitted horizontal walls' 'with unpitted horizontal walls',
+58 'strong' 'weak',
+59 'exhibiting indentures at the c' 'without indentures',
+60 'exhibiting nodular or bead-lik' 'without nodular thickenings on',
+61 'exhibiting crystals' 'without crystals',
+62 '1(-3), large and simple (or ne' 'piceoid' 'cupressoid' 'taxodioid'
+     '1-6 pinoid',
+63 'present' 'absent',
+64 'with at least some thick-walle' 'with only thin-walled epitheli',
+65 'with 5-6 epithelial cells' 'with 7-12 epithelial cells',
+66 'frigid zone' 'temperate' 'sub-tropical' 'tropical',
+67 'Western and Northern Eurasia,' 'Middle East' 'Mediterranean'
+     'Eastern and Southern Asia' 'North Africa'
+     'Central, East tropical and Wes' 'South Africa' 'Madagascar'
+     'Malay Archipelago' 'Australasia' 'Pacific Islands' 'North America'
+     'Central America' 'West Indies' 'South America' 'Arctic' 'Antarctic',
+68 'Cycadidae' 'Ginkgoidae' 'Gnetidae' 'Pinidae',
+69 'Cycadales' 'Bennettitales',
+70 'Ginkgoales',
+71 'Welwitschiales' 'Gnetales' 'Ephedrales',
+72 'Pinales' 'Araucariales' 'Cupressales',
+;
+
+MATRIX 
+'Araucariaceae'                                                                 
+211222122?21-2(12)(12)211?(12)211123122222-11(12)12(12)22212?222---?2-12-222(23)2--(234)(49ABF)4---2                                                            
+'Cephalotaxaceae'                                                               
+21(12)2221(23)1121-2222111221?21?4?12214212122222322211121?2-21212222--?44---3  
+'Cupressaceae'                                                                  
+21(12)2221?(12)?21-(12)(23)12(23)(12)1(12)21(12)(23)1(123)131222-(12)(12)(12)(12)(12)(12)(12)223(12)(12)221(12)(12)(12)(12)(12)2(12)(12)(12)(12)(12)2(234)2--?(123456789ABCDEF)4---3                                                         
+'Cycadaceae'                                                                    
+11(12)2212----212?--??-222-?--3-1211421??????22??2??---??-??-?????--(234)(4689AB)11---                                                                   
+'Ephedraceae'                                                                   
+2?(123)212?(23)2?21-23??(23)?-211?(23)?15?1222-22??????1???2??---??-??-????2--(234)(23456789CDEF)3--3?                                                        
+'Ginkgoaceae'                                                                   
+2212222(12)2221-11?-12-222-?-?2-1211422?12???22222?1?121?-??-??232--2(12347ACF)2-1--                                                                            
+'Gnetaceae'                                                                     
+21(123)222??2?21-21?22?-(12)12-?-?5-1222-2???????1???2??---??-??-?????--(34)(469BF)3--2-                                                                    
+'Pinaceae'                                                                      
+2(12)(12)2221(12)2(12)21-221(12)1(12)(23456)12111(12)3112(12)22-12(12)(12)(12)(12)222(23)2(12)(12)2(12)22(12)(12)(12)(12)(12)(12)(12)(12)(12)(12)(12345)(12)(12)2(1234)(1234569BCDEG)4---1                                                  
+'Podocarpaceae'                                                                 
+21(12)2221?(12)?(12)1-2(123)(12)2(12)(12)1(12)2(12)????(12)1(12)(12)21(1234)2(12)(12)1222(12)2322(12)2(12)(12)2(12)?(12)2(12)(12)(12)(12)22(134)2--?(46789ABCDEF)4---2                                                              
+'Sciadopityaceae'                                                               
+2112221?2221-1(34)?(12)314?211123112222-121111222322222---?2-12-22212--?44---3  
+'Stangeriaceae'                                                                 
+11-2212----222?--1?-221-?--3-1211421??????2(23)??2??---??-??-?????--(234)(7A)11---                                                                              
+'Taxaceae'                                                                      
+21(12)222(12)(123)1121-22221(12)1222-?-?2-122122211(12)222222221(12)(12)2(12)12-(12)(12)(12)122(34)2--2(1234ABC)4????                                           
+;
+
+END;
+BEGIN ASSUMPTIONS;
+OPTIONS DEFTYPE=unord PolyTCount=MINSTEPS;
+TYPESET * untitled = unord: 1-26 28-65 67-72, ord: 27 66;
+
+WTSET * untitled = 1: 1-72;
+
+END;
